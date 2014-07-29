@@ -1,4 +1,4 @@
-package com.eduict..util;
+package com.eduict.util;
 
 import java.util.logging.Logger;
 
