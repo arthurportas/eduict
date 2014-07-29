@@ -20,7 +20,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 @XmlRootElement
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
-public class Member implements Serializable {
+public class Question implements Serializable {
 
    private static final long serialVersionUID = 1L;
 
