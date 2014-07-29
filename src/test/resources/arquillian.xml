@@ -19,5 +19,14 @@
          <property name="jbossHome">/path/to/jboss/as</property>
       </configuration>
    </container>
-
+   <container qualifier="openshift-express">
+       <configuration>
+           <property name="namespace">afmp</property>
+           <property name="application">eduict</property>
+           <property name="sshUserName">53cb90bf4382ec1aea0000ed</property>
+           <property name="passphrase">antena3?</property>
+           <property name="login">arthurportas@gmail.com</property>
+       </configuration>
+   </container>
+<!--ssh://53cb90bf4382ec1aea0000ed@eduict-afmp.rhcloud.com/~/git/eduict.git/-->
 </arquillian>
