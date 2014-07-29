@@ -1,4 +1,4 @@
-package org.jboss.as.quickstarts.kitchensink.controller;
+package com.eduict.controller;
 
 import java.util.logging.Logger;
 
@@ -13,7 +13,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 
-import org.jboss.as.quickstarts.kitchensink.model.Member;
+import com.eduict.model.Member;
 
 // The @Stateful annotation eliminates the need for manual transaction demarcation
 @Stateful

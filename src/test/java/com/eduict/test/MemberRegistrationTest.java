@@ -1,4 +1,4 @@
-package org.jboss.as.quickstarts.kitchensink.test;
+package com.eduict.test;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -8,9 +8,9 @@ import javax.inject.Inject;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.as.quickstarts.kitchensink.controller.MemberRegistration;
-import org.jboss.as.quickstarts.kitchensink.model.Member;
-import org.jboss.as.quickstarts.kitchensink.util.Resources;
+import com.eduict.controller.MemberRegistration;
+import com.eduict.model.Member;
+import com.eduict.util.Resources;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;

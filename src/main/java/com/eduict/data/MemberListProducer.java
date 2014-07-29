@@ -1,6 +1,6 @@
-package org.jboss.as.quickstarts.kitchensink.data;
+package com.eduict.data;
 
-import org.jboss.as.quickstarts.kitchensink.model.Member;
+import com.eduict.model.Member;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;

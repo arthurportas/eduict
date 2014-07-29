@@ -1,4 +1,4 @@
-package org.jboss.as.quickstarts.kitchensink.model;
+package com.eduict.model;
 
 import java.io.Serializable;
 

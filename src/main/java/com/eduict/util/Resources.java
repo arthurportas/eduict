@@ -1,4 +1,4 @@
-package org.jboss.as.quickstarts.kitchensink.util;
+package com.eduict..util;
 
 import java.util.logging.Logger;
 
