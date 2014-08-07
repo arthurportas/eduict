@@ -22,7 +22,7 @@ import com.eduict.model.Member;
 // Read more about the @Model stereotype in this FAQ:
 // http://sfwk.org/Documentation/WhatIsThePurposeOfTheModelAnnotation
 @Model
-public class MemberRegistration {
+public class DomainRegistration {
 
    @Inject
    private Logger log;
@@ -31,25 +31,25 @@ public class MemberRegistration {
    private EntityManager em;
 
    @Inject
-   private Event<Member> memberEventSrc;
+   private Event<Domain> domainEventSrc;
 
-   private Member newMember;
+   private Domain newDomain;
 
    @Produces
    @Named
-   public Member getNewMember() {
-      return newMember;
+   public Domain getNewDomain() {
+      return newDomain;
    }
 
    public void register() throws Exception {
-      log.info("Registering " + newMember.getName());
-      em.persist(newMember);
-      memberEventSrc.fire(newMember);
-      initNewMember();
+      log.info("Registering " + newDomain.getDescription());
+      em.persist(newDomain);
+      domainEventSrc.fire(newDomain);
+      initNewDomain();
    }
 
    @PostConstruct
-   public void initNewMember() {
-      newMember = new Member();
+   public void initNewDomain() {
+      newDomain = new Domain();
    }
 }
