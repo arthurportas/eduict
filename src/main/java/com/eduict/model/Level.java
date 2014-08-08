@@ -47,7 +47,7 @@ public class Level implements Serializable {
    private List<Domain> domains;
    
    @ManyToOne(fetch = FetchType.EAGER)
-   @JoinColumn(name="QUIZ_ID_FK", referencedColumnName = "LEVEL_ID", unique= false, nullable=false, insertable=true, updatable=true)
+   @JoinColumn(name="QUIZ_ID_FK", referencedColumnName = "QUIZ_ID", unique= false, nullable=false, insertable=true, updatable=true)
    @XmlTransient
    private Quiz quiz;
    
