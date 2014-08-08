@@ -43,7 +43,6 @@ public class Domain implements Serializable {
    private String description;
 
    @OneToMany(fetch = FetchType.LAZY, mappedBy = "domain", cascade=CascadeType.ALL)
-   @XmlAttribute
    private List<Question> questions;
    
    @ManyToOne(fetch = FetchType.EAGER)
