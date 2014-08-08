@@ -203,7 +203,9 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
     <script src="js/bootstrap.min.js"></script>
-
+    <!-- Charts Core JavaScript -->
+    <script src="<c:url value="/resources/js/Chart.js" />"></script>
+    
 </body>
 
 </html>
