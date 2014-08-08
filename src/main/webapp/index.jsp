@@ -100,10 +100,13 @@
                                 	    <p><c:out value="${question.question}"/></p>
                                 	</div>
                             	    <h4>Respostas</h4>
-                            	    <c:forEach items="${question.responses}" var="response">
+                            	    <c:forEach items="${question.responses}" var="response" varStatus="loop">
                                 	    <div class="radio">
                                           <label>
-                                            <input type="radio" name="response-radios" id="${response.id}" value="${response.response}">
+                                            <input type="radio" name="response-radios" id="${response.id}" 
+                                                value="${response.response}" 
+                                                <c:if test="${loop.index == 1}" checked </c:if>
+                                            />
                                                 <c:out value="${response.response}"/>
                                           </label>
                                         </div>
