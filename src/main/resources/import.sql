@@ -1,9 +1,12 @@
 -- You can use this file to load seed data into the database using SQL statements
 insert into Member (id, name, email, phone_number) values (0, 'John Smith', 'john.smith@mailinator.com', '2125551212');
+--Quiz
+INSERT INTO QUIZ (QUIZ_ID, DESCRIPTION) VALUES (1, 'Demo');
+
 --Level
-INSERT INTO LEVEL (LEVEL_ID, DESCRIPTION) VALUES (1, 'Alfabetização Tecnológica');
-INSERT INTO LEVEL (LEVEL_ID, DESCRIPTION) VALUES (2, 'Aprofundamento do Conhecimento');
-INSERT INTO LEVEL (LEVEL_ID, DESCRIPTION) VALUES (3, 'Criação de Conhecimento');
+INSERT INTO LEVEL (LEVEL_ID, DESCRIPTION, QUIZ_ID_FK) VALUES (1, 'Alfabetização Tecnológica', 1);
+INSERT INTO LEVEL (LEVEL_ID, DESCRIPTION, QUIZ_ID_FK) VALUES (2, 'Aprofundamento do Conhecimento', 1);
+INSERT INTO LEVEL (LEVEL_ID, DESCRIPTION, QUIZ_ID_FK) VALUES (3, 'Criação de Conhecimento', 1);
 
 --LEVEL 1 - DOMAINS
 INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (1, 'Compreensão das TIC na educação', 1);

@@ -13,43 +13,32 @@ import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import java.util.List;
-import com.eduict.model.Quiz;
 
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@Table(name = "LEVEL", uniqueConstraints = @UniqueConstraint(columnNames = "description"))
-@NamedQueries({
-        @NamedQuery(name = "Level.FIND_ALL_QUESTIONS_PER_LEVEL_ID", query = "SELECT l FROM Level l WHERE l.id= :id"),
-})
-public class Level implements Serializable {
+@Table(name = "QUIZ", uniqueConstraints = @UniqueConstraint(columnNames = "description"))
+
+public class Quiz implements Serializable {
 
    private static final long serialVersionUID = 1L;
 
-   public static final String FIND_ALL_QUESTIONS_PER_LEVEL_ID = "Level.FIND_ALL_QUESTIONS_PER_LEVEL_ID";
-   
    @Id
    @GeneratedValue
-   @Column(name="LEVEL_ID")
+   @Column(name="QUIZ_ID")
    @XmlAttribute
    private Long id;
 
    @NotNull
    @Size(min = 1, max = 100)
-   @Pattern(regexp = "[A-Za-z ]*", message = "level description must contain only letters and spaces")
+   @Pattern(regexp = "[A-Za-z ]*", message = "quiz description must contain only letters and spaces")
    @Column(name="DESCRIPTION")
    @XmlAttribute
    private String description;
 
-   @OneToMany(fetch = FetchType.LAZY, mappedBy = "level", cascade=CascadeType.ALL)
-   private List<Domain> domains;
-   
-   @ManyToOne(fetch = FetchType.EAGER)
-   @JoinColumn(name="QUIZ_ID_FK", referencedColumnName = "LEVEL_ID", unique= false, nullable=false, insertable=true, updatable=true)
-   @XmlTransient
-   private Quiz quiz;
+   @OneToMany(fetch = FetchType.LAZY, mappedBy = "quiz", cascade=CascadeType.ALL)
+   private List<Level> levels;
    
    /* ==========================GETTERS/SETTERS======================= */
    
@@ -69,19 +58,11 @@ public class Level implements Serializable {
       this.description = description;
    }
    
-   public List<Domain> getDomains() {
-      return domains;
+   public List<Level> getLevels() {
+      return levels;
    }
 
-   public void setDomains(List<Domain> domains) {
-      this.domains = domains;
-   }
-   
-   public Quiz getQuiz() {
-      return quiz;
-   }
-
-   public void setQuiz(Quiz quiz) {
-      this.quiz = quiz;
+   public void setDLevels(List<Level> levels) {
+      this.levels = levels;
    }
 }
