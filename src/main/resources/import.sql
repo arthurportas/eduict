@@ -9,11 +9,11 @@ INSERT INTO Domain (DOMAIN_ID, DESCRIPTION) VALUES (5, 'Organização e Administ
 INSERT INTO Domain (DOMAIN_ID, DESCRIPTION) VALUES (6, 'Desenvolvimento Profissional Docente');
 
 --Domain 1
-INSERT INTO Question (id, question, DOMAIN_ID_FK) VALUES (1, 'Capaz de identificar as principais características das práticas de sala de aula e especificar como essas características servem para implementar as polÌticas de integração das TIC em contexto de sala de aula', 1);
-INSERT INTO Question (id, question, DOMAIN_ID_FK) VALUES (2, 'Capaz de combinar padrões curriculares específicos com pacotes de software específicos e aplicações informáticas e descrever como esses padrões são sustentados por essas aplicações', 1);
-INSERT INTO Question (id, question, DOMAIN_ID_FK) VALUES (3, 'Sou capaz de descrever como o ensino didático e as TIC podem ser utilizados para apoiar na aquisição de conhecimentos escolar sobre a disciplina', 1);
-INSERT INTO Question (id, question, DOMAIN_ID_FK) VALUES (4, 'Sou capaz de incorporar atividades  apropriadas de TIC em planos de aula, de modo a apoiar a aquisição de conhecimentos escolar sobre a disciplina', 1);
-INSERT INTO Question (id, question, DOMAIN_ID_FK) VALUES (5, 'Utilizo software de apresentação e recursos digitais para apoiar as aulas', 1);
+INSERT INTO Question (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (1, 'Capaz de identificar as principais características das práticas de sala de aula e especificar como essas características servem para implementar as polÌticas de integração das TIC em contexto de sala de aula', 1);
+INSERT INTO Question (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (2, 'Capaz de combinar padrões curriculares específicos com pacotes de software específicos e aplicações informáticas e descrever como esses padrões são sustentados por essas aplicações', 1);
+INSERT INTO Question (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (3, 'Sou capaz de descrever como o ensino didático e as TIC podem ser utilizados para apoiar na aquisição de conhecimentos escolar sobre a disciplina', 1);
+INSERT INTO Question (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (4, 'Sou capaz de incorporar atividades  apropriadas de TIC em planos de aula, de modo a apoiar a aquisição de conhecimentos escolar sobre a disciplina', 1);
+INSERT INTO Question (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (5, 'Utilizo software de apresentação e recursos digitais para apoiar as aulas', 1);
 
 
 

@@ -21,10 +21,15 @@ import org.hibernate.validator.constraints.NotEmpty;
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "description"))
+@NamedQueries({
+        @NamedQuery(name = "Domain.FIND_ALL_QUESTIONS_PER_DOMAIN_ID", query = "SELECT d FROM Domain d WHERE d.id= :id"),
+})
 public class Domain implements Serializable {
 
    private static final long serialVersionUID = 1L;
 
+   public static final String FIND_ALL_QUESTIONS_PER_DOMAIN_ID = "Domain.FIND_ALL_QUESTIONS_PER_DOMAIN_ID";
+   
    @Id
    @GeneratedValue
    @Column(name="DOMAIN_ID")
@@ -39,7 +44,6 @@ public class Domain implements Serializable {
    private String description;
 
    @OneToMany(fetch = FetchType.EAGER, mappedBy = "domain", cascade=CascadeType.ALL)
-   @XmlTransient
    private List<Question> questions;
    
    public Long getId() {
