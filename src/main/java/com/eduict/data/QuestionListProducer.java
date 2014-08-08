@@ -31,11 +31,11 @@ public class QuestionListProducer {
    }
 
    public void onQuestionListChanged(@Observes(notifyObserver = Reception.IF_EXISTS) final Question question) {
-      retrieveAllQuestionOrderedByQuestion();
+      retrieveAllQuestionsOrderedByQuestion();
    }
 
    @PostConstruct
-   public void retrieveAllQuestionOrderedByQuestion() {
+   public void retrieveAllQuestionsOrderedByQuestion() {
       CriteriaBuilder cb = em.getCriteriaBuilder();
       CriteriaQuery<Question> criteria = cb.createQuery(Question.class);
       Root<Question> question = criteria.from(Question.class);
