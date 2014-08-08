@@ -103,7 +103,12 @@
                                 	    <h4>Respostas</h4>
                                 	</div>    
                                 	    <c:forEach items="${question.responses}" var="response">
-                                	        <p><c:out value="${response.response}"/></p>
+                                    	    <div class="radio">
+                                              <label>
+                                                <input type="radio" name="response-radios" id="${response.id}" value="${response.response}">
+                                                    <c:out value="${response.response}"/>
+                                              </label>
+                                            </div>
                             	        </c:forEach>
                                 </c:forEach>
                             </c:forEach>
