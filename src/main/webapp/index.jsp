@@ -87,18 +87,24 @@
                     <c:forEach items="${quizzes}" var="quiz">
                     	<!--<h4><c:out value="${quiz.description}"/></h4>-->
                     	<c:forEach items="${quiz.levels}" var="level">
-                        	<div class="alert info">
+                        	<div class="alert alert-info">
                         	    <h4><c:out value="${level.id} - ${level.description}"/></h4>
                         	</div>    
                         	<c:forEach items="${level.domains}" var="domain">
-                            	<h4><c:out value="${domain.description}"/></h4>
+                        	    <div class="alert alert-success">
+                            	    <h4><c:out value="${domain.description}"/></h4>
+                            	</div> 
                             	<c:forEach items="${domain.questions}" var="question">
-                            	    <h4>Questão</h4>
-                                	<p><c:out value="${question.question}"/></p>
-                                	<c:forEach items="${question.responses}" var="response">
-                            	        <h4>Respostas</h4>
-                            	        <p><c:out value="${response.response}"/></p>
-                            	    </c:forEach>
+                            	    <div class="alert alert-warning">
+                            	        <h4>Questão</h4>
+                                	    <p><c:out value="${question.question}"/></p>
+                                	</div>
+                                	<div class="alert alert-warning">
+                                	    <h4>Respostas</h4>
+                                	</div>    
+                                	    <c:forEach items="${question.responses}" var="response">
+                                	        <p><c:out value="${response.response}"/></p>
+                            	        </c:forEach>
                                 </c:forEach>
                             </c:forEach>
                         </c:forEach>
