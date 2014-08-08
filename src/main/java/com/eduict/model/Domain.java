@@ -46,8 +46,8 @@ public class Domain implements Serializable {
    @XmlAttribute
    private List<Question> questions;
    
-   @ManyToOne
-   @JoinColumn(fetch = FetchType.EAGER, name="LEVEL_ID_FK", referencedColumnName = "LEVEL_ID", unique= false, nullable=false, insertable=true, updatable=true)
+   @ManyToOne(fetch = FetchType.EAGER)
+   @JoinColumn(name="LEVEL_ID_FK", referencedColumnName = "LEVEL_ID", unique= false, nullable=false, insertable=true, updatable=true)
    @XmlTransient
    private Level level;
    
