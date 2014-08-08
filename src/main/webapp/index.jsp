@@ -29,39 +29,8 @@
 </head>
 
 <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
+    <jsp:include page="navigation.jsp" />
+    
     <!-- Page Content -->
     <div class="container">
 
@@ -71,8 +40,8 @@
                 <p class="lead">Eduict/p>
                 <div class="list-group">
                     <a href="#" class="list-group-item active">Nível 1</a>
-                    <a href="#" class="list-group-item">Nível 2</a>
-                    <a href="#" class="list-group-item">Nível 3</a>
+                    <a href="#" class="list-group-item disabled">Nível 2</a>
+                    <a href="#" class="list-group-item disabled">Nível 3</a>
                 </div>
                 <div>
 		        	<canvas id="canvas" height="450" width="450"></canvas>
@@ -103,10 +72,11 @@
                             	    <c:forEach items="${question.responses}" var="response" varStatus="loop">
                                 	    <div class="radio">
                                           <label>
+                                            <c:if test="${loop.index == 1}"> 
+                                              <c:set value="checked" var="index"></c:set>
+                                            </c:if> 
                                             <input type="radio" name="response-radios" id="${response.id}" 
-                                                value="${response.response}" 
-                                                <c:if test="${loop.index == 1}"> checked </c:if>
-                                            />
+                                                value="${response.response}" ${index} >
                                                 <c:out value="${response.response}"/>
                                           </label>
                                         </div>
