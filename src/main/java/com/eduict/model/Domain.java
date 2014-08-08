@@ -17,6 +17,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.JoinColumn;
 import javax.persistence.Column;
 
+import java.util.List;
+
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
