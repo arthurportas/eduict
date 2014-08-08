@@ -105,7 +105,7 @@
                                           <label>
                                             <input type="radio" name="response-radios" id="${response.id}" 
                                                 value="${response.response}" 
-                                                <c:if test="${loop.index == 1}" checked </c:if>
+                                                <c:if test="${loop.index == 1}"> checked </c:if>
                                             />
                                                 <c:out value="${response.response}"/>
                                           </label>
