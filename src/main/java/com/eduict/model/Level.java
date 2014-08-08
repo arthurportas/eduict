@@ -19,7 +19,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = "description"))
+@Table(name = "LEVEL", uniqueConstraints = @UniqueConstraint(columnNames = "description"))
 @NamedQueries({
         @NamedQuery(name = "Level.FIND_ALL_QUESTIONS_PER_LEVEL_ID", query = "SELECT l FROM Level l WHERE l.id= :id"),
 })
