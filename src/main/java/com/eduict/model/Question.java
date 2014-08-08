@@ -39,8 +39,7 @@ public class Question implements Serializable {
    private String question;
 
    @ManyToOne
-   @Fetch(value = FetchMode.LAZY)
-   @JoinColumn(name="DOMAIN_ID_FK", referencedColumnName = "DOMAIN_ID", unique= false, nullable=false, insertable=true, updatable=true)
+   @JoinColumn(fetch = FetchType.LAZY, name="DOMAIN_ID_FK", referencedColumnName = "DOMAIN_ID", unique= false, nullable=false, insertable=true, updatable=true)
    @XmlTransient
    private Domain domain;
    

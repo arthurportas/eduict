@@ -44,14 +44,12 @@ public class Domain implements Serializable {
    @XmlAttribute
    private String description;
 
-   @OneToMany(mappedBy = "domain", cascade=CascadeType.ALL)
-   @Fetch(value = FetchMode.LAZY)
+   @OneToMany(fetch = FetchType.LAZY, mappedBy = "domain", cascade=CascadeType.ALL)
    @XmlAttribute
    private List<Question> questions;
    
    @ManyToOne
-   @Fetch(value = FetchMode.LAZY)
-   @JoinColumn(name="LEVEL_ID_FK", referencedColumnName = "LEVEL_ID", unique= false, nullable=false, insertable=true, updatable=true)
+   @JoinColumn(fetch = FetchType.LAZY, name="LEVEL_ID_FK", referencedColumnName = "LEVEL_ID", unique= false, nullable=false, insertable=true, updatable=true)
    @XmlTransient
    private Level level;
    
