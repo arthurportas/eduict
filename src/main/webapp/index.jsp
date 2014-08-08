@@ -88,31 +88,17 @@
                     		<td><c:out value="${quiz.description}"/></td>
                     	</tr>
                     	<c:forEach items="${quiz.levels}" var="level">
-                        	<tr>
-                        		<td><c:out value="${level.description}"/></td>
-                        	</tr>
+                        	<h4><c:out value="${level.description}"/></h4>
                         	<c:forEach items="${level.domains}" var="domain">
-                            	<tr>
-                            		<td><c:out value="${domain.description}"/></td>
-                            	</tr>
+                            	<h4><c:out value="${domain.description}"/></h4>
                             	<c:forEach items="${domain.questions}" var="question">
-                                	<tr>
-                                		<td><c:out value="${question.question}"/></td>
-                                	</tr>
+                            	    <h4>Questão</h4>
+                                	<p><c:out value="${question.question}"/></p>
                                 </c:forEach>
                             </c:forEach>
-                            
                         </c:forEach>
                     </c:forEach>
 
-                    <h4><a href="#">Questão</a>
-                    <p>
-                        
-                    </p>
-                    
-                    
-                    
-                    
                     
                     <div class="caption-full">
                         <h4 class="pull-right">$24.99</h4>
