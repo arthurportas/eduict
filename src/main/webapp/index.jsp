@@ -71,16 +71,33 @@
             <div class="col-md-3">
                 <p class="lead">Shop Name</p>
                 <div class="list-group">
-                    <a href="#" class="list-group-item active">Category 1</a>
-                    <a href="#" class="list-group-item">Category 2</a>
-                    <a href="#" class="list-group-item">Category 3</a>
+                    <a href="#" class="list-group-item active">Nível 1</a>
+                    <a href="#" class="list-group-item">Nível 2</a>
+                    <a href="#" class="list-group-item">Nível 3</a>
                 </div>
             </div>
 
             <div class="col-md-9">
 
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+                    <!--<img class="img-responsive" src="http://placehold.it/800x300" alt="">-->
+                    <!--  iterate on the member list @named attribute and display name,email and phone number -->
+                    ${quizzes.id}${quizzes.description}    
+                    <c:forEach items="${quizzes.levels}" var="quizLevels">
+                    	<tr>
+                    		<td><c:out value="${quizLevels.description}"/></td>
+                    	</tr>
+                    </c:forEach>
+
+                    <h4><a href="#">Questão</a>
+                    <p>
+                        
+                    </p>
+                    
+                    
+                    
+                    
+                    
                     <div class="caption-full">
                         <h4 class="pull-right">$24.99</h4>
                         <h4><a href="#">Product Name</a>
