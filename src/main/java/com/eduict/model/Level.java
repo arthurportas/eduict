@@ -13,7 +13,8 @@ import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import java.util.List;
-
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -42,7 +43,8 @@ public class Level implements Serializable {
    @XmlAttribute
    private String description;
 
-   @OneToMany(fetch = FetchType.EAGER, mappedBy = "level", cascade=CascadeType.ALL)
+   @OneToMany(mappedBy = "level", cascade=CascadeType.ALL)
+   @Fetch(value = FetchMode.SUBSELECT)
    @XmlAttribute
    private List<Domain> domains;
    

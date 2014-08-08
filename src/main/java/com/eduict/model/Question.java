@@ -36,7 +36,8 @@ public class Question implements Serializable {
    @XmlAttribute
    private String question;
 
-   @ManyToOne(fetch = FetchType.EAGER)
+   @ManyToOne()
+   @Fetch(value = FetchMode.SUBSELECT)
    @JoinColumn(name="DOMAIN_ID_FK", referencedColumnName = "DOMAIN_ID", unique= false, nullable=false, insertable=true, updatable=true)
    @XmlTransient
    private Domain domain;
