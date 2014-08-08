@@ -50,6 +50,6 @@ public class DomainResourceRESTService {
    public Domain lookupQuestionPerDomain(@PathParam("id") long id) {
       return em.createNamedQuery(Domain.FIND_ALL_QUESTIONS_PER_DOMAIN_ID)
             .setParameter("id", id)
-            .getResultList();
+            .getSingleResult();
    }
 }
