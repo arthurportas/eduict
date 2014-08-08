@@ -91,11 +91,11 @@
                         	<tr>
                         		<td><c:out value="${level.description}"/></td>
                         	</tr>
-                        	<c:forEach items="${quiz.levels.domains}" var="domain">
+                        	<c:forEach items="${level.domains}" var="domain">
                             	<tr>
                             		<td><c:out value="${domain.description}"/></td>
                             	</tr>
-                            	<c:forEach items="${quiz.levels.domains.questions}" var="question">
+                            	<c:forEach items="${domain.questions}" var="question">
                                 	<tr>
                                 		<td><c:out value="${question.question}"/></td>
                                 	</tr>
