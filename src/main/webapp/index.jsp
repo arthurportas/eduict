@@ -82,10 +82,9 @@
                 <div class="thumbnail">
                     <!--<img class="img-responsive" src="http://placehold.it/800x300" alt="">-->
                     <!--  iterate on the member list @named attribute and display name,email and phone number -->
-                    <c:out value="${quizzes.description}"/>    
-                    <c:forEach items="${quizzes.levels}" var="quizLevels">
+                    <c:forEach items="${quizzes}" var="quiz">
                     	<tr>
-                    		<td><c:out value="${quizLevels.description}"/></td>
+                    		<td><c:out value="${quiz.description}"/></td>
                     	</tr>
                     </c:forEach>
 
