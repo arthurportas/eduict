@@ -8,3 +8,6 @@ INSERT INTO Domain (id, description) VALUES (4, 'TIC');
 INSERT INTO Domain (id, description) VALUES (5, 'Organização e Administração');
 INSERT INTO Domain (id, description) VALUES (6, 'Desenvolvimento Profissional Docente');
 
+INSERT INTO Question (id, question) VALUES (1, 'Capaz de identificar as principais características das práticas de sala de aula e especificar como essas características servem para implementar as polÌticas de integração das TIC em contexto de sala de aula');
+
+

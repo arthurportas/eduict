@@ -14,12 +14,9 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
-
 @Entity
 @XmlRootElement
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = "question"))
 public class Question implements Serializable {
 
    private static final long serialVersionUID = 1L;
@@ -29,21 +26,11 @@ public class Question implements Serializable {
    private Long id;
 
    @NotNull
-   @Size(min = 1, max = 25)
-   @Pattern(regexp = "[A-Za-z ]*", message = "must contain only letters and spaces")
-   private String name;
+   @Size(min = 1, max = 100)
+   @Pattern(regexp = "[A-Za-z ]*", message = "question must contain only letters and spaces")
+   private String question;
 
-   @NotNull
-   @NotEmpty
-   @Email
-   private String email;
-
-   @NotNull
-   @Size(min = 10, max = 12)
-   @Digits(fraction = 0, integer = 12)
-   @Column(name = "phone_number")
-   private String phoneNumber;
-
+   
    public Long getId() {
       return id;
    }
@@ -52,27 +39,11 @@ public class Question implements Serializable {
       this.id = id;
    }
 
-   public String getName() {
-      return name;
+   public String getQuestion() {
+      return question;
    }
 
-   public void setName(String name) {
-      this.name = name;
-   }
-
-   public String getEmail() {
-      return email;
-   }
-
-   public void setEmail(String email) {
-      this.email = email;
-   }
-
-   public String getPhoneNumber() {
-      return phoneNumber;
-   }
-
-   public void setPhoneNumber(String phoneNumber) {
-      this.phoneNumber = phoneNumber;
+   public void setQuestion(String question) {
+      this.question = question;
    }
 }
