@@ -85,11 +85,11 @@
                     <!--<img class="img-responsive" src="http://placehold.it/800x300" alt="">-->
                     <!--  iterate on the member list @named attribute and display name,email and phone number -->
                     <c:forEach items="${quizzes}" var="quiz">
-                    	<tr>
-                    		<td><c:out value="${quiz.description}"/></td>
-                    	</tr>
+                    	<!--<h4><c:out value="${quiz.description}"/></h4>-->
                     	<c:forEach items="${quiz.levels}" var="level">
-                        	<h4><c:out value="${level.description}"/></h4>
+                        	<div class="alert info">
+                        	    <h4><c:out value="${level.id} - ${level.description}"/></h4>
+                        	</div>    
                         	<c:forEach items="${level.domains}" var="domain">
                             	<h4><c:out value="${domain.description}"/></h4>
                             	<c:forEach items="${domain.questions}" var="question">
