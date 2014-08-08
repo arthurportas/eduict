@@ -43,6 +43,6 @@ public class QuizRegistration {
 
    @PostConstruct
    public void initNewQuiz() {
-      initNewQuiz = new Quiz();
+      newQuiz = new Quiz();
    }
 }
