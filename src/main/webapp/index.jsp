@@ -88,28 +88,26 @@
                     	<!--<h4><c:out value="${quiz.description}"/></h4>-->
                     	<c:forEach items="${quiz.levels}" var="level">
                         	<div class="alert alert-info">
-                        	    <h4><c:out value="${level.id} - ${level.description}"/></h4>
+                        	    <h4><c:out value="Nível ${level.id} - ${level.description}"/></h4>
                         	</div>    
                         	<c:forEach items="${level.domains}" var="domain">
                         	    <div class="alert alert-success">
-                            	    <h4><c:out value="${domain.description}"/></h4>
+                            	    <h4><c:out value="Domínio ${domain.id} - ${domain.description}"/></h4>
                             	</div> 
                             	<c:forEach items="${domain.questions}" var="question">
                             	    <div class="alert alert-warning">
                             	        <h4>Questão</h4>
                                 	    <p><c:out value="${question.question}"/></p>
                                 	</div>
-                                	<div class="alert alert-warning">
-                                	    <h4>Respostas</h4>
-                                	</div>    
-                                	    <c:forEach items="${question.responses}" var="response">
-                                    	    <div class="radio">
-                                              <label>
-                                                <input type="radio" name="response-radios" id="${response.id}" value="${response.response}">
-                                                    <c:out value="${response.response}"/>
-                                              </label>
-                                            </div>
-                            	        </c:forEach>
+                            	    <h4>Respostas</h4>
+                            	    <c:forEach items="${question.responses}" var="response">
+                                	    <div class="radio">
+                                          <label>
+                                            <input type="radio" name="response-radios" id="${response.id}" value="${response.response}">
+                                                <c:out value="${response.response}"/>
+                                          </label>
+                                        </div>
+                        	        </c:forEach>
                                 </c:forEach>
                             </c:forEach>
                         </c:forEach>

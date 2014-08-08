@@ -35,19 +35,65 @@ INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (18, 'Desenvolvi
 --Domain 1 - QUESTIONs
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (1, 'Capaz de identificar as principais características das práticas de sala de aula e especificar como essas características servem para implementar as polÌticas de integração das TIC em contexto de sala de aula', 1);
 --RESPONSES
-INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(1, 'lorem ipsum', 1);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(1, 'R1P1', 1);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(2, 'R2P1', 1);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(3, 'R3P1', 1);
 --Domain 2 - QUESTIONs
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (2, 'Capaz de combinar padrões curriculares específicos com pacotes de software específicos e aplicações informáticas e descrever como esses padrões são sustentados por essas aplicações', 2);
+--RESPONSES
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(4, 'R1P2', 2);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(5, 'R2P2', 2);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(6, 'R3P2', 2);
 --Domain 3 - QUESTIONs
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (3, 'Sou capaz de descrever como o ensino didático e as TIC podem ser utilizados para apoiar na aquisição de conhecimentos escolar sobre a disciplina', 3);
+--RESPONSES
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(7, 'R1P3', 3);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(8, 'R2P3', 3);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(9, 'R3P3', 3);
+
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (4, 'Sou capaz de incorporar atividades  apropriadas de TIC em planos de aula, de modo a apoiar a aquisição de conhecimentos escolar sobre a disciplina', 3);
+--RESPONSES
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(10, 'R1P4', 4);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(11, 'R2P4', 4);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(12, 'R3P4', 4);
+
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (5, 'Utilizo software de apresentação e recursos digitais para apoiar as aulas', 3);
+--RESPONSES
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(13, 'R1P5', 5);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(14, 'R2P5', 5);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(15, 'R3P5', 5);
+
 --Domain 4 - QUESTIONs
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (6, 'Sou capaz de descrever e demonstrar a utilização de hardware comum', 4);
+--RESPONSES
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(16, 'R1P6', 6);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(17, 'R2P6', 6);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(18, 'R3P6', 6);
+
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (7, 'Descrever e demonstrar as tarefas básicas e aplicações de processadores de texto, como a entrada de texto, edição de texto, formataão de texto e impressão', 4);
+--RESPONSES
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(19, 'R1P7', 7);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(20, 'R2P7', 7);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(21, 'R3P7', 7);
+
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (8, 'Descrever e demonstrar a finalidade e características básicas do software de apresentação e outros recursos digitais', 4);
+--RESPONSES
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(22, 'R1P8', 8);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(23, 'R2P8', 8);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(24, 'R3P8', 8);
+
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (9, 'Descrever o propósito e a função básica do software gráfico e usar um pacote de software de gráficos para criar um display gráfico simples', 4);
+--RESPONSES
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(25, 'R1P9', 9);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(26, 'R2P9', 9);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(27, 'R3P9', 9);
+
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (10, 'Descrever a Internet e a World Wide Web, refletir sobre os seus usos, descrever como funciona um browser e usar uma URL para aceder a um site', 4);
+--RESPONSES
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(28, 'R1P10', 10);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(29, 'R2P10', 10);
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(30, 'R3P10', 10);
+
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (11, 'Utilizar um motor de busca', 4);
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (12, 'Criar uma conta de e-mail e utilizá-la para criar uma cadeia de correspondência de e-mails', 4);
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (13, 'Descrever as funcionalidades e os propósito dos tutoriais e software de treino e a forma como apoia os alunos na aquisição de conhecimentos escolares sobre a disciplina', 4);
