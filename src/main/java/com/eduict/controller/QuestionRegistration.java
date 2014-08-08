@@ -43,7 +43,7 @@ public class QuestionRegistration {
    public void register() throws Exception {
       log.info("Registering " + newQuestion.getQuestion());
       em.persist(newQuestion);
-      domainEventSrc.fire(newQuestion);
+      questionEventSrc.fire(newQuestion);
       initNewQuestion();
    }
 

@@ -39,7 +39,7 @@ public class QuestionListProducer {
       CriteriaBuilder cb = em.getCriteriaBuilder();
       CriteriaQuery<Question> criteria = cb.createQuery(Question.class);
       Root<Question> question = criteria.from(Question.class);
-      criteria.select(question).orderBy(cb.asc(domain.get("question")));
+      criteria.select(question).orderBy(cb.asc(question.get("question")));
       questions = em.createQuery(criteria).getResultList();
    }
 }

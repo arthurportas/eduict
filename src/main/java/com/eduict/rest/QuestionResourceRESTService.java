@@ -17,7 +17,7 @@ import com.eduict.model.Question;
  * 
  * This class produces a RESTful service to read the contents of the domains table.
  */
-@Path("/question")
+@Path("/questions")
 @RequestScoped
 public class QuestionResourceRESTService {
    @Inject
