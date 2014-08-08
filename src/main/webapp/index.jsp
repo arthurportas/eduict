@@ -96,23 +96,25 @@
                             	    <h4><c:out value="Domínio ${domain.id} - ${domain.description}"/></h4>
                             	</div> 
                             	<c:forEach items="${domain.questions}" var="question">
-                            	    <div class="alert alert-warning">
-                            	        <h4>Questão</h4>
-                                	    <p><c:out value="${question.question}"/></p>
-                                	</div>
-                            	    <h4>Respostas</h4>
-                            	    <c:forEach items="${question.responses}" var="response" varStatus="loop">
-                                	    <div class="radio">
-                                          <label>
-                                            <c:if test="${loop.index == 1}"> 
-                                              <c:set value="checked" var="index"></c:set>
-                                            </c:if> 
-                                            <input type="radio" name="response-radios" id="${response.id}" 
-                                                value="${response.response}" ${index} >
-                                                <c:out value="${response.response}"/>
-                                          </label>
-                                        </div>
-                        	        </c:forEach>
+                            	    <div class="question-wrapper-${question.id}">
+                                	    <div class="alert alert-warning">
+                                	        <h4>Questão</h4>
+                                    	    <p><c:out value="${question.question}"/></p>
+                                    	</div>
+                                	    <h4>Respostas</h4>
+                                	    <c:forEach items="${question.responses}" var="response" varStatus="loop">
+                                    	    <div class="radio">
+                                              <label>
+                                                <c:if test="${loop.index == 1}"> 
+                                                  <c:set value="checked" var="index"></c:set>
+                                                </c:if> 
+                                                <input type="radio" name="response-radios" id="${response.id}" 
+                                                    value="${response.response}" ${index} >
+                                                    <c:out value="${response.response}"/>
+                                              </label>
+                                            </div>
+                            	        </c:forEach>
+                            	    </div>
                                 </c:forEach>
                             </c:forEach>
                         </c:forEach>
