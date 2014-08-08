@@ -95,6 +95,10 @@
                             	<c:forEach items="${domain.questions}" var="question">
                             	    <h4>Questão</h4>
                                 	<p><c:out value="${question.question}"/></p>
+                                	<c:forEach items="${question.responses}" var="response">
+                            	        <h4>Respostas</h4>
+                            	        <p><c:out value="${response.response}"/></p>
+                            	    </c:forEach>
                                 </c:forEach>
                             </c:forEach>
                         </c:forEach>
