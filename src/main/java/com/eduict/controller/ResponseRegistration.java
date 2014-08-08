@@ -12,7 +12,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 
-import com.eduict.model.Question;
+import com.eduict.model.Response;
 
 @Stateful
 @Model
@@ -36,7 +36,7 @@ public class ResponseRegistration {
    }
 
    public void register() throws Exception {
-      log.info("Registering " + newResponse.getQuestion());
+      log.info("Registering " + newResponse.getResponse());
       em.persist(newResponse);
       responseEventSrc.fire(newResponse);
       initNewResponse();
