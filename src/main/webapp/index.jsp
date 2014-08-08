@@ -30,7 +30,7 @@
 
 <body>
 
-    <%@include file="navigation.jsp" %>
+    <jsp:include page="navigation.jsp" />
     <!-- Page Content -->
     <div class="container">
 
@@ -40,8 +40,8 @@
                 <p class="lead">Eduict/p>
                 <div class="list-group">
                     <a href="#" class="list-group-item active">Nível 1</a>
-                    <a href="#" class="list-group-item disabled">Nível 2</a>
-                    <a href="#" class="list-group-item disabled">Nível 3</a>
+                    <a href="#" class="list-group-item ">Nível 2</a>
+                    <a href="#" class="list-group-item ">Nível 3</a>
                 </div>
                 <div>
 		        	<canvas id="canvas" height="450" width="450"></canvas>
