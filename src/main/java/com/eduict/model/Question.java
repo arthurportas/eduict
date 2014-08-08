@@ -14,6 +14,9 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 
 import com.eduict.model.Domain;
+import com.eduict.model.Response;
+import java.util.List;
+
 
 @Entity
 @XmlRootElement
@@ -41,6 +44,9 @@ public class Question implements Serializable {
    @XmlTransient
    private Domain domain;
    
+   @OneToMany(fetch = FetchType.LAZY, mappedBy = "question", cascade=CascadeType.ALL)
+   private List<Response> responses;
+   
    /* ==========================GETTERS/SETTERS======================= */
    
    public Long getId() {
@@ -65,5 +71,13 @@ public class Question implements Serializable {
 
    public void setDomain(Domain domain) {
       this.domain = domain;
+   }
+   
+   public List<Response> getResponses() {
+      return responses;
+   }
+
+   public void setResponses(List<Response> responses) {
+      this.responses = responses;
    }
 }

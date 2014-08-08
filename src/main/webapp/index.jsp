@@ -11,15 +11,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Item - Start Bootstrap Template</title>
+    <title>.:Eduict:.</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="<c:url value="/resources/css/shop-item.css" />" rel="stylesheet">
-    <link href="css/shop-item.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,7 +74,7 @@
                     <a href="#" class="list-group-item">Nível 2</a>
                     <a href="#" class="list-group-item">Nível 3</a>
                 </div>
-                <div style="width:30%">
+                <div>
 		        	<canvas id="canvas" height="450" width="450"></canvas>
 		        </div>
             </div>
@@ -204,14 +202,12 @@
 
     <!-- jQuery Version 1.11.0 -->
     <script src="<c:url value="/resources/js/jquery-1.11.0.js" />"></script>
-    <script src="js/jquery-1.11.0.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
-    <script src="js/bootstrap.min.js"></script>
+    
     <!-- Charts Core JavaScript -->
     <script src="<c:url value="/resources/js/Chart.js" />"></script>
-    
     
     <script>
 	var radarChartData = {

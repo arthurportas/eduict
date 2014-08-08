@@ -36,11 +36,10 @@ public class Response implements Serializable {
    @XmlAttribute
    private String response;
 
-/*
    @ManyToOne(fetch = FetchType.EAGER)
-   @JoinColumn(name="DOMAIN_ID_FK", referencedColumnName = "DOMAIN_ID", unique= false, nullable=false, insertable=true, updatable=true)
+   @JoinColumn(name="QUESTION_ID_FK", referencedColumnName = "QUESTION_ID", unique= false, nullable=false, insertable=true, updatable=true)
    @XmlTransient
-   private Domain domain;*/
+   private Question question;
    
    /* ==========================GETTERS/SETTERS======================= */
    
@@ -58,5 +57,13 @@ public class Response implements Serializable {
 
    public void setResponse(String response) {
       this.response = response;
+   }
+   
+   public Question getQuestion() {
+      return question;
+   }
+
+   public void setQuestion(Question question) {
+      this.question = question;
    }
 }

@@ -34,6 +34,8 @@ INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (18, 'Desenvolvi
 --##LEVEL 1-'Alfabetização Tecnológica'
 --Domain 1 - QUESTIONs
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (1, 'Capaz de identificar as principais características das práticas de sala de aula e especificar como essas características servem para implementar as polÌticas de integração das TIC em contexto de sala de aula', 1);
+--RESPONSES
+INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, QUESTION_ID_FK) VALUES(1, 'lorem ipsum', 1);
 --Domain 2 - QUESTIONs
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (2, 'Capaz de combinar padrões curriculares específicos com pacotes de software específicos e aplicações informáticas e descrever como esses padrões são sustentados por essas aplicações', 2);
 --Domain 3 - QUESTIONs
