@@ -48,8 +48,9 @@ public class DomainResourceRESTService {
    @Path("/{id:[0-9][0-9]*}/questions")
    @Produces("text/xml")
    public Domain lookupQuestionPerDomain(@PathParam("id") long id) {
-      return em.createNamedQuery(Domain.FIND_ALL_QUESTIONS_PER_DOMAIN_ID)
+      return em.find(Domain.class, id);
+      /*return em.createNamedQuery(Domain.FIND_ALL_QUESTIONS_PER_DOMAIN_ID)
             .setParameter("id", id)
-            .getSingleResult();
+            .getSingleResult();*/
    }
 }
