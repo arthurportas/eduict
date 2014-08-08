@@ -12,13 +12,17 @@ import javax.ws.rs.Produces;
 
 import com.eduict.model.Domain;
 
-/**
- * JAX-RS Example
- * 
- * This class produces a RESTful service to read the contents of the domains table.
- */
+import javax.ejb.Remove;
+import javax.ejb.TransactionManagement;
+import javax.ejb.TransactionManagementType;
+import javax.ejb.TransactionAttribute;
+import static javax.ejb.TransactionAttributeType.REQUIRED;
+import static javax.ejb.TransactionAttributeType.REQUIRES_NEW;
+
 @Path("/domains")
 @RequestScoped
+@TransactionManagement(value=TransactionManagementType.CONTAINER)
+@TransactionAttribute(value=REQUIRED)
 public class DomainResourceRESTService {
    @Inject
    private EntityManager em;
