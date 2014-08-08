@@ -13,11 +13,11 @@
     <title>Shop Item - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<c:url value="css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<c:url value="css/shop-item.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/shop-item.css" />" rel="stylesheet">
     <link href="css/shop-item.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -181,11 +181,11 @@
     <!-- /.container -->
 
     <!-- jQuery Version 1.11.0 -->
-    <script src="<c:url value="js/jquery-1.11.0.js" />"></script>
+    <script src="<c:url value="/resources/js/jquery-1.11.0.js" />"></script>
     <script src="js/jquery-1.11.0.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="<c:url value="js/bootstrap.min.js" />"></script>
+    <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
     <script src="js/bootstrap.min.js"></script>
 
 </body>
