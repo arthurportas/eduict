@@ -18,7 +18,7 @@ import com.eduict.model.Domain;
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = "question"))
+@Table(name = "QUESTION", uniqueConstraints = @UniqueConstraint(columnNames = "question"))
 public class Question implements Serializable {
 
    private static final long serialVersionUID = 1L;
