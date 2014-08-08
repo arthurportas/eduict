@@ -84,7 +84,7 @@ INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (40, 'Gerencia
 --Domain 6
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (41, 'Usar as TIC para aceder e partilhar recursos em apoio ás suas actividades e ao seu próprio desenvolvimento profissional', 12);
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (42, 'Utilizar as TIC para aceder a peritos externos (tutores) e a comunidades de aprendizagem em apoio ás suas atividades e ao seu proprio desenvolvimento profissional', 12);
-INSERT INTO QUESTION (QUESTION_ID, QUESTION) VALUES (43, 'Utilizar as TIC para pesquisar, gerir, analisar, integrar e avaliar as informaÁıes que possam ser usadas para apoiar o seu desenvolvimento profissional', 12);
+INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (43, 'Utilizar as TIC para pesquisar, gerir, analisar, integrar e avaliar as informaÁıes que possam ser usadas para apoiar o seu desenvolvimento profissional', 12);
 --##LEVEL 3-'Criação de Conhecimento'
 --Domain 1 - QUESTIONs
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (44, 'Capaz de elaborar, implementar e modificar os programas da reforma do ensino ao nível de escola que implementam os elementos-chave das políticas nacionais da reforma do ensino', 13);
