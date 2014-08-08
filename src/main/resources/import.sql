@@ -1,12 +1,31 @@
 -- You can use this file to load seed data into the database using SQL statements
 insert into Member (id, name, email, phone_number) values (0, 'John Smith', 'john.smith@mailinator.com', '2125551212');
+--Level
+INSERT INTO Level (LEVEL_ID, DESCRIPTION) VALUES (1, 'Alfabetização Tecnológica');
+INSERT INTO Level (LEVEL_ID, DESCRIPTION) VALUES (2, 'Aprofundamento do Conhecimento');
+INSERT INTO Level (LEVEL_ID, DESCRIPTION) VALUES (3, 'Criação de Conhecimento');
 
-INSERT INTO Domain (DOMAIN_ID, DESCRIPTION) VALUES (1, 'Compreensão das TIC na educação');
-INSERT INTO Domain (DOMAIN_ID, DESCRIPTION) VALUES (2, 'Currículo e Avaliação');
-INSERT INTO Domain (DOMAIN_ID, DESCRIPTION) VALUES (3, 'Pedagogia');
-INSERT INTO Domain (DOMAIN_ID, DESCRIPTION) VALUES (4, 'TIC');
-INSERT INTO Domain (DOMAIN_ID, DESCRIPTION) VALUES (5, 'Organização e Administração');
-INSERT INTO Domain (DOMAIN_ID, DESCRIPTION) VALUES (6, 'Desenvolvimento Profissional Docente');
+--LEVEL 1 - DOMAINS
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (1, 'Compreensão das TIC na educação', 1);
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (2, 'Currículo e Avaliação', 1);
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (3, 'Pedagogia', 1);
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (4, 'TIC', 1);
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (5, 'Organização e Administração', 1);
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (6, 'Desenvolvimento Profissional Docente', 1);
+--LEVEL 2 - DOMAINS
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (1, 'Compreensão das TIC na educação', 2);
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (2, 'Currículo e Avaliação', 2);
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (3, 'Pedagogia', 2);
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (4, 'TIC', 2);
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (5, 'Organização e Administração', 2);
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (6, 'Desenvolvimento Profissional Docente', 2);
+--LEVEL 3 - DOMAINS
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (1, 'Compreensão das TIC na educação', 3);
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (2, 'Currículo e Avaliação', 3);
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (3, 'Pedagogia', 3);
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (4, 'TIC', 3);
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (5, 'Organização e Administração', 3);
+INSERT INTO DOMAIN (DOMAIN_ID, DESCRIPTION, LEVEL_ID_FK) VALUES (6, 'Desenvolvimento Profissional Docente', 3);
 
 --Domain 1
 INSERT INTO Question (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (1, 'Capaz de identificar as principais características das práticas de sala de aula e especificar como essas características servem para implementar as polÌticas de integração das TIC em contexto de sala de aula', 1);

@@ -14,43 +14,37 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import java.util.List;
 
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@Table(name = "DOMAIN")
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = "description"))
 @NamedQueries({
-        @NamedQuery(name = "Domain.FIND_ALL_QUESTIONS_PER_DOMAIN_ID", query = "SELECT d FROM Domain d WHERE d.id= :id"),
+        @NamedQuery(name = "Level.FIND_ALL_QUESTIONS_PER_LEVEL_ID", query = "SELECT l FROM Level l WHERE l.id= :id"),
 })
-public class Domain implements Serializable {
+public class Level implements Serializable {
 
    private static final long serialVersionUID = 1L;
 
-   public static final String FIND_ALL_QUESTIONS_PER_DOMAIN_ID = "Domain.FIND_ALL_QUESTIONS_PER_DOMAIN_ID";
+   public static final String FIND_ALL_QUESTIONS_PER_LEVEL_ID = "Level.FIND_ALL_QUESTIONS_PER_LEVEL_ID";
    
    @Id
    @GeneratedValue
-   @Column(name="DOMAIN_ID")
+   @Column(name="LEVEL_ID")
    @XmlAttribute
    private Long id;
 
    @NotNull
    @Size(min = 1, max = 100)
-   @Pattern(regexp = "[A-Za-z ]*", message = "domain description must contain only letters and spaces")
+   @Pattern(regexp = "[A-Za-z ]*", message = "level description must contain only letters and spaces")
    @Column(name="DESCRIPTION")
    @XmlAttribute
    private String description;
 
-   @OneToMany(fetch = FetchType.EAGER, mappedBy = "domain", cascade=CascadeType.ALL)
+   @OneToMany(fetch = FetchType.EAGER, mappedBy = "level", cascade=CascadeType.ALL)
    @XmlAttribute
-   private List<Question> questions;
-   
-   @ManyToOne(fetch = FetchType.EAGER)
-   @JoinColumn(name="LEVEL_ID_FK", referencedColumnName = "LEVEL_ID", unique= false, nullable=false, insertable=true, updatable=true)
-   @XmlTransient
-   private Level level;
+   private List<Domain> domains;
    
    /* ==========================GETTERS/SETTERS======================= */
    
@@ -70,19 +64,11 @@ public class Domain implements Serializable {
       this.description = description;
    }
    
-   public List<Question> getQuestions() {
-      return questions;
+   public List<Domain> getDomains() {
+      return domains;
    }
 
-   public void setQuestions(List<Question> questions) {
-      this.questions = questions;
-   }
-   
-   public Level getLevel() {
-      return level;
-   }
-
-   public void setLevel(Level level) {
-      this.level = level;
+   public void setDomains(List<Domain> domains) {
+      this.domains = domains;
    }
 }
