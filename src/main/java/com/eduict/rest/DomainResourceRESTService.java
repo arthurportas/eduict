@@ -40,7 +40,7 @@ public class DomainResourceRESTService {
    @GET
    @Path("/{id:[0-9][0-9]*}")
    @Produces("text/xml")
-   public Member lookupDomainById(@PathParam("id") long id) {
+   public Domain lookupDomainById(@PathParam("id") long id) {
       return em.find(Domain.class, id);
    }
 }
