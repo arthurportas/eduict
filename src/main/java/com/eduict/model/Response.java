@@ -13,33 +13,34 @@ import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 
-import com.eduict.model.Domain;
+import com.eduict.model.Question;
 
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@Table(name = "QUESTION", uniqueConstraints = @UniqueConstraint(columnNames = "question"))
-public class Question implements Serializable {
+@Table(name = "RESPONSE", uniqueConstraints = @UniqueConstraint(columnNames = "response"))
+public class Response implements Serializable {
 
    private static final long serialVersionUID = 1L;
 
    @Id
    @GeneratedValue
-   @Column(name="QUESTION_ID")
+   @Column(name="RESPONSE_ID")
    @XmlAttribute
    private Long id;
 
    @NotNull
    @Size(min = 1, max = 500)
-   @Pattern(regexp = "[A-Za-z ´`ç~]*", message = "question must contain only letters and spaces")
-   @Column(name="QUESTION")
+   @Pattern(regexp = "[A-Za-z ´`ç~]*", message = "response must contain only letters and spaces")
+   @Column(name="RESPONSE")
    @XmlAttribute
-   private String question;
+   private String response;
 
+/*
    @ManyToOne(fetch = FetchType.EAGER)
    @JoinColumn(name="DOMAIN_ID_FK", referencedColumnName = "DOMAIN_ID", unique= false, nullable=false, insertable=true, updatable=true)
    @XmlTransient
-   private Domain domain;
+   private Domain domain;*/
    
    /* ==========================GETTERS/SETTERS======================= */
    
@@ -51,19 +52,11 @@ public class Question implements Serializable {
       this.id = id;
    }
 
-   public String getQuestion() {
-      return question;
+   public String getResponse() {
+      return response;
    }
 
-   public void setQuestion(String question) {
-      this.question = question;
-   }
-   
-   public Domain getDomain() {
-      return domain;
-   }
-
-   public void setDomain(Domain domain) {
-      this.domain = domain;
+   public void setResponse(String response) {
+      this.response = response;
    }
 }
