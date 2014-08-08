@@ -13,6 +13,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.Column;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -26,6 +29,7 @@ public class Domain implements Serializable {
 
    @Id
    @GeneratedValue
+   @Column(name="DOMAIN_ID")
    private Long id;
 
    @NotNull
@@ -33,6 +37,10 @@ public class Domain implements Serializable {
    @Pattern(regexp = "[A-Za-z ]*", message = "domain description must contain only letters and spaces")
    private String description;
 
+   @OneToMany
+   @JoinColumn(name="DOMAIN_QUESTIONS", referencedColumnName="DOMAIN_ID")
+   private List<Question> questions;
+   
    public Long getId() {
       return id;
    }
@@ -47,5 +55,13 @@ public class Domain implements Serializable {
 
    public void setDescription(String description) {
       this.description = description;
+   }
+   
+   public List<Question> getQuestions() {
+      return questions;
+   }
+
+   public void setQuestions(List<Question> questions) {
+      this.questions = questions;
    }
 }
