@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +84,7 @@
                     <!--<img class="img-responsive" src="http://placehold.it/800x300" alt="">-->
                     <!--  iterate on the member list @named attribute and display name,email and phone number -->
                     <c:forEach items="${quizzes}" var="quiz">
-                    	<tr>
+                    	<tr>tretas
                     		<td><c:out value="${quiz.description}"/></td>
                     	</tr>
                     </c:forEach>
