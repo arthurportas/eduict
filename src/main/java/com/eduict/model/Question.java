@@ -27,7 +27,7 @@ public class Question implements Serializable {
 
    @NotNull
    @Size(min = 1, max = 200)
-   @Pattern(regexp = "[A-Za-z ]*", message = "question must contain only letters and spaces")
+   //@Pattern(regexp = "[A-Za-z ]*", message = "question must contain only letters and spaces")
    private String question;
 
    
