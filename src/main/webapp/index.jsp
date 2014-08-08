@@ -84,9 +84,15 @@
                     <!--<img class="img-responsive" src="http://placehold.it/800x300" alt="">-->
                     <!--  iterate on the member list @named attribute and display name,email and phone number -->
                     <c:forEach items="${quizzes}" var="quiz">
-                    	<tr>tretas
+                    	<tr>
                     		<td><c:out value="${quiz.description}"/></td>
                     	</tr>
+                    	<c:forEach items="${quiz.levels}" var="quizLevels">
+                    	<tr>
+                    		<td><c:out value="${quizLevels.description}"/></td>
+                    	</tr>
+                    	
+                    </c:forEach>
                     </c:forEach>
 
                     <h4><a href="#">Questão</a>
