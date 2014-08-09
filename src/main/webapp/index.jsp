@@ -45,19 +45,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Start Bootstrap</a>
+                    <a class="navbar-brand" href="#">EduIct</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#">About</a>
+                            <a href="#">Developer</a>
                         </li>
                         <li>
-                            <a href="#">Services</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
+                            <a href="#">Contatos</a>
                         </li>
                     </ul>
                 </div>
@@ -79,13 +76,13 @@
                             <hr class="intro-divider">
                             <ul class="list-inline intro-social-buttons">
                                 <li>
-                                    <a href="#" class="btn btn-default btn-lg"><i class="fa fa-fw"></i> <span class="network-name">Login</span></a>
+                                    <a href="#" class="btn btn-default btn-lg"><i class="fa-fw"></i> <span class="network-name">Login</span></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-default btn-lg"><i class="fa fa-fw"></i> <span class="network-name">Registar</span></a>
+                                    <a href="#" class="btn btn-default btn-lg"><i class="fa-fw"></i> <span class="network-name">Registar</span></a>
                                 </li>
                                 <li>
-                                    <a href="/quiz.jsp" class="btn btn-default btn-lg"><i class="fa fa-fw"></i> <span class="network-name">Questionário</span></a>
+                                    <a href="/quiz.jsp" class="btn btn-default btn-lg"><i class="fa-fw"></i> <span class="network-name">Questionário</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -104,7 +101,7 @@
     
                 <div class="row">
                     <div class="col-lg-6">
-                        <h2>Connect to EduIct:</h2>
+                        <h2>EduIct nas Redes Sociais</h2>
                     </div>
                     <div class="col-lg-6">
                         <ul class="list-inline banner-social-buttons">
