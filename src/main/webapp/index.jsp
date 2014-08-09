@@ -17,7 +17,7 @@
         <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
     
         <!-- Custom CSS -->
-        <link href="<c:url value="/resources/css/shop-item.css" />" rel="stylesheet">
+        <link href="<c:url value="/resources/css/landing-page.css" />" rel="stylesheet">
     
         <!-- Custom Fonts -->
         <link href="/resources/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -85,7 +85,7 @@
                                     <a href="#" class="btn btn-default btn-lg"><i class="fa fa-fw"></i> <span class="network-name">Registar</span></a>
                                 </li>
                                 <li>
-                                    <a href="/quiz.jsp" class="btn btn-default btn-lg"><i class="fa fa-fw"></i> <span class="network-name">Quuestionário</span></a>
+                                    <a href="/quiz.jsp" class="btn btn-default btn-lg"><i class="fa fa-fw"></i> <span class="network-name">Questionário</span></a>
                                 </li>
                             </ul>
                         </div>
