@@ -104,15 +104,12 @@
     
                 <div class="row">
                     <div class="col-lg-6">
-                        <h2>Connect to Start Bootstrap:</h2>
+                        <h2>Connect to EduIct:</h2>
                     </div>
                     <div class="col-lg-6">
                         <ul class="list-inline banner-social-buttons">
                             <li>
-                                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                             </li>
                             <li>
                                 <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
@@ -149,17 +146,16 @@
                                 <a href="#contact">Contact</a>
                             </li>
                         </ul>
-                        <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+                        <p class="copyright text-muted small">Copyright &copy; EduIct 2014. Todos os Direitos Reservados</p>
                     </div>
                 </div>
             </div>
         </footer>
-    
         <!-- jQuery Version 1.11.0 -->
-        <script src="js/jquery-1.11.0.js"></script>
-    
+        <script src="<c:url value="/resources/js/jquery-1.11.0.js" />"></script>
+
         <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
+        <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
     
     </body>
 
