@@ -15,12 +15,12 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import java.util.List;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Email;
 
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @Table(name = "USER")
-
 public class User implements Serializable {
 
    private static final long serialVersionUID = 1L;
@@ -44,6 +44,31 @@ public class User implements Serializable {
    @Column(name="LASTNAME")
    @XmlAttribute
    private String lastName;
+   
+   @NotNull
+   @NotEmpty
+   @Email
+   private String email;
+   
+   @NotNull
+   @NotEmpty
+   @Pattern(regexp = "[0-9]*", message = "age must contain only numbers")
+   @Column(name="AGE")
+   @XmlAttribute
+   private String age;
+   
+   @NotNull
+   @NotEmpty
+   @Pattern(regexp = "[A-Za-z]*", message = "gender must contain only letters")
+   @Column(name="GENDER")
+   @XmlAttribute
+   private String gender;
+   
+   @NotNull
+   @NotEmpty
+   @Column(name="ACADEMIC_DEGREE")
+   @XmlAttribute
+   private String academicDegree;
    
    /* ==========================GETTERS/SETTERS======================= */
    
@@ -71,4 +96,35 @@ public class User implements Serializable {
       this.lastName = lastName;
    }
    
+   public String getEmail() {
+      return email;
+   }
+
+   public void setEmail(String email) {
+      this.email = email;
+   }
+   
+   public String getAge() {
+      return age;
+   }
+
+   public void setAge(String age) {
+      this.age = age;
+   }
+   
+   public String getGender() {
+      return gender;
+   }
+
+   public void setGender(String gender) {
+      this.gender = gender;
+   }
+   
+   public String getAcademicDegree() {
+      return academicDegree;
+   }
+
+   public void setAcademicDegree(String academicDegree) {
+      this.academicDegree = academicDegree;
+   }
 }
