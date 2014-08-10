@@ -39,7 +39,15 @@ public class Login extends HttpServlet {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) request
                 .getServletContext().getAttribute("executor");
  
-        Callable loginTask = new LoginTask();
+        User user = new User();
+        user.setFirstName = "Arthur";
+        user.serLastName = "Portas";
+        user.setEmail = "arthurportas@gmail.com";
+        user.setAge="34";
+        user.setGender = "masculino";
+        user.setAcademicDegree = "licenciatura";
+        
+        Callable loginTask = new LoginTask(user);
         
         FutureTask<String> futureTask = new FutureTask<String>(loginTask);
         
@@ -51,7 +59,7 @@ public class Login extends HttpServlet {
             
             try {
                 out.println("Waiting for FutureTask to complete");
-                String result = futureTask.get();
+                String result = futureTask.get(2000L, TimeUnit.MILLISECONDS);
 
                 if(result != null){
                     out.println("FutureTask output=" + result);
