@@ -1,11 +1,14 @@
-package com.journaldev.servlet.async;
+package com.eduict.servlet.async;
  
 import java.io.IOException;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.FutureTask;
 import java.util.logging.Logger;
+import java.util.concurrent.TimeUnit;
 import com.eduict.servlet.async.LoginTask;
-
+import javax.inject.Inject;
+import java.util.concurrent.TimeoutException;
+import java.util.concurrent.ExecutionException;
 import javax.servlet.AsyncContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -51,11 +54,11 @@ public class Login extends HttpServlet {
                     log.info("FutureTask output=" + result);
                 }
             } catch (InterruptedException ie) {
-                log.debug(ie.getMessage());
+              
             }catch(ExecutionException ee) {
-                log.debug(ee.getMessage());   
+                
             }catch(TimeoutException te){
-                log.debug(te.getMessage());
+                
             }
         }
         
