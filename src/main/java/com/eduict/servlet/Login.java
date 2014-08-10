@@ -56,7 +56,7 @@ public class Login extends HttpServlet {
                 }
 
                 out.println("Waiting for FutureTask to complete");
-                String result = futureTask.get(2000L, TimeUnit.MILLISECONDS);
+                String result = futureTask.get();
                 out.println("FutureTask output=" + result);
                 if(result != null){
                     out.println("FutureTask output=" + result);
