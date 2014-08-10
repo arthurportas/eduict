@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 import java.io.IOException;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.FutureTask;
+import java.util.concurrent.Callable;
 import java.util.logging.Logger;
 import java.util.concurrent.TimeUnit;
 import com.eduict.servlet.async.LoginTask;
@@ -38,7 +39,7 @@ public class Login extends HttpServlet {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) request
                 .getServletContext().getAttribute("executor");
  
-        LoginTask loginTask = new LoginTask();
+        Callable loginTask = new LoginTask();
         
         FutureTask<String> futureTask = new FutureTask<String>(loginTask);
         
