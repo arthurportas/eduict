@@ -26,7 +26,9 @@ public class Login extends HttpServlet {
     
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
-        
+        // Set response content type
+      response.setContentType("text/html");
+      
         long startTime = System.currentTimeMillis();
         log.info("Login Start::Name="
                 + Thread.currentThread().getName() + "::ID="
@@ -40,7 +42,10 @@ public class Login extends HttpServlet {
         FutureTask<String> futureTask = new FutureTask<String>(loginTask);
         
         executor.execute(futureTask);
-        
+
+        PrintWriter out = response.getWriter();
+        out.println("<h1> tretas </h1>");
+      
         while (true) {
             try {
                 if(futureTask.isDone()){
@@ -54,11 +59,11 @@ public class Login extends HttpServlet {
                     log.info("FutureTask output=" + result);
                 }
             } catch (InterruptedException ie) {
-              
-            }catch(ExecutionException ee) {
-                
-            }catch(TimeoutException te){
-                
+                log.info(ie.getMessage());
+            } catch(ExecutionException ee) {
+                log.info(ee.getMessage());    
+            } catch(TimeoutException te){
+                log.info(te.getMessage());
             }
         }
         
