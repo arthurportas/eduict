@@ -49,18 +49,16 @@ public class Login extends HttpServlet {
         while (true) {
             
             try {
-                
-                if(futureTask.isDone()){
-                    out.println("Done");
-                    return;
-                }
-
                 out.println("Waiting for FutureTask to complete");
                 String result = futureTask.get();
-                out.println("FutureTask output=" + result);
+
                 if(result != null){
                     out.println("FutureTask output=" + result);
                     log.info("FutureTask output=" + result);
+                }
+                if(futureTask.isDone()){
+                    out.println("Done");
+                    return;
                 }
             } catch (InterruptedException ie) {
                 log.info(ie.getMessage());
