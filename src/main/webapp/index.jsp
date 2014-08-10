@@ -51,28 +51,8 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                           <a class="" data-toggle="modal" href="#login-modal" > 
-                            <!--login modal-->
-                            <div class="modal hide" id="myModal">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">x</button>
-                                <h3>Login to MyWebsite.com</h3>
-                              </div>
-                              <div class="modal-body">
-                                <form method="post" action='' name="login_form">
-                                  <p><input type="text" class="span3" name="eid" id="email" placeholder="Email"></p>
-                                  <p><input type="password" class="span3" name="passwd" placeholder="Password"></p>
-                                  <p><button type="submit" class="btn btn-primary">Sign in</button>
-                                    <a href="#">Forgot Password?</a>
-                                  </p>
-                                </form>
-                              </div>
-                              <div class="modal-footer">
-                                New To MyWebsite.com?
-                                <a href="#" class="btn btn-primary">Register</a>
-                              </div>
-                            </div>
-                        </li>
+                            <a href="#">Login</a>
+                        </li>   
                         <li>
                             <a href="#">Developer</a>
                         </li>
