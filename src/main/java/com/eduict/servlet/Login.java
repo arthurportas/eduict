@@ -43,20 +43,21 @@ public class Login extends HttpServlet {
         FutureTask<String> futureTask = new FutureTask<String>(loginTask);
         
         executor.execute(futureTask);
-
-        
       
+        PrintWriter out = response.getWriter();
+        
         while (true) {
+            
             try {
                 if(futureTask.isDone()){
-                    log.info("Done");
+                    out.println("Done");
                     return;
                 }
 
-                log.info("Waiting for FutureTask to complete");
-                String result = futureTask.get(200L, TimeUnit.MILLISECONDS);
-                if(result !=null){
-                    PrintWriter out = response.getWriter();
+                out.println("Waiting for FutureTask to complete");
+                String result = futureTask.get(2000L, TimeUnit.MILLISECONDS);
+                
+                if(result != null){
                     out.println("FutureTask output=" + result);
                     log.info("FutureTask output=" + result);
                 }
