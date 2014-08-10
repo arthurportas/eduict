@@ -49,6 +49,7 @@ public class Login extends HttpServlet {
         while (true) {
             
             try {
+                
                 if(futureTask.isDone()){
                     out.println("Done");
                     return;
@@ -56,7 +57,7 @@ public class Login extends HttpServlet {
 
                 out.println("Waiting for FutureTask to complete");
                 String result = futureTask.get(2000L, TimeUnit.MILLISECONDS);
-                
+                out.println("FutureTask output=" + result);
                 if(result != null){
                     out.println("FutureTask output=" + result);
                     log.info("FutureTask output=" + result);
