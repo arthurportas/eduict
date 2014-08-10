@@ -72,33 +72,37 @@
                     <div class="col-lg-12">
                         <div class="intro-message">
                             <h1>EduICT</h1>
-                            <h3>Sobre o Projeto</h3>
+                            <h3><a class="project-info" href="" title="Sobre o Projeto">Sobre o Projeto</a></h3>
                             <hr class="intro-divider">
                             <ul class="list-inline intro-social-buttons">
                                 <li>
                                     <!--<a href="#" class="btn btn-default btn-lg"><i class="fa-fw"></i> <span class="network-name">Login</span></a>-->
-                                    <a class="btn btn-default btn-lg" data-toggle="modal" href="#login-modal" >
-                                        <span class="network-name">Login</span>
-                                    </a>
-
-                                    <div class="modal hide" id="login-modal">
-                                      <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">x</button>
-                                        <h3>Login to MyWebsite.com</h3>
-                                      </div>
-                                      <div class="modal-body">
-                                        <form method="post" action='' name="login_form">
-                                          <p><input type="text" class="span3" name="eid" id="email" placeholder="Email"></p>
-                                          <p><input type="password" class="span3" name="passwd" placeholder="Password"></p>
-                                          <p><button type="submit" class="btn btn-primary">Sign in</button>
-                                            <a href="#">Forgot Password?</a>
-                                          </p>
-                                        </form>
-                                      </div>
-                                      <div class="modal-footer">
-                                        New To MyWebsite.com?
-                                        <a href="#" class="btn btn-primary">Register</a>
-                                      </div>
+                                    <div class="container">
+	                                    <div class="row">
+                                            <a class="btn btn-default btn-lg" data-toggle="modal" href="#login-modal" >
+                                                <span class="network-name">Login</span>
+                                            </a>
+        
+                                            <div class="modal hide" id="login-modal">
+                                              <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal">x</button>
+                                                <h3>Login to MyWebsite.com</h3>
+                                              </div>
+                                              <div class="modal-body">
+                                                <form method="post" action='' name="login_form">
+                                                  <p><input type="text" class="span3" name="eid" id="email" placeholder="Email"></p>
+                                                  <p><input type="password" class="span3" name="passwd" placeholder="Password"></p>
+                                                  <p><button type="submit" class="btn btn-primary">Sign in</button>
+                                                    <a href="#">Forgot Password?</a>
+                                                  </p>
+                                                </form>
+                                              </div>
+                                              <div class="modal-footer">
+                                                New To MyWebsite.com?
+                                                <a href="#" class="btn btn-primary">Register</a>
+                                              </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </li>
                                 <li>

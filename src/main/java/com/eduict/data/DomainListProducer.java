@@ -22,7 +22,7 @@ public class DomainListProducer {
 
    private List<Domain> domains;
 
-   // @Named provides access the return value via the EL variable name "members" in the UI (e.g.,
+   // @Named provides access the return value via the EL variable name "domains" in the UI (e.g.,
    // Facelets or JSP view)
    @Produces
    @Named
