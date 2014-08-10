@@ -1,17 +1,18 @@
 package com.eduict.servlet.async;
 
 import java.util.concurrent.Callable;
-import com.eduict.controller.MemberRegistration;
 import com.eduict.model.User;
-import javax.inject.Inject;
+import com.eduict.controller.MemberRegistration;
+
 
 
 public class LoginTask implements Callable<String> {
 
-    
+    private MemberRegistration registrationService;
     private User user;
     
     public LoginTask(User user) {
+        this.registrationService = new MemberRegistration();
         this.user = user;
     }
     
