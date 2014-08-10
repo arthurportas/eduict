@@ -66,9 +66,9 @@ public class Login extends HttpServlet {
                 log.info(ie.getMessage());
             } catch(ExecutionException ee) {
                 log.info(ee.getMessage());    
-            } catch(TimeoutException te){
+            } /*catch(TimeoutException te){
                 log.info(te.getMessage());
-            }
+            }*/
         }
         
         /*
