@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import java.util.concurrent.TimeUnit;
 import com.eduict.servlet.async.LoginTask;
 import javax.inject.Inject;
+import com.eduict.controller.MemberRegistration;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.ExecutionException;
 import javax.servlet.AsyncContext;
@@ -17,6 +18,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.eduict.model.User;
  
 @WebServlet(urlPatterns = "/login")
 public class Login extends HttpServlet {
@@ -25,6 +27,9 @@ public class Login extends HttpServlet {
  
     @Inject
     private Logger log;
+    
+    @Inject
+    MemberRegistration registrationService;
     
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
@@ -40,12 +45,12 @@ public class Login extends HttpServlet {
                 .getServletContext().getAttribute("executor");
  
         User user = new User();
-        user.setFirstName = "Arthur";
-        user.serLastName = "Portas";
-        user.setEmail = "arthurportas@gmail.com";
-        user.setAge="34";
-        user.setGender = "masculino";
-        user.setAcademicDegree = "licenciatura";
+        user.setFirstName("Arthur");
+        user.setLastName("Portas");
+        user.setEmail("arthurportas@gmail.com");
+        user.setAge("34");
+        user.setGender("masculino");
+        user.setAcademicDegree("licenciatura");
         
         Callable loginTask = new LoginTask(user);
         
@@ -73,9 +78,9 @@ public class Login extends HttpServlet {
                 log.info(ie.getMessage());
             } catch(ExecutionException ee) {
                 log.info(ee.getMessage());    
-            } /*catch(TimeoutException te){
+            } catch(TimeoutException te){
                 log.info(te.getMessage());
-            }*/
+            }
         }
         
         /*
