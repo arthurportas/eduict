@@ -44,8 +44,7 @@ public class Login extends HttpServlet {
         
         executor.execute(futureTask);
 
-        PrintWriter out = response.getWriter();
-        out.println("<h1> tretas </h1>");
+        
       
         while (true) {
             try {
@@ -57,6 +56,8 @@ public class Login extends HttpServlet {
                 log.info("Waiting for FutureTask to complete");
                 String result = futureTask.get(200L, TimeUnit.MILLISECONDS);
                 if(result !=null){
+                    PrintWriter out = response.getWriter();
+                    out.println("FutureTask output=" + result);
                     log.info("FutureTask output=" + result);
                 }
             } catch (InterruptedException ie) {
