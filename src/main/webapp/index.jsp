@@ -235,7 +235,7 @@
                         
                         <div class="form-group">
                             <label for="academic-degree" class="col-sm-2 control-label">Grau Académico</label>
-                            <select class="academic-degree" class="form-control">
+                            <select class=" selectpicker academic-degree">
                                 <option value="graduate">Licenciatura</option>
                                 <option value="master">Mestrado</option>
                                 <option value="post-graduate">Pós-Graduação</option>
@@ -244,7 +244,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="academic-degree" class="col-sm-2 control-label">Grupo de Recrutamento</label>
+                            <label for="recruitment-group" class="col-sm-2 control-label">Grupo de Recrutamento</label>
                             <select class="selectpicker recruitment-group">
                                 <optgroup label="Pré-Escolar e 1ºCiclo do Ensino Básico" >
                                   <option>100 - Educação Pré-Escolar</option>
@@ -332,7 +332,7 @@
         <script src="<c:url value="/resources/js/bootstrap-select.min" />"></script>
         
         <script>
-            $('.selectpicker').selectpicker();
+           // $('.selectpicker').selectpicker();
         </script>    
     </body>
 
