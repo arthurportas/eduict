@@ -94,6 +94,19 @@
         </div>
         <!-- /.content-section-a -->  
         
+        <div class="content-section-a about-project hidden">
+    
+            <div class="container">
+            	<div class="row">
+                	<div class="container">
+                      
+                    </div> <!-- /container -->
+            	</div>
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.content-section-a --> 
+        
         <div class="content-section-a contact hidden">
     
             <div class="container">
@@ -148,7 +161,7 @@
             	<div class="row">
                 	<div class="container" id="formRecoverContainer">
                       <form class="form-signin" id="recover" role="form">
-                        <h3 class="form-signin-heading">Email</h3>
+                        <h3 class="form-signin-heading">Recuperar password</h3>
                         <div class="form-group">
                             <label for="recover-email" class="col-sm-2 control-label">Email</label>
                             <input type="email" class="form-control" name="recover-email" id="recover-email" 
@@ -450,6 +463,9 @@
         
         <!-- Login JavaScript -->
         <script src="<c:url value="/resources/js/login/recover-password.js" />"></script>
+        
+        <!-- About JavaScript -->
+        <script src="<c:url value="/resources/js/about/about.js" />"></script>
         
         <script>
             $('.selectpicker').selectpicker();
