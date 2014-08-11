@@ -81,7 +81,7 @@
                       <form class="form-signin" id="developer" role="form">
                         <h3 class="form-signin-heading">Email</h3>
                         <div class="form-group">
-                            <label for="developer-email" class="col-sm-2 control-label">Email</label>
+                            <label for="developer-email" class="sr-only col-sm-2 control-label">Email</label>
                             <input type="email" class="form-control" name="developer-email" id="login-email" 
                                 placeholder="Email" required autofocus>
                         </div>
@@ -157,12 +157,12 @@
                       <form class="form-signin" id="login-form" action="/login" method="POST" role="form">
                         <h3 class="form-signin-heading">Login</h3>
                         <div class="form-group">
-                            <label for="login-email" class="col-sm-2 control-label">Email</label>
+                            <label for="login-email" class="sr-only col-sm-2 control-label">Email</label>
                             <input type="email" class="form-control" name="login-email" id="login-email" 
                                 placeholder="Email" required autofocus>
                         </div>
                         <div class="form-group">
-                            <label for="login-password" class="col-sm-2 control-label">Password</label>
+                            <label for="login-password" class="sr-only col-sm-2 control-label">Password</label>
                             <input type="password" class="form-control" name="login-password" id="login-password" 
                             placeholder="Password" required>
                         </div>
@@ -183,7 +183,7 @@
                       <form class="form-signin" id="recover-form" method="POST" action="password" role="form">
                         <h3 class="form-signin-heading">Recuperar password</h3>
                         <div class="form-group">
-                            <label for="recover-email" class="col-sm-2 control-label">Email</label>
+                            <label for="recover-email" class="sr-only col-sm-2 control-label">Email</label>
                             <input type="email" class="form-control" name="recover-email" id="recover-email" 
                             placeholder="Email" required autofocus>
                         </div>
