@@ -23,28 +23,40 @@ import javax.servlet.http.HttpServletResponse;
 import com.eduict.model.User;
 import javax.servlet.RequestDispatcher;
  
-@WebServlet(urlPatterns = "/login")
-public class Login extends HttpServlet {
+@WebServlet(urlPatterns = "/register")
+public class Registration extends HttpServlet {
     
     private static final long serialVersionUID = 1L;
  
     @Inject
     private Logger log;
+    
+    @Inject
+    UserRegistration registrationService;
 
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
     
-        PrintWriter out = response.getWriter();
-        
         StringBuilder errorMessage = new StringBuilder();
 
         try {
 
             User user;
 
-            
+            while ((user = registrationService.getNewUser()) == null) {
+                registrationService.initNewUser();
+            }
+
+            user.setFirstName("Arthur");
+            user.setLastName("Portas");
+            user.setEmail("arthurportas@gmail.com");
+            user.setAge(34);
+            user.setGender("masculino");
+            user.setAcademicDegree("licenciatura");
+
+            registrationService.register();
 
         } catch (Exception e) {
 
