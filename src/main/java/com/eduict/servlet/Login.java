@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import java.util.concurrent.TimeUnit;
 import com.eduict.servlet.async.LoginTask;
 import javax.inject.Inject;
-import com.eduict.controller.MemberRegistration;
+import com.eduict.controller.UserRegistration;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.ExecutionException;
 import javax.servlet.AsyncContext;
@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.eduict.model.User;
+import javax.servlet.RequestDispatcher;
  
 @WebServlet(urlPatterns = "/login")
 public class Login extends HttpServlet {
@@ -29,66 +30,48 @@ public class Login extends HttpServlet {
     private Logger log;
     
     @Inject
-    MemberRegistration registrationService;
+    UserRegistration registrationService;
     
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
-        // Set response content type
-      response.setContentType("text/html");
-      
-        long startTime = System.currentTimeMillis();
-        log.info("Login Start::Name="
-                + Thread.currentThread().getName() + "::ID="
-                + Thread.currentThread().getId());
- 
-        ThreadPoolExecutor executor = (ThreadPoolExecutor) request
-                .getServletContext().getAttribute("executor");
- 
-        User user = new User();
-        user.setFirstName("Arthur");
-        user.setLastName("Portas");
-        user.setEmail("arthurportas@gmail.com");
-        user.setAge(34);
-        user.setGender("masculino");
-        user.setAcademicDegree("licenciatura");
-        
-        Callable loginTask = new LoginTask(user);
-        
-        FutureTask<String> futureTask = new FutureTask<String>(loginTask);
-        
-        executor.execute(futureTask);
-      
-        PrintWriter out = response.getWriter();
-        
-        while (true) {
-            
-            try {
-                out.println("Waiting for FutureTask to complete");
-                String result = futureTask.get(2000L, TimeUnit.MILLISECONDS);
 
-                if(result != null){
-                    out.println("FutureTask output=" + result);
-                    log.info("FutureTask output=" + result);
-                }
-                if(futureTask.isDone()){
-                    out.println("Done");
-                    return;
-                }
-            } catch (InterruptedException ie) {
-                log.info(ie.getMessage());
-            } catch(ExecutionException ee) {
-                log.info(ee.getMessage());    
-            } catch(TimeoutException te){
-                log.info(te.getMessage());
-            }
-        }
+        response.setContentType("text/html");
+    
+        //PrintWriter out = response.getWriter();
         
-        /*
-        long endTime = System.currentTimeMillis();
-        System.out.println("AsyncLongRunningServlet End::Name="
-                + Thread.currentThread().getName() + "::ID="
-                + Thread.currentThread().getId() + "::Time Taken="
-                + (endTime - startTime) + " ms.");*/
+        StringBuilder errorMessage = new StringBuilder();
+
+        try {
+
+            User user;
+
+            while ((user = registrationService.getNewUser()) == null) {
+                registrationService.initNewUser();
+            }
+
+            user.setFirstName("Arthur");
+            user.setLastName("Portas");
+            user.setEmail("arthurportas@gmail.com");
+            user.setAge(34);
+            user.setGender("masculino");
+            user.setAcademicDegree("licenciatura");
+
+            registrationService.register();
+
+        } catch (Exception e) {
+
+            Throwable t = e;
+            while ((t.getCause()) != null) {
+                t = t.getCause();
+            }
+
+            errorMessage.append("Error========>" + t.getMessage());
+            request.setAttribute("infoMessage", "");
+            e.printStackTrace();
+        } finally {
+            request.setAttribute("errorMessage", errorMessage.toString());
+            RequestDispatcher resultView = request.getRequestDispatcher("rest/users");
+            resultView.forward(request, response);
+        }
     }
- 
 }
