@@ -110,20 +110,53 @@
         <div class="content-section-a contact hidden">
     
             <div class="container">
-            	<div class="row">
-                	<div class="container" id="formContactContainer">
-                      <form class="form-signin" id="contact" role="form">
-                        <h3 class="form-signin-heading">Email</h3>
-                        
-                        <div class="form-group">
-                            <label for="contact-email" class="col-sm-2 control-label">Email</label>
-                            <input type="email" class="form-control" name="contact-email" id="login-email" 
-                                placeholder="Email" required autofocus>
+                <div class="row">
+                    <div class="col-md-12">
+                        <small><i></i>Add alerts if form ok... success, else error.</i></small>
+            	        <div class="alert alert-success"><strong><span class="glyphicon glyphicon-send"></span> Success! Message sent. (If form ok!)</strong></div>	  
+                        <div class="alert alert-danger"><span class="glyphicon glyphicon-alert"></span><strong> Error! Please check the inputs. (If form error!)</strong></div>
+                    </div>
+                    <form role="form" action="/contact" method="POST" >
+                        <div class="col-lg-6">
+                            <div class="well well-sm">
+                                <strong><i class="glyphicon glyphicon-ok form-control-feedback"></i> Preenchimento obrigatório</strong>
+                            </div>
+                            <div class="form-group">
+                                <label for="InputName">Nome</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Nome" required>
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="InputEmail">Email</label>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Email" required >
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                                </div>
+                            </div>
+                  
+                            <div class="form-group">
+                                <label for="InputMessage">Mensagem</label>
+                                <div class="input-group">
+                                    <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="InputReal">What is 4+3? (Simple Spam Checker)</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="InputReal" id="InputReal" required>
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
+                                </div>
+                            </div>
+                            
+                            <input type="submit" name="contact-submit" id="contact-submit" value="Enviar" class="btn btn-info pull-right">
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
-                      </form>
-                    </div> <!-- /container -->
-            	</div>
+                    </form>
+                </div>
             </div>
             <!-- /.container -->
         </div>
@@ -134,7 +167,7 @@
             <div class="container">
             	<div class="row">
                 	<div class="container" id="formContainer">
-                      <form class="form-signin" id="login" role="form">
+                      <form class="form-signin" id="login-form" action="/login" method="POST" role="form">
                         <h3 class="form-signin-heading">Login</h3>
                         <div class="form-group">
                             <label for="login-email" class="col-sm-2 control-label">Email</label>
@@ -160,7 +193,7 @@
             <div class="container">
             	<div class="row">
                 	<div class="container" id="formRecoverContainer">
-                      <form class="form-signin" id="recover" role="form">
+                      <form class="form-signin" id="recover-form" method="POST" action="password" role="form">
                         <h3 class="form-signin-heading">Recuperar password</h3>
                         <div class="form-group">
                             <label for="recover-email" class="col-sm-2 control-label">Email</label>
@@ -181,7 +214,7 @@
             <div class="container">
             	<div class="row">
                 	<div class="container" id="formRegisterContainer">
-                      <form class="form-signin" id="register" role="form" action="register" method="GET">
+                      <form class="form-signin" id="register" role="form" action="/register" method="GET">
                         <h3 class="form-signin-heading">Novo utilizador</h3>
                         <div class="form-group">
                             <label for="register-firstName" class="col-sm-2 control-label">Nome</label>
@@ -387,7 +420,7 @@
                     <div class="col-lg-12">
                         <div class="intro-message">
                             <h1>EduICT</h1>
-                            <h3>Sobre o Projeto</h3>
+                            <h3><span class="about-project" title="Sobre o Projeto">Sobre o Projeto</span></h3>
                             <hr class="intro-divider">
                             <ul class="list-inline intro-social-buttons">
                                 <li>
