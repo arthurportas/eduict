@@ -182,17 +182,20 @@
                                 placeholder="Idade" required />
                         </div>
                         
-                        <div class="radio">
-                            <label for="gender-radios-male" class="col-sm-2 control-label">Sexo</label>
-                                <input type="radio" name="gender-radios" id="gender-radios-male" value="male" checked>
-                                Masculino
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="gender-radios" id="gender-radios-female" value="female">
-                                Feminino
-                            </label>
+                        <div class="form-group">
+                            <label for="register-gender" class="col-sm-2 control-label">Sexo</label>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender-radios" id="gender-radios-male" value="male" checked>
+                                    Masculino
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender-radios" id="gender-radios-female" value="female">
+                                    Feminino
+                                </label>
+                            </div>
                         </div>
                         
                         <select class="academic-degree" class="form-control">
