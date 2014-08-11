@@ -3,7 +3,11 @@ $(document).ready(function() {
         e.preventDefault();
         var loginPanel = $('div.login');
         if (loginPanel) {
-            loginPanel.toggle("slow");
-        }
+            if (loginPanel.hasClass("hidden")) {
+                loginPanel.removeClass("hidden");    
+            } else {
+                loginPanel.addClass("hidden"); 
+            }
+        } 
     });
 });

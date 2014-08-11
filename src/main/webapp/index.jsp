@@ -178,6 +178,7 @@
                         
                         <div class="form-group">
                             <label for="register-age" class="col-sm-2 control-label">Idade</label>
+                            <br />
                             <div class="radio">
                                 <label class="radio-inline">
                                     <input type="radio" name="age-radios" id="age-radios-until25" value="until25" checked>
@@ -212,6 +213,7 @@
                         
                         <div class="form-group">
                             <label for="register-gender" class="col-sm-2 control-label">Sexo</label>
+                            <br />
                             <div class="radio">
                                 <label class="radio-inline">
                                     <input type="radio" name="gender-radios" id="gender-radios-male" value="male" checked>
@@ -326,6 +328,9 @@
         
         <!-- Login JavaScript -->
         <script src="<c:url value="/resources/js/login/login.js" />"></script>
+        
+        <!-- Register JavaScript -->
+        <script src="<c:url value="/resources/js/login/register.js" />"></script>
         
         <!-- Login JavaScript -->
         <script src="<c:url value="/resources/js/login/recover-password.js" />"></script>
