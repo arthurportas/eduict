@@ -147,7 +147,7 @@
         </div>
         <!-- /.content-section-a --> 
         
-        <div class="content-section-a register">
+        <div class="content-section-a register hidden">
             <div class="container">
             	<div class="row">
                 	<div class="container" id="formRegisterContainer">
@@ -278,7 +278,7 @@
                                 <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                             </li>
                             <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
                             </li>
                         </ul>
                     </div>
@@ -295,23 +295,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#home">Home</a>
-                            </li>
-                            <li class="footer-menu-divider">&sdot;</li>
-                            <li>
-                                <a href="#about">About</a>
-                            </li>
-                            <li class="footer-menu-divider">&sdot;</li>
-                            <li>
-                                <a href="#services">Services</a>
-                            </li>
-                            <li class="footer-menu-divider">&sdot;</li>
-                            <li>
-                                <a href="#contact">Contact</a>
-                            </li>
-                        </ul>
                         <p class="copyright text-muted small">Copyright &copy; EduIct 2014. Todos os Direitos Reservados</p>
                     </div>
                 </div>
