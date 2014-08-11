@@ -167,3 +167,6 @@ p.copyright {
 div.current-year-teching-level {
     min-height: 180px;
 }
+.bordered {
+    border: 1px grey dotted;
+}

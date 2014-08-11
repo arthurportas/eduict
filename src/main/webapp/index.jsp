@@ -75,7 +75,7 @@
         <!-- Page Content -->
         <div class="content-section-a developer hidden">
     
-            <div class="container">
+            <div class="container bordered">
             	<div class="row">
                 	<div class="container" id="formDeveloperContainer">
                       <form class="form-signin" id="developer" role="form">
@@ -118,14 +118,11 @@
                     </div>
                     <form role="form" action="/contact" method="POST" >
                         <div class="col-lg-6">
-                            <div class="well well-sm">
-                                <strong><i class="glyphicon glyphicon-ok form-control-feedback"></i> Preenchimento obrigatório</strong>
-                            </div>
+
                             <div class="form-group">
                                 <label for="InputName">Nome</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Nome" required>
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
                                 </div>
                             </div>
                             
@@ -133,7 +130,6 @@
                                 <label for="InputEmail">Email</label>
                                 <div class="input-group">
                                     <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Email" required >
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
                                 </div>
                             </div>
                   
@@ -141,15 +137,6 @@
                                 <label for="InputMessage">Mensagem</label>
                                 <div class="input-group">
                                     <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="InputReal">What is 4+3? (Simple Spam Checker)</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" name="InputReal" id="InputReal" required>
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
                                 </div>
                             </div>
                             

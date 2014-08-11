@@ -1,5 +1,5 @@
 $(document).ready(function() {    
-    $('a.about-project').bind('click', function(e) {
+    $('span.about-project').bind('click', function(e) {
         e.preventDefault();
         var aboutPanel = $('div.about-project ');
         if (aboutPanel) {
