@@ -103,22 +103,33 @@
     
         <!-- Page Content -->
 
-        <div class="content-section-a">
+        <div class="content-section-a login">
     
             <div class="container">
-    
-                <div class="row">
-                    <div class="col-lg-5 col-sm-6">
-                        <hr class="section-heading-spacer">
-                        <div class="clearfix"></div>
-                        <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-                        <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
-                    </div>
-                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                        <img class="img-responsive" src="img/ipad.png" alt="">
-                    </div>
-                </div>
-    
+            	<div class="row">
+                	<div class="container" id="formContainer">
+            
+                      <form class="form-signin" id="login" role="form">
+                        <h3 class="form-signin-heading">Please sign in</h3>
+                        <a href="#" id="flipToRecover" class="flipLink">
+                          <div id="triangle-topright"></div>
+                        </a>
+                        <input type="email" class="form-control" name="loginEmail" id="loginEmail" placeholder="Email address" required autofocus>
+                        <input type="password" class="form-control" name="loginPass" id="loginPass" placeholder="Password" required>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                      </form>
+                
+                      <form class="form-signin" id="recover" role="form">
+                        <h3 class="form-signin-heading">Enter email address</h3>
+                        <a href="#" id="flipToLogin" class="flipLink">
+                          <div id="triangle-topleft"></div>
+                        </a>
+                        <input type="email" class="form-control" name="loginEmail" id="loginEmail" placeholder="Email address" required autofocus>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Recover password</button>
+                      </form>
+            
+                    </div> <!-- /container -->
+            	</div>
             </div>
             <!-- /.container -->
         </div>
