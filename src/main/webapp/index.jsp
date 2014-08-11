@@ -151,7 +151,7 @@
             <div class="container">
             	<div class="row">
                 	<div class="container" id="formRegisterContainer">
-                      <form class="form-signin" id="register" role="form">
+                      <form class="form-signin" id="register" role="form" action="register" method="GET">
                         <h3 class="form-signin-heading">Novo utilizador</h3>
                         <div class="form-group">
                             <label for="register-firstName" class="col-sm-2 control-label">Nome</label>
@@ -175,8 +175,15 @@
                             <input type="password" class="form-control" name="register-password" id="register-password" 
                             placeholder="Password" required />
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="register-age" class="col-sm-2 control-label">Idade</label>
+                            <input type="text" class="form-control" name="register-age" id="register-age" 
+                                placeholder="Idade" required />
+                        </div>
+                        
                         <div class="radio">
-                            <label>
+                            <label for="gender-radios-male" class="col-sm-2 control-label">Sexo</label>
                                 <input type="radio" name="gender-radios" id="gender-radios-male" value="male" checked>
                                 Masculino
                             </label>
@@ -188,7 +195,7 @@
                             </label>
                         </div>
                         
-                        <select class="academic-degree" multiple class="form-control">
+                        <select class="academic-degree" class="form-control">
                             <option>Licenciatura</option>
                             <option>Mestrado</option>
                             <option>Doutoramento</option>
