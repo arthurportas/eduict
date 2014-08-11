@@ -48,6 +48,7 @@ public class User implements Serializable {
    @NotNull
    @NotEmpty
    @Email
+   @Column(name="EMAIL")
    private String email;
    
    @NotNull
@@ -55,7 +56,7 @@ public class User implements Serializable {
    @Pattern(regexp = "[0-9]*", message = "age must contain only numbers")
    @Column(name="AGE")
    @XmlAttribute
-   private String age;
+   private int age;
    
    @NotNull
    @NotEmpty
@@ -104,11 +105,11 @@ public class User implements Serializable {
       this.email = email;
    }
    
-   public String getAge() {
+   public int getAge() {
       return age;
    }
 
-   public void setAge(String age) {
+   public void setAge(int age) {
       this.age = age;
    }
    

@@ -48,7 +48,7 @@ public class Login extends HttpServlet {
         user.setFirstName("Arthur");
         user.setLastName("Portas");
         user.setEmail("arthurportas@gmail.com");
-        user.setAge("34");
+        user.setAge(34);
         user.setGender("masculino");
         user.setAcademicDegree("licenciatura");
         
