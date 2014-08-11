@@ -72,38 +72,6 @@
             <!-- /.container -->
         </nav>
     
-        <!-- Header -->
-        <div class="intro-header">
-    
-            <div class="container">
-    
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="intro-message">
-                            <h1>EduICT</h1>
-                            <h3>Sobre o Projeto</h3>
-                            <hr class="intro-divider">
-                            <ul class="list-inline intro-social-buttons">
-                                <!--<li>-->
-                                    <!--<a href="#" class="btn btn-default btn-lg"><i class="fa-fw"></i> <span class="network-name">Login</span></a>-->
-                                    <!--<a class="btn btn-default btn-lg" data-toggle="modal" href="#login-modal" >
-                                        <span class="network-name">Login</span>
-                                    </a>
-                                </li>-->
-                                <li>
-                                    <a href="/quiz.jsp" class="btn btn-default btn-lg"><i class="fa-fw"></i> <span class="network-name">Questionário</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-    
-            </div>
-            <!-- /.container -->
-    
-        </div>
-        <!-- /.intro-header -->
-    
         <!-- Page Content -->
 
         <div class="content-section-a login hidden">
@@ -113,12 +81,19 @@
                 	<div class="container" id="formContainer">
                       <form class="form-signin" id="login" role="form">
                         <h3 class="form-signin-heading">Login</h3>
-                        <input type="email" class="form-control" name="login-email" id="login-email" 
-                            placeholder="Email" required autofocus>
-                        <input type="password" class="form-control" name="login-password" id="login-password" 
-                        placeholder="Password" required>
+                        <div class="form-group">
+                            <label for="login-email" class="col-sm-2 control-label">Email</label>
+                            <input type="email" class="form-control" name="login-email" id="login-email" 
+                                placeholder="Email" required autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password" class="col-sm-2 control-label">Password</label>
+                            <input type="password" class="form-control" name="login-password" id="login-password" 
+                            placeholder="Password" required>
+                        </div>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
                       </form>
+                      <a class="pull-right recover-password" href="" title="Recuperar password">Recuperar password</a>
                     </div> <!-- /container -->
             	</div>
             </div>
@@ -132,11 +107,11 @@
                 	<div class="container" id="formRecoverContainer">
                       <form class="form-signin" id="recover" role="form">
                         <h3 class="form-signin-heading">Email</h3>
-                        <a href="#" id="flipToLogin" class="flipLink">
-                          <div id="triangle-topleft"></div>
-                        </a>
-                        <input type="email" class="form-control" name="recover-email" id="recover-email" 
-                        placeholder="Email" required autofocus>
+                        <div class="form-group">
+                            <label for="recover-email" class="col-sm-2 control-label">Email</label>
+                            <input type="email" class="form-control" name="recover-email" id="recover-email" 
+                            placeholder="Email" required autofocus>
+                        </div>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Recuperar password</button>
                       </form>
             
@@ -263,6 +238,32 @@
             <!-- /.container -->
         </div>
         <!-- /.content-section-a --> 
+       
+       <!-- Header -->
+        <div class="intro-header">
+    
+            <div class="container">
+    
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="intro-message">
+                            <h1>EduICT</h1>
+                            <h3>Sobre o Projeto</h3>
+                            <hr class="intro-divider">
+                            <ul class="list-inline intro-social-buttons">
+                                <li>
+                                    <a href="/quiz.jsp" class="btn btn-default btn-lg" title="Questionário"><i class="fa-fw"></i> <span class="network-name">Questionário</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+            <!-- /.container -->
+    
+        </div>
+        <!-- /.intro-header -->
         
         <div class="banner">
     
@@ -275,10 +276,10 @@
                     <div class="col-lg-6">
                         <ul class="list-inline banner-social-buttons">
                             <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                                <a href="#" class="btn btn-default btn-lg" title="Twitter"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                             </li>
                             <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+                                <a href="#" class="btn btn-default btn-lg" title="Facebook"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
                             </li>
                         </ul>
                     </div>
