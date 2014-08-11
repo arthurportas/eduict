@@ -54,16 +54,16 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#">Login</a>
+                            <a class="login-menu" href="" title="Login">Login</a>
                         </li>  
                         <li>
-                            <a href="#">Registar</a>
+                            <a class="register-menu" href="" title="Registar">Registar</a>
                         </li> 
                         <li>
-                            <a href="#">Developer</a>
+                            <a class="developer-credits" href="" title="Developer">Developer</a>
                         </li>
                         <li>
-                            <a href="#">Contatos</a>
+                            <a class="contacts" href="" title="Contatos">Contatos</a>
                         </li>
                     </ul>
                 </div>
@@ -113,9 +113,6 @@
                 	<div class="container" id="formContainer">
                       <form class="form-signin" id="login" role="form">
                         <h3 class="form-signin-heading">Login</h3>
-                        <a href="#" id="flipToRecover" class="flipLink">
-                          <div id="triangle-topright"></div>
-                        </a>
                         <input type="email" class="form-control" name="login-email" id="login-email" 
                             placeholder="Email" required autofocus>
                         <input type="password" class="form-control" name="login-password" id="login-password" 
