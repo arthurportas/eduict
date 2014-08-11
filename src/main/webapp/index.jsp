@@ -154,24 +154,46 @@
                       <form class="form-signin" id="register" role="form">
                         <h3 class="form-signin-heading">Novo utilizador</h3>
                         <div class="form-group">
+                            <label for="register-firstName" class="col-sm-2 control-label">Nome</label>
                             <input type="text" class="form-control" name="register-firstName" id="register-firstName" 
                                 placeholder="Firstname" required autofocus />
                         </div>
                         <div class="form-group">
+                            <label for="register-lastName" class="col-sm-2 control-label">Apelido</label>
                             <input type="text" class="form-control" name="register-lastName" id="register-lastName" 
                             placeholder="Lastname" required />
                         </div>
-                        
-                        <input type="email" class="form-control" name="register-email" id="register-email" 
-                            placeholder="Email address" required />
-                        <input type="password" class="form-control" name="register-password" id="register-password" 
-                        placeholder="Password" required>
-                        <div class="input-group">
-                            <span class="input-group-addon beautiful">
-                                <input type="radio">
-                            </span>
-                            <input type="text" class="form-control">
+                       
+                        <div class="form-group">
+                            <label for="register-email" class="col-sm-2 control-label">Email</label>
+                            <input type="email" class="form-control" name="register-email" id="register-email" 
+                                placeholder="Email address" required />
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="register-password" class="col-sm-2 control-label">Password</label>
+                            <input type="password" class="form-control" name="register-password" id="register-password" 
+                            placeholder="Password" required />
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="gender-radios" id="gender-radios-male" value="male" checked>
+                                Masculino
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="gender-radios" id="gender-radios-female" value="female">
+                                Feminino
+                            </label>
+                        </div>
+                        
+                        <select class="academic-degree" multiple class="form-control">
+                            <option>Licenciatura</option>
+                            <option>Mestrado</option>
+                            <option>Doutoramento</option>
+                        </select>
+
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Registar</button>
                       </form>
                     </div> <!-- /container -->
