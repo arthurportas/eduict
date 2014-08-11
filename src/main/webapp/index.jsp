@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
     <head>
     
@@ -73,7 +73,49 @@
         </nav>
     
         <!-- Page Content -->
-
+        <div class="content-section-a developer hidden">
+    
+            <div class="container">
+            	<div class="row">
+                	<div class="container" id="formDeveloperContainer">
+                      <form class="form-signin" id="developer" role="form">
+                        <h3 class="form-signin-heading">Email</h3>
+                        <div class="form-group">
+                            <label for="developer-email" class="col-sm-2 control-label">Email</label>
+                            <input type="email" class="form-control" name="developer-email" id="login-email" 
+                                placeholder="Email" required autofocus>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+                      </form>
+                    </div> <!-- /container -->
+            	</div>
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.content-section-a -->  
+        
+        <div class="content-section-a contact hidden">
+    
+            <div class="container">
+            	<div class="row">
+                	<div class="container" id="formContactContainer">
+                      <form class="form-signin" id="contact" role="form">
+                        <h3 class="form-signin-heading">Email</h3>
+                        
+                        <div class="form-group">
+                            <label for="contact-email" class="col-sm-2 control-label">Email</label>
+                            <input type="email" class="form-control" name="contact-email" id="login-email" 
+                                placeholder="Email" required autofocus>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+                      </form>
+                    </div> <!-- /container -->
+            	</div>
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.content-section-a -->
+        
         <div class="content-section-a login hidden">
     
             <div class="container">
@@ -255,7 +297,7 @@
                             </select>
                         </div>
                         
-                        <div class="form-group">
+                        <div class="form-group current-year-teching-level">
                             <label for="register-current-year-teching-level" class="col-sm-2 control-label">
                                 No presente ano letivo leciona em que nível de ensino?
                             </label>
@@ -283,7 +325,7 @@
                                     <input type="radio" name="current-year-teching-level-radios" id="current-year-teching-level-radios-secondary" value="Secundário">
                                     Secundário
                                 </label>
-                            </div>3ºciclo/Secundário
+                            </div>
                             <div class="radio">
                                 <label class="radio-inline">
                                     <input type="radio" name="current-year-teching-level-radios" id="current-year-teching-level-radios-3cicle-secondary" value="3ºciclo/Secundário">
@@ -399,6 +441,12 @@
         
         <!-- Register JavaScript -->
         <script src="<c:url value="/resources/js/login/register.js" />"></script>
+        
+        <!-- Developer JavaScript -->
+        <script src="<c:url value="/resources/js/developer/developer.js" />"></script>
+        
+        <!-- Contact JavaScript -->
+        <script src="<c:url value="/resources/js/contact/contact.js" />"></script>
         
         <!-- Login JavaScript -->
         <script src="<c:url value="/resources/js/login/recover-password.js" />"></script>
