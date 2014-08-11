@@ -50,10 +50,7 @@ public class User implements Serializable {
    @Email
    @Column(name="EMAIL")
    private String email;
-   
-   @NotNull
-   @NotEmpty
-   @Pattern(regexp = "[0-9]*", message = "age must contain only numbers")
+
    @Column(name="AGE")
    @XmlAttribute
    private int age;

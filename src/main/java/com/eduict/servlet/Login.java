@@ -1,4 +1,4 @@
-package com.eduict.servlet.async;
+package com.eduict.servlet;
 import javax.servlet.http.*;
 import java.io.PrintWriter;
 import java.io.IOException;
@@ -7,6 +7,8 @@ import java.util.concurrent.FutureTask;
 import java.util.concurrent.Callable;
 import java.util.logging.Logger;
 import java.util.concurrent.TimeUnit;
+
+import com.eduict.data.UserListProducer;
 import com.eduict.servlet.async.LoginTask;
 import javax.inject.Inject;
 import com.eduict.controller.UserRegistration;
@@ -31,7 +33,10 @@ public class Login extends HttpServlet {
     
     @Inject
     UserRegistration registrationService;
-    
+
+    @Inject
+    UserListProducer userListService;
+
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
 
@@ -70,7 +75,7 @@ public class Login extends HttpServlet {
             e.printStackTrace();
         } finally {
             request.setAttribute("errorMessage", errorMessage.toString());
-            RequestDispatcher resultView = request.getRequestDispatcher("rest/users");
+            RequestDispatcher resultView = request.getRequestDispatcher("users.jsp");
             resultView.forward(request, response);
         }
     }
