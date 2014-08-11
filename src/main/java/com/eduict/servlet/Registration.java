@@ -40,7 +40,8 @@ public class Registration extends HttpServlet {
         response.setContentType("text/html");
     
         StringBuilder errorMessage = new StringBuilder();
-
+//http://eduict-afmp.rhcloud.com/register?register-firstName=Arthur&register-lastName=Portas
+//&register-email=arthurportas%40gmail.com&register-password=123456&register-age=34&gender-radios=male
         try {
 
             User user;
@@ -52,7 +53,7 @@ public class Registration extends HttpServlet {
             user.setFirstName("Arthur");
             user.setLastName("Portas");
             user.setEmail("arthurportas@gmail.com");
-            user.setAge(34);
+            user.setAge("34");
             user.setGender("masculino");
             user.setAcademicDegree("licenciatura");
 

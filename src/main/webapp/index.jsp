@@ -29,7 +29,10 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-    
+        
+        <!-- Bootstrap Select CSS -->
+        <link href="<c:url value="/resources/css/bootstrap-select.min.css" />" rel="stylesheet">
+        
     </head>
     
     <body>
@@ -178,32 +181,85 @@
                         
                         <div class="form-group">
                             <label for="register-age" class="col-sm-2 control-label">Idade</label>
-                            <input type="text" class="form-control" name="register-age" id="register-age" 
-                                placeholder="Idade" required />
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="radio">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="age-radios" id="age-radios-until25" value="until25" checked>
+                                        Até 25 anos
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="age-radios" id="age-radios-26until35" value="26until35">
+                                        26 a 35 anos
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="age-radios" id="age-radios-36until45" value="36until45">
+                                        36 a 45 anos
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="age-radios" id="age-radios-46until55" value="46until55">
+                                        46 a 55 anos
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="age-radios" id="age-radios-56ormore" value="56ormore">
+                                        56 ou mais anos
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="register-gender" class="col-sm-2 control-label">Sexo</label>
-                            <div class="radio">
-                                <label class="radio-inline">
-                                    <input type="radio" name="gender-radios" id="gender-radios-male" value="male" checked>
-                                    Masculino
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label class="radio-inline">
-                                    <input type="radio" name="gender-radios" id="gender-radios-female" value="female">
-                                    Feminino
-                                </label>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="radio">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="gender-radios" id="gender-radios-male" value="male" checked>
+                                        Masculino
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="gender-radios" id="gender-radios-female" value="female">
+                                        Feminino
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         
-                        <select class="academic-degree" class="form-control">
-                            <option>Licenciatura</option>
-                            <option>Mestrado</option>
-                            <option>Doutoramento</option>
-                        </select>
-
+                        <div class="form-group">
+                            <label for="academic-degree" class="col-sm-2 control-label">Grau Académico</label>
+                            <select class="academic-degree" class="form-control">
+                                <option value="graduate">Licenciatura</option>
+                                <option value="master">Mestrado</option>
+                                <option value="post-graduate">Pós-Graduação</option>
+                                <option value="doctoral">Doutoramento</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="academic-degree" class="col-sm-2 control-label">Grupo de Recrutamento</label>
+                            <select class="selectpicker recruitment-group">
+                                <optgroup label="Pré-Escolar e 1ºCiclo do Ensino Básico" >
+                                  <option>100 - Educação Pré-Escolar</option>
+                                  <option>110 - 1º Ciclo do Ensino Básico</option>
+                                </optgroup>
+                                <optgroup label="2º Ciclo do Ensino Básico">
+                                  <option>200 - Português e Estudos Sociais-História</option>
+                                  <option>210 - Português e Francês</option>
+                                  <option>220 - Português e Inglês</option>
+                                  <option>230 - Matemática e Ciências da Natureza</option>
+                                  <option>250 - Educação Musical</option>
+                                  <option>220 - Português e Inglês</option>
+                                </optgroup>
+                            </select>
+                        </div>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Registar</button>
                       </form>
                     </div> <!-- /container -->
@@ -272,6 +328,12 @@
         <!-- Bootstrap Core JavaScript -->
         <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
     
+        <!-- Bootstrap Select JavaScript -->
+        <script src="<c:url value="/resources/js/bootstrap-select.min" />"></script>
+        
+        <script>
+            $('.selectpicker').selectpicker();
+        </script>    
     </body>
 
 </html>
