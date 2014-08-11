@@ -161,3 +161,5 @@ INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (58, 'Desempen
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (59, 'Desempenhar papel de liderança no apoio à inovação na sua escola e ao aprendizagem contínuo entre os seus colegas', 18);
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (60, 'Avaliar continuamente e reflectir sobre a prática profissional para envolvimento na inovação e melhoria contínuas', 18);
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (61, 'Usar os recursos de TIC para participar nas comunidades profissionais e partilhar e discutir as melhores práticas de ensino', 18);
+
+INSERT INTO USER (USER_ID, FIRSTNAME, LASTNAME, EMAIL, AGE, GENDER, ACADEMIC_DEGREE) VALUES (1, 'Susana', 'Gonçalves', 'susana.goncalves@portugalmail.pt', 38, 'feminino', 'licenciatura');
