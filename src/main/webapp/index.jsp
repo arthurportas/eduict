@@ -109,7 +109,7 @@
         
         <div class="content-section-a contact hidden">
     
-            <div class="container">
+            <div class="container bordered">
                 <div class="row">
                     <div class="col-md-12">
                         <small><i></i>Add alerts if form ok... success, else error.</i></small>
@@ -151,7 +151,7 @@
         
         <div class="content-section-a login hidden">
     
-            <div class="container">
+            <div class="container bordered">
             	<div class="row">
                 	<div class="container" id="formContainer">
                       <form class="form-signin" id="login-form" action="/login" method="POST" role="form">
@@ -177,7 +177,7 @@
         <!-- /.content-section-a -->    
         
         <div class="content-section-a recover-password hidden">
-            <div class="container">
+            <div class="container bordered">
             	<div class="row">
                 	<div class="container" id="formRecoverContainer">
                       <form class="form-signin" id="recover-form" method="POST" action="password" role="form">
@@ -198,7 +198,7 @@
         <!-- /.content-section-a --> 
         
         <div class="content-section-a register hidden">
-            <div class="container">
+            <div class="container bordered">
             	<div class="row">
                 	<div class="container" id="formRegisterContainer">
                       <form class="form-signin" id="register" role="form" action="/register" method="GET">

@@ -169,4 +169,6 @@ div.current-year-teching-level {
 }
 .bordered {
     border: 1px grey dotted;
+    border-radius: 4px;
+    padding-bottom: 10px;
 }
