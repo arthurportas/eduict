@@ -52,7 +52,10 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a href="#">Login</a>
-                        </li>   
+                        </li>  
+                        <li>
+                            <a href="#">Registar</a>
+                        </li> 
                         <li>
                             <a href="#">Developer</a>
                         </li>
