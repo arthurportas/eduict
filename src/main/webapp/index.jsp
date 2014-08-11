@@ -106,7 +106,7 @@
     
         <!-- Page Content -->
 
-        <div class="content-section-a login">
+        <div class="content-section-a login hidden">
     
             <div class="container">
             	<div class="row">
@@ -129,7 +129,7 @@
         </div>
         <!-- /.content-section-a -->    
         
-        <div class="content-section-a recover-password">
+        <div class="content-section-a recover-password hidden">
             <div class="container">
             	<div class="row">
                 	<div class="container" id="formRecoverContainer">
