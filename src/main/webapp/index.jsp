@@ -181,55 +181,51 @@
                         
                         <div class="form-group">
                             <label for="register-age" class="col-sm-2 control-label">Idade</label>
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <div class="radio">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="age-radios" id="age-radios-until25" value="until25" checked>
-                                        Até 25 anos
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="age-radios" id="age-radios-26until35" value="26until35">
-                                        26 a 35 anos
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="age-radios" id="age-radios-36until45" value="36until45">
-                                        36 a 45 anos
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="age-radios" id="age-radios-46until55" value="46until55">
-                                        46 a 55 anos
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="age-radios" id="age-radios-56ormore" value="56ormore">
-                                        56 ou mais anos
-                                    </label>
-                                </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="age-radios" id="age-radios-until25" value="until25" checked>
+                                    Até 25 anos
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="age-radios" id="age-radios-26until35" value="26until35">
+                                    26 a 35 anos
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="age-radios" id="age-radios-36until45" value="36until45">
+                                    36 a 45 anos
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="age-radios" id="age-radios-46until55" value="46until55">
+                                    46 a 55 anos
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="age-radios" id="age-radios-56ormore" value="56ormore">
+                                    56 ou mais anos
+                                </label>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="register-gender" class="col-sm-2 control-label">Sexo</label>
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <div class="radio">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="gender-radios" id="gender-radios-male" value="male" checked>
-                                        Masculino
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="gender-radios" id="gender-radios-female" value="female">
-                                        Feminino
-                                    </label>
-                                </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender-radios" id="gender-radios-male" value="male" checked>
+                                    Masculino
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender-radios" id="gender-radios-female" value="female">
+                                    Feminino
+                                </label>
                             </div>
                         </div>
                         
