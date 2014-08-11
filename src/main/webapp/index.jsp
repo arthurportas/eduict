@@ -329,10 +329,16 @@
         <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
     
         <!-- Bootstrap Select JavaScript -->
-        <script src="<c:url value="/resources/js/bootstrap-select.min" />"></script>
+        <script src="<c:url value="/resources/js/bootstrap-select.min.js" />"></script>
+        
+        <!-- Login JavaScript -->
+        <script src="<c:url value="/resources/js/login/login.js" />"></script>
+        
+        <!-- Login JavaScript -->
+        <script src="<c:url value="/resources/js/login/recover-password.js" />"></script>
         
         <script>
-           // $('.selectpicker').selectpicker();
+            $('.selectpicker').selectpicker();
         </script>    
     </body>
 
