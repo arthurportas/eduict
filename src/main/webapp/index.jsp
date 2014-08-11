@@ -109,13 +109,15 @@
             	<div class="row">
                 	<div class="container" id="formContainer">
                       <form class="form-signin" id="login" role="form">
-                        <h3 class="form-signin-heading">Please sign in</h3>
+                        <h3 class="form-signin-heading">Login</h3>
                         <a href="#" id="flipToRecover" class="flipLink">
                           <div id="triangle-topright"></div>
                         </a>
-                        <input type="email" class="form-control" name="loginEmail" id="loginEmail" placeholder="Email address" required autofocus>
-                        <input type="password" class="form-control" name="loginPass" id="loginPass" placeholder="Password" required>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                        <input type="email" class="form-control" name="login-email" id="login-email" 
+                            placeholder="Email" required autofocus>
+                        <input type="password" class="form-control" name="login-password" id="login-password" 
+                        placeholder="Password" required>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
                       </form>
                     </div> <!-- /container -->
             	</div>
@@ -127,14 +129,15 @@
         <div class="content-section-a recover-password">
             <div class="container">
             	<div class="row">
-                	<div class="container" id="formContainer">
+                	<div class="container" id="formRecoverContainer">
                       <form class="form-signin" id="recover" role="form">
-                        <h3 class="form-signin-heading">Enter email address</h3>
+                        <h3 class="form-signin-heading">Email</h3>
                         <a href="#" id="flipToLogin" class="flipLink">
                           <div id="triangle-topleft"></div>
                         </a>
-                        <input type="email" class="form-control" name="loginEmail" id="loginEmail" placeholder="Email address" required autofocus>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Recover password</button>
+                        <input type="email" class="form-control" name="recover-email" id="recover-email" 
+                        placeholder="Email" required autofocus>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Recuperar password</button>
                       </form>
             
                     </div> <!-- /container -->
@@ -147,14 +150,20 @@
         <div class="content-section-a register">
             <div class="container">
             	<div class="row">
-                	<div class="container" id="formContainer">
-                      <form class="form-signin" id="login" role="form">
-                        <h3 class="form-signin-heading">Please sign in</h3>
+                	<div class="container" id="formRegisterContainer">
+                      <form class="form-signin" id="register" role="form">
+                        <h3 class="form-signin-heading">Novo utilizador</h3>
                         <a href="#" id="flipToRecover" class="flipLink">
                           <div id="triangle-topright"></div>
                         </a>
-                        <input type="email" class="form-control" name="loginEmail" id="loginEmail" placeholder="Email address" required autofocus>
-                        <input type="password" class="form-control" name="loginPass" id="loginPass" placeholder="Password" required>
+                        <input type="text" class="form-control" name="register-firstName" id="register-firstName" 
+                            placeholder="Firstname" required autofocus />
+                        <input type="text" class="form-control" name="register-lastName" id="register-lastName" 
+                        placeholder="Lastname" required />
+                        <input type="email" class="form-control" name="register-email" id="register-email" 
+                            placeholder="Email address" required />
+                        <input type="password" class="form-control" name="register-password" id="register-password" 
+                        placeholder="Password" required>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Registar</button>
                       </form>
                     </div> <!-- /container -->
