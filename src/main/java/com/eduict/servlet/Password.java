@@ -65,7 +65,6 @@ public class Password extends HttpServlet {
                                     return new PasswordAuthentication("arthurportas","xKoninha");
                                 }
                             });
-    
                     try {
 
                         Message message = new MimeMessage(session);
@@ -80,9 +79,11 @@ public class Password extends HttpServlet {
                     } catch (MessagingException e) {
                         throw new RuntimeException(e);
                     }
+                } else {
+                    out.println("<div class='alert alert-danger'><span class='glyphicon glyphicon-alert'></span><strong> Utilizador não encontrado!</strong></div>");
                 }
             } else {
-                out.println("<div class='alert alert-danger'><span class='glyphicon glyphicon-alert'></span><strong> Utilizador/Password não encontrado!</strong></div>");
+                out.println("<div class='alert alert-danger'><span class='glyphicon glyphicon-alert'></span><strong> Utilizador não encontrado!</strong></div>");
             }
 
         } catch (Exception e) {
