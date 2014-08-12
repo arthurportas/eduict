@@ -10,11 +10,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Logger;
 
-@WebServlet(urlPatterns = "/register")
-public class Registration extends HttpServlet {
+@WebServlet(urlPatterns = "/recover-password")
+public class Password extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,39 +31,37 @@ public class Registration extends HttpServlet {
 
         response.setContentType("text/html");
 
+        PrintWriter out = response.getWriter();
+
         StringBuilder errorMessage = new StringBuilder();
-//http://eduict-afmp.rhcloud.com/register?register-firstName=Arthur&register-lastName=Portas
-//&register-email=arthurportas%40gmail.com&register-password=123456&register-age=34&gender-radios=male
+
         try {
+            String email = request.getParameter("recover-email");
+            User user = registrationService.changePasswordRequest(email);
+            if (user != null) {
+                out.println("encontrado " + user.getEmail());
+                HttpSession session = request.getSession();
+                session.setAttribute("user", user);
+                //setting session to expiry in 30 mins
+                session.setMaxInactiveInterval(30 * 60);
 
-            User user;
+                //send email with token
 
-            while ((user = registrationService.getNewUser()) == null) {
-                registrationService.initNewUser();
+            } else {
+                out.println("não encontrado ");
             }
 
-            user.setFirstName("Arthur");
-            user.setLastName("Portas");
-            user.setEmail("arthurportas@gmail.com");
-            user.setAge("34");
-            user.setGender("masculino");
-            user.setAcademicDegree("licenciatura");
-
-            registrationService.register();
-
         } catch (Exception e) {
-
             Throwable t = e;
             while ((t.getCause()) != null) {
                 t = t.getCause();
             }
-
             errorMessage.append("Error========>" + t.getMessage());
             request.setAttribute("infoMessage", "");
             e.printStackTrace();
         } finally {
             request.setAttribute("errorMessage", errorMessage.toString());
-            RequestDispatcher resultView = request.getRequestDispatcher("users.jsp");
+            RequestDispatcher resultView = request.getRequestDispatcher("index.jsp");
             resultView.forward(request, response);
         }
     }

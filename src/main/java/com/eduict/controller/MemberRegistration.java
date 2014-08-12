@@ -1,19 +1,17 @@
 package com.eduict.controller;
 
-import java.util.logging.Logger;
+import com.eduict.model.Member;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
 import javax.enterprise.event.Event;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
-import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
-
-import com.eduict.model.Member;
+import java.util.logging.Logger;
 
 // The @Stateful annotation eliminates the need for manual transaction demarcation
 @Stateful
@@ -24,35 +22,35 @@ import com.eduict.model.Member;
 @Model
 public class MemberRegistration {
 
-   @Inject
-   private Logger log;
+    @Inject
+    private Logger log;
 
-   @Inject
-   private FacesContext facesContext;
+    @Inject
+    private FacesContext facesContext;
 
-   @Inject
-   private EntityManager em;
+    @Inject
+    private EntityManager em;
 
-   @Inject
-   private Event<Member> memberEventSrc;
+    @Inject
+    private Event<Member> memberEventSrc;
 
-   private Member newMember;
+    private Member newMember;
 
-   @Produces
-   @Named
-   public Member getNewMember() {
-      return newMember;
-   }
+    @Produces
+    @Named
+    public Member getNewMember() {
+        return newMember;
+    }
 
-   public void register() throws Exception {
-      log.info("Registering " + newMember.getName());
-      em.persist(newMember);
-      memberEventSrc.fire(newMember);
-      initNewMember();
-   }
+    public void register() throws Exception {
+        log.info("Registering " + newMember.getName());
+        em.persist(newMember);
+        memberEventSrc.fire(newMember);
+        initNewMember();
+    }
 
-   @PostConstruct
-   public void initNewMember() {
-      newMember = new Member();
-   }
+    @PostConstruct
+    public void initNewMember() {
+        newMember = new Member();
+    }
 }

@@ -1,6 +1,6 @@
 package com.eduict.controller;
 
-import java.util.logging.Logger;
+import com.eduict.model.Question;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
@@ -10,8 +10,7 @@ import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
-
-import com.eduict.model.Question;
+import java.util.logging.Logger;
 
 // The @Stateful annotation eliminates the need for manual transaction demarcation
 @Stateful
@@ -22,32 +21,32 @@ import com.eduict.model.Question;
 @Model
 public class QuestionRegistration {
 
-   @Inject
-   private Logger log;
+    @Inject
+    private Logger log;
 
-   @Inject
-   private EntityManager em;
+    @Inject
+    private EntityManager em;
 
-   @Inject
-   private Event<Question> questionEventSrc;
+    @Inject
+    private Event<Question> questionEventSrc;
 
-   private Question newQuestion;
+    private Question newQuestion;
 
-   @Produces
-   @Named
-   public Question getNewQuestion() {
-      return newQuestion;
-   }
+    @Produces
+    @Named
+    public Question getNewQuestion() {
+        return newQuestion;
+    }
 
-   public void register() throws Exception {
-      log.info("Registering " + newQuestion.getQuestion());
-      em.persist(newQuestion);
-      questionEventSrc.fire(newQuestion);
-      initNewQuestion();
-   }
+    public void register() throws Exception {
+        log.info("Registering " + newQuestion.getQuestion());
+        em.persist(newQuestion);
+        questionEventSrc.fire(newQuestion);
+        initNewQuestion();
+    }
 
-   @PostConstruct
-   public void initNewQuestion() {
-      newQuestion = new Question();
-   }
+    @PostConstruct
+    public void initNewQuestion() {
+        newQuestion = new Question();
+    }
 }

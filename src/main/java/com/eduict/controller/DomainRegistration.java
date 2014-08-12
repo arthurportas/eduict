@@ -1,49 +1,47 @@
 package com.eduict.controller;
 
-import java.util.logging.Logger;
+import com.eduict.model.Domain;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
 import javax.enterprise.event.Event;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
-import javax.faces.application.FacesMessage;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
-
-import com.eduict.model.Domain;
+import java.util.logging.Logger;
 
 @Stateful
 @Model
 public class DomainRegistration {
 
-   @Inject
-   private Logger log;
+    @Inject
+    private Logger log;
 
-   @Inject
-   private EntityManager em;
+    @Inject
+    private EntityManager em;
 
-   @Inject
-   private Event<Domain> domainEventSrc;
+    @Inject
+    private Event<Domain> domainEventSrc;
 
-   private Domain newDomain;
+    private Domain newDomain;
 
-   @Produces
-   @Named
-   public Domain getNewDomain() {
-      return newDomain;
-   }
+    @Produces
+    @Named
+    public Domain getNewDomain() {
+        return newDomain;
+    }
 
-   public void register() throws Exception {
-      log.info("Registering " + newDomain.getDescription());
-      em.persist(newDomain);
-      domainEventSrc.fire(newDomain);
-      initNewDomain();
-   }
+    public void register() throws Exception {
+        log.info("Registering " + newDomain.getDescription());
+        em.persist(newDomain);
+        domainEventSrc.fire(newDomain);
+        initNewDomain();
+    }
 
-   @PostConstruct
-   public void initNewDomain() {
-      newDomain = new Domain();
-   }
+    @PostConstruct
+    public void initNewDomain() {
+        newDomain = new Domain();
+    }
 }

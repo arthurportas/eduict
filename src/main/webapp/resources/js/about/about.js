@@ -1,13 +1,13 @@
-$(document).ready(function() {    
-    $('span.about-project').bind('click', function(e) {
+$(document).ready(function () {
+    $('span.about-project').bind('click', function (e) {
         e.preventDefault();
         var aboutPanel = $('div.about-project ');
         if (aboutPanel) {
             if (aboutPanel.hasClass("hidden")) {
-                aboutPanel.removeClass("hidden");    
+                aboutPanel.removeClass("hidden");
             } else {
-                aboutPanel.addClass("hidden"); 
+                aboutPanel.addClass("hidden");
             }
-        } 
+        }
     });
 });
