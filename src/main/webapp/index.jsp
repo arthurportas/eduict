@@ -139,10 +139,7 @@
         <div class="row">
             <div class="col-md-12">
                 <small><i></i>Add alerts if form ok... success, else error.</i></small>
-                <div class="alert alert-success"><strong><span class="glyphicon glyphicon-send"></span> Success! Message
-                    sent. (If form ok!)</strong></div>
-                <div class="alert alert-danger"><span class="glyphicon glyphicon-alert"></span><strong> Error! Please
-                    check the inputs. (If form error!)</strong></div>
+                
             </div>
             <form role="form" action="/contact" method="POST">
                 <div class="col-lg-6">
@@ -217,7 +214,7 @@
     <div class="container bordered">
         <div class="row">
             <div class="container" id="formRecoverContainer">
-                <form class="form-signin" id="recover-form" method="POST" action="recover-password" role="form">
+                <form class="form-signin" id="recover-form" role="form">
                     <h3 class="form-signin-heading">Recuperar password</h3>
 
                     <div class="form-group">
@@ -225,7 +222,8 @@
                         <input type="email" class="form-control" name="recover-email" id="recover-email"
                                placeholder="Email" required autofocus>
                     </div>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Recuperar password</button>
+                    <button class="btn btn-lg btn-primary btn-block recover-password">Recuperar password</button>
+                    <div class="recover-password-alert"></div>
                 </form>
 
             </div>
