@@ -165,8 +165,8 @@ p.copyright {
     margin: 15px 0 0;
 }
 
-div.current-year-teching-level {
-    min-height: 180px;
+label.current-year-teching-level {
+    min-height: 185px;
 }
 
 .bordered {

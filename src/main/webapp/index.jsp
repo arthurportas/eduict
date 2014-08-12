@@ -375,7 +375,7 @@
                     </div>
 
                     <div class="form-group current-year-teching-level">
-                        <label for="register-current-year-teching-level" class="col-sm-2 control-label">
+                        <label for="register-current-year-teching-level" class="col-sm-2 control-label current-year-teching-level">
                             No presente ano letivo leciona em que nível de ensino?
                         </label>
                         <br/>
@@ -434,14 +434,28 @@
 
                     <div class="form-group">
                         <label for="service-time" class="col-sm-2 control-label">Tempo de Serviço</label>
-                        <select class=" selectpicker service-time">
+                        <select class="selectpicker service-time">
                             <option value="Menos de 5 anos">Menos de 5 anos</option>
                             <option value="6 a 15 anos">6 a 15 anos</option>
                             <option value="16 a 25 anos">16 a 25 anos</option>
                             <option value="mais de 25 anos">mais de 25 anos</option>
                         </select>
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="work-region" class="col-sm-2 control-label">Concelho</label>
+                        <select class="selectpicker work-region">
+                            <option value="Porto">Porto</option>
+                        </select>
+                    </div>
 
+                    <div class="form-group">
+                        <label for="work-school" class="col-sm-2 control-label">Escola</label>
+                        <select class="selectpicker work-school">
+                            <option value="XXX">YYY</option>
+                        </select>
+                    </div>
+                    
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Registar</button>
                 </form>
             </div>
