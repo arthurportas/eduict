@@ -44,10 +44,12 @@ public class Password extends HttpServlet {
 
         try {
             String email = request.getParameter("recover-email");
-            User user = registrationService.changePasswordRequest(email);
+            
+            if(email != null) {
+                User user = registrationService.changePasswordRequest(email);
             if (user != null) {
-                
-                out.println("Foi enviado um email para  " + user.getEmail() + " com instruções para alterar a sua password.");
+                out.println("<div class='alert alert-success'><strong><span class='glyphicon glyphicon-send'></span>Foi enviado um email para  " + user.getEmail() + " com instruções para alterar a sua password.</strong></div>");
+                    
                 //send email with token
                 Properties props = new Properties();
                 props.put("mail.smtp.host", "smtp.gmail.com");
@@ -78,9 +80,9 @@ public class Password extends HttpServlet {
                 } catch (MessagingException e) {
                     throw new RuntimeException(e);
                 }
-
+            }
             } else {
-                out.println("Utilizador/Password não encontrado!");
+                out.println("<div class='alert alert-danger'><span class='glyphicon glyphicon-alert'></span><strong> Utilizador/Password não encontrado!</strong></div>");
             }
 
         } catch (Exception e) {
