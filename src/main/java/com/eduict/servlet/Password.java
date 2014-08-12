@@ -93,10 +93,10 @@ public class Password extends HttpServlet {
             errorMessage.append("Error========>" + t.getMessage());
             request.setAttribute("infoMessage", "");
             e.printStackTrace();
-        } finally {
+        } /*finally {
             request.setAttribute("errorMessage", errorMessage.toString());
             RequestDispatcher resultView = request.getRequestDispatcher("index.jsp");
             resultView.forward(request, response);
-        }
+        }*/
     }
 }
