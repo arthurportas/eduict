@@ -19,7 +19,7 @@ $(document).ready(function () {
         // and remember the jqxhr object for this request
         var recoverPasswordAlertElement = $('div.recover-password-alert');
         var email = $('.recover-email').val();
-        var jqxhr = $.post( "/recover-password", { "recover-email": email }, function() {
+        var jqxhr = $.get( "/recover-password", { "recover-email": email }, function() {
             alert( "success" );
         })
           .done(function(data, textStatus, jqXHR) {

@@ -33,7 +33,7 @@ public class Password extends HttpServlet {
     @Inject
     UserRegistration registrationService;
 
-    protected void doPost(HttpServletRequest request,
+    protected void doGet(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
@@ -47,40 +47,40 @@ public class Password extends HttpServlet {
             
             if(email != null) {
                 User user = registrationService.changePasswordRequest(email);
-            if (user != null) {
-                out.println("<div class='alert alert-success'><strong><span class='glyphicon glyphicon-send'></span>Foi enviado um email para  " + user.getEmail() + " com instruções para alterar a sua password.</strong></div>");
-                    
-                //send email with token
-                Properties props = new Properties();
-                props.put("mail.smtp.host", "smtp.gmail.com");
-                props.put("mail.smtp.socketFactory.port", "465");
-                props.put("mail.smtp.socketFactory.class",
-                        "javax.net.ssl.SSLSocketFactory");
-                props.put("mail.smtp.auth", "true");
-                props.put("mail.smtp.port", "465");
+                if (user != null) {
+                    out.println("<div class='alert alert-success'><strong><span class='glyphicon glyphicon-send'></span>Foi enviado um email para  " + user.getEmail() + " com instruções para alterar a sua password.</strong></div>");
+                        
+                    //send email with token
+                    Properties props = new Properties();
+                    props.put("mail.smtp.host", "smtp.gmail.com");
+                    props.put("mail.smtp.socketFactory.port", "465");
+                    props.put("mail.smtp.socketFactory.class",
+                            "javax.net.ssl.SSLSocketFactory");
+                    props.put("mail.smtp.auth", "true");
+                    props.put("mail.smtp.port", "465");
+    
+                    Session session = Session.getDefaultInstance(props,
+                            new javax.mail.Authenticator() {
+                                protected PasswordAuthentication getPasswordAuthentication() {
+                                    return new PasswordAuthentication("arthurportas","xKoninha");
+                                }
+                            });
+    
+                    try {
 
-                Session session = Session.getDefaultInstance(props,
-                        new javax.mail.Authenticator() {
-                            protected PasswordAuthentication getPasswordAuthentication() {
-                                return new PasswordAuthentication("arthurportas","xKoninha");
-                            }
-                        });
+                        Message message = new MimeMessage(session);
+                        message.setFrom(new InternetAddress("arthurportas@gmail.com"));
+                        message.setRecipients(Message.RecipientType.TO,
+                                InternetAddress.parse("arthurportas@gmail.com"));
+                        message.setSubject("Mudar password");
+                        message.setText("teste");
+    
+                        Transport.send(message);
 
-                try {
-
-                    Message message = new MimeMessage(session);
-                    message.setFrom(new InternetAddress("arthurportas@gmail.com"));
-                    message.setRecipients(Message.RecipientType.TO,
-                            InternetAddress.parse("arthurportas@gmail.com"));
-                    message.setSubject("Mudar password");
-                    message.setText("teste");
-
-                    Transport.send(message);
-
-                } catch (MessagingException e) {
-                    throw new RuntimeException(e);
+                    } catch (MessagingException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
-            }
             } else {
                 out.println("<div class='alert alert-danger'><span class='glyphicon glyphicon-alert'></span><strong> Utilizador/Password não encontrado!</strong></div>");
             }
