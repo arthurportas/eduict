@@ -10,10 +10,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Logger;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 @WebServlet(urlPatterns = "/recover-password")
 public class Password extends HttpServlet {
@@ -40,15 +47,39 @@ public class Password extends HttpServlet {
             User user = registrationService.changePasswordRequest(email);
             if (user != null) {
                 out.println("encontrado " + user.getEmail());
-                HttpSession session = request.getSession();
-                session.setAttribute("user", user);
-                //setting session to expiry in 30 mins
-                session.setMaxInactiveInterval(30 * 60);
-
                 //send email with token
+                Properties props = new Properties();
+                props.put("mail.smtp.host", "smtp.gmail.com");
+                props.put("mail.smtp.socketFactory.port", "465");
+                props.put("mail.smtp.socketFactory.class",
+                        "javax.net.ssl.SSLSocketFactory");
+                props.put("mail.smtp.auth", "true");
+                props.put("mail.smtp.port", "465");
+
+                Session session = Session.getDefaultInstance(props,
+                        new javax.mail.Authenticator() {
+                            protected PasswordAuthentication getPasswordAuthentication() {
+                                return new PasswordAuthentication("arthurportas","xKoninha");
+                            }
+                        });
+
+                try {
+
+                    Message message = new MimeMessage(session);
+                    message.setFrom(new InternetAddress("arthurportas@gmail.com"));
+                    message.setRecipients(Message.RecipientType.TO,
+                            InternetAddress.parse("arthurportas@gmail.com"));
+                    message.setSubject("Mudar password");
+                    message.setText("teste");
+
+                    Transport.send(message);
+
+                } catch (MessagingException e) {
+                    throw new RuntimeException(e);
+                }
 
             } else {
-                out.println("não encontrado ");
+                out.println("não encontrado");
             }
 
         } catch (Exception e) {

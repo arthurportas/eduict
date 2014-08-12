@@ -77,7 +77,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="user-logout" href="/eduict/logout" title="Logout">Logout</a>
+                    <a class="user-logout" href="/logout" title="Logout">Logout</a>
                 </li>
                 <%}%>
 
@@ -189,7 +189,7 @@
     <div class="container bordered">
         <div class="row">
             <div class="container" id="formContainer">
-                <form class="form-signin" id="login-form" action="/eduict/login" method="POST" role="form">
+                <form class="form-signin" id="login-form" action="/login" method="POST" role="form">
                     <h3 class="form-signin-heading">Login</h3>
 
                     <div class="form-group">
