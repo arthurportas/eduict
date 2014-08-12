@@ -19,20 +19,44 @@ $(document).ready(function () {
         // and remember the jqxhr object for this request
         var recoverPasswordAlertElement = $('div.recover-password-alert');
         var email = $('.recover-email').val();
-        var jqxhr = $.get( "/recover-password", { "recover-email": email }, function() {
-            alert( "success" );
-        })
-          .done(function(data, textStatus, jqXHR) {
-              if (recoverPasswordAlertElement) {
-                recoverPasswordAlertElement.html(data);    
-              }
-            //alert(data);
-          })
-          .fail(function() {
-            //alert("error");
-          })
-          .always(function() {
-            //alert("finished");
+        $.ajax({
+            type: "GET",
+            url: "/recover-password?recover-email=" + email,
+            contentType: 'text/html',
+            beforeSend: function() {
+            },
+            success: function(jqXHR, textStatus, errorThrown) {
+                if (recoverPasswordAlertElement) {
+                    recoverPasswordAlertElement.html(jqXHR);    
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status === 0) {
+                    alert('Not connect.\n Verify Network.');
+                    return;
+                } else if (jqXHR.status == 404) {
+                    alert('Requested page not found. [404]');
+                    return;
+                } else if (jqXHR.status == 500) {
+                    alert('Internal Server Error [500].');
+                    return;
+                } else if (errorThrown === 'parsererror') {
+                    alert('Requested JSON parse failed.');
+                    return;
+                } else if (errorThrown === 'timeout') {
+                    alert('Time out error.');
+                    return;
+                } else if (errorThrown === 'abort') {
+                    alert('Ajax request aborted.');
+                    return;
+                } else {
+                    if (recoverPasswordAlertElement) {
+                        recoverPasswordAlertElement.html(jqXHR);    
+                    }
+                }   
+            },
+            complete: function(jqXHR, textStatus, errorThrown) {
+            }
         });
     });
 });

@@ -219,7 +219,7 @@
 
                     <div class="form-group">
                         <label for="recover-email" class="sr-only col-sm-2 control-label">Email</label>
-                        <input type="email" class="form-control" name="recover-email" id="recover-email"
+                        <input type="email" class="form-control recover-email" name="recover-email" id="recover-email"
                                placeholder="Email" required autofocus>
                     </div>
                     <button class="btn btn-lg btn-primary btn-block recover-password">Recuperar password</button>
