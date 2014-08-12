@@ -217,7 +217,7 @@
     <div class="container bordered">
         <div class="row">
             <div class="container" id="formRecoverContainer">
-                <form class="form-signin" id="recover-form" method="POST" action="password" role="form">
+                <form class="form-signin" id="recover-form" method="POST" action="recover-password" role="form">
                     <h3 class="form-signin-heading">Recuperar password</h3>
 
                     <div class="form-group">
