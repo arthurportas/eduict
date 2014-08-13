@@ -24,8 +24,8 @@ import javax.mail.internet.MimeMessage;
 import java.util.UUID;
 
 
-@WebServlet(urlPatterns = "/recover-password")
-public class Password extends HttpServlet {
+@WebServlet(urlPatterns = "/new-password")
+public class NewPassword extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
@@ -45,7 +45,7 @@ public class Password extends HttpServlet {
         StringBuilder errorMessage = new StringBuilder();
 
         try {
-            String email = request.getParameter("recover-email");
+            String email = request.getParameter("email");//...need work
             
             if(email != null) {
                 User user = registrationService.changePasswordRequest(email);

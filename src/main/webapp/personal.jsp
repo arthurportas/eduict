@@ -62,9 +62,9 @@
                     if (session.getAttribute("user") == null) {
                         response.sendRedirect("index.jsp");
 
-                } else {
-                    user = (User) session.getAttribute("user");
-                    String email = user.getEmail();
+                    } else {
+                        user = (User) session.getAttribute("user");
+                        String email = user.getEmail();
                 %>
                 <li>
                     <a class="user-menu" href="" title="<%=email %>"><%=email %>
