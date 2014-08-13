@@ -22,8 +22,6 @@ public class UserListProducer {
 
     private List<User> users;
 
-    // @Named provides access the return value via the EL variable name "domains" in the UI (e.g.,
-    // Facelets or JSP view)
     @Produces
     @Named
     public List<User> getUsers() {
