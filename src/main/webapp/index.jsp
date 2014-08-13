@@ -73,7 +73,7 @@
                     String email = user.getEmail();
                 %>
                 <li>
-                    <a class="user-menu" href="" title="<%=email %>"><%=email %>
+                    <a class="user-menu" href="/personal?email=<%=email %>" title="<%=email %>"><%=email %>
                     </a>
                 </li>
                 <li>
