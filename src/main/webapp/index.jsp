@@ -136,8 +136,6 @@
                             <input type="email" class="form-control" name="register-email" id="register-email"
                                placeholder="Email" required value=""/>
                         </div>
-                    <%}%>
-                    
                     
                     <div class="form-group">
                         <label for="register-lastName" class="col-sm-2 control-label">Apelido</label>

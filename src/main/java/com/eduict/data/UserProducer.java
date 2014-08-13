@@ -32,7 +32,9 @@ public class UserProducer {
     }
 
     @PostConstruct
-    public void retrieveUserByEmail() {
-        //TODO: refactoruser = em.createQuery(criteria).getResultList();
+    public void retrieveUserByEmail(String email) {
+        user = em.createNamedQuery(User.FIND_BY_EMAIL)
+        .setParameter("email", email)
+        .getSingleResult();
     }
 }
