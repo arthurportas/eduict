@@ -117,7 +117,7 @@
         <div class="row">
             <div class="container" id="formPersonalDataContainer">
                 <form class="form-signin" id="personal-form" role="form">
-                    <h3 class="form-signin-heading">Perfil/h3>
+                    <h3 class="form-signin-heading">Perfil</h3>
                         <div class="form-group">
                             <label for="register-firstName" class="col-sm-2 control-label">Nome</label>
                             <input type="text" class="form-control" name="register-firstName" id="register-firstName"
