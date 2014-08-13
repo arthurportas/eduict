@@ -34,7 +34,7 @@ public class Personal extends HttpServlet {
         StringBuilder errorMessage = new StringBuilder();
 
         try {
-            String email = request.getParameter("login-email");
+            String email = request.getParameter("email");
             User user = registrationService.lookupUserByEmail(email);
             if (user != null) {
                 request.setAttribute("user", user);
