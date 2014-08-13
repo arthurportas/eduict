@@ -28,7 +28,7 @@ public class UserProducer {
     }
 
     public void onUserChanged(@Observes(notifyObserver = Reception.IF_EXISTS) final User user) {
-        retrieveUsersOrderedByEmail();
+        retrieveUserByEmail();
     }
 
     @PostConstruct
