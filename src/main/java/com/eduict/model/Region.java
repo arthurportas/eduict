@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 
 @Entity
-@Table(name = "REGION", uniqueConstraints = @UniqueConstraint(columnNames = "REGION_NAME"))
+@Table(name = "REGION", uniqueConstraints = @UniqueConstraint(columnNames = "NAME"))
 @NamedQueries({
     @NamedQuery(name = "Region.FIND_ALL", query = "SELECT r from Region r"),
     @NamedQuery(name = "Region.FIND_BY_NAME", query = "SELECT r from Region r WHERE r.regionName LIKE :regionName"),

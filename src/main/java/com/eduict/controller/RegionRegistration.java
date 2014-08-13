@@ -34,14 +34,14 @@ public class RegionRegistration {
     }
 
     public void register() throws Exception {
-        log.info("Registering " + newDomain.getDescription());
-        em.persist(newDomain);
-        domainEventSrc.fire(newDomain);
-        initNewDomain();
+        log.info("Registering " + newRegion.getRegionName());
+        em.persist(newRegion);
+        regionEventSrc.fire(newRegion);
+        initNewRegion();
     }
 
     @PostConstruct
-    public void initNewDomain() {
-        newDomain = new Domain();
+    public void initNewRegion() {
+        newRegion = new Region();
     }
 }
