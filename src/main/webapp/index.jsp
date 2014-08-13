@@ -125,24 +125,16 @@
             <div class="container" id="formPersonalDataContainer">
                 <form class="form-signin" id="personal-form" role="form">
                     <h3 class="form-signin-heading">Perfil/h3>
-                    <%
-                    //session exists
-                    User user = null;
-                    if (session.getAttribute("user") != null) {
-                        user = (User) session.getAttribute("user");
-                        String email = user.getEmail();
-                        String firstName = user.getFirstName();
-                        %>
                         <div class="form-group">
                             <label for="register-firstName" class="col-sm-2 control-label">Nome</label>
                             <input type="text" class="form-control" name="register-firstName" id="register-firstName"
-                               placeholder="Nome" required autofocus value="<%=firstName%>"/>
+                               placeholder="Nome" required autofocus value=""/>
                         </div>
                         
                         <div class="form-group">
                             <label for="register-email" class="col-sm-2 control-label">Email</label>
                             <input type="email" class="form-control" name="register-email" id="register-email"
-                               placeholder="Email" required value="<%=email%>"/>
+                               placeholder="Email" required value=""/>
                         </div>
                     <%}%>
                     
