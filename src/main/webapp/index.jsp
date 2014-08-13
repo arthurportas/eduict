@@ -137,44 +137,27 @@
 
     <div class="container bordered">
         <div class="row">
-            <div class="col-md-12">
-                <small><i></i>Add alerts if form ok... success, else error.</i></small>
-                
-            </div>
-            <form role="form" action="/contact" method="POST">
-                <div class="col-lg-6">
+            <div class="container" id="formContactContainer">
+                <form class="form-contact" id="contact-form" action="/contact" method="POST" role="form">
+                    <h3 class="form-signin-heading">Contato</h3>
 
                     <div class="form-group">
-                        <label for="InputName">Nome</label>
-
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Nome"
-                                   required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="InputEmail">Email</label>
-
-                        <div class="input-group">
-                            <input type="email" class="form-control" id="InputEmail" name="InputEmail"
-                                   placeholder="Email" required>
-                        </div>
+                        <label for="contact-email" class="sr-only col-sm-2 control-label">Email</label>
+                        <input type="email" class="form-control" name="contact-email" id="contact-email"
+                               placeholder="Email" required autofocus>
                     </div>
 
                     <div class="form-group">
                         <label for="InputMessage">Mensagem</label>
-
                         <div class="input-group">
                             <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5"
                                       required></textarea>
                         </div>
                     </div>
-
-                    <input type="submit" name="contact-submit" id="contact-submit" value="Enviar"
-                           class="btn btn-info pull-right">
-                </div>
-            </form>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+                </form>
+            </div>
+            <!-- /container -->
         </div>
     </div>
     <!-- /.container -->
@@ -266,7 +249,6 @@
 
                     <div class="form-group">
                         <label for="register-age" class="col-sm-2 control-label">Idade</label>
-                        <br/>
 
                         <div class="radio">
                             <label class="radio-inline">
@@ -302,7 +284,6 @@
 
                     <div class="form-group">
                         <label for="register-gender" class="col-sm-2 control-label">Sexo</label>
-                        <br/>
 
                         <div class="radio">
                             <label class="radio-inline">
