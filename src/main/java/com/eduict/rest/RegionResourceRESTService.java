@@ -19,7 +19,7 @@ public class RegionResourceRESTService {
 
     @GET
     @Produces("text/xml")
-    public List<Region> listAllDomains() {
+    public List<Region> listAllRegions() {
         @SuppressWarnings("unchecked")
         final List<Region> results = em.createQuery("select r from Region r order by r.regionName").getResultList();
         return results;

@@ -36,7 +36,7 @@ public class RegionListProducer {
     public void retrieveAllDomainsOrderedByName() {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Region> criteria = cb.createQuery(Region.class);
-        Root<Region> region = criteria.from(Domain.class);
+        Root<Region> region = criteria.from(Region.class);
         criteria.select(region).orderBy(cb.asc(region.get("regionName")));
         regions = em.createQuery(criteria).getResultList();
     }
