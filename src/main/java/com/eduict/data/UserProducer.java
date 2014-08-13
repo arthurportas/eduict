@@ -28,12 +28,12 @@ public class UserProducer {
     }
 
     public void onUserChanged(@Observes(notifyObserver = Reception.IF_EXISTS) final User user) {
-        retrieveUserByEmail();
+        retrieveUserByEmail(user.getEmail());
     }
 
     @PostConstruct
-    public void retrieveUserByEmail(String email) {
-        user = em.createNamedQuery(User.FIND_BY_EMAIL)
+    public User retrieveUserByEmail(String email) {
+        return user = (User)em.createNamedQuery(User.FIND_BY_EMAIL)
         .setParameter("email", email)
         .getSingleResult();
     }
