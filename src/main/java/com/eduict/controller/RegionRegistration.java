@@ -1,6 +1,6 @@
 package com.eduict.controller;
 
-import com.eduict.model.Domain;
+import com.eduict.model.Region;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 @Stateful
 @Model
-public class DomainRegistration {
+public class RegionRegistration {
 
     @Inject
     private Logger log;
@@ -23,14 +23,14 @@ public class DomainRegistration {
     private EntityManager em;
 
     @Inject
-    private Event<Domain> domainEventSrc;
+    private Event<Region> regionEventSrc;
 
-    private Domain newDomain;
+    private Region newRegion;
 
     @Produces
     @Named
-    public Domain getNewDomain() {
-        return newDomain;
+    public Region getNewRegion() {
+        return newRegion;
     }
 
     public void register() throws Exception {
