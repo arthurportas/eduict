@@ -33,7 +33,7 @@ public class RegionListProducer {
     }
 
     @PostConstruct
-    public void retrieveAllDomainsOrderedByName() {
+    public void retrieveAllRegionsOrderedByName() {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Region> criteria = cb.createQuery(Region.class);
         Root<Region> region = criteria.from(Region.class);

@@ -28,7 +28,7 @@ public class RegionResourceRESTService {
     @GET
     @Path("/{id:[0-9][0-9]*}")
     @Produces("text/xml")
-    public Region lookupDomainById(@PathParam("id") long id) {
+    public Region lookupRgionById(@PathParam("id") long id) {
         return em.find(Region.class, id);
     }
 }
