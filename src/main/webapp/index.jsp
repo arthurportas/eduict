@@ -132,24 +132,28 @@
                         user = (User) session.getAttribute("user");
                         String email = user.getEmail();
                         String firstName = user.getFirstName();
-                    }%>
-                    
-                    <div class="form-group">
-                        <label for="register-firstName" class="col-sm-2 control-label">Nome</label>
-                        <input type="text" class="form-control" name="register-firstName" id="register-firstName"
+                        %>
+                        <div class="form-group">
+                            <label for="register-firstName" class="col-sm-2 control-label">Nome</label>
+                            <input type="text" class="form-control" name="register-firstName" id="register-firstName"
                                placeholder="Nome" required autofocus value="<%=firstName%>"/>
-                    </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-email" class="col-sm-2 control-label">Email</label>
+                            <input type="email" class="form-control" name="register-email" id="register-email"
+                               placeholder="Email" required value="<%=email%>"/>
+                        </div>
+                    <%}%>
+                    
+                    
                     <div class="form-group">
                         <label for="register-lastName" class="col-sm-2 control-label">Apelido</label>
                         <input type="text" class="form-control" name="register-lastName" id="register-lastName"
                                placeholder="Apelido" required value=""/>
                     </div>
 
-                    <div class="form-group">
-                        <label for="register-email" class="col-sm-2 control-label">Email</label>
-                        <input type="email" class="form-control" name="register-email" id="register-email"
-                               placeholder="Email" required value="<%=email%>"/>
-                    </div>
+                    
 
                     <div class="form-group">
                         <label for="register-password" class="col-sm-2 control-label">Password</label>
