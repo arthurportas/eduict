@@ -60,6 +60,7 @@
                     //session exists
                     User user = null;
                     if (session.getAttribute("user") == null) {
+                        response.sendRedirect("index.jsp");
 
                 } else {
                     user = (User) session.getAttribute("user");
@@ -125,217 +126,210 @@
                         </div>
                         
                         <div class="form-group">
+                            <label for="register-lastName" class="col-sm-2 control-label">Apelido</label>
+                            <input type="text" class="form-control" name="register-lastName" id="register-lastName"
+                                   placeholder="Apelido" required value="<c:out value="${user.lastName}"/>"/>
+                        </div>
+                    
+                        <div class="form-group">
                             <label for="register-email" class="col-sm-2 control-label">Email</label>
                             <input type="email" class="form-control" name="register-email" id="register-email"
-                               placeholder="Email" required value=""/>
+                               placeholder="Email" required value="<c:out value="${user.email}"/>"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-age" class="col-sm-2 control-label">Idade</label>
+                            <br/>
+    
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="age-radios" id="age-radios-until25" value="until25" checked>
+                                    Até 25 anos
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="age-radios" id="age-radios-26until35" value="26until35">
+                                    26 a 35 anos
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="age-radios" id="age-radios-36until45" value="36until45">
+                                    36 a 45 anos
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="age-radios" id="age-radios-46until55" value="46until55">
+                                    46 a 55 anos
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="age-radios" id="age-radios-56ormore" value="56ormore">
+                                    56 ou mais anos
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-gender" class="col-sm-2 control-label">Sexo</label>
+                            <br/>
+    
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender-radios" id="gender-radios-male" value="male" checked>
+                                    Masculino
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="gender-radios" id="gender-radios-female" value="female">
+                                    Feminino
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="academic-degree" class="col-sm-2 control-label">Grau Académico</label>
+                            <select class=" selectpicker academic-degree">
+                                <option value="graduate">Licenciatura</option>
+                                <option value="master">Mestrado</option>
+                                <option value="post-graduate">Pós-Graduação</option>
+                                <option value="doctoral">Doutoramento</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="recruitment-group" class="col-sm-2 control-label">Grupo de Recrutamento</label>
+                            <select class="selectpicker recruitment-group">
+                                <optgroup label="Pré-Escolar e 1ºCiclo do Ensino Básico">
+                                    <option value="100 - Educação Pré-Escolar">100 - Educação Pré-Escolar</option>
+                                    <option value="110 - 1º Ciclo do Ensino Básico">110 - 1º Ciclo do Ensino Básico</option>
+                                </optgroup>
+                                <optgroup label="2º Ciclo do Ensino Básico">
+                                    <option value="200 - Português e Estudos Sociais-História">200 - Português e Estudos
+                                        Sociais-História
+                                    </option>
+                                    <option value="210 - Português e Francês">210 - Português e Francês</option>
+                                    <option value="220 - Português e Inglês"></option>
+                                    <option value="230 - Matemática e Ciências da Natureza">230 - Matemática e Ciências da
+                                        Natureza
+                                    </option>
+                                    <option value="250 - Educação Musical">250 - Educação Musical</option>
+                                    <option value="220 - Português e Inglês">220 - Português e Inglês</option>
+                                </optgroup>
+                                <optgroup label="Educação Especial">
+                                    <option value="910 - Educação Especial 1">910 - Educação Especial 1</option>
+                                    <option value="920 - Educação Especial 2">920 - Educação Especial 2</option>
+                                    <option value="930 - Educação Especial 3">930 - Educação Especial 3</option>
+                                </optgroup>
+                                <optgroup label="3º Ciclo do Ensino Básico e Secundário">
+                                    <option value="300 – Português">300 – Português</option>
+                                    <option value="310 - Latim e Grego">310 - Latim e Grego</option>
+                                    <option value="320 – Francês">320 – Francês</option>
+                                    <option value="330 – Inglês">330 – Inglês</option>
+                                    <option value="350 – Espanhol">350 – Espanhol</option>
+                                    <option value="400 – História">400 – História</option>
+                                    <option value="410 – Filosofia">410 – Filosofia</option>
+                                    <option value="420 – Geografia">420 – Geografia</option>
+                                    <option value="430 - Economia e Contabilidade">430 - Economia e Contabilidade</option>
+                                    <option value="500 – Matemática">500 – Matemática</option>
+                                    <option value="510 - Física e Química">510 - Física e Química</option>
+                                    <option value="520 - Biologia e Geologia">520 - Biologia e Geologia</option>
+                                    <option value="540 - Eletrotecnia">540 - Eletrotecnia</option>
+                                    <option value="550 - Informática">550 - Informática</option>
+                                    <option value="560 - Ciências Agropecuárias">560 - Ciências Agropecuárias</option>
+                                    <option value="600 - Artes Visuais">600 - Artes Visuais</option>
+                                    <option value="620 - Educação Física">620 - Educação Física</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-group current-year-teching-level">
+                            <label for="register-current-year-teching-level" class="col-sm-2 control-label current-year-teching-level">
+                                No presente ano letivo leciona em que nível de ensino?
+                            </label>
+                            <br/>
+    
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="current-year-teching-level-radios"
+                                           id="current-year-teching-level-radios-1cicle" value="1º Ciclo" checked>
+                                    1º Ciclo
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="current-year-teching-level-radios"
+                                           id="current-year-teching-level-radios-2cicle" value="2º Ciclo">
+                                    2º Ciclo
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="current-year-teching-level-radios"
+                                           id="current-year-teching-level-radios-3cicle" value="3º Ciclo">
+                                    3º Ciclo
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="current-year-teching-level-radios"
+                                           id="current-year-teching-level-radios-secondary" value="Secundário">
+                                    Secundário
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="current-year-teching-level-radios"
+                                           id="current-year-teching-level-radios-3cicle-secondary"
+                                           value="3ºciclo/Secundário">
+                                    3ºciclo/Secundário
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="current-year-teching-level-radios"
+                                           id="current-year-teching-level-radios-professional" value="Profissional">
+                                    Profissional
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="radio-inline">
+                                    <input type="radio" name="current-year-teching-level-radios"
+                                           id="current-year-teching-level-radios-noschool" value="Sem escola">
+                                    Sem escola
+                                </label>
+                            </div>
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="service-time" class="col-sm-2 control-label">Tempo de Serviço</label>
+                            <select class="selectpicker service-time">
+                                <option value="Menos de 5 anos">Menos de 5 anos</option>
+                                <option value="6 a 15 anos">6 a 15 anos</option>
+                                <option value="16 a 25 anos">16 a 25 anos</option>
+                                <option value="mais de 25 anos">mais de 25 anos</option>
+                            </select>
                         </div>
                     
-                    <div class="form-group">
-                        <label for="register-lastName" class="col-sm-2 control-label">Apelido</label>
-                        <input type="text" class="form-control" name="register-lastName" id="register-lastName"
-                               placeholder="Apelido" required value=""/>
-                    </div>
+                        <div class="form-group">
+                            <label for="work-region" class="col-sm-2 control-label">Concelho</label>
+                            <select class="selectpicker work-region">
+                                <option value="Porto">Porto</option>
+                            </select>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="register-password" class="col-sm-2 control-label">Password</label>
-                        <input type="password" class="form-control" name="register-password" id="register-password"
-                               placeholder="Password" required/>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="register-age" class="col-sm-2 control-label">Idade</label>
-                        <br/>
-
-                        <div class="radio">
-                            <label class="radio-inline">
-                                <input type="radio" name="age-radios" id="age-radios-until25" value="until25" checked>
-                                Até 25 anos
-                            </label>
+                        <div class="form-group">
+                            <label for="work-school" class="col-sm-2 control-label">Escola</label>
+                            <select class="selectpicker work-school">
+                                <option value="XXX">YYY</option>
+                            </select>
                         </div>
-                        <div class="radio">
-                            <label class="radio-inline">
-                                <input type="radio" name="age-radios" id="age-radios-26until35" value="26until35">
-                                26 a 35 anos
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label class="radio-inline">
-                                <input type="radio" name="age-radios" id="age-radios-36until45" value="36until45">
-                                36 a 45 anos
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label class="radio-inline">
-                                <input type="radio" name="age-radios" id="age-radios-46until55" value="46until55">
-                                46 a 55 anos
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label class="radio-inline">
-                                <input type="radio" name="age-radios" id="age-radios-56ormore" value="56ormore">
-                                56 ou mais anos
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="register-gender" class="col-sm-2 control-label">Sexo</label>
-                        <br/>
-
-                        <div class="radio">
-                            <label class="radio-inline">
-                                <input type="radio" name="gender-radios" id="gender-radios-male" value="male" checked>
-                                Masculino
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label class="radio-inline">
-                                <input type="radio" name="gender-radios" id="gender-radios-female" value="female">
-                                Feminino
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="academic-degree" class="col-sm-2 control-label">Grau Académico</label>
-                        <select class=" selectpicker academic-degree">
-                            <option value="graduate">Licenciatura</option>
-                            <option value="master">Mestrado</option>
-                            <option value="post-graduate">Pós-Graduação</option>
-                            <option value="doctoral">Doutoramento</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="recruitment-group" class="col-sm-2 control-label">Grupo de Recrutamento</label>
-                        <select class="selectpicker recruitment-group">
-                            <optgroup label="Pré-Escolar e 1ºCiclo do Ensino Básico">
-                                <option value="100 - Educação Pré-Escolar">100 - Educação Pré-Escolar</option>
-                                <option value="110 - 1º Ciclo do Ensino Básico">110 - 1º Ciclo do Ensino Básico</option>
-                            </optgroup>
-                            <optgroup label="2º Ciclo do Ensino Básico">
-                                <option value="200 - Português e Estudos Sociais-História">200 - Português e Estudos
-                                    Sociais-História
-                                </option>
-                                <option value="210 - Português e Francês">210 - Português e Francês</option>
-                                <option value="220 - Português e Inglês"></option>
-                                <option value="230 - Matemática e Ciências da Natureza">230 - Matemática e Ciências da
-                                    Natureza
-                                </option>
-                                <option value="250 - Educação Musical">250 - Educação Musical</option>
-                                <option value="220 - Português e Inglês">220 - Português e Inglês</option>
-                            </optgroup>
-                            <optgroup label="Educação Especial">
-                                <option value="910 - Educação Especial 1">910 - Educação Especial 1</option>
-                                <option value="920 - Educação Especial 2">920 - Educação Especial 2</option>
-                                <option value="930 - Educação Especial 3">930 - Educação Especial 3</option>
-                            </optgroup>
-                            <optgroup label="3º Ciclo do Ensino Básico e Secundário">
-                                <option value="300 – Português">300 – Português</option>
-                                <option value="310 - Latim e Grego">310 - Latim e Grego</option>
-                                <option value="320 – Francês">320 – Francês</option>
-                                <option value="330 – Inglês">330 – Inglês</option>
-                                <option value="350 – Espanhol">350 – Espanhol</option>
-                                <option value="400 – História">400 – História</option>
-                                <option value="410 – Filosofia">410 – Filosofia</option>
-                                <option value="420 – Geografia">420 – Geografia</option>
-                                <option value="430 - Economia e Contabilidade">430 - Economia e Contabilidade</option>
-                                <option value="500 – Matemática">500 – Matemática</option>
-                                <option value="510 - Física e Química">510 - Física e Química</option>
-                                <option value="520 - Biologia e Geologia">520 - Biologia e Geologia</option>
-                                <option value="540 - Eletrotecnia">540 - Eletrotecnia</option>
-                                <option value="550 - Informática">550 - Informática</option>
-                                <option value="560 - Ciências Agropecuárias">560 - Ciências Agropecuárias</option>
-                                <option value="600 - Artes Visuais">600 - Artes Visuais</option>
-                                <option value="620 - Educação Física">620 - Educação Física</option>
-                            </optgroup>
-                        </select>
-                    </div>
-
-                    <div class="form-group current-year-teching-level">
-                        <label for="register-current-year-teching-level" class="col-sm-2 control-label current-year-teching-level">
-                            No presente ano letivo leciona em que nível de ensino?
-                        </label>
-                        <br/>
-
-                        <div class="radio">
-                            <label class="radio-inline">
-                                <input type="radio" name="current-year-teching-level-radios"
-                                       id="current-year-teching-level-radios-1cicle" value="1º Ciclo" checked>
-                                1º Ciclo
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label class="radio-inline">
-                                <input type="radio" name="current-year-teching-level-radios"
-                                       id="current-year-teching-level-radios-2cicle" value="2º Ciclo">
-                                2º Ciclo
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label class="radio-inline">
-                                <input type="radio" name="current-year-teching-level-radios"
-                                       id="current-year-teching-level-radios-3cicle" value="3º Ciclo">
-                                3º Ciclo
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label class="radio-inline">
-                                <input type="radio" name="current-year-teching-level-radios"
-                                       id="current-year-teching-level-radios-secondary" value="Secundário">
-                                Secundário
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label class="radio-inline">
-                                <input type="radio" name="current-year-teching-level-radios"
-                                       id="current-year-teching-level-radios-3cicle-secondary"
-                                       value="3ºciclo/Secundário">
-                                3ºciclo/Secundário
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label class="radio-inline">
-                                <input type="radio" name="current-year-teching-level-radios"
-                                       id="current-year-teching-level-radios-professional" value="Profissional">
-                                Profissional
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label class="radio-inline">
-                                <input type="radio" name="current-year-teching-level-radios"
-                                       id="current-year-teching-level-radios-noschool" value="Sem escola">
-                                Sem escola
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="service-time" class="col-sm-2 control-label">Tempo de Serviço</label>
-                        <select class="selectpicker service-time">
-                            <option value="Menos de 5 anos">Menos de 5 anos</option>
-                            <option value="6 a 15 anos">6 a 15 anos</option>
-                            <option value="16 a 25 anos">16 a 25 anos</option>
-                            <option value="mais de 25 anos">mais de 25 anos</option>
-                        </select>
-                    </div>
                     
-                    <div class="form-group">
-                        <label for="work-region" class="col-sm-2 control-label">Concelho</label>
-                        <select class="selectpicker work-region">
-                            <option value="Porto">Porto</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="work-school" class="col-sm-2 control-label">Escola</label>
-                        <select class="selectpicker work-school">
-                            <option value="XXX">YYY</option>
-                        </select>
-                    </div>
-                    
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Registar</button>
-                   
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Gravar</button>
                 </form>
 
             </div>

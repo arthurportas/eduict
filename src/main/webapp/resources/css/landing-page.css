@@ -173,6 +173,7 @@ label.current-year-teching-level {
     border: 1px grey dotted;
     border-radius: 4px;
     padding-bottom: 10px;
+    margin-top: 1px;
 }
 div.recover-password-alert {
     padding-top: 5px;
