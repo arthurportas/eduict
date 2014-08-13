@@ -60,14 +60,7 @@
                     //session exists
                     User user = null;
                     if (session.getAttribute("user") == null) {
-                %>
-                <li>
-                    <a class="login-menu" href="" title="Login">Login</a>
-                </li>
-                <li>
-                    <a class="register-menu" href="" title="Registar">Registar</a>
-                </li>
-                <%
+
                 } else {
                     user = (User) session.getAttribute("user");
                     String email = user.getEmail();
@@ -128,7 +121,7 @@
                         <div class="form-group">
                             <label for="register-firstName" class="col-sm-2 control-label">Nome</label>
                             <input type="text" class="form-control" name="register-firstName" id="register-firstName"
-                               placeholder="Nome" required autofocus value=""/>
+                               placeholder="Nome" required autofocus value="<c:out value="${user.firstName}"/>"/>
                         </div>
                         
                         <div class="form-group">

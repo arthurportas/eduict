@@ -56,6 +56,16 @@ public class UserRegistration {
         }
     }
 
+    public User lookupUserByEmail(String email) {
+        try {
+            return (User) em.createNamedQuery(User.FIND_BY_EMAIL)
+                    .setParameter("email", email)
+                    .getSingleResult();
+        } catch (NoResultException nre) {
+            return null;
+        }
+    }
+
     public User changePasswordRequest(String email) {
         try {
             User user = (User) em.createNamedQuery(User.FIND_BY_EMAIL)
