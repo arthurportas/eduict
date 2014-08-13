@@ -136,8 +136,6 @@
                                placeholder="Apelido" required value=""/>
                     </div>
 
-                    
-
                     <div class="form-group">
                         <label for="register-password" class="col-sm-2 control-label">Password</label>
                         <input type="password" class="form-control" name="register-password" id="register-password"
