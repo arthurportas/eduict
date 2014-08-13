@@ -138,7 +138,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="register-age" class="col-sm-2 control-label">Idade</label>
+                            <label for="register-age" class="col-sm-2 control-label register-age">Idade</label>
                             <br/>
     
                             <div class="radio">
@@ -174,7 +174,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="register-gender" class="col-sm-2 control-label">Sexo</label>
+                            <label for="register-gender" class="col-sm-2 control-label gender">Sexo</label>
                             <br/>
     
                             <div class="radio">

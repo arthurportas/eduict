@@ -168,6 +168,12 @@ p.copyright {
 label.current-year-teching-level {
     min-height: 185px;
 }
+label.register-age {
+    min-height: 105px;
+}
+label.gender{
+    min-height: 22px;
+}
 
 .bordered {
     border: 1px grey dotted;

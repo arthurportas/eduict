@@ -163,3 +163,6 @@ INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (60, 'Avaliar 
 INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (61, 'Usar os recursos de TIC para participar nas comunidades profissionais e partilhar e discutir as melhores práticas de ensino', 18);
 
 INSERT INTO USER (USER_ID, FIRSTNAME, LASTNAME, PASSWORD, EMAIL, AGE, GENDER, ACADEMIC_DEGREE) VALUES (0, 'Susana', 'Gonçalves', '123456', 'susana.goncalves@portugalmail.pt', 38, 'feminino', 'licenciatura');
+
+INSERT INTO REGION (REGION_ID, NAME) VALUES(1, 'Amarante');
+INSERT INTO REGION (REGION_ID, NAME) VALUES(2, 'Porto');
