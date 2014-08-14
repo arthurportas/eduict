@@ -52,7 +52,6 @@ public class Region implements Serializable{
       return this.regionId;
    }
 
-    @XmlElement
     public void setRegionId(Long regionId) {
       this.regionId = regionId;
    }
@@ -61,7 +60,6 @@ public class Region implements Serializable{
       return this.regionName;
    }
 
-    @XmlElement
     public void setRegionName(String regionName) {
       this.regionName = regionName;
    }
