@@ -1,14 +1,12 @@
 package com.eduict.model;
 
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.*;
 import java.io.Serializable;
-import javax.xml.bind.*;
-import com.eduict.model.Region;
-
+import java.util.List;
 
 @Entity
 @XmlRootElement
