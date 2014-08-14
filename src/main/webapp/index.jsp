@@ -435,7 +435,11 @@
                     <div class="form-group">
                         <label for="work-school" class="col-sm-2 control-label">Escola</label>
                         <select class="selectpicker work-school">
-                            <option value="XXX">YYY</option>
+                            <c:forEach items="${regions}" var="region">
+                                <c:forEach items="${region.schools}" var="school">
+                                    <c:out value="<option value=${school.schoolName}>${school.schoolName}</option>" escapeXml="false"/>
+                                </c:forEach>
+                            </c:forEach>
                         </select>
                     </div>
                     
