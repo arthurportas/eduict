@@ -1,6 +1,5 @@
 package com.eduict.model;
 
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -8,7 +7,7 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 import javax.xml.bind.annotation.*;
 import com.eduict.model.School;
-
+import java.util.List;
 
 @Entity
 @XmlRootElement
