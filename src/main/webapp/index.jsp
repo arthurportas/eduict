@@ -422,11 +422,13 @@
                             <option value="mais de 25 anos">mais de 25 anos</option>
                         </select>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="work-region" class="col-sm-2 control-label">Concelho</label>
                         <select class="selectpicker work-region">
-                            <option value="Porto">Porto</option>
+                            <c:forEach items="${regions}" var="region">
+                                <option value="<c:out value="${region.regionName}"/>"><c:out value="${region.regionName}</option>
+                            </c:forEach>
                         </select>
                     </div>
 
