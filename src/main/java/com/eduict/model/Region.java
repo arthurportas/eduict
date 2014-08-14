@@ -5,12 +5,17 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlElement;
 import java.io.Serializable;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 
 
 
 @Entity
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 @Table(name = "REGION", uniqueConstraints = @UniqueConstraint(columnNames = "NAME"))
 @NamedQueries({
     @NamedQuery(name = "Region.FIND_ALL", query = "SELECT r from Region r"),
