@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
-
+import com.eduict.model.School;
 
 
 @Entity
@@ -45,6 +45,9 @@ public class Region implements Serializable{
     @Column(name = "NAME", unique = true, nullable = false)
     @XmlAttribute
     private String regionName;
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "region", cascade = CascadeType.ALL)
+    private List<School> schools;
 
     	/* ==========================GETTERS/SETTERS======================= */
 
@@ -64,6 +67,14 @@ public class Region implements Serializable{
       this.regionName = regionName;
    }
 
+    public List<School> getSchools() {
+        return schools;
+    }
+
+    public void setSchools(List<School> schools) {
+        this.schools = schools;
+    }
+    
     /* ==========================BUILDER======================= */
 
     public static Builder getBuilder() {
@@ -82,6 +93,11 @@ public class Region implements Serializable{
             return this;
         }
 
+        public Builder withSchools(List<School> schools) {
+            school.schools = schools;
+            return this;
+        }
+        
         public Region build() {
             return region;
         }

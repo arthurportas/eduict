@@ -46,7 +46,12 @@ public class School implements Serializable{
     @XmlAttribute
     private String schoolName;
 
-    	/* ==========================GETTERS/SETTERS======================= */
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "REGION_ID_FK", referencedColumnName = "REGION_ID", unique = false, nullable = false, insertable = true, updatable = true)
+    @XmlTransient
+    private Region region;
+    
+    /* ==========================GETTERS/SETTERS======================= */
 
     public Long getId() {
       return this.id;
@@ -58,12 +63,19 @@ public class School implements Serializable{
 
     public String getSchoolName() {
       return this.schoolName;
-   }
+    }
 
     public void setSchoolName(String schoolName) {
       this.schoolName = schoolName;
-   }
+    }
 
+    public Region getRegion() {
+      return this.region;
+    }
+
+    public void setRegion(Region region) {
+      this.region = region;
+    }
     /* ==========================BUILDER======================= */
 
     public static Builder getBuilder() {
@@ -82,6 +94,11 @@ public class School implements Serializable{
             return this;
         }
 
+        public Builder withRegion(Region region) {
+            school.region = region;
+            return this;
+        }
+        
         public School build() {
             return school;
         }
