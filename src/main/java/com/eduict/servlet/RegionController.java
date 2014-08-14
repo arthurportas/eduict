@@ -34,17 +34,14 @@ public class RegionController extends HttpServlet {
         StringBuilder errorMessage = new StringBuilder();
 
         try {
-            String regionId = request.getParameter("id");
-            if (regionId != null) {
-                Region region = registrationService.lookupRegionById(regionId);
-                if (region != null) {
-                    request.setAttribute("region", region);
-                } else {
-                    //handle error
-                }
+            long regionId = Long.parseLong(request.getParameter("id"));
+            Region region = registrationService.lookupRegionById(regionId);
+            if (region != null) {
+                request.setAttribute("region", region);
             } else {
-                    //handle error
+                //handle error
             }
+
         } catch (Exception e) {
             Throwable t = e;
             while ((t.getCause()) != null) {
