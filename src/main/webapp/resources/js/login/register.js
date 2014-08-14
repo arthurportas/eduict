@@ -15,13 +15,12 @@ $(document).ready(function () {
         //get selected option-region Id
         //ajax call to get this specific region
         //replace school selct html with schools according to selected region
-        var regionSelect = $('select.work-region');
         var schoolSelect = $('select.work-school');
-        var regionId = regionSelect.options[regionSelect.selectedIndex].value;
+        var regionId = $('.work-region option:selected').val()
         console.log(regionId);
         $.ajax({
             type: "GET",
-            url: "/regions?regionId=" + regionId,
+            url: "/regions?id=" + regionId,
             contentType: 'text/html',
             beforeSend: function() {
             },
