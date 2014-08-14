@@ -90,7 +90,7 @@ public class Region implements Serializable{
         }
 
         public Builder withSchools(List<School> schools) {
-            school.schools = schools;
+            region.schools = schools;
             return this;
         }
         
