@@ -1,6 +1,6 @@
 package com.eduict.rest;
 
-import com.eduict.model.Region;
+import com.eduict.model.School;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -11,25 +11,25 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import java.util.List;
 
-@Path("/regions")
+@Path("/schools")
 @RequestScoped
-public class RegionResourceRESTService {
+public class SchoolResourceRESTService {
     
     @Inject
     private EntityManager em;
 
     @GET
     @Produces("text/xml")
-    public List<Region> listAllRegions() {
+    public List<School> listAllSchools() {
         @SuppressWarnings("unchecked")
-        final List<Region> results = em.createQuery("select r from Region r order by r.regionName").getResultList();
+        final List<School> results = em.createQuery("select s from School s order by s.schoolName").getResultList();
         return results;
     }
 
     @GET
     @Path("/{id:[0-9][0-9]*}")
     @Produces("text/xml")
-    public Region lookupRegionById(@PathParam("id") long id) {
-        return em.find(Region.class, id);
+    public School lookupSchoolById(@PathParam("id") long id) {
+        return em.find(School.class, id);
     }
 }

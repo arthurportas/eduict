@@ -16,26 +16,26 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@Table(name = "REGION", uniqueConstraints = @UniqueConstraint(columnNames = "NAME"))
+@Table(name = "SCHOOL", uniqueConstraints = @UniqueConstraint(columnNames = "NAME"))
 @NamedQueries({
-    @NamedQuery(name = "Region.FIND_ALL", query = "SELECT r from Region r"),
-    @NamedQuery(name = "Region.FIND_BY_NAME", query = "SELECT r from Region r WHERE r.regionName LIKE :regionName"),
-    @NamedQuery(name = "Region.FIND_BY_NAME_PATTERN", query = "SELECT r from Region r WHERE r.regionName LIKE :regionName"),
+    @NamedQuery(name = "School.FIND_ALL", query = "SELECT s from School s"),
+    @NamedQuery(name = "School.FIND_BY_NAME", query = "SELECT s from School s WHERE s.schoolName LIKE :schoolName"),
+    @NamedQuery(name = "School.FIND_BY_NAME_PATTERN", query = "SELECT s from School s WHERE s.schoolName LIKE :schoolName"),
 })
-public class Region implements Serializable{
+public class School implements Serializable{
 
     /** Default value included to remove warning. Remove or modify at will. **/
     private static final long serialVersionUID = 1L;
 
-    public static final String FIND_ALL = "Region.FIND_ALL";
+    public static final String FIND_ALL = "School.FIND_ALL";
 
-    public static final String FIND_BY_NAME = "Region.FIND_BY_NAME";
+    public static final String FIND_BY_NAME = "School.FIND_BY_NAME";
 
-    public static final String FIND_BY_NAME_PATTERN = "Region.FIND_BY_NAME_PATTERN";
+    public static final String FIND_BY_NAME_PATTERN = "School.FIND_BY_NAME_PATTERN";
 
     @Id
     @GeneratedValue
-    @Column(name = "REGION_ID", unique = true, nullable = false)
+    @Column(name = "SCHOOL_ID", unique = true, nullable = false)
     @XmlAttribute
     private Long id;
 
@@ -44,7 +44,7 @@ public class Region implements Serializable{
     @Pattern(regexp = "[A-Za-z ]*", message = "must contain only letters and spaces")
     @Column(name = "NAME", unique = true, nullable = false)
     @XmlAttribute
-    private String regionName;
+    private String schoolName;
 
     	/* ==========================GETTERS/SETTERS======================= */
 
@@ -56,12 +56,12 @@ public class Region implements Serializable{
       this.id = id;
    }
 
-    public String getRegionName() {
-      return this.regionName;
+    public String getSchoolName() {
+      return this.schoolName;
    }
 
-    public void setRegionName(String regionName) {
-      this.regionName = regionName;
+    public void setSchoolName(String schoolName) {
+      this.schoolName = schoolName;
    }
 
     /* ==========================BUILDER======================= */
@@ -71,19 +71,19 @@ public class Region implements Serializable{
     }
     public static class Builder {
 
-        private Region region;
+        private School school;
 
         public Builder() {
-            region = new Region();
+            school = new School();
         }
 
-        public Builder withName(String regionName) {
-            region.regionName = regionName;
+        public Builder withName(String schoolName) {
+            school.schoolName = schoolName;
             return this;
         }
 
-        public Region build() {
-            return region;
+        public School build() {
+            return school;
         }
     }
 }
