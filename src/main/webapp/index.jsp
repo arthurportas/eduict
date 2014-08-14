@@ -427,7 +427,7 @@
                         <label for="work-region" class="col-sm-2 control-label">Concelho</label>
                         <select class="selectpicker work-region">
                             <c:forEach items="${regions}" var="region">
-                                <option value="<c:out value="${region.regionName}"/>"><c:out value="${region.regionName}</option>
+                                <c:out value="<option value=${region.regionName}>${region.regionName}</option>" escapeXml="false"/>
                             </c:forEach>
                         </select>
                     </div>
