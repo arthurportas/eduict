@@ -15,5 +15,48 @@ $(document).ready(function () {
         //get selected option-region Id
         //ajax call to get this specific region
         //replace school selct html with schools according to selected region
+        var regionSelect = $('select.work-region');
+        var schoolSelect = $('select.work-school');
+        var regionId = regionSelect.options[regionSelect.selectedIndex].value;
+        console.log(regionId);
+        $.ajax({
+            type: "GET",
+            url: "/regions?regionId=" + regionId,
+            contentType: 'text/html',
+            beforeSend: function() {
+            },
+            success: function(jqXHR, textStatus, errorThrown) {
+                if (schoolSelect) {
+                    schoolSelect.html(jqXHR);    
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status === 0) {
+                    alert('Not connect.\n Verify Network.');
+                    return;
+                } else if (jqXHR.status == 404) {
+                    alert('Requested page not found. [404]');
+                    return;
+                } else if (jqXHR.status == 500) {
+                    alert('Internal Server Error [500].');
+                    return;
+                } else if (errorThrown === 'parsererror') {
+                    alert('Requested JSON parse failed.');
+                    return;
+                } else if (errorThrown === 'timeout') {
+                    alert('Time out error.');
+                    return;
+                } else if (errorThrown === 'abort') {
+                    alert('Ajax request aborted.');
+                    return;
+                } else {
+                    if (schoolSelect) {
+                        schoolSelect.html(jqXHR);    
+                    }
+                }   
+            },
+            complete: function(jqXHR, textStatus, errorThrown) {
+            }
+        });
     })
 });
