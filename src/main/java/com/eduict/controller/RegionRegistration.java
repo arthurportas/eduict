@@ -40,6 +40,10 @@ public class RegionRegistration {
         initNewRegion();
     }
 
+    public Region lookupRegionById(long id) {
+        return em.find(Region.class, id);
+    }
+    
     @PostConstruct
     public void initNewRegion() {
         newRegion = new Region();
