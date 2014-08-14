@@ -14,6 +14,7 @@ import java.util.List;
 @Path("/regions")
 @RequestScoped
 public class RegionResourceRESTService {
+    
     @Inject
     private EntityManager em;
 

@@ -31,12 +31,14 @@ public class Region implements Serializable{
     @Id
     @GeneratedValue
     @Column(name = "REGION_ID", unique = true, nullable = false)
+    @XmlAttribute
     private Long regionId;
 
     @NotNull
     @Size(min = 1, max = 25)
     @Pattern(regexp = "[A-Za-z ]*", message = "must contain only letters and spaces")
     @Column(name = "NAME", unique = true, nullable = false)
+    @XmlAttribute
     private String regionName;
 
     	/* ==========================GETTERS/SETTERS======================= */
