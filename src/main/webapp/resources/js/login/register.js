@@ -10,4 +10,10 @@ $(document).ready(function () {
             }
         }
     });
+
+    $('select.work-region').change(function () {
+        //get selected option-region Id
+        //ajax call to get this specific region
+        //replace school selct html with schools according to selected region
+    })
 });
