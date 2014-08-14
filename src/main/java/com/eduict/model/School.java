@@ -35,7 +35,7 @@ public class School implements Serializable{
     private Long id;
 
     @NotNull
-    @Size(min = 1, max = 25)
+    @Size(min = 1, max = 250)
     @Pattern(regexp = "[A-Za-z ]*", message = "must contain only letters and spaces")
     @Column(name = "NAME", unique = true, nullable = false)
     @XmlAttribute
