@@ -30,14 +30,18 @@ public class RegionController extends HttpServlet {
                           HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
-
+        PrintWriter out = response.getWriter();
+        StringBuilder message = new StringBuilder(); 
         StringBuilder errorMessage = new StringBuilder();
 
         try {
             long regionId = Long.parseLong(request.getParameter("id"));
             Region region = registrationService.lookupRegionById(regionId);
             if (region != null) {
-                request.setAttribute("region", region);
+                //build html response
+                
+                out.println("");
+
             } else {
                 //handle error
             }
@@ -50,10 +54,6 @@ public class RegionController extends HttpServlet {
             errorMessage.append("Error========>" + t.getMessage());
             request.setAttribute("infoMessage", "");
             e.printStackTrace();
-        } finally {
-            request.setAttribute("errorMessage", errorMessage.toString());
-            RequestDispatcher resultView = request.getRequestDispatcher("regions.jsp");
-            resultView.forward(request, response);
         }
     }
 }
