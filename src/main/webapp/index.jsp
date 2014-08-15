@@ -556,7 +556,7 @@
 <script src="<c:url value="/resources/js/personal/personal.js" />"></script>
 
 <script>
-    $('.selectpicker').selectpicker();
+    //$('.selectpicker').selectpicker();
 </script>
 </body>
 
