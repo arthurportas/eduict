@@ -40,7 +40,7 @@ public class RoleRegistration {
         initNewRole();
     }
 
-    public Region lookupRoleById(long id) {
+    public Role lookupRoleById(long id) {
         return em.find(Role.class, id);
     }
     
