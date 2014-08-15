@@ -128,6 +128,12 @@
             </div>
             <!-- /container -->
         </div>
+        <div class="row">
+            <div class="container">
+                <a href="school-stats-request" class="school-director push-right">Acesso por escola/agrupamento</a>
+            </div>
+            <!-- /container -->
+        </div>
     </div>
     <!-- /.container -->
 </div>
@@ -492,8 +498,8 @@
             <div class="col-lg-6">
                 <ul class="list-inline banner-social-buttons">
                     <li>
-                        <a href="#" class="btn btn-default btn-lg" title="Twitter"><i class="fa fa-twitter fa-fw"></i>
-                            <span class="network-name">Twitter</span></a>
+                        <a href="#" class="btn btn-default btn-lg" title="Scoop.it"><i class="fa fa-fw"></i>
+                            <span class="network-name">Scoop</span></a>
                     </li>
                     <li>
                         <a href="#" class="btn btn-default btn-lg" title="Facebook"><i class="fa fa-facebook fa-fw"></i>
