@@ -79,8 +79,8 @@ public class Role implements Serializable{
             return this;
         }
         
-        public Region build() {
-            return region;
+        public Role build() {
+            return role;
         }
     }
 }

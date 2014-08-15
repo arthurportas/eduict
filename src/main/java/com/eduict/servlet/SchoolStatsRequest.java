@@ -1,8 +1,5 @@
 package com.eduict.servlet;
 
-import com.eduict.controller.UserRegistration;
-import com.eduict.model.User;
-
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,9 +19,6 @@ public class SchoolStatsRequest extends HttpServlet {
 
     @Inject
     private Logger log;
-
-    @Inject
-    UserRegistration registrationService;
 
     protected void doGet(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
