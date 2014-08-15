@@ -17,7 +17,6 @@ $(document).ready(function () {
         //replace school selct html with schools according to selected region
         var schoolSelect = $('select.work-school');
         var regionId = $('.work-region option:selected').val()
-        console.log(regionId);
         $.ajax({
             type: "GET",
             url: "/regions?id=" + regionId,

@@ -187,3 +187,6 @@ div.recover-password-alert {
 span.about-project:hover{
     text-decoration: underline;
 }
+a.recover-password {
+    padding-top: 3px;
+}

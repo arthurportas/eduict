@@ -130,7 +130,7 @@
         </div>
         <div class="row">
             <div class="container">
-                <a href="school-stats-request" class="school-director push-right">Acesso por escola/agrupamento</a>
+                <a href="school-stats-request" class="school-director push-right" title="Estatística por escola/agrupamento">Estatística por escola/agrupamento</a>
             </div>
             <!-- /container -->
         </div>
@@ -520,6 +520,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
+                <ul class="list-inline">
+                    <li>
+                        <a href="">Referências WEB</a>
+                    </li>
+                </ul>
                 <p class="copyright text-muted small">Copyright &copy; EduIct 2014. Todos os Direitos Reservados</p>
             </div>
         </div>

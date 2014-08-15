@@ -114,6 +114,7 @@
 <!-- /.content-section-a -->
 
 <div class="content-section-a user-personal">
+ver se tem role de diretor e dar fom registo para se identificar
     <div class="container bordered">
         <div class="row">
             <div class="container" id="formPersonalDataContainer">
