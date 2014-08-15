@@ -26,5 +26,4 @@ public class SchoolStatsRequest extends HttpServlet {
             RequestDispatcher resultView = request.getRequestDispatcher("school-stats-request.jsp");
             resultView.forward(request, response);
         }
-    }
 }
