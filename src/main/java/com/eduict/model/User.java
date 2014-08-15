@@ -12,6 +12,9 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
+import java.util.List;
+import com.eduict.model.Role;
+
 
 @Entity
 @XmlRootElement
@@ -77,6 +80,9 @@ public class User implements Serializable {
     @Column(name = "ACADEMIC_DEGREE")
     @XmlAttribute
     private String academicDegree;
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Role> roles;
    
    /* ==========================GETTERS/SETTERS======================= */
 
@@ -142,5 +148,13 @@ public class User implements Serializable {
 
     public void setAcademicDegree(String academicDegree) {
         this.academicDegree = academicDegree;
+    }
+    
+    public List<Role> getRoless() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 }

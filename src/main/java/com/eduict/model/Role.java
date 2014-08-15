@@ -8,6 +8,7 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.*;
 import com.eduict.model.School;
 import java.util.List;
+import com.eduict.model.Role;
 
 @Entity
 @XmlRootElement
@@ -42,24 +43,36 @@ public class Role implements Serializable{
     @XmlAttribute
     private String roleName;
     
-
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "USER_ID_FK", referencedColumnName = "USER_ID", unique = false, nullable = false, insertable = true, updatable = true)
+    @XmlTransient
+    private User user;
+    
     /* ==========================GETTERS/SETTERS======================= */
 
     public Long getId() {
       return this.id;
-   }
+    }
 
     public void setId(Long id) {
       this.id = id;
-   }
+    }
 
     public String getRoleName() {
       return this.roleName;
-   }
+    }
 
     public void setRoleName(String roleName) {
       this.roleName = roleName;
-   }
+    }
+    
+    public User getUser() {
+      return this.user;
+    }
+
+    public void setUser(User user) {
+      this.user = user;
+    }
     
     /* ==========================BUILDER======================= */
 
@@ -76,6 +89,11 @@ public class Role implements Serializable{
 
         public Builder withName(String roleName) {
             role.roleName = roleName;
+            return this;
+        }
+        
+        public Builder withUser(User user) {
+            role.user = user;
             return this;
         }
         

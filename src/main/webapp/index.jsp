@@ -304,7 +304,17 @@
                             </label>
                         </div>
                     </div>
-
+                    
+                    <!--Role-->
+                    <div class="form-group">
+                        <label for="user-role" class="col-sm-2 control-label">Profissão</label>
+                        <select class="selectpicker user-role">
+                            <c:forEach items="${roles}" var="role">
+                                <c:out value="<option value=${role.id}>${role.roleName}</option>" escapeXml="false"/>
+                            </c:forEach>
+                        </select>
+                    </div>
+                    
                     <div class="form-group">
                         <label for="academic-degree" class="col-sm-2 control-label">Grau Académico</label>
                         <select class=" selectpicker academic-degree">
