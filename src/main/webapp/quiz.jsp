@@ -101,6 +101,7 @@
                     <a href="#" class="list-group-item ">Nível 2</a>
                     <a href="#" class="list-group-item ">Nível 3</a>
                 </div>
+                
                 <div>
                     <canvas id="canvas" height="450" width="450"></canvas>
                 </div>
@@ -113,15 +114,15 @@
                     <!--  iterate on the member list @named attribute and display name,email and phone number -->
                     <c:forEach items="${quizzes}" var="quiz">
                         <!--<h4><c:out value="${quiz.description}"/></h4>-->
-                        <c:forEach items="${quiz.levels}" var="level" varStatus="level-index">
+                        <c:forEach items="${quiz.levels}" var="level" varStatus="levelIndex">
                             <div class="alert alert-info level">
                                 <h4><c:out value="Nível ${level.id} - ${level.description}"/></h4>
                             </div>
-                            <c:forEach items="${level.domains}" var="domain" varStatus="domain-index">
+                            <c:forEach items="${level.domains}" var="domain" varStatus="domainIndex">
                                 <div class="alert alert-success domain">
                                     <h4><c:out value="Domínio ${domain.id} - ${domain.description}"/></h4>
                                 </div>
-                                <c:forEach items="${domain.questions}" var="question" varStatus="question-index">
+                                <c:forEach items="${domain.questions}" var="question" varStatus="questionIndex">
                                     <div class="question-container question-wrapper-${question.id}">
                                         <div class="alert alert-warning question">
                                             <h4>Questão</h4>
@@ -130,7 +131,7 @@
                                         </div>
                                         <div class="answer-container answer-wrapper-${question.id} ">
                                             <h4>Respostas</h4>
-                                            <c:forEach items="${question.responses}" var="response" varStatus="response-index">
+                                            <c:forEach items="${question.responses}" var="response" varStatus="responseIndex">
                                                 <div class="radio">
                                                     <label>
                                                         <c:if test="${response-index.index == 1}">
@@ -138,7 +139,7 @@
                                                         </c:if>
                                                         <input type="radio" name="response-radios"
                                                                value="${response.response}" ${index} >
-                                                        <c:out value="${response.response} (indice-${response-index.index)"/>
+                                                        <c:out value="${response.response} (indice-${responseIndex.index)" escapeXml="false"/>
                                                     </label>
                                                 </div>
                                             </c:forEach>
@@ -257,7 +258,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p class="copyright text-muted small">Copyright &copy; EduIct 2014. Todos os Direitos Reservados</p>
                 </div>
             </div>
         </footer>
