@@ -218,8 +218,7 @@
                         <div class="form-group">
                             <label for="contact-captcha" class="sr-only col-sm-2 control-label">Controlo de SPAM</label>
                             <%
-                                ReCaptcha c2 = ReCaptchaFactory.newReCaptcha("6LeTzfgSAAAAAJyUwnLuGQLj3tZMbwlDyA7VrxCi", "6LeTzfgSAAAAAJq4lZld0gXYdiZqj6bsACtj8saU", false);
-                                out.print(c2.createRecaptchaHtml(null, null));
+                                out.print(c.createRecaptchaHtml(null, null));
                             %>
                         </div>
 

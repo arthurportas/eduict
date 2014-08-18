@@ -30,3 +30,19 @@ body {
 footer {
     margin: 50px 0;
 }
+
+div.domain {
+    margin-bottom: 0; 
+}
+
+div.question {
+    margin-bottom: 0; 
+}
+
+div.level {
+    margin-bottom: 0; 
+}
+
+div.answer-wrapper {
+    margin-left: 10px;
+}

@@ -32,7 +32,7 @@
     <body>
     
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -113,34 +113,37 @@
                     <!--  iterate on the member list @named attribute and display name,email and phone number -->
                     <c:forEach items="${quizzes}" var="quiz">
                         <!--<h4><c:out value="${quiz.description}"/></h4>-->
-                        <c:forEach items="${quiz.levels}" var="level">
-                            <div class="alert alert-info">
+                        <c:forEach items="${quiz.levels}" var="level" varStatus="level-index">
+                            <div class="alert alert-info level">
                                 <h4><c:out value="Nível ${level.id} - ${level.description}"/></h4>
                             </div>
-                            <c:forEach items="${level.domains}" var="domain">
-                                <div class="alert alert-success">
+                            <c:forEach items="${level.domains}" var="domain" varStatus="domain-index">
+                                <div class="alert alert-success domain">
                                     <h4><c:out value="Domínio ${domain.id} - ${domain.description}"/></h4>
                                 </div>
-                                <c:forEach items="${domain.questions}" var="question">
+                                <c:forEach items="${domain.questions}" var="question" varStatus="question-index">
                                     <div class="question-wrapper-${question.id}">
-                                        <div class="alert alert-warning">
+                                        <div class="alert alert-warning question">
                                             <h4>Questão</h4>
     
                                             <p><c:out value="${question.question}"/></p>
                                         </div>
-                                        <h4>Respostas</h4>
-                                        <c:forEach items="${question.responses}" var="response" varStatus="loop">
-                                            <div class="radio">
-                                                <label>
-                                                    <c:if test="${loop.index == 1}">
-                                                        <c:set value="checked" var="index"></c:set>
-                                                    </c:if>
-                                                    <input type="radio" name="response-radios" id="${response.id}"
-                                                           value="${response.response}" ${index} >
-                                                    <c:out value="${response.response}"/>
-                                                </label>
-                                            </div>
-                                        </c:forEach>
+                                        <div class="answer-wrapper-${question.id} ">
+                                            <h4>Respostas</h4>
+                                            <c:forEach items="${question.responses}" var="response" varStatus="loop">
+                                                <div class="radio">
+                                                    <label>
+                                                        <c:if test="${loop.index == 1}">
+                                                            <c:set value="checked" var="index"></c:set>
+                                                        </c:if>
+                                                        <input type="radio" name="response-radios"
+                                                               value="${response.response}" ${index} >
+                                                        <c:out value="${response.response}"/>
+                                                    </label>
+                                                </div>
+                                                <button class="btn btn-lg btn-primary btn-block" title="Responder">Responder</button>
+                                            </c:forEach>
+                                        </div>
                                     </div>
                                 </c:forEach>
                             </c:forEach>
