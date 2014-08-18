@@ -106,17 +106,24 @@
                     
                         <div class="form-group">
                             <label for="developer-email" class="sr-only col-sm-2 control-label">Email</label>
-                            <input type="email" class="form-control" name="developer-email" id="login-email"
+                            <input type="email" class="form-control developer-email" name="developer-email" id="developer-email"
                                    placeholder="Email" required autofocus>
                         </div>
                         
                         <div class="form-group">
+                            <label for="developer-subject" class="sr-only col-sm-2 control-label">Assunto</label>
+                            <input type="email" class="form-control developer-subject" name="developer-subject" id="developer-subject"
+                                   placeholder="Assunto" required autofocus>
+                        </div>
+                        
+                        <div class="form-group">
                             <label for="contact-developer-message" class="sr-only col-sm-2 control-label">Mensagem</label>
-                            <textarea name="contact-developer-message" id="contact-developer-message" class="form-control" rows="5"
+                            <textarea name="contact-developer-message" id="contact-developer-message" class="form-control developer-message" rows="5"
                                           required></textarea>
                         </div>
                         
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+                        <button class="btn btn-lg btn-primary btn-block developer-message" type="submit" title="Enviar mensagem">Enviar</button>
+                        <div class="developer-message-alert"></div>
                     </form>
                 </div>
                 <!-- /container -->
