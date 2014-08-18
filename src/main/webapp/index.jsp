@@ -214,6 +214,15 @@
                             <textarea name="contact-message" class="form-control contact-message" rows="5"
                                           required></textarea>
                         </div>
+
+                        <div class="form-group">
+                            <label for="contact-captcha" class="sr-only col-sm-2 control-label">Controlo de SPAM</label>
+                            <%
+                                ReCaptcha c2 = ReCaptchaFactory.newReCaptcha("6LeTzfgSAAAAAJyUwnLuGQLj3tZMbwlDyA7VrxCi", "6LeTzfgSAAAAAJq4lZld0gXYdiZqj6bsACtj8saU", false);
+                                out.print(c2.createRecaptchaHtml(null, null));
+                            %>
+                        </div>
+
                         <button class="btn btn-lg btn-primary btn-block contact-email disabled" type="submit" title="Enviar">Enviar</button>
                         <div class="contact-message-alert"></div>
                     </form>
