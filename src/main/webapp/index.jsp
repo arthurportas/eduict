@@ -114,7 +114,14 @@
                                     if (session.getAttribute("user") != null) {
                                         user = (User) session.getAttribute("user");
                                         String email = user.getEmail();
-                                        %>value="<%=email%>"<%}%>>
+                                        %>
+                                        <input type="email" class="form-control developer-email" name="developer-email" id="developer-email"
+                                        placeholder="Email" required autofocus value="<%=email%>">
+                                   <%} else { %>
+                                        <input type="email" class="form-control developer-email" name="developer-email" id="developer-email"
+                                        placeholder="Email" required autofocus >
+                                    <%}%>
+                                  
                         </div>
                         
                         <div class="form-group">
