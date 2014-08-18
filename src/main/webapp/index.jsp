@@ -110,7 +110,6 @@
                                    placeholder="Email" required autofocus 
                                    <%
                                     //session exists
-                                    User user = null;
                                     if (session.getAttribute("user") != null) {
                                         user = (User) session.getAttribute("user");
                                         String email = user.getEmail();
