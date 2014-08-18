@@ -113,8 +113,7 @@
                         <div class="form-group">
                             <label for="contact-developer-message" class="sr-only col-sm-2 control-label">Mensagem</label>
                             <textarea name="contact-developer-message" id="contact-developer-message" class="form-control" rows="5"
-                                          required>
-                            </textarea>
+                                          required></textarea>
                             </div>
                         </div>
                         
@@ -165,8 +164,7 @@
                         <div class="form-group">
                             <label for="contact-email-message" class="sr-only col-sm-2 control-label">Mensagem</label>
                             <textarea name="contact-email-message" id="contact-email-message" class="form-control" rows="5"
-                                          required>
-                            </textarea>
+                                          required></textarea>
                         </div>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
                     </form>
