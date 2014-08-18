@@ -109,6 +109,15 @@
                             <input type="email" class="form-control" name="developer-email" id="login-email"
                                    placeholder="Email" required autofocus>
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-developer-message" class="sr-only col-sm-2 control-label">Mensagem</label>
+                            <textarea name="contact-developer-message" id="contact-developer-message" class="form-control" rows="5"
+                                          required>
+                            </textarea>
+                            </div>
+                        </div>
+                        
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
                     </form>
                 </div>
@@ -154,11 +163,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="InputMessage">Mensagem</label>
-                            <div class="input-group">
-                                <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5"
-                                          required></textarea>
-                            </div>
+                            <label for="contact-email-message" class="sr-only col-sm-2 control-label">Mensagem</label>
+                            <textarea name="contact-email-message" id="contact-email-message" class="form-control" rows="5"
+                                          required>
+                            </textarea>
                         </div>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
                     </form>
@@ -535,30 +543,31 @@
                             <a title="Referências WEB" class="references" href="">Referências WEB</a>
                         </li>
                     </ul>
+                    <div class="container web-references hidden">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="list-inline">
+                                    <li>
+                                        <a href="">aaa</a>
+                                    </li>
+                                    <li>
+                                        <a href="">bbb</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ccc</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ddd</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     <p class="copyright text-muted small">Copyright &copy; EduIct 2014. Todos os Direitos Reservados</p>
                 </div>
             </div>
         </div>
-         <div class="container web-references hidden">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="">aaa</a>
-                        </li>
-                        <li>
-                            <a href="">bbb</a>
-                        </li>
-                        <li>
-                            <a href="">ccc</a>
-                        </li>
-                        <li>
-                            <a href="">ddd</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+         
     </footer>
     <!-- jQuery Version 1.11.0 -->
     <script src="<c:url value="/resources/js/jquery-1.11.0.js" />"></script>
