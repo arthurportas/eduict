@@ -258,14 +258,14 @@
     <div class="content-section-a recover-password hidden">
         <div class="container bordered">
             <div class="row">
-                <div class="container" id="formRecoverContainer">
-                    <form class="form-signin" id="recover-form" role="form">
+                <div class="container">
+                    <form class="form-signin" role="form">
                         <h3 class="form-signin-heading">Recuperar password</h3>
     
                         <div class="form-group">
                             <label for="recover-email" class="sr-only col-sm-2 control-label">Email</label>
-                            <input type="email" class="form-control recover-email" name="recover-email" id="recover-email"
-                                   placeholder="Email" required autofocus>
+                            <input type="email" class="form-control recover-email" name="recover-email"
+                                   placeholder="Email" required autofocus/>
                         </div>
                         <button class="btn btn-lg btn-primary btn-block recover-password" title="Recuperar password">Recuperar password</button>
                         <div class="recover-password-alert"></div>
@@ -282,30 +282,30 @@
     <div class="content-section-a register hidden">
         <div class="container bordered">
             <div class="row">
-                <div class="container" id="formRegisterContainer">
-                    <form class="form-signin" id="register" role="form" action="/register" method="GET">
+                <div class="container">
+                    <form class="form-signin" role="form" action="/register" method="GET">
                         <h3 class="form-signin-heading">Novo utilizador</h3>
     
                         <div class="form-group">
                             <label for="register-firstName" class="col-sm-2 control-label">Nome</label>
-                            <input type="text" class="form-control" name="register-firstName" id="register-firstName"
+                            <input type="text" class="form-control" name="register-firstName"
                                    placeholder="Nome" required autofocus/>
                         </div>
                         <div class="form-group">
                             <label for="register-lastName" class="col-sm-2 control-label">Apelido</label>
-                            <input type="text" class="form-control" name="register-lastName" id="register-lastName"
+                            <input type="text" class="form-control" name="register-lastName"
                                    placeholder="Apelido" required/>
                         </div>
     
                         <div class="form-group">
                             <label for="register-email" class="col-sm-2 control-label">Email</label>
-                            <input type="email" class="form-control" name="register-email" id="register-email"
+                            <input type="email" class="form-control" name="register-email"
                                    placeholder="Email" required/>
                         </div>
     
                         <div class="form-group">
                             <label for="register-password" class="col-sm-2 control-label">Password</label>
-                            <input type="password" class="form-control" name="register-password" id="register-password"
+                            <input type="password" class="form-control" name="register-password"
                                    placeholder="Password" required/>
                         </div>
     
@@ -314,31 +314,31 @@
     
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="age-radios" id="age-radios-until25" value="until25" checked>
+                                    <input type="radio" name="age-radios" value="until25" checked/>
                                     Até 25 anos
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="age-radios" id="age-radios-26until35" value="26until35">
+                                    <input type="radio" name="age-radios" value="26until35"/>
                                     26 a 35 anos
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="age-radios" id="age-radios-36until45" value="36until45">
+                                    <input type="radio" name="age-radios" value="36until45"/>
                                     36 a 45 anos
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="age-radios" id="age-radios-46until55" value="46until55">
+                                    <input type="radio" name="age-radios" value="46until55"/>
                                     46 a 55 anos
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="age-radios" id="age-radios-56ormore" value="56ormore">
+                                    <input type="radio" name="age-radios" value="56ormore"/>
                                     56 ou mais anos
                                 </label>
                             </div>
@@ -349,13 +349,13 @@
     
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="gender-radios" id="gender-radios-male" value="male" checked>
+                                    <input type="radio" name="gender-radios" value="male" checked/>
                                     Masculino
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="gender-radios" id="gender-radios-female" value="female">
+                                    <input type="radio" name="gender-radios" value="female"/>
                                     Feminino
                                 </label>
                             </div>
@@ -435,51 +435,43 @@
     
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="current-year-teching-level-radios"
-                                           id="current-year-teching-level-radios-1cicle" value="1º Ciclo" checked>
+                                    <input type="radio" name="current-year-teching-level-radios" value="1º Ciclo" checked/>
                                     1º Ciclo
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="current-year-teching-level-radios"
-                                           id="current-year-teching-level-radios-2cicle" value="2º Ciclo">
+                                    <input type="radio" name="current-year-teching-level-radios" value="2º Ciclo"/>
                                     2º Ciclo
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="current-year-teching-level-radios"
-                                           id="current-year-teching-level-radios-3cicle" value="3º Ciclo">
+                                    <input type="radio" name="current-year-teching-level-radios" value="3º Ciclo"/>
                                     3º Ciclo
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="current-year-teching-level-radios"
-                                           id="current-year-teching-level-radios-secondary" value="Secundário">
+                                    <input type="radio" name="current-year-teching-level-radios" value="Secundário"/>
                                     Secundário
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="current-year-teching-level-radios"
-                                           id="current-year-teching-level-radios-3cicle-secondary"
-                                           value="3ºciclo/Secundário">
+                                    <input type="radio" name="current-year-teching-level-radios" value="3ºciclo/Secundário"/>
                                     3ºciclo/Secundário
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="current-year-teching-level-radios"
-                                           id="current-year-teching-level-radios-professional" value="Profissional">
+                                    <input type="radio" name="current-year-teching-level-radios" value="Profissional"/>
                                     Profissional
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="current-year-teching-level-radios"
-                                           id="current-year-teching-level-radios-noschool" value="Sem escola">
+                                    <input type="radio" name="current-year-teching-level-radios" value="Sem escola"/>
                                     Sem escola
                                 </label>
                             </div>
