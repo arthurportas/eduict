@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
     <head>
     
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
+        <meta name="description" content="EduICT - Plataforma de Auto-avaliação no ensino das TIC">
+        <meta name="author" content="Arthur Portas">
     
         <title>.:Eduict:.</title>
     
@@ -31,7 +31,7 @@
     <body>
     
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -42,19 +42,42 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="" title="EduIct">EduIct</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
+                    <%
+                        //session exists
+                        User user = null;
+                        if (session.getAttribute("user") == null) {
+                    %>
                     <li>
-                        <a href="#">About</a>
+                        <a class="login-menu" href="" title="Login">Login</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a class="register-menu" href="" title="Registar">Registar</a>
+                    </li>
+                    <%
+                    } else {
+                        user = (User) session.getAttribute("user");
+                        String email = user.getEmail();
+                    %>
+                    <li>
+                        <a class="user-menu" href="/personal?email=<%=email %>" title="Área pessoal de <%=email %>"><%=email %>
+                        </a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a class="user-logout" href="/logout" title="Logout">Logout</a>
+                    </li>
+                    <%}%>
+    
+    
+                    <li>
+                        <a class="developer-credits" href="" title="Developer">Developer</a>
+                    </li>
+                    <li>
+                        <a class="contacts" href="" title="Contatos">Contatos</a>
                     </li>
                 </ul>
             </div>
