@@ -32,7 +32,7 @@ public class ContactDeveloper extends HttpServlet {
     @Inject
     private Logger log;
 
-    protected void doGet(HttpServletRequest request,
+    protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
