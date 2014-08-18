@@ -12,6 +12,10 @@ $(document).ready(function () {
     });
 });
 $(document).ready(function () {
+    $('input.developer-message').bind('keyUp', function (e) {
+        $('button.developer-message').removeClass("disabled");
+    });
+        
     $('button.developer-message').bind('click', function (e) {
         e.preventDefault();
         // Assign handlers immediately after making the request,

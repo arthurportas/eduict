@@ -100,8 +100,8 @@
     
         <div class="container bordered">
             <div class="row">
-                <div class="container" id="formDeveloperContainer">
-                    <form class="form-signin" id="developer" role="form">
+                <div class="container">
+                    <form class="form-signin" role="form">
                         <h3 class="form-signin-heading">Email</h3>
                     
                         <div class="form-group">
@@ -135,7 +135,7 @@
                                           required></textarea>
                         </div>
                         
-                        <button class="btn btn-lg btn-primary btn-block developer-message" type="submit" title="Enviar mensagem">Enviar</button>
+                        <button class="btn btn-lg btn-primary btn-block developer-message disabled" type="submit" title="Enviar mensagem">Enviar</button>
                         <div class="developer-message-alert"></div>
                     </form>
                 </div>
@@ -170,8 +170,8 @@
     
         <div class="container bordered">
             <div class="row">
-                <div class="container" id="formContactContainer">
-                    <form class="form-contact" id="contact-form" action="/contact" method="POST" role="form">
+                <div class="container">
+                    <form class="form-contact" action="/contact" method="POST" role="form">
                         <h3 class="form-signin-heading">Contato</h3>
                         <%
                         //session exists
@@ -204,7 +204,7 @@
                             <textarea name="contact-message" class="form-control contact-message" rows="5"
                                           required></textarea>
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block contact-email" type="submit" title="Enviar">Enviar</button>
+                        <button class="btn btn-lg btn-primary btn-block contact-email disabled" type="submit" title="Enviar">Enviar</button>
                         <div class="contact-message-alert"></div>
                     </form>
                 </div>

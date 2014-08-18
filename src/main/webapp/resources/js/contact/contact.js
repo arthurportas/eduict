@@ -12,6 +12,10 @@ $(document).ready(function () {
     });
 });
 $(document).ready(function () {
+    $('input.contact-message').bind('keyUp', function (e) {
+        $('button.contact-email').removeClass("disabled");
+    });
+    
     $('button.contact-email').bind('click', function (e) {
         e.preventDefault();
         // Assign handlers immediately after making the request,
