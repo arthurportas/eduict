@@ -1,4 +1,6 @@
 <%@ page import="com.eduict.model.User" %>
+<%@ page import="net.tanesha.recaptcha.ReCaptcha" %>
+<%@ page import="net.tanesha.recaptcha.ReCaptchaFactory" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -135,6 +137,14 @@
                                           required></textarea>
                         </div>
                         
+                        <div class="form-group">
+                            <label for="contact-captcha" class="sr-only col-sm-2 control-label">Controlo de SPAM</label>
+                            <%
+                            ReCaptcha c = ReCaptchaFactory.newReCaptcha("6LeTzfgSAAAAAJyUwnLuGQLj3tZMbwlDyA7VrxCi", "6LeTzfgSAAAAAJq4lZld0gXYdiZqj6bsACtj8saU", false);
+                            out.print(c.createRecaptchaHtml(null, null));
+                            %>
+                        </div>
+        
                         <button class="btn btn-lg btn-primary btn-block developer-message disabled" type="submit" title="Enviar mensagem">Enviar</button>
                         <div class="developer-message-alert"></div>
                     </form>
