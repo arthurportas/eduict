@@ -134,7 +134,7 @@
                                             <c:forEach items="${question.responses}" var="response" varStatus="responseIndex">
                                                 <div class="radio">
                                                     <label>
-                                                        <c:if test="${response-index.index == 1}">
+                                                        <c:if test="${responseIndex.index == 0}">
                                                             <c:set value="checked" var="index"></c:set>
                                                         </c:if>
                                                         <input type="radio" name="response-radios"
