@@ -12,7 +12,7 @@ $(document).ready(function () {
     });
 });
 $(document).ready(function () {
-    $('textarea.contact-message').bind('keyUp', function (e) {
+    $('textarea.contact-message').bind('keyup', function (e) {
         $('button.contact-email').removeClass("disabled");
     });
     
