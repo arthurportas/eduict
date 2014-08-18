@@ -128,7 +128,7 @@
     
                                             <p><c:out value="${question.question}"/></p>
                                         </div>
-                                        <div class="answer-wrapper-${question.id} ">
+                                        <div class="answer-container answer-wrapper-${question.id} ">
                                             <h4>Respostas</h4>
                                             <c:forEach items="${question.responses}" var="response" varStatus="loop">
                                                 <div class="radio">
