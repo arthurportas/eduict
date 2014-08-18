@@ -135,10 +135,12 @@
                                                 <div class="radio">
                                                     <label>
                                                         <c:if test="${responseIndex.index == 0}">
-                                                            <c:set value="checked" var="index"></c:set>
                                                         </c:if>
                                                         <input type="radio" name="response-radios"
-                                                               value="${response.response}" ${index} >
+                                                               value="${response.response}" 
+                                                               <c:if test="${responseIndex.index == 0}">
+                                                                    <c:out value="checked"/>
+                                                                </c:if>>
                                                         <c:out value="${responseIndex.index}"/>-<c:out value="${response.response}" escapeXml="false"/>
                                                     </label>
                                                 </div>
