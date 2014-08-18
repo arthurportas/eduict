@@ -107,7 +107,14 @@
                         <div class="form-group">
                             <label for="developer-email" class="sr-only col-sm-2 control-label">Email</label>
                             <input type="email" class="form-control developer-email" name="developer-email" id="developer-email"
-                                   placeholder="Email" required autofocus>
+                                   placeholder="Email" required autofocus 
+                                   <%
+                                    //session exists
+                                    User user = null;
+                                    if (session.getAttribute("user") != null) {
+                                        user = (User) session.getAttribute("user");
+                                        String email = user.getEmail();
+                                        %>value="<%=email%>"<%}%>>
                         </div>
                         
                         <div class="form-group">

@@ -1,8 +1,5 @@
 package com.eduict.servlet;
 
-import com.eduict.controller.UserRegistration;
-import com.eduict.model.User;
-
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
