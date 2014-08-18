@@ -141,8 +141,8 @@
                                                         <c:out value="${response.response}"/>
                                                     </label>
                                                 </div>
-                                                <button class="btn btn-lg btn-primary btn-block" title="Responder">Responder</button>
                                             </c:forEach>
+                                            <button class="btn btn-lg btn-primary btn-block" title="Responder">Responder</button>
                                         </div>
                                     </div>
                                 </c:forEach>

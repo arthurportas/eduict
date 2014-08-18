@@ -215,13 +215,6 @@
                                           required></textarea>
                         </div>
 
-                        <div class="form-group">
-                            <label for="contact-captcha" class="sr-only col-sm-2 control-label">Controlo de SPAM</label>
-                            <%
-                                out.print(c.createRecaptchaHtml(null, null));
-                            %>
-                        </div>
-
                         <button class="btn btn-lg btn-primary btn-block contact-email disabled" type="submit" title="Enviar">Enviar</button>
                         <div class="contact-message-alert"></div>
                     </form>
