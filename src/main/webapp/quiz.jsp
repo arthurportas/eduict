@@ -122,7 +122,7 @@
                                     <h4><c:out value="Domínio ${domain.id} - ${domain.description}"/></h4>
                                 </div>
                                 <c:forEach items="${domain.questions}" var="question" varStatus="question-index">
-                                    <div class="question-wrapper-${question.id}">
+                                    <div class="question-container -wrapper-${question.id}">
                                         <div class="alert alert-warning question">
                                             <h4>Questão</h4>
     
@@ -142,7 +142,7 @@
                                                     </label>
                                                 </div>
                                             </c:forEach>
-                                            <button class="btn btn-lg btn-primary btn-block" title="Responder">Responder</button>
+                                            <button class="btn btn-lg btn-primary btn-block response" title="Selecionar a resposta e avançar">Selecionar a resposta e avançar</button>
                                         </div>
                                     </div>
                                 </c:forEach>

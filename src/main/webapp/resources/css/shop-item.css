@@ -32,15 +32,18 @@ footer {
 }
 
 div.domain {
-    margin-bottom: 0; 
+    margin-bottom: 0;
+    padding: 12px;
 }
 
 div.question {
     margin-bottom: 0; 
+    padding: 12px;
 }
 
 div.level {
-    margin-bottom: 0; 
+    margin-bottom: 0;
+    padding: 12px;
 }
 
 div.answer-container {
