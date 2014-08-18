@@ -12,7 +12,7 @@ $(document).ready(function () {
     });
 });
 $(document).ready(function () {
-    $('input.developer-message').bind('keyUp', function (e) {
+    $('textarea.developer-message').bind('keyUp', function (e) {
         $('button.developer-message').removeClass("disabled");
     });
         
