@@ -106,7 +106,7 @@
                     
                         <div class="form-group">
                             <label for="developer-email" class="sr-only col-sm-2 control-label">Email</label>
-                            <input type="email" class="form-control developer-email" name="developer-email" id="developer-email"
+                            <input type="email" class="form-control developer-email" name="developer-email" 
                                    placeholder="Email" required autofocus 
                                    <%
                                     //session exists
@@ -114,10 +114,10 @@
                                         user = (User) session.getAttribute("user");
                                         String email = user.getEmail();
                                         %>
-                                        <input type="email" class="form-control developer-email" name="developer-email" id="developer-email"
+                                        <input type="email" class="form-control developer-email" name="developer-email" 
                                         placeholder="Email" required autofocus value="<%=email%>">
                                    <%} else { %>
-                                        <input type="email" class="form-control developer-email" name="developer-email" id="developer-email"
+                                        <input type="email" class="form-control developer-email" name="developer-email"
                                         placeholder="Email" required autofocus >
                                     <%}%>
                                   
@@ -125,13 +125,13 @@
                         
                         <div class="form-group">
                             <label for="developer-subject" class="sr-only col-sm-2 control-label">Assunto</label>
-                            <input type="email" class="form-control developer-subject" name="developer-subject" id="developer-subject"
+                            <input type="text" class="form-control developer-subject" name="developer-subject" 
                                    placeholder="Assunto" required autofocus>
                         </div>
                         
                         <div class="form-group">
                             <label for="contact-developer-message" class="sr-only col-sm-2 control-label">Mensagem</label>
-                            <textarea name="contact-developer-message" id="contact-developer-message" class="form-control developer-message" rows="5"
+                            <textarea name="contact-developer-message" class="form-control developer-message" rows="5"
                                           required></textarea>
                         </div>
                         
@@ -192,12 +192,19 @@
                                    placeholder="Email" required autofocus>
                         </div>
                         <%}%>
+                        
                         <div class="form-group">
-                            <label for="contact-email-message" class="sr-only col-sm-2 control-label">Mensagem</label>
-                            <textarea name="contact-email-message" class="form-control contact-email-message" rows="5"
+                            <label for="contact-subject" class="sr-only col-sm-2 control-label">Assunto</label>
+                            <input type="text" class="form-control contact-subject" name="contact-subject"
+                                   placeholder="Assunto" required autofocus>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-message" class="sr-only col-sm-2 control-label">Mensagem</label>
+                            <textarea name="contact-message" class="form-control contact-message" rows="5"
                                           required></textarea>
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block contact-email" type="submit">Enviar</button>
+                        <button class="btn btn-lg btn-primary btn-block contact-email" type="submit" title="Enviar">Enviar</button>
                         <div class="contact-message-alert"></div>
                     </form>
                 </div>
@@ -218,15 +225,15 @@
     
                         <div class="form-group">
                             <label for="login-email" class="sr-only col-sm-2 control-label">Email</label>
-                            <input type="email" class="form-control" name="login-email" id="login-email"
+                            <input type="email" class="form-control" name="login-email"
                                    placeholder="Email" required autofocus>
                         </div>
                         <div class="form-group">
                             <label for="login-password" class="sr-only col-sm-2 control-label">Password</label>
-                            <input type="password" class="form-control" name="login-password" id="login-password"
+                            <input type="password" class="form-control" name="login-password" 
                                    placeholder="Password" required>
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" title="Entrar">Entrar</button>
                     </form>
                     <a class="pull-right recover-password" href="" title="Recuperar password">Recuperar password</a>
                 </div>
@@ -249,7 +256,7 @@
                             <input type="email" class="form-control recover-email" name="recover-email" id="recover-email"
                                    placeholder="Email" required autofocus>
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block recover-password">Recuperar password</button>
+                        <button class="btn btn-lg btn-primary btn-block recover-password" title="Recuperar password">Recuperar password</button>
                         <div class="recover-password-alert"></div>
                     </form>
     
