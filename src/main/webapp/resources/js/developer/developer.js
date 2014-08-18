@@ -17,11 +17,14 @@ $(document).ready(function () {
         // Assign handlers immediately after making the request,
         // and remember the jqxhr object for this request
         var developerMessageAlertElement = $('div.developer-message-alert');
-        var email = $('.developer-email').val();
-        var subject = $('.developer-subject').val();
-        var message = $('.developer-message').val();
+        var _email = $('.developer-email').val();
+        var _subject = $('.developer-subject').val();
+        var _message = $('.developer-message').val();
+        var formData = {email: _email, subject: _subject, message: _message};  
+ 
         $.ajax({
             type: "POST",
+            data : formData,
             url: "/contact-developer",
             contentType: 'text/html',
             beforeSend: function() {
