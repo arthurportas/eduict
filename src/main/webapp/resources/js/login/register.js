@@ -26,6 +26,7 @@ $(document).ready(function () {
             success: function(jqXHR, textStatus, errorThrown) {
                 if (schoolSelect) {
                     schoolSelect.empty().append(jqXHR);
+                    $('.selectpicker').selectpicker('render');
                 }
             },
             error: function(jqXHR, textStatus, errorThrown) {

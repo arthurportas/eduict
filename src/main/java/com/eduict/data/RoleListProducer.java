@@ -37,7 +37,7 @@ public class RoleListProducer {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Role> criteria = cb.createQuery(Role.class);
         Root<Role> role = criteria.from(Role.class);
-        criteria.select(role).orderBy(cb.asc(role.get("roleName")));
+        criteria.select(role).orderBy(cb.desc(role.get("roleName")));
         roles = em.createQuery(criteria).getResultList();
     }
 }
