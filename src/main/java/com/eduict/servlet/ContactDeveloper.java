@@ -48,7 +48,7 @@ public class ContactDeveloper extends HttpServlet {
             
             if(email != null && subject !=null && message != null) {
 
-                out.println("<div class='alert alert-success'><strong><span class='glyphicon glyphicon-send'></span>Mensagem enviada. Obrigado pelo contato!"</strong></div>");
+                out.println("<div class='alert alert-success'><strong><span class='glyphicon glyphicon-send'></span>Mensagem enviada. Obrigado pelo contato!</strong></div>");
                     
                 //send email with token
                 Properties props = new Properties();
