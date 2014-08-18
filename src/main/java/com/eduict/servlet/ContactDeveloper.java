@@ -44,9 +44,9 @@ public class ContactDeveloper extends HttpServlet {
         try {
             String email = request.getParameter("email");
             String subject = request.getParameter("subject");
-            String message = request.getParameter("message");
+            String emailMessage = request.getParameter("message");
             
-            if(email != null && subject !=null && message != null) {
+            if(email != null && subject !=null && emailMessage != null) {
 
                 out.println("<div class='alert alert-success'><strong><span class='glyphicon glyphicon-send'></span>Mensagem enviada. Obrigado pelo contato!</strong></div>");
                     
@@ -72,7 +72,7 @@ public class ContactDeveloper extends HttpServlet {
                     message.setRecipients(Message.RecipientType.TO,
                             InternetAddress.parse("arthurportas@gmail.com"));
                     message.setSubject(subject);
-                    message.setText(message);
+                    message.setText(emailMessage);
 
                     Transport.send(message);
 
