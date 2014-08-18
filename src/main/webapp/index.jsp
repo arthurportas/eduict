@@ -173,19 +173,32 @@
                 <div class="container" id="formContactContainer">
                     <form class="form-contact" id="contact-form" action="/contact" method="POST" role="form">
                         <h3 class="form-signin-heading">Contato</h3>
-    
+                        <%
+                        //session exists
+                        if (session.getAttribute("user") != null) {
+                            user = (User) session.getAttribute("user");
+                            String email = user.getEmail();
+                            %>
+                                        
                         <div class="form-group">
                             <label for="contact-email" class="sr-only col-sm-2 control-label">Email</label>
-                            <input type="email" class="form-control" name="contact-email" id="contact-email"
+                            <input type="email" class="form-control contact-email" name="contact-email"
+                                   placeholder="Email" required autofocus value="<%=email%>">
+                        </div>
+                        <%} else { %>
+                        <div class="form-group">
+                            <label for="contact-email" class="sr-only col-sm-2 control-label">Email</label>
+                            <input type="email" class="form-control contact-email" name="contact-email"
                                    placeholder="Email" required autofocus>
                         </div>
-
+                        <%}%>
                         <div class="form-group">
                             <label for="contact-email-message" class="sr-only col-sm-2 control-label">Mensagem</label>
-                            <textarea name="contact-email-message" id="contact-email-message" class="form-control" rows="5"
+                            <textarea name="contact-email-message" class="form-control contact-email-message" rows="5"
                                           required></textarea>
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+                        <button class="btn btn-lg btn-primary btn-block contact-email" type="submit">Enviar</button>
+                        <div class="contact-message-alert"></div>
                     </form>
                 </div>
                 <!-- /container -->
