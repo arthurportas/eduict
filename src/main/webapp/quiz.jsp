@@ -139,7 +139,7 @@
                                                         </c:if>
                                                         <input type="radio" name="response-radios"
                                                                value="${response.response}" ${index} >
-                                                        <c:out value="${response.response} (indice-${responseIndex.index)" escapeXml="false"/>
+                                                        <c:out value="${responseIndex.index}"/>-<c:out value="${response.response}" escapeXml="false"/>
                                                     </label>
                                                 </div>
                                             </c:forEach>
