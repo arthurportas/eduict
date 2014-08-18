@@ -134,13 +134,10 @@
                                             <c:forEach items="${question.responses}" var="response" varStatus="responseIndex">
                                                 <div class="radio">
                                                     <label>
-                                                        <c:if test="${responseIndex.index == 0}">
-                                                        </c:if>
+
                                                         <input type="radio" name="response-radios"
                                                                value="${response.response}" 
-                                                               <c:if test="${responseIndex.index == 0}">
-                                                                    <c:out value="checked"/>
-                                                                </c:if>>
+                                                               ${responseIndex.first ? 'checked' : ''>
                                                         <c:out value="${responseIndex.index}"/>-<c:out value="${response.response}" escapeXml="false"/>
                                                     </label>
                                                 </div>
