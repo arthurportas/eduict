@@ -20,12 +20,11 @@ $(document).ready(function () {
         var _email = $('.developer-email').val();
         var _subject = $('.developer-subject').val();
         var _message = $('.developer-message').val();
-        var formData = {email: _email, subject: _subject, message: _message};  
+        var formData = "?email="  + _email + "&subject="  + _subject + "&message=" + _message;  
  
         $.ajax({
             type: "POST",
-            data : formData,
-            url: "/contact-developer",
+            url: "/contact-developer" + formData,
             contentType: 'text/html',
             beforeSend: function() {
             },
