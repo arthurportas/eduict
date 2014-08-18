@@ -38,14 +38,16 @@ div.domain {
 
 div.question {
     margin-bottom: 0; 
-    padding: 12px;
 }
 
 div.level {
     margin-bottom: 0;
-    padding: 12px;
 }
 
 div.answer-container {
     margin-left: 10px;
+}
+
+div.question-container {
+    padding-bottom: 5px;
 }
