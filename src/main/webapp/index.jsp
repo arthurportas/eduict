@@ -114,7 +114,6 @@
                             <label for="contact-developer-message" class="sr-only col-sm-2 control-label">Mensagem</label>
                             <textarea name="contact-developer-message" id="contact-developer-message" class="form-control" rows="5"
                                           required></textarea>
-                            </div>
                         </div>
                         
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
