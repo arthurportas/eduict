@@ -115,7 +115,7 @@
                                         <h4><c:out value="Domínio ${domain.id} - ${domain.description}"/></h4>
                                     </div>
                                     <c:forEach items="${domain.questions}" var="question" varStatus="questionIndex">
-                                        <div class="question-container question-wrapper-${question.id} ${not questionIndex.first ? 'hidden' : ''}">
+                                        <div class="question-container question-wrapper-${question.id} ${((not questionIndex.first) || (questionIndex == 7) || (questionIndex == 13))  ? 'hidden' : ''}">
                                             <div class="alert alert-warning question">
                                                 <h4>Questão</h4>
         
@@ -126,7 +126,6 @@
                                                 <c:forEach items="${question.responses}" var="response" varStatus="responseIndex">
                                                     <div class="radio">
                                                         <label>
-    
                                                             <input type="radio" name="response-radios"
                                                                    value="${response.value}" 
                                                                    ${responseIndex.first ? 'checked' : ''}><c:out value="${response.response}" escapeXml="false"/>
