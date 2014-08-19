@@ -137,7 +137,7 @@
 
                                                         <input type="radio" name="response-radios"
                                                                value="${response.response}" 
-                                                               ${responseIndex.first ? 'checked' : ''>
+                                                               ${responseIndex.first ? 'checked' : ''}>
                                                         <c:out value="${responseIndex.index}"/>-<c:out value="${response.response}" escapeXml="false"/>
                                                     </label>
                                                 </div>
