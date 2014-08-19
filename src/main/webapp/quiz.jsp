@@ -321,7 +321,7 @@
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(178,34,34,1)",
-                    data: [0.25, 1, 1.5, 1.75, 2, 2],
+                    data: [0.25, 0, 1.5, 1.75, 2, 2],
                     title : "Nível obtido"
                 }
             ]
