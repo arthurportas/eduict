@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("input[name=response-radios]:radio").change(function () {
         var responseButtonId = $(this).data("question");
-        $('button.response-' + responseButtonId).removeAttr('disabled');
+        $('button.response-' + responseButtonId).removeClass('disabled');
         var value = $(this).val();
     })
     

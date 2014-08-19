@@ -94,7 +94,7 @@
                     <div id="legend-container">
                         <div id="legend"></div>
                     </div>
-                    <ul>
+                    <ul class="list-unstyled">
                         <li>
                             <h6>Domínio 1 - Comprensão das TIC na Educação</h6>
                         </li>
