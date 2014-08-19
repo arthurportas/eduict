@@ -111,32 +111,34 @@
                                 <h4><c:out value="Nível ${level.id} - ${level.description}"/></h4>
                             </div>
                             <c:forEach items="${level.domains}" var="domain" varStatus="domainIndex">
-                                <div class="alert alert-success domain">
-                                    <h4><c:out value="Domínio ${domain.id} - ${domain.description}"/></h4>
-                                </div>
-                                <c:forEach items="${domain.questions}" var="question" varStatus="questionIndex">
-                                    <div class="question-container question-wrapper-${question.id}">
-                                        <div class="alert alert-warning question">
-                                            <h4>Questão</h4>
-    
-                                            <p><c:out value="${question.question}"/></p>
-                                        </div>
-                                        <div class="answer-container answer-wrapper-${question.id} ">
-                                            <h4>Respostas</h4>
-                                            <c:forEach items="${question.responses}" var="response" varStatus="responseIndex">
-                                                <div class="radio">
-                                                    <label>
-
-                                                        <input type="radio" name="response-radios"
-                                                               value="${response.response}" 
-                                                               ${responseIndex.first ? 'checked' : ''}><c:out value="${response.response}" escapeXml="false"/>/>
-                                                    </label>
-                                                </div>
-                                            </c:forEach>
-                                            <button class="btn btn-lg btn-primary btn-block response" title="Selecionar a resposta e avançar">Selecionar a resposta e avançar</button>
-                                        </div>
+                                <div class="domain-question-wrapper-${domain.id} ${not responseIndex.first ? 'hidden' : ''}">
+                                    <div class="alert alert-success domain">
+                                        <h4><c:out value="Domínio ${domain.id} - ${domain.description}"/></h4>
                                     </div>
-                                </c:forEach>
+                                    <c:forEach items="${domain.questions}" var="question" varStatus="questionIndex">
+                                        <div class="question-container question-wrapper-${question.id}">
+                                            <div class="alert alert-warning question">
+                                                <h4>Questão</h4>
+        
+                                                <p><c:out value="${question.question}"/></p>
+                                            </div>
+                                            <div class="answer-container answer-wrapper-${question.id} ">
+                                                <h4>Respostas</h4>
+                                                <c:forEach items="${question.responses}" var="response" varStatus="responseIndex">
+                                                    <div class="radio">
+                                                        <label>
+    
+                                                            <input type="radio" name="response-radios"
+                                                                   value="${response.response}" 
+                                                                   ${responseIndex.first ? 'checked' : ''}><c:out value="${response.response}" escapeXml="false"/>/>
+                                                        </label>
+                                                    </div>
+                                                </c:forEach>
+                                                <button class="btn btn-lg btn-primary btn-block response" title="Selecionar a resposta e avançar">Selecionar a resposta e avançar</button>
+                                            </div>
+                                        </div>
+                                    </c:forEach>
+                                </div>
                             </c:forEach>
                         </c:forEach>
                     </c:forEach>
