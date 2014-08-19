@@ -276,7 +276,7 @@
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [65, 59, 90, 81, 56, 55]
+                    data: [3, 3, 2.5, 1.85, 3, 2]
                 },
                 {
                     label: "Nível obtido",
@@ -286,7 +286,7 @@
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(151,187,205,1)",
-                    data: [28, 48, 40, 19, 96, 27]
+                    data: [0.25, 1, 1.5, 1.75, 2, 2]
                 }
             ]
         };
