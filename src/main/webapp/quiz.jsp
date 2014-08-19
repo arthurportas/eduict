@@ -56,9 +56,6 @@
                     <li>
                         <a class="login-menu" href="" title="Login">Login</a>
                     </li>
-                    <li>
-                        <a class="register-menu" href="" title="Registar">Registar</a>
-                    </li>
                     <%
                     } else {
                         user = (User) session.getAttribute("user");
@@ -72,13 +69,8 @@
                         <a class="user-logout" href="/logout" title="Logout">Logout</a>
                     </li>
                     <%}%>
-    
-    
                     <li>
-                        <a class="developer-credits" href="" title="Developer">Developer</a>
-                    </li>
-                    <li>
-                        <a class="contacts" href="" title="Contatos">Contatos</a>
+                        <a class="" href="/index.jsp" title="Home">Home</a>
                     </li>
                 </ul>
             </div>
@@ -137,8 +129,7 @@
 
                                                         <input type="radio" name="response-radios"
                                                                value="${response.response}" 
-                                                               ${responseIndex.first ? 'checked' : ''}>
-                                                        <c:out value="${responseIndex.index}"/>-<c:out value="${response.response}" escapeXml="false"/>
+                                                               ${responseIndex.first ? 'checked' : ''}><c:out value="${response.response}" escapeXml="false"/>/>
                                                     </label>
                                                 </div>
                                             </c:forEach>
