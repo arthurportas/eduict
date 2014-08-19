@@ -33,6 +33,13 @@ public class Response implements Serializable {
     @XmlTransient
     private Question question;
    
+    @NotNull
+    @Size(min = 1, max = 4)
+    @Pattern(regexp = "[A-Za-z ´`ç~,.]*", message = "value must contain only letters and chars specified")
+    @Column(name = "VALUE")
+    @XmlAttribute
+    private String value;
+    
    /* ==========================GETTERS/SETTERS======================= */
 
     public Long getId() {
@@ -57,5 +64,13 @@ public class Response implements Serializable {
 
     public void setQuestion(Question question) {
         this.question = question;
+    }
+    
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 }

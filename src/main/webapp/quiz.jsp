@@ -89,9 +89,9 @@
                 <p class="lead">Eduict</p>
     
                 <div class="list-group">
-                    <a href="" class="list-group-item active">Nível 1</a>
-                    <a href="" class="list-group-item disabled">Nível 2</a>
-                    <a href="" class="list-group-item disabled">Nível 3</a>
+                    <a href="" title="Nível 1" class="list-group-item active">Nível 1</a>
+                    <a href="" title="Nível 2" class="list-group-item disabled">Nível 2</a>
+                    <a href="" title="Nível 3" class="list-group-item disabled">Nível 3</a>
                 </div>
                 
                 <div>
@@ -115,7 +115,7 @@
                                         <h4><c:out value="Domínio ${domain.id} - ${domain.description}"/></h4>
                                     </div>
                                     <c:forEach items="${domain.questions}" var="question" varStatus="questionIndex">
-                                        <div class="question-container question-wrapper-${question.id}">
+                                        <div class="question-container question-wrapper-${question.id} ${not questionIndex.first ? 'hidden' : ''}">
                                             <div class="alert alert-warning question">
                                                 <h4>Questão</h4>
         
@@ -128,7 +128,7 @@
                                                         <label>
     
                                                             <input type="radio" name="response-radios"
-                                                                   value="${response.response}" 
+                                                                   value="${response.value}" 
                                                                    ${responseIndex.first ? 'checked' : ''}><c:out value="${response.response}" escapeXml="false"/>
                                                         </label>
                                                     </div>
