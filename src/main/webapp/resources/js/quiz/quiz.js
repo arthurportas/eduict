@@ -21,3 +21,8 @@ $(document).ready(function () {
         }*/
     });
 });
+
+function updateGraph(answerValue, domainIndex) {
+    
+    
+}
