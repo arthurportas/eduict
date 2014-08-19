@@ -111,11 +111,7 @@
                                         <h4><c:out value="Domínio ${domain.id} - ${domain.description}"/></h4>
                                     </div>
                                     <c:forEach items="${domain.questions}" var="question" varStatus="questionIndex">
-                                        <div class="question-container question-wrapper-${question.id} 
-                                        <c:if test='${ ((not questionIndex.first) || (questionIndex eq 7) || (questionIndex eq 13))}'>
-                                        	hidden
-                                    	</c:if>
-                                        ">
+                                        <div class="question-container question-wrapper-${question.id}">
                                             <div class="alert alert-warning question">
                                                 <h4>Questão</h4>
         
