@@ -69,13 +69,13 @@ public class NewPassword extends HttpServlet {
                                 }
                             });
                     try {
-                        UUID token = UUID.randomUUID();
+                        UUID uuid = UUID.randomUUID();
                         Message message = new MimeMessage(session);
                         message.setFrom(new InternetAddress("eduict.skills@gmail.com"));
                         message.setRecipients(Message.RecipientType.TO,
                                 InternetAddress.parse(email));
                         message.setSubject("Mudar password");
-                        message.setText("teste" + token);
+                        message.setText("teste" + uuid);
     
                         Transport.send(message);
 
