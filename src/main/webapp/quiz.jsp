@@ -292,6 +292,9 @@
     <!-- Charts Legend JavaScript -->
     <script src="<c:url value="/resources/js/legend.js" />"></script>
     
+    <!-- Quiz JavaScript -->
+    <script src="<c:url value="/resources/js/quiz/quiz.js" />"></script>
+    
     <script>
         var radarChartData = {
             
