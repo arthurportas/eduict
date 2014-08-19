@@ -143,7 +143,7 @@
                                                 <c:forEach items="${question.responses}" var="response" varStatus="responseIndex">
                                                     <div class="radio">
                                                         <label>
-                                                            <input type="radio" name="response-radios"
+                                                            <input type="radio" name="response-radios" data-question="${question.id}"
                                                                    value="${response.value}" 
                                                                    ${responseIndex.first ? 'checked' : ''}><c:out value="${response.response}" escapeXml="false"/>
                                                         </label>
