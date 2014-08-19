@@ -107,11 +107,11 @@
                     <c:forEach items="${quizzes}" var="quiz">
                         <!--<h4><c:out value="${quiz.description}"/></h4>-->
                         <c:forEach items="${quiz.levels}" var="level" varStatus="levelIndex">
-                            <div class="alert alert-info level">
+                            <div class="alert alert-info level ${not levelIndex.first ? 'hidden' : ''}">
                                 <h4><c:out value="Nível ${level.id} - ${level.description}"/></h4>
                             </div>
                             <c:forEach items="${level.domains}" var="domain" varStatus="domainIndex">
-                                <div class="domain-question-wrapper-${domain.id} ${not responseIndex.first ? 'hidden' : ''}">
+                                <div class="domain-question-wrapper-${domain.id} ${not domainIndex.first ? 'hidden' : ''}">
                                     <div class="alert alert-success domain">
                                         <h4><c:out value="Domínio ${domain.id} - ${domain.description}"/></h4>
                                     </div>
@@ -144,7 +144,7 @@
                     </c:forEach>
     
     
-                    <div class="caption-full">
+                    <div class="caption-full hidden">
                         <h4 class="pull-right">$24.99</h4>
                         <h4><a href="#">Product Name</a>
                         </h4>
@@ -179,7 +179,7 @@
                     </div>
                 </div>
     
-                <div class="well">
+                <div class="well hidden">
     
                     <div class="text-right">
                         <a class="btn btn-success">Leave a Review</a>
