@@ -112,7 +112,7 @@
                                     </div>
                                     <c:forEach items="${domain.questions}" var="question" varStatus="questionIndex">
                                         <div class="question-container question-wrapper-${question.id} 
-                                        <c:if test='${ not questionIndex.first or questionIndex eq 7 or questionIndex eq 13}'>
+                                        <c:if test='${ ((not questionIndex.first) || (questionIndex eq 7) || (questionIndex eq 13))}'>
                                         	hidden
                                     	</c:if>
                                         ">
