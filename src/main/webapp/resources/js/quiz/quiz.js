@@ -14,14 +14,12 @@ $(document).ready(function () {
         var clientDataset = 1;
         window.myRadar.datasets[1].points[domainIndex-1].value=answerValue;
         window.myRadar.update();
-        /*var visiblePanel = $('div.login');
-        if (visiblePanel) {
-            if (visiblePanel.hasClass("hidden")) {
-                visiblePanel.removeClass("hidden");
-            } else {
-                visiblePanel.addClass("hidden");
-            }
-        }*/
+        var visiblePanel = $('div.domain-question-wrapper-' + domainIndex);
+        var nextVisiblePanel = $('div.domain-question-wrapper-' + (domainIndex + 1));
+        if (visiblePanel && nextVisiblePanel) {
+            visiblePanel.addClass("hidden");
+            nextVisiblePanel.removeClass("hidden");
+        }
     });
 });
 
