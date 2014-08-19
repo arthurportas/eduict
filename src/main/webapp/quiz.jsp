@@ -89,10 +89,6 @@
                     <a href="" title="Nível 2" class="list-group-item disabled">Nível 2</a>
                     <a href="" title="Nível 3" class="list-group-item disabled">Nível 3</a>
                 </div>
-                
-                <div>
-                    <canvas id="canvas" height="450" width="450"></canvas>
-                </div>
             </div>
     
             <div class="col-md-9">
@@ -174,7 +170,12 @@
                         </p>
                     </div>
                 </div>
-    
+                
+                <div class="thumbnail">
+                    <canvas id="canvas" height="400" width="400"></canvas>
+                    <div id="legend"></div>
+                </div>
+
                 <div class="well hidden">
     
                     <div class="text-right">
@@ -263,9 +264,12 @@
     <!-- Charts Core JavaScript -->
     <script src="<c:url value="/resources/js/Chart.js" />"></script>
     
+    <!-- Charts Legend JavaScript -->
+    <script src="<c:url value="/resources/js/legend.js" />"></script>
+    
     <script>
         var radarChartData = {
-            //labels: ["D1_Comprensão das TIC na Educação", "D2_Curículo e Avaliação", "D3_Pedagogia", "D4_TIC", "D5_Organização e Administração", "D6_Desenvolvimento Profissional Docente", "Running"],
+            //labels: ["D1_Comprensão das TIC na Educação", "D2_Currículo e Avaliação", "D3_Pedagogia", "D4_TIC", "D5_Organização e Administração", "D6_Desenvolvimento Profissional Docente", "Running"],
             labels: ["Comprensão das TIC na Educação", "Drinking", "Sleeping", "Designing", "Coding", "Cycling"],
             datasets: [
                 {
@@ -276,7 +280,8 @@
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [3, 3, 2.5, 1.85, 3, 2]
+                    data: [3, 3, 2.5, 1.85, 3, 2],
+                    title : "Nivel desejado da Unesco"
                 },
                 {
                     label: "Nível obtido",
@@ -286,7 +291,8 @@
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(151,187,205,1)",
-                    data: [0.25, 1, 1.5, 1.75, 2, 2]
+                    data: [0.25, 1, 1.5, 1.75, 2, 2],
+                    title : "Nível obtido"
                 }
             ]
         };
@@ -294,9 +300,10 @@
         window.onload = function () {
             window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData, {
                 responsive: true,
-                legendTemplate : "legenda"
+                scaleShowLabels : true,
 
             });
+            legend(document.getElementById("legend"), radarChartData);
         }
     
     </script>
