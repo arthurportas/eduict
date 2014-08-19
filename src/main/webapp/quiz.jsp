@@ -303,7 +303,7 @@
             labels: ["Domínio-1", "Domínio-2", "Domínio-3", "Domínio-4", "Domínio-5", "Domínio-6"],
             datasets: [
                 {
-                    label: "Nivel desejado da Unesco",
+                    label: "Nível desejado da Unesco",
                     fillColor: "rgba(151,187,205,0.2)",
                     strokeColor: "rgba(151,187,205,1)",
                     pointColor: "rgba(151,187,205,1)",
@@ -311,7 +311,7 @@
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(151,187,205,1)",
                     data: [3, 3, 2.5, 1.85, 3, 2],
-                    title : "Nivel desejado da Unesco"
+                    title : "Nível desejado da Unesco"
                 },
                 {
                     label: "Nível obtido",
