@@ -89,6 +89,30 @@
                     <a href="" title="Nível 2" class="list-group-item disabled">Nível 2</a>
                     <a href="" title="Nível 3" class="list-group-item disabled">Nível 3</a>
                 </div>
+                <div class="graph-container">
+                    <canvas id="canvas" height="400" width="400"></canvas>
+                    <div id="legend"></div>
+                    <ul>
+                        <li>
+                            <h6>Domínio 1 - Comprensão das TIC na Educação</h6>
+                        </li>
+                        <li>
+                            <h6>Domínio 2 - Currículo e Avaliação</h6>
+                        </li>
+                        <li>
+                            <h6>Domínio 3 - Pedagogia</h6>
+                        </li>
+                        <li>
+                            <h6>Domínio 4 - TIC</h6>
+                        </li>
+                        <li>
+                            <h6>Domínio 5 - Organização e Administração</h6>
+                        </li>
+                        <li>
+                            <h6>Domínio 6 - Desenvolvimento Profissional Docente</h6>
+                        </li>
+                    </ul>
+                </div>
             </div>
     
             <div class="col-md-9">
@@ -234,8 +258,7 @@
         </div>
         <div class="row">
             <div class="thumbnail graph">
-                <canvas id="canvas" height="400" width="400"></canvas>
-                <div id="legend"></div>
+                
             </div>
         </div>
     </div>
@@ -272,7 +295,7 @@
     <script>
         var radarChartData = {
             
-            labels: ["D1_Comprensão das TIC na Educação", "D2_Currículo e Avaliação", "D3_Pedagogia", "D4_TIC", "D5_Organização e Administração", "D6_Desenvolvimento Profissional Docente"],
+            labels: ["Domínio-1", "Domínio-2", "Domínio-3", "Domínio-4", "Domínio-5", "Domínio-6"],
             datasets: [
                 {
                     label: "Nivel desejado da Unesco",
