@@ -102,11 +102,12 @@
                     <c:forEach items="${quizzes}" var="quiz">
                         <!--<h4><c:out value="${quiz.description}"/></h4>-->
                         <c:forEach items="${quiz.levels}" var="level" varStatus="levelIndex">
-                            <div class="alert alert-info level-${level.id} ${not levelIndex.first ? 'hidden' : ''}">
+                        <div class="level-${level.id}-wrapper ${not levelIndex.first ? 'hidden' : ''}">
+                            <div class="alert alert-info level-${level.id}">
                                 <h4><c:out value="Nível ${level.id} - ${level.description}"/></h4>
                             </div>
                             <c:forEach items="${level.domains}" var="domain" varStatus="domainIndex">
-                                <div class="domain-question-wrapper-${domain.id} ${not levelIndex.first ? 'hidden' : ''}">
+                                <div class="domain-question-wrapper-${domain.id} ${not domainIndex.first ? 'hidden' : ''}">
                                     <div class="alert alert-success domain">
                                         <h4><c:out value="Domínio ${domain.id} - ${domain.description}"/></h4>
                                     </div>
@@ -134,6 +135,7 @@
                                     </c:forEach>
                                 </div>
                             </c:forEach>
+                        </div>
                         </c:forEach>
                     </c:forEach>
     
