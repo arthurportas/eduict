@@ -49,14 +49,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <%
-                        //session exists
-                        User user = null;
-                        if (session.getAttribute("user") == null) {
-                    %>
-                    <li>
-                        <a class="login-menu" href="" title="Login">Login</a>
-                    </li>
-                    <%
+                    //session exists
+                    User user = null;
+                    if (session.getAttribute("user") == null) {
+
                     } else {
                         user = (User) session.getAttribute("user");
                         String email = user.getEmail();
@@ -115,7 +111,11 @@
                                         <h4><c:out value="Domínio ${domain.id} - ${domain.description}"/></h4>
                                     </div>
                                     <c:forEach items="${domain.questions}" var="question" varStatus="questionIndex">
-                                        <div class="question-container question-wrapper-${question.id} ${((not questionIndex.first) || (questionIndex == 7) || (questionIndex == 13))  ? 'hidden' : ''}">
+                                        <div class="question-container question-wrapper-${question.id} 
+                                        <c:if test='${ not questionIndex.first or questionIndex eq 7 or questionIndex eq 13}'>
+                                        	hidden
+                                    	</c:if>
+                                        ">
                                             <div class="alert alert-warning question">
                                                 <h4>Questão</h4>
         
