@@ -4,12 +4,7 @@ $(document).ready(function () {
         var answerValue = 3;
         var domainIndex = 1;
         var clientDataset = 1;
-        var chart = radarChartData;
-        if(chart) {
-            chart.datasets[clientDataset].data[domainIndex] = answerValue;
-            chart.update();
-        }
-        debugger;
+        window.myRadar.datasets[1].points[1].value=3;
         /*var visiblePanel = $('div.login');
         if (visiblePanel) {
             if (visiblePanel.hasClass("hidden")) {
