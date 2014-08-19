@@ -149,7 +149,7 @@
                                                         </label>
                                                     </div>
                                                 </c:forEach>
-                                                <button class="btn btn-lg btn-primary btn-block response disabled" data-domain="${domain.id}" data-question="${question.id}" data-answer="${answer.id}" title="Selecionar a resposta e avançar">Selecionar a resposta e avançar</button>
+                                                <button class="btn btn-lg btn-primary btn-block response-"${question.id}" disabled" data-domain="${domain.id}" data-question="${question.id}" data-answer="${answer.id}" title="Selecionar a resposta e avançar">Selecionar a resposta e avançar</button>
                                             </div>
                                         </div>
                                     </c:forEach>
