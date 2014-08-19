@@ -171,7 +171,7 @@
                     </div>
                 </div>
                 
-                <div class="thumbnail">
+                <div class="thumbnail graph">
                     <canvas id="canvas" height="400" width="400"></canvas>
                     <div id="legend"></div>
                 </div>
@@ -269,8 +269,8 @@
     
     <script>
         var radarChartData = {
-            //labels: ["D1_Comprensão das TIC na Educação", "D2_Currículo e Avaliação", "D3_Pedagogia", "D4_TIC", "D5_Organização e Administração", "D6_Desenvolvimento Profissional Docente", "Running"],
-            labels: ["Comprensão das TIC na Educação", "Drinking", "Sleeping", "Designing", "Coding", "Cycling"],
+            
+            labels: ["D1_Comprensão das TIC na Educação", "D2_Currículo e Avaliação", "D3_Pedagogia", "D4_TIC", "D5_Organização e Administração", "D6_Desenvolvimento Profissional Docente"],
             datasets: [
                 {
                     label: "Nivel desejado da Unesco",
