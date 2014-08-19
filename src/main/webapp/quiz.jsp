@@ -265,7 +265,8 @@
     
     <script>
         var radarChartData = {
-            labels: ["D1_Comprensão das TIC na Educação", "D2_Curículo e Avaliação", "D3_Pedagogia", "D4_TIC", "D5_Organização e Administração", "D6_Desenvolvimento Profissional Docente", "Running"],
+            //labels: ["D1_Comprensão das TIC na Educação", "D2_Curículo e Avaliação", "D3_Pedagogia", "D4_TIC", "D5_Organização e Administração", "D6_Desenvolvimento Profissional Docente", "Running"],
+            labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling"],
             datasets: [
                 {
                     label: "Nivel desejado da Unesco",
