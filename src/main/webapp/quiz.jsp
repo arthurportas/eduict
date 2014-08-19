@@ -171,10 +171,7 @@
                     </div>
                 </div>
                 
-                <div class="thumbnail graph">
-                    <canvas id="canvas" height="400" width="400"></canvas>
-                    <div id="legend"></div>
-                </div>
+                
 
                 <div class="well hidden">
     
@@ -235,7 +232,12 @@
             </div>
     
         </div>
-    
+        <div class="row">
+            <div class="thumbnail graph">
+                <canvas id="canvas" height="400" width="400"></canvas>
+                <div id="legend"></div>
+            </div>
+        </div>
     </div>
     <!-- /.container -->
     
@@ -274,23 +276,23 @@
             datasets: [
                 {
                     label: "Nivel desejado da Unesco",
-                    fillColor: "rgba(220,220,220,0.2)",
-                    strokeColor: "rgba(220,220,220,1)",
-                    pointColor: "rgba(220,220,220,1)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [3, 3, 2.5, 1.85, 3, 2],
-                    title : "Nivel desejado da Unesco"
-                },
-                {
-                    label: "Nível obtido",
                     fillColor: "rgba(151,187,205,0.2)",
                     strokeColor: "rgba(151,187,205,1)",
                     pointColor: "rgba(151,187,205,1)",
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: [3, 3, 2.5, 1.85, 3, 2],
+                    title : "Nivel desejado da Unesco"
+                },
+                {
+                    label: "Nível obtido",
+                    fillColor: "rgba(178,34,34,0.2)",
+                    strokeColor: "rgba(178,34,34,1)",
+                    pointColor: "rgba(178,34,34,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(178,34,34,1)",
                     data: [0.25, 1, 1.5, 1.75, 2, 2],
                     title : "Nível obtido"
                 }
