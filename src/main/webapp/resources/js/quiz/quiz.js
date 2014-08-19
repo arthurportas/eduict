@@ -1,4 +1,9 @@
 $(document).ready(function () {
+    $("input[name=response-radios]:radio").change(function () {
+        $('button.response').removeAttr('disabled');
+        var value = $(this).val();
+    })
+    
     $('button.response').bind('click', function (e) {
         e.preventDefault();
         var answerValue = 3;
