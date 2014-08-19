@@ -10,9 +10,9 @@ $(document).ready(function () {
     $('button.response').bind('click', function (e) {
         e.preventDefault();
         var answerValue = $(this).data("answerValue");
-        var domainIndex = 1;
+        var domainIndex = $(this).data("domain");
         var clientDataset = 1;
-        window.myRadar.datasets[1].points[1].value=3;
+        window.myRadar.datasets[1].points[domainIndex].value=3;
         window.myRadar.update();
         /*var visiblePanel = $('div.login');
         if (visiblePanel) {

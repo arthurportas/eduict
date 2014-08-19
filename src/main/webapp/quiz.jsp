@@ -12,7 +12,7 @@
         <meta name="description" content="EduICT - Plataforma de Auto-avaliação no ensino das TIC">
         <meta name="author" content="Arthur Portas">
     
-        <title>.:Eduict:.</title>
+        <title>.:Eduict:. - Questionário</title>
     
         <!-- Bootstrap Core CSS -->
         <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
