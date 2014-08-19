@@ -59,15 +59,15 @@ public class ContactEduict extends HttpServlet {
                 Session session = Session.getDefaultInstance(props,
                         new javax.mail.Authenticator() {
                             protected PasswordAuthentication getPasswordAuthentication() {
-                                return new PasswordAuthentication("arthurportas","xKoninha");
+                                return new PasswordAuthentication("eduict.skills","liliana77");
                             }
                         });
                 try {
 
                     Message message = new MimeMessage(session);
-                    message.setFrom(new InternetAddress("arthurportas@gmail.com"));
+                    message.setFrom(new InternetAddress(email));
                     message.setRecipients(Message.RecipientType.TO,
-                            InternetAddress.parse("arthurportas@gmail.com"));
+                            InternetAddress.parse("eduict.skills@gmail.com"));
                     message.setSubject(subject);
                     message.setText(emailMessage);
 

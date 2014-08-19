@@ -45,7 +45,8 @@ public class NewPassword extends HttpServlet {
         StringBuilder errorMessage = new StringBuilder();
 
         try {
-            String email = request.getParameter("email");//...need work
+            String email = request.getParameter("email");
+            String token = request.getParameter("token");
             
             if(email != null) {
                 User user = registrationService.changePasswordRequest(email);
@@ -64,15 +65,15 @@ public class NewPassword extends HttpServlet {
                     Session session = Session.getDefaultInstance(props,
                             new javax.mail.Authenticator() {
                                 protected PasswordAuthentication getPasswordAuthentication() {
-                                    return new PasswordAuthentication("arthurportas","xKoninha");
+                                    return new PasswordAuthentication("eduict.skills","liliana77");
                                 }
                             });
                     try {
                         UUID token = UUID.randomUUID();
                         Message message = new MimeMessage(session);
-                        message.setFrom(new InternetAddress("arthurportas@gmail.com"));
+                        message.setFrom(new InternetAddress("eduict.skills@gmail.com"));
                         message.setRecipients(Message.RecipientType.TO,
-                                InternetAddress.parse("arthurportas@gmail.com"));
+                                InternetAddress.parse(email));
                         message.setSubject("Mudar password");
                         message.setText("teste" + token);
     

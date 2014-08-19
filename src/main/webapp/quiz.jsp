@@ -265,27 +265,27 @@
     
     <script>
         var radarChartData = {
-            labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+            labels: ["D1_Comprensão das TIC na Educação", "D2_Curículo e Avaliação", "D3_Pedagogia", "D4_TIC", "D5_Organização e Administração", "D6_Desenvolvimento Profissional Docente", "Running"],
             datasets: [
                 {
-                    label: "My First dataset",
+                    label: "Nivel desejado da Unesco",
                     fillColor: "rgba(220,220,220,0.2)",
                     strokeColor: "rgba(220,220,220,1)",
                     pointColor: "rgba(220,220,220,1)",
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [65, 59, 90, 81, 56, 55, 40]
+                    data: [65, 59, 90, 81, 56, 55]
                 },
                 {
-                    label: "My Second dataset",
+                    label: "Nível obtido",
                     fillColor: "rgba(151,187,205,0.2)",
                     strokeColor: "rgba(151,187,205,1)",
                     pointColor: "rgba(151,187,205,1)",
                     pointStrokeColor: "#fff",
                     pointHighlightFill: "#fff",
                     pointHighlightStroke: "rgba(151,187,205,1)",
-                    data: [28, 48, 40, 19, 96, 27, 100]
+                    data: [28, 48, 40, 19, 96, 27]
                 }
             ]
         };
