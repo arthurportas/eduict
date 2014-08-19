@@ -89,9 +89,9 @@
                 <p class="lead">Eduict</p>
     
                 <div class="list-group">
-                    <a href="#" class="list-group-item active">Nível 1</a>
-                    <a href="#" class="list-group-item ">Nível 2</a>
-                    <a href="#" class="list-group-item ">Nível 3</a>
+                    <a href="" class="list-group-item active">Nível 1</a>
+                    <a href="" class="list-group-item disabled">Nível 2</a>
+                    <a href="" class="list-group-item disabled">Nível 3</a>
                 </div>
                 
                 <div>
@@ -103,7 +103,6 @@
     
                 <div class="thumbnail">
                     <!--<img class="img-responsive" src="http://placehold.it/800x300" alt="">-->
-                    <!--  iterate on the member list @named attribute and display name,email and phone number -->
                     <c:forEach items="${quizzes}" var="quiz">
                         <!--<h4><c:out value="${quiz.description}"/></h4>-->
                         <c:forEach items="${quiz.levels}" var="level" varStatus="levelIndex">
@@ -130,7 +129,7 @@
     
                                                             <input type="radio" name="response-radios"
                                                                    value="${response.response}" 
-                                                                   ${responseIndex.first ? 'checked' : ''}><c:out value="${response.response}" escapeXml="false"/>/>
+                                                                   ${responseIndex.first ? 'checked' : ''}><c:out value="${response.response}" escapeXml="false"/>
                                                         </label>
                                                     </div>
                                                 </c:forEach>
@@ -165,7 +164,7 @@
                             voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
                             non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                     </div>
-                    <div class="ratings">
+                    <div class="ratings hidden">
                         <p class="pull-right">3 reviews</p>
     
                         <p>
