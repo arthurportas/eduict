@@ -34,6 +34,13 @@ $(document).ready(function () {
             if ((currentQuestionVisited) < questionsNumber) {
                 $(questions[currentQuestionVisited - 1]).addClass("hidden");//current visible
                 //$(questions[currentQuestionVisited]).removeClass("hidden");
+            } else if(currentQuestionVisited === questionsNumber) {
+                visiblePanel = $('div.domain-question-wrapper-' + domainIndex);
+                nextVisiblePanel = $('div.domain-question-wrapper-' + (domainIndex + 1));
+                if (visiblePanel && nextVisiblePanel) {
+                    visiblePanel.addClass("hidden");
+                    nextVisiblePanel.removeClass("hidden");
+                }  
             }
         }
     });
