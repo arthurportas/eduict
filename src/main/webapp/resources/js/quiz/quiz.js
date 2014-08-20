@@ -34,7 +34,7 @@ $(document).ready(function () {
             if ((currentQuestionVisited) < questionsNumber) {
                 $(questions[currentQuestionVisited - 1]).addClass("hidden");//current visible
                 //$(questions[currentQuestionVisited]).removeClass("hidden");
-            } else if(currentQuestionVisited === questionsNumber) {
+            } else if (currentQuestionVisited === questionsNumber) {
                 $(questions[currentQuestionVisited - 1]).addClass("hidden");//current visible
                 visiblePanel = $('div.domain-question-wrapper-' + domainIndex);
                 nextVisiblePanel = $('div.domain-question-wrapper-' + (domainIndex + 1));
