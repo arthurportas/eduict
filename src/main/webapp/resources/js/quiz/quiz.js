@@ -40,7 +40,7 @@ $(document).ready(function () {
             $('a.level-2').addClass("disabled");
             
             $('a.level-3').removeClass("disabled");
-            $('a.level-2').addClass("active");
+            $('a.level-3').addClass("active");
             
             currentLevel = levelIndex;
             datasetValueIndex = domainIndex - level3OOffset;
