@@ -22,8 +22,8 @@ $(document).ready(function () {
         
         /*hack to know domain index per level*/
         if (questionVisible === 22) {//22 is the last question on first level
-            $('level-1-wrapper').addClass("hidden");
-            $('level-2-wrapper').removeClass("hidden");
+            $('div.level-1-wrapper').addClass("hidden");
+            $('div.level-2-wrapper').removeClass("hidden");
             
             $('a.level-1').removeClass("active");
             $('a.level-1').addClass("disabled");
@@ -33,8 +33,8 @@ $(document).ready(function () {
             currentLevel = levelIndex;
             datasetValueIndex = domainIndex - level2Offset;
         } else if (questionVisible === 43) {//43 is the last question on second level
-            $('level-2-wrapper').addClass("hidden");
-            $('level-3-wrapper').removeClass("hidden");
+            $('div.level-2-wrapper').addClass("hidden");
+            $('div.level-3-wrapper').removeClass("hidden");
             
             $('a.level-2').removeClass("active");
             $('a.level-2').addClass("disabled");
