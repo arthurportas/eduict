@@ -13,7 +13,7 @@ $(document).ready(function () {
         e.preventDefault();
         var answerValue = $(this).data("answerValue");
         var levelIndex = $(this).data("level");
-        var questionVisible = $(this).data("data-question");
+        var questionVisible = $(this).data("question");
         var domainIndex = $(this).data("domain");
         var datasetValueIndex = domainIndex;
         var clientDataset = 1;
