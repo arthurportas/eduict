@@ -45,7 +45,7 @@ $(document).ready(function () {
             $('a.level-2').addClass("active");
             $('a.level-2').removeClass("disabled");
             currentLevel = 2;
-            datasetValueIndex = domainIndex - level2Offset;
+            
         } else if (questionVisible === 43) {//43 is the last question on second level
             $('div.level-2-wrapper').addClass("hidden");
             $('div.level-3-wrapper').removeClass("hidden");
@@ -57,7 +57,7 @@ $(document).ready(function () {
             $('a.level-3').addClass("active");
             
             currentLevel = 3;
-            datasetValueIndex = domainIndex - level3OOffset;
+            
         } else if (questionVisible === 61) {//61 is the last question 
             $(this).html('Selecionar a resposta e gravar resultados');
             //ajax call to record my results
@@ -69,6 +69,12 @@ $(document).ready(function () {
         var questions =  questionWrapper.find(".question-container");//array of questions
         
         var questionsNumber = questions.length;
+        
+        if (currentLevel === 2) {
+            datasetValueIndex = domainIndex - level2Offset;
+        } else if (currentLevel === 3) {
+            datasetValueIndex = domainIndex - level3OOffset;
+        }
         
         var valueToUpdate = window.myRadar.datasets[1].points[datasetValueIndex-1];
         console.log('valueToUpdate->[datasetValueIndex-1]' + valueToUpdate);
