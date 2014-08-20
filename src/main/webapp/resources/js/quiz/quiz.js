@@ -17,7 +17,7 @@ $(document).ready(function () {
         
         var questionWrapper = $('div.domain-question-wrapper-' + domainIndex);
         var questions =  questionWrapper.find(".question-container");//array of questions
-        var currentQuestionVisited = 1;
+        var currentQuestionVisited = 0;//bacause it's an array
         var questionsNumber = questions.length;
         
         if (questionsNumber === 1) {

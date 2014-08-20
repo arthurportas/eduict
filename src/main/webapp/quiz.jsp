@@ -78,9 +78,9 @@
             <div class="col-md-3">
                 <p class="lead">Eduict</p>
                 <div class="list-group">
-                    <a href="" title="Nível 1" class="list-group-item active">Nível 1</a>
-                    <a href="" title="Nível 2" class="list-group-item disabled">Nível 2</a>
-                    <a href="" title="Nível 3" class="list-group-item disabled">Nível 3</a>
+                    <a href="" title="Nível 1" class="list-group-item active level-1">Nível 1</a>
+                    <a href="" title="Nível 2" class="list-group-item disabled level-2">Nível 2</a>
+                    <a href="" title="Nível 3" class="list-group-item disabled level-3">Nível 3</a>
                 </div>
                 <div class="graph-container">
                     <canvas id="canvas" height="400" width="400"></canvas>
