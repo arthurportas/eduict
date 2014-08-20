@@ -79,7 +79,7 @@ INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, VALUE, QUESTION_ID_FK) VALUES(23, 'R
 INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, VALUE, QUESTION_ID_FK) VALUES(24, 'R4P6', '1', 6);
 
 
-INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (7, 'Descrever e demonstrar as tarefas básicas e aplicações de processadores de texto, como a entrada de texto, edição de texto, formataão de texto e impressão', 4);
+INSERT INTO QUESTION (QUESTION_ID, QUESTION, DOMAIN_ID_FK) VALUES (7, 'Descrever e demonstrar as tarefas básicas e aplicações de processadores de texto, como a entrada de texto, edição de texto, formatação de texto e impressão', 4);
 --RESPONSES
 INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, VALUE, QUESTION_ID_FK) VALUES(25, 'R1P7', '0', 7);
 INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, VALUE, QUESTION_ID_FK) VALUES(26, 'R2P7', '0.33', 7);

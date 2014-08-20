@@ -41,7 +41,8 @@ $(document).ready(function () {
                 if (visiblePanel && nextVisiblePanel) {
                     visiblePanel.addClass("hidden");
                     nextVisiblePanel.removeClass("hidden");
-                }  
+                }
+                currentQuestionVisited = 0;
             }
         }
     });
