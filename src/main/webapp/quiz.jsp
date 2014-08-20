@@ -144,7 +144,7 @@
                                                         </label>
                                                     </div>
                                                 </c:forEach>
-                                                <button class="btn btn-lg btn-primary btn-block response response-${question.id} disabled" data-domain="${domain.id}" data-question="${question.id}" data-answerValue="0" title="Selecionar a resposta e avançar">Selecionar a resposta e avançar</button>
+                                                <button class="btn btn-lg btn-primary btn-block response response-${question.id} disabled" data-level="${level.id}" data-domain="${domain.id}" data-question="${question.id}" data-answerValue="0" title="Selecionar a resposta e avançar">Selecionar a resposta e avançar</button>
                                             </div>
                                         </div>
                                     </c:forEach>

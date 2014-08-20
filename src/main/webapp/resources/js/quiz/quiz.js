@@ -7,12 +7,37 @@ $(document).ready(function () {
         
     })
     var currentQuestionVisited = 0;//bacause it's an array
+    var currentLevel = 1;
     
     $('button.response').bind('click', function (e) {
         e.preventDefault();
         var answerValue = $(this).data("answerValue");
+        var levelIndex = $(this).data("level");
         var domainIndex = $(this).data("domain");
         var clientDataset = 1;
+        var level2Offset = 6;
+        var level3OOffset = 12;
+        
+        /*hack to know domain index per level*/
+        if (levelIndex === 2) {
+            $('a.level-1').removeClass("active");
+            $('a.level-1').addClass("disabled");
+            
+            $('a.level-2').addClass("active");
+            $('a.level-2').removeClass("disabled");
+            currentLevel = levelIndex;
+            domainIndex = domainIndex - level2Offset;
+        } else if (levelIndex === 3) {
+            $('a.level-2').removeClass("active");
+            $('a.level-2').addClass("disabled");
+            
+            $('a.level-3').removeClass("disabled");
+            $('a.level-2').addClass("active");
+            
+            currentLevel = levelIndex;
+            domainIndex = domainIndex - 12;
+        }
+        
         window.myRadar.datasets[1].points[domainIndex-1].value=answerValue;
         window.myRadar.update();
         
