@@ -32,7 +32,7 @@ $(document).ready(function () {
             currentQuestionVisited +=1;
             if ((currentQuestionVisited) < questionsNumber) {
                 $(questions[currentQuestionVisited - 1]).addClass("hidden");//current visible
-                $(questions[currentQuestionVisited]).removeClass("hidden");
+                //$(questions[currentQuestionVisited]).removeClass("hidden");
             }
         }
     });
