@@ -45,10 +45,13 @@ $(document).ready(function () {
             currentLevel = levelIndex;
             datasetValueIndex = domainIndex - level3OOffset;
         }
-        
-        window.myRadar.datasets[1].points[datasetValueIndex-1].value=answerValue;
-        window.myRadar.update();
-        
+        var valueToUpdate = window.myRadar.datasets[1].points[datasetValueIndex-1];
+       
+        if (valueToUpdate) {
+             valueToUpdate.value=answerValue;
+            window.myRadar.update();
+        }
+       
         var questionWrapper = $('div.domain-question-wrapper-' + domainIndex);
         var questions =  questionWrapper.find(".question-container");//array of questions
         
