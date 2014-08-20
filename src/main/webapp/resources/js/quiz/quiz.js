@@ -96,8 +96,9 @@ $(document).ready(function () {
             
             $('a.level-2').addClass("active");
             $('a.level-2').removeClass("disabled");
-            currentLevel = 2;
             
+        } else if (questionVisible === 23) {//23 is the first question on second level
+            currentLevel = 2;
         } else if (questionVisible === 43) {//43 is the last question on second level
             $('div.level-2-wrapper').addClass("hidden");
             $('div.level-3-wrapper').removeClass("hidden");
