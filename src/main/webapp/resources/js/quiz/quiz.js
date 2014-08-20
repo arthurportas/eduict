@@ -32,7 +32,7 @@ $(document).ready(function () {
             
             $('a.level-2').addClass("active");
             $('a.level-2').removeClass("disabled");
-            currentLevel = levelIndex;
+            currentLevel = 2;
             datasetValueIndex = domainIndex - level2Offset;
         } else if (questionVisible === 43) {//43 is the last question on second level
             $('div.level-2-wrapper').addClass("hidden");
@@ -44,7 +44,7 @@ $(document).ready(function () {
             $('a.level-3').removeClass("disabled");
             $('a.level-3').addClass("active");
             
-            currentLevel = levelIndex;
+            currentLevel = 3;
             datasetValueIndex = domainIndex - level3OOffset;
         } else if (questionVisible === 61) {//61 is the last question 
             $(this).html('Selecionar a resposta e gravar resultados');
@@ -61,7 +61,7 @@ $(document).ready(function () {
         var valueToUpdate = window.myRadar.datasets[1].points[datasetValueIndex-1];
        
         if (valueToUpdate) {
-             valueToUpdate.value = (answerValue / questionsNumber);
+             valueToUpdate.value = valueToUpdate.value + (answerValue / questionsNumber);
             window.myRadar.update();
         }
         
