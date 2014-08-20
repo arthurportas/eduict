@@ -20,6 +20,18 @@ $(document).ready(function () {
         var level2Offset = 6;
         var level3OOffset = 12;
         
+        var averages = {
+            domain1 :{
+                value: 0
+            },
+            domain12 :{
+                value: 0
+            },
+            domain13 :{
+                value: 0
+            }
+        };
+        
         /*hack to know domain index per level*/
         if (questionVisible === 22) {//22 is the last question on first level
             //may i see the next level?
@@ -50,8 +62,8 @@ $(document).ready(function () {
             $(this).html('Selecionar a resposta e gravar resultados');
             //ajax call to record my results
         }
-            console.log('currentLevel->' + currentLevel);
-            console.log('currentDomain->' + domainIndex);
+            //console.log('currentLevel->' + currentLevel);
+            //console.log('currentDomain->' + domainIndex);
        
         var questionWrapper = $('div.domain-question-wrapper-' + domainIndex);
         var questions =  questionWrapper.find(".question-container");//array of questions
@@ -59,7 +71,8 @@ $(document).ready(function () {
         var questionsNumber = questions.length;
         
         var valueToUpdate = window.myRadar.datasets[1].points[datasetValueIndex-1];
-       
+        console.log('valueToUpdate->[datasetValueIndex-1]' + valueToUpdate);
+        
         if (valueToUpdate) {
              valueToUpdate.value = valueToUpdate.value + (answerValue / questionsNumber);
             window.myRadar.update();
