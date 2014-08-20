@@ -6,6 +6,7 @@ $(document).ready(function () {
         $('button.response-' + responseButtonId).data("answerValue", value);
         
     })
+    var currentQuestionVisited = 0;//bacause it's an array
     
     $('button.response').bind('click', function (e) {
         e.preventDefault();
@@ -17,7 +18,7 @@ $(document).ready(function () {
         
         var questionWrapper = $('div.domain-question-wrapper-' + domainIndex);
         var questions =  questionWrapper.find(".question-container");//array of questions
-        var currentQuestionVisited = 0;//bacause it's an array
+        
         var questionsNumber = questions.length;
         
         if (questionsNumber === 1) {
@@ -29,7 +30,7 @@ $(document).ready(function () {
             }
         } else {
             //go to next question, if not visited
-            currentQuestionVisited +=1;
+            currentQuestionVisited = currentQuestionVisited + 1;
             if ((currentQuestionVisited) < questionsNumber) {
                 $(questions[currentQuestionVisited - 1]).addClass("hidden");//current visible
                 //$(questions[currentQuestionVisited]).removeClass("hidden");
