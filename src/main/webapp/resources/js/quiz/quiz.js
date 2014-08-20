@@ -14,16 +14,30 @@ $(document).ready(function () {
         var clientDataset = 1;
         window.myRadar.datasets[1].points[domainIndex-1].value=answerValue;
         window.myRadar.update();
-        var visiblePanel = $('div.domain-question-wrapper-' + domainIndex);
-        var nextVisiblePanel = $('div.domain-question-wrapper-' + (domainIndex + 1));
-        if (visiblePanel && nextVisiblePanel) {
-            visiblePanel.addClass("hidden");
-            nextVisiblePanel.removeClass("hidden");
+        
+        var questionWrapper = $('div.domain-question-wrapper-' + domainIndex);
+        var questions =  questionWrapper.find(".question-container");//array of questions
+        var currentQuestionVisited = 1;
+        var questionsNumber = questions.length;
+        
+        if (questionsNumber === 1) {
+            var visiblePanel = $('div.domain-question-wrapper-' + domainIndex);
+            var nextVisiblePanel = $('div.domain-question-wrapper-' + (domainIndex + 1));
+            if (visiblePanel && nextVisiblePanel) {
+                visiblePanel.addClass("hidden");
+                nextVisiblePanel.removeClass("hidden");
+            }
+        } else {
+            //go to next question, if not visited
+            if ((currentQuestionVisited +1) < questionsNumber) {
+                questions[currentQuestionVisited].addClass("hidden");
+                questions[currentQuestionVisited +1].removeClass("hidden");
+            }
         }
     });
 });
 
-function updateGraph(answerValue, domainIndex) {
+function calculateAnswerAverage(answerValue, domainIndex) {
     
     
 }
