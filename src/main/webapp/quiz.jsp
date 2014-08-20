@@ -128,7 +128,7 @@
                                             <div class="alert alert-warning question">
                                                 <h4>Questão</h4>
                                                 
-                                                <p><c:out value="${question.question}"/></p>
+                                                <p><c:out value="${question.question}."/></p>
                                             </div>
                                             <div class="answer-container answer-wrapper-${question.id} ">
                                                 <h4>Respostas</h4>

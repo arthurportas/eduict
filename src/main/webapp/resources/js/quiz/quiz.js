@@ -22,6 +22,8 @@ $(document).ready(function () {
         
         /*hack to know domain index per level*/
         if (questionVisible === 22) {//22 is the last question on first level
+            //may i see the next level?
+        
             $('div.level-1-wrapper').addClass("hidden");
             $('div.level-2-wrapper').removeClass("hidden");
             
@@ -48,17 +50,20 @@ $(document).ready(function () {
             $(this).html('Selecionar a resposta e gravar resultados');
             //ajax call to record my results
         }
-        var valueToUpdate = window.myRadar.datasets[1].points[datasetValueIndex-1];
-       
-        if (valueToUpdate) {
-             valueToUpdate.value=answerValue;
-            window.myRadar.update();
-        }
+            console.log('currentLevel->' + currentLevel);
+            console.log('currentDomain->' + domainIndex);
        
         var questionWrapper = $('div.domain-question-wrapper-' + domainIndex);
         var questions =  questionWrapper.find(".question-container");//array of questions
         
         var questionsNumber = questions.length;
+        
+        var valueToUpdate = window.myRadar.datasets[1].points[datasetValueIndex-1];
+       
+        if (valueToUpdate) {
+             valueToUpdate.value = (answerValue / questionsNumber);
+            window.myRadar.update();
+        }
         
         if (questionsNumber === 1) {
             var visiblePanel = $('div.domain-question-wrapper-' + domainIndex);
