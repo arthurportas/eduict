@@ -61,9 +61,6 @@
                             <a class="user-logout" href="/logout" title="Logout">Logout</a>
                         </li>
                         <%}%>
-                        <li>
-                            <a class="" href="/index.jsp" title="Home">Home</a>
-                        </li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
