@@ -14,19 +14,21 @@ $(document).ready(function () {
         var answerValue = $(this).data("answerValue");
         var levelIndex = $(this).data("level");
         var domainIndex = $(this).data("domain");
+        var datasetValueIndex = domainIndex;
         var clientDataset = 1;
         var level2Offset = 6;
         var level3OOffset = 12;
         
         /*hack to know domain index per level*/
         if (levelIndex === 2) {
+            $('level-1-wrapper').addClass("hidden");
             $('a.level-1').removeClass("active");
             $('a.level-1').addClass("disabled");
             
             $('a.level-2').addClass("active");
             $('a.level-2').removeClass("disabled");
             currentLevel = levelIndex;
-            domainIndex = domainIndex - level2Offset;
+            datasetValueIndex = domainIndex - level2Offset;
         } else if (levelIndex === 3) {
             $('a.level-2').removeClass("active");
             $('a.level-2').addClass("disabled");
@@ -35,10 +37,10 @@ $(document).ready(function () {
             $('a.level-2').addClass("active");
             
             currentLevel = levelIndex;
-            domainIndex = domainIndex - 12;
+            datasetValueIndex = domainIndex - level3OOffset;
         }
         
-        window.myRadar.datasets[1].points[domainIndex-1].value=answerValue;
+        window.myRadar.datasets[1].points[datasetValueIndex-1].value=answerValue;
         window.myRadar.update();
         
         var questionWrapper = $('div.domain-question-wrapper-' + domainIndex);
