@@ -44,6 +44,9 @@ $(document).ready(function () {
             
             currentLevel = levelIndex;
             datasetValueIndex = domainIndex - level3OOffset;
+        } else if (questionVisible === 61) {//61 is the last question 
+            $(this).html('Selecionar a resposta e gravar resultados');
+            //ajax call to record my results
         }
         var valueToUpdate = window.myRadar.datasets[1].points[datasetValueIndex-1];
        
