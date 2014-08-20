@@ -21,15 +21,66 @@ $(document).ready(function () {
         var level3OOffset = 12;
         
         var averages = {
-            domain1 :{
-                value: 0
+            level1 :{
+                domain1 :{
+                    value: 0
+                },
+                domain2 :{
+                    value: 0
+                },
+                domain3 :{
+                    value: 0
+                },
+                domain4 :{
+                    value: 0
+                },
+                domain5 :{
+                    value: 0
+                },
+                domain6 :{
+                    value: 0
+                },
             },
-            domain12 :{
-                value: 0
+            level2 :{
+                domain1 :{
+                    value: 0
+                },
+                domain2 :{
+                    value: 0
+                },
+                domain3 :{
+                    value: 0
+                },
+                domain4 :{
+                    value: 0
+                },
+                domain5 :{
+                    value: 0
+                },
+                domain6 :{
+                    value: 0
+                },
             },
-            domain13 :{
-                value: 0
-            }
+            level3 :{
+                domain1 :{
+                    value: 0
+                },
+                domain2 :{
+                    value: 0
+                },
+                domain3 :{
+                    value: 0
+                },
+                domain4 :{
+                    value: 0
+                },
+                domain5 :{
+                    value: 0
+                },
+                domain6 :{
+                    value: 0
+                },
+            },
         };
         
         /*hack to know domain index per level*/
@@ -77,7 +128,7 @@ $(document).ready(function () {
         }
         
         var valueToUpdate = window.myRadar.datasets[1].points[datasetValueIndex-1];
-        console.log('valueToUpdate->[datasetValueIndex-1]' + valueToUpdate);
+        console.log('valueToUpdate->[datasetValueIndex-1].value' + valueToUpdate.value);
         
         if (valueToUpdate) {
              valueToUpdate.value = valueToUpdate.value + (answerValue / questionsNumber);
