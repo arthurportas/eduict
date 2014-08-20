@@ -31,8 +31,8 @@ $(document).ready(function () {
             //go to next question, if not visited
             currentQuestionVisited +=1;
             if ((currentQuestionVisited) < questionsNumber) {
-                $(questions[currentQuestionVisited]).addClass("hidden")
-                $(questions[currentQuestionVisited +1]).removeClass("hidden");
+                $(questions[currentQuestionVisited - 1]).addClass("hidden");//current visible
+                $(questions[currentQuestionVisited]).removeClass("hidden");
             }
         }
     });
