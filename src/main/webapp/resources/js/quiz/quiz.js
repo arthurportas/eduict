@@ -29,7 +29,8 @@ $(document).ready(function () {
             }
         } else {
             //go to next question, if not visited
-            if ((currentQuestionVisited +1) < questionsNumber) {
+            currentQuestionVisited +=1;
+            if ((currentQuestionVisited) < questionsNumber) {
                 questions[currentQuestionVisited].addClass("hidden");
                 questions[currentQuestionVisited +1].removeClass("hidden");
             }
