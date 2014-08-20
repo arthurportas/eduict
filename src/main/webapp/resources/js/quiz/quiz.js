@@ -18,7 +18,7 @@ $(document).ready(function () {
         var datasetValueIndex = domainIndex;
         var clientDataset = 1;
         var level2Offset = 5;
-        var level3OOffset = 11;
+        var level3OOffset = 12;
         
         var averages = {
             domain1 :{
