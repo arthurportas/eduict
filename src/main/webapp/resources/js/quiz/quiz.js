@@ -13,6 +13,7 @@ $(document).ready(function () {
         e.preventDefault();
         var answerValue = $(this).data("answerValue");
         var levelIndex = $(this).data("level");
+        var questionVisible = $(this).data("data-question");
         var domainIndex = $(this).data("domain");
         var datasetValueIndex = domainIndex;
         var clientDataset = 1;
@@ -20,8 +21,10 @@ $(document).ready(function () {
         var level3OOffset = 12;
         
         /*hack to know domain index per level*/
-        if (levelIndex === 2) {
+        if (questionVisible === 22) {//22 is the last question on first level
             $('level-1-wrapper').addClass("hidden");
+            $('level-2-wrapper').removeClass("hidden");
+            
             $('a.level-1').removeClass("active");
             $('a.level-1').addClass("disabled");
             
@@ -29,7 +32,10 @@ $(document).ready(function () {
             $('a.level-2').removeClass("disabled");
             currentLevel = levelIndex;
             datasetValueIndex = domainIndex - level2Offset;
-        } else if (levelIndex === 3) {
+        } else if (questionVisible === 43) {//43 is the last question on second level
+            $('level-2-wrapper').addClass("hidden");
+            $('level-3-wrapper').removeClass("hidden");
+            
             $('a.level-2').removeClass("active");
             $('a.level-2').addClass("disabled");
             
