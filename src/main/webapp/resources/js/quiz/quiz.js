@@ -8,7 +8,9 @@ $(document).ready(function () {
     })
     var currentQuestionVisited = 0;//bacause it's an array
     var currentLevel = 1;
-    
+    var level2Offset = 5;
+    var level3OOffset = 12;
+        
     $('button.response').bind('click', function (e) {
         e.preventDefault();
         var answerValue = $(this).data("answerValue");
@@ -17,8 +19,7 @@ $(document).ready(function () {
         var domainIndex = $(this).data("domain");
         var datasetValueIndex = domainIndex;
         var clientDataset = 1;
-        var level2Offset = 5;
-        var level3OOffset = 12;
+        
         
         var averages = {
             level1 :{
@@ -122,13 +123,16 @@ $(document).ready(function () {
         var questionsNumber = questions.length;
         
         if (currentLevel === 2) {
+            if (domainIndex >=12) {
+                level2Offset += 1;
+            }
             datasetValueIndex = domainIndex - level2Offset;
         } else if (currentLevel === 3) {
             datasetValueIndex = domainIndex - level3OOffset;
         }
         
         var valueToUpdate = window.myRadar.datasets[1].points[datasetValueIndex-1];
-        console.log('valueToUpdate->[datasetValueIndex-1].value' + valueToUpdate.value);
+        console.log('valueToUpdate->[datasetValueIndex-1].value ->' + valueToUpdate.value);
         
         if (valueToUpdate) {
              valueToUpdate.value = valueToUpdate.value + (answerValue / questionsNumber);
