@@ -108,9 +108,9 @@ $(document).ready(function () {
             
             $('a.level-3').removeClass("disabled");
             $('a.level-3').addClass("active");
-            
+
+        } else if (questionVisible === 44) {//44 is the first question on third level
             currentLevel = 3;
-            
         } else if (questionVisible === 61) {//61 is the last question 
             $(this).html('Selecionar a resposta e gravar resultados');
             //ajax call to record my results
