@@ -36,8 +36,9 @@ public class QuizController extends HttpServlet {
         StringBuilder errorMessage = new StringBuilder();
 
         try {
-            Quiz quiz = registrationService.lookupQuizById(1L);
-            request.setAttribute("quiz", quiz);
+            Quiz demoQuiz = registrationService.lookupQuizById(1L);
+            request.setAttribute("quiz", demoQuiz);
+            out.println(demoQuiz.toString());
         } catch (Exception e) {
             Throwable t = e;
             while ((t.getCause()) != null) {
