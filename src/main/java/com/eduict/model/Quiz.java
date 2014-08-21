@@ -39,10 +39,6 @@ public class Quiz implements Serializable {
     @XmlAttribute
     private Date createdAt = new Date();
     
-    @Column(name = "SAVED_AT")
-    @XmlAttribute
-    private Date savedAt;
-    
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "USER_ID_FK", referencedColumnName = "USER_ID", unique = false, nullable = true, insertable = true, updatable = true)
     @XmlTransient
@@ -80,14 +76,6 @@ public class Quiz implements Serializable {
 
     public void setCreateAt(Date createdAt) {
         this.createdAt = createdAt;
-    }
-    
-    public Date getSavedAt() {
-        return savedAt;
-    }
-
-    public void setSavedAt(Date savedAt) {
-        this.savedAt = savedAt;
     }
     
     public User getUser() {

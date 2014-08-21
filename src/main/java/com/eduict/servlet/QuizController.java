@@ -37,7 +37,6 @@ public class QuizController extends HttpServlet {
 
         try {
             Quiz quiz = registrationService.lookupQuizById(1L);
-            
             request.setAttribute("quiz", quiz);
         } catch (Exception e) {
             Throwable t = e;
