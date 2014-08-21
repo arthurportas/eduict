@@ -26,7 +26,7 @@ public class QuizController extends HttpServlet {
     @Inject
     QuizRegistration registrationService;
 
-    protected void doPost(HttpServletRequest request,
+    protected void doGet(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html");
