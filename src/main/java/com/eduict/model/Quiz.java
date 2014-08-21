@@ -37,7 +37,7 @@ public class Quiz implements Serializable {
     
     @Column(name = "CREATED_AT")
     @XmlAttribute
-    private Date createdAt = new Date();
+    private Date createdAt;
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "USER_ID_FK", referencedColumnName = "USER_ID", unique = false, nullable = true, insertable = true, updatable = true)
