@@ -4,8 +4,8 @@ insert into Member (id, name, email, phone_number) values (0, 'John Smith', 'joh
 INSERT INTO USER (USER_ID, FIRSTNAME, LASTNAME, PASSWORD, EMAIL, AGE, GENDER, ACADEMIC_DEGREE) VALUES (0, 'Susana', 'Gonçalves', '123456', 'susana.goncalves@portugalmail.pt', 38, 'feminino', 'licenciatura');
 
 --Quiz
-INSERT INTO QUIZ (QUIZ_ID, DESCRIPTION, CREATED_AT, USER_ID_FK) VALUES (1, 'Demo', null, null);
-INSERT INTO QUIZ (QUIZ_ID, DESCRIPTION, CREATED_AT, USER_ID_FK) VALUES (2, 'Auto-avaliação', null, 0);
+INSERT INTO QUIZ (QUIZ_ID, DESCRIPTION) VALUES (1, 'Demo');
+INSERT INTO QUIZ (QUIZ_ID, DESCRIPTION, USER_ID_FK) VALUES (2, 'Auto-avaliação', 0);
 
 INSERT INTO ROLE (ROLE_ID, NAME, USER_ID_FK) VALUES(1, 'Professor', 0);
 INSERT INTO ROLE (ROLE_ID, NAME, USER_ID_FK) VALUES(2, 'Diretor', 0);
