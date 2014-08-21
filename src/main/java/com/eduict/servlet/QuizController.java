@@ -38,7 +38,6 @@ public class QuizController extends HttpServlet {
         try {
             Quiz demoQuiz = registrationService.lookupQuizById(1L);
             request.setAttribute("quiz", demoQuiz);
-            out.println(demoQuiz.toString());
         } catch (Exception e) {
             Throwable t = e;
             while ((t.getCause()) != null) {
@@ -50,7 +49,7 @@ public class QuizController extends HttpServlet {
         } finally {
             request.setAttribute("errorMessage", errorMessage.toString());
             RequestDispatcher resultView = request.getRequestDispatcher("quiz.jsp");
-            //resultView.forward(request, response);
+            resultView.forward(request, response);
         }
     }
 }
