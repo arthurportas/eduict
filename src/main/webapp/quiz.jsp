@@ -75,7 +75,7 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="alert alert-warning demo">
-                    Está em modo demonstração. Para GRAVAR os resultados e ter histórico efetue login!
+                    Está em modo demonstração. Para GRAVAR os resultados e ter histórico efetue <a class="login" title="Login" href="/index.jsp?view=login">LOGIN!</a>
                 </div>
             </div>
         </div>
