@@ -71,6 +71,16 @@
     <!--###################################################################-->
     <!-- Page Content -->
     <div class="container">
+        <%if (session.getAttribute("user") == null) {%>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="alert alert-warning demo">
+                    Está em modo demonstração. Para GRAVAR os resultados e ter histórico efetue login!
+                </div>
+            </div>
+        </div>
+        <%}%>
+        
         <div class="row">
             <div class="col-md-3">
                 <p class="lead">Eduict</p>
@@ -111,7 +121,7 @@
             
                 <div class="thumbnail">
                     <!--<img class="img-responsive" src="http://placehold.it/800x300" alt="">-->
-                    <c:forEach items="${quizzes}" var="quiz">
+                    <c:forEach items="${quiz}" var="quiz">
                         <!--<h4><c:out value="${quiz.description}"/></h4>-->
                         <c:forEach items="${quiz.levels}" var="level" varStatus="levelIndex">
                         <div class="level level-${level.id}-wrapper ${not levelIndex.first ? 'hidden' : ''}">
@@ -136,8 +146,8 @@
                                                     <div class="radio">
                                                         <label>
                                                             <input type="radio" name="response-radios" data-question="${question.id}"
-                                                                   value="${response.value}" 
-                                                                   ${responseIndex.first ? 'checked' : ''}><c:out value="${response.response}" escapeXml="false"/>
+                                                                   value="${response.value}">
+                                                                   <c:out value="${response.response}" escapeXml="false"/>
                                                         </label>
                                                     </div>
                                                 </c:forEach>

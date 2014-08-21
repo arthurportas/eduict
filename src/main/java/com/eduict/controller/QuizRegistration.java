@@ -40,6 +40,10 @@ public class QuizRegistration {
         initNewQuiz();
     }
 
+    public Quiz lookupQuizById(long id) {
+        return em.find(Quiz.class, id);
+    }
+    
     @PostConstruct
     public void initNewQuiz() {
         newQuiz = new Quiz();

@@ -1,7 +1,6 @@
 -- You can use this file to load seed data into the database using SQL statements
 insert into Member (id, name, email, phone_number) values (0, 'John Smith', 'john.smith@mailinator.com', '2125551212');
---Quiz
-INSERT INTO QUIZ (QUIZ_ID, DESCRIPTION) VALUES (1, 'Demo');
+
 
 --Level
 INSERT INTO LEVEL (LEVEL_ID, DESCRIPTION, QUIZ_ID_FK) VALUES (1, 'Alfabetização Tecnológica', 1);
@@ -485,6 +484,10 @@ INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, VALUE, QUESTION_ID_FK) VALUES(243, '
 INSERT INTO RESPONSE(RESPONSE_ID, RESPONSE, VALUE, QUESTION_ID_FK) VALUES(244, 'R4P61', '1', 61);
 
 INSERT INTO USER (USER_ID, FIRSTNAME, LASTNAME, PASSWORD, EMAIL, AGE, GENDER, ACADEMIC_DEGREE) VALUES (0, 'Susana', 'Gonçalves', '123456', 'susana.goncalves@portugalmail.pt', 38, 'feminino', 'licenciatura');
+
+--Quiz
+INSERT INTO QUIZ (QUIZ_ID, DESCRIPTION) VALUES (1, 'Demo');
+INSERT INTO QUIZ (QUIZ_ID, DESCRIPTION, USER_ID_FK) VALUES (2, 'Auto-avaliação', 0);
 
 INSERT INTO ROLE (ROLE_ID, NAME, USER_ID_FK) VALUES(1, 'Professor', 0);
 INSERT INTO ROLE (ROLE_ID, NAME, USER_ID_FK) VALUES(2, 'Diretor', 0);

@@ -67,15 +67,15 @@
                             String email = user.getEmail();
                     %>
                     <li>
-                        <a class="user-menu" href="" title="<%=email %>"><%=email %>
-                        </a>
+                        <a class="user-menu" href="" title="<%=email %>"><%=email %></a>
+                    </li>
+                    <li>
+                        <a class="user-profile" href="" title="Perfil">Perfil</a>
                     </li>
                     <li>
                         <a class="user-logout" href="/logout" title="Logout">Logout</a>
                     </li>
                     <%}%>
-    
-    
                     <li>
                         <a class="developer-credits" href="" title="Developer">Developer</a>
                     </li>
@@ -113,7 +113,7 @@
     </div>
     <!-- /.content-section-a -->
     
-    <div class="content-section-a user-personal">
+    <div class="content-section-a user-personal hidden">
         <div class="container bordered">
             <div class="row">
                 <div class="container" id="formPersonalDataContainer">

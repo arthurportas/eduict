@@ -14,6 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.List;
 import com.eduict.model.Role;
+import com.eduict.model.Quiz;
 
 
 @Entity
@@ -83,6 +84,9 @@ public class User implements Serializable {
     
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
     private List<Role> roles;
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Quiz> quizzes;
    
    /* ==========================GETTERS/SETTERS======================= */
 
@@ -150,11 +154,19 @@ public class User implements Serializable {
         this.academicDegree = academicDegree;
     }
     
-    public List<Role> getRoless() {
+    public List<Role> getRoles() {
         return roles;
     }
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+    
+    public List<Quiz> getQuizzes() {
+        return quizzes;
+    }
+
+    public void setQuizzes(List<Quiz> quizzes) {
+        this.quizzes = quizzes;
     }
 }

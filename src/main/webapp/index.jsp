@@ -531,7 +531,7 @@
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
-                                <a href="/quiz.jsp" class="btn btn-default btn-lg" title="Questionário de Auto-avaliação"><i
+                                <a href="/quiz" class="btn btn-default btn-lg" title="Questionário de Auto-avaliação"><i
                                         class="fa-fw"></i> <span class="network-name">Questionário</span></a>
                             </li>
                         </ul>

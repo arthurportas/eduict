@@ -4,13 +4,11 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.util.List;
-
+import java.util.Date;
+import com.eduict.model.User;
 
 @Entity
 @XmlRootElement
@@ -36,7 +34,20 @@ public class Quiz implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "quiz", cascade = CascadeType.ALL)
     private List<Level> levels;
-   
+    
+    @Column(name = "CREATED_AT")
+    @XmlAttribute
+    private Date createdAt = new Date();
+    
+    @Column(name = "SAVED_AT")
+    @XmlAttribute
+    private Date savedAt;
+    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "USER_ID_FK", referencedColumnName = "USER_ID", unique = false, nullable = true, insertable = true, updatable = true)
+    @XmlTransient
+    private User user;
+    
    /* ==========================GETTERS/SETTERS======================= */
 
     public Long getId() {
@@ -59,7 +70,31 @@ public class Quiz implements Serializable {
         return levels;
     }
 
-    public void setDLevels(List<Level> levels) {
+    public void setLevels(List<Level> levels) {
         this.levels = levels;
+    }
+    
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreateAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+    
+    public Date getSavedAt() {
+        return savedAt;
+    }
+
+    public void setSavedAt(Date savedAt) {
+        this.savedAt = savedAt;
+    }
+    
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
