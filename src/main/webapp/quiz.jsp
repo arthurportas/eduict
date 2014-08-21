@@ -121,7 +121,7 @@
             
                 <div class="thumbnail">
                     <!--<img class="img-responsive" src="http://placehold.it/800x300" alt="">-->
-                    <c:forEach items="${quiz}" var="quiz">
+                    <c:out value="${quiz.description}">
                         <!--<h4><c:out value="${quiz.description}"/></h4>-->
                         <c:forEach items="${quiz.levels}" var="level" varStatus="levelIndex">
                         <div class="level level-${level.id}-wrapper ${not levelIndex.first ? 'hidden' : ''}">
@@ -159,7 +159,7 @@
                             </c:forEach>
                         </div>
                         </c:forEach>
-                    </c:forEach>
+                    </c:out>
                     
                     <div class="caption-full hidden">
                         <h4 class="pull-right">$24.99</h4>
