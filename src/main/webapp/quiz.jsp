@@ -121,9 +121,9 @@
             
                 <div class="thumbnail">
                     <!--<img class="img-responsive" src="http://placehold.it/800x300" alt="">-->
-                    <c:out value="${quiz.description}">
+                    <c:out value="${demoQuiz.description}">
                         <!--<h4><c:out value="${quiz.description}"/></h4>-->
-                        <c:forEach items="${quiz.levels}" var="level" varStatus="levelIndex">
+                        <c:forEach items="${demoQuiz.levels}" var="level" varStatus="levelIndex">
                         <div class="level level-${level.id}-wrapper ${not levelIndex.first ? 'hidden' : ''}">
                             <div class="alert alert-info level-${level.id}">
                                 <h4><c:out value="Nível ${level.id} - ${level.description}"/></h4>
