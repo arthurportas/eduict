@@ -135,7 +135,7 @@ $(document).ready(function () {
             window.myRadar.update();
         }
         
-        switch (questionsNumber) {
+        switch (questionVisible) {
             case 1: averages.level1.domain1 = window.myRadar.datasets[1].points[0].value;
                 break;
             case 2: averages.level1.domain2 = window.myRadar.datasets[1].points[1].value;
