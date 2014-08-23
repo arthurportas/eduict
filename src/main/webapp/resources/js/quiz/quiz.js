@@ -10,18 +10,7 @@ $(document).ready(function () {
     var currentLevel = 1;
     var level2Offset = 6;
     var level3OOffset = 12;
-        
-    $('button.response').bind('click', function (e) {
-        e.preventDefault();
-        var answerValue = $(this).data("answerValue");
-        var levelIndex = $(this).data("level");
-        var questionVisible = $(this).data("question");
-        var domainIndex = $(this).data("domain");
-        var datasetValueIndex = domainIndex;
-        var clientDataset = 1;
-        
-        
-        var averages = {
+    var averages = {
             level1 :{
                 domain1 :{
                     value: 0
@@ -84,6 +73,15 @@ $(document).ready(function () {
             },
         };
         
+    $('button.response').bind('click', function (e) {
+        e.preventDefault();
+        var answerValue = $(this).data("answerValue");
+        var levelIndex = $(this).data("level");
+        var questionVisible = $(this).data("question");
+        var domainIndex = $(this).data("domain");
+        var datasetValueIndex = domainIndex;
+        var clientDataset = 1;
+        
         /*hack to know domain index per level*/
         if (questionVisible === 22) {//22 is the last question on first level
             //may i see the next level?
@@ -144,6 +142,8 @@ $(document).ready(function () {
                 visiblePanel.addClass("hidden");
                 nextVisiblePanel.removeClass("hidden");
             }
+            averages.level1.domain1 = 99;
+            
         } else {
             //go to next question, if not visited
             currentQuestionVisited = currentQuestionVisited + 1;

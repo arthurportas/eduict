@@ -86,7 +86,7 @@
             </div><!--placeholder-->
             <div class="col-md-9">
                 <div class="alert alert-warning save-results">
-                    A qualquer momento pode terminar o questionário e gravar os resultados. <%if (session.getAttribute("user") == null) {%>(Demonstração)<%{%>
+                    A qualquer momento pode terminar o questionário e gravar os resultados. <%if (session.getAttribute("user") == null) {%>(Demonstração)<%}%>
                     <button class="btn btn-lg btn-danger btn-block save-results" title="Terminar e gravar resultados" >Terminar e Gravar resultados</button>
                 </div>
             </div>
