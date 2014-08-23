@@ -130,7 +130,7 @@
                             
                             
                             
-                            <!--<c:forEach items="${level.domains}" var="domain" varStatus="domainIndex">
+                            <c:forEach items="${level.domains}" var="domain" varStatus="domainIndex">
                                 <div class="domain-question-wrapper-${domain.id} ${not domainIndex.first ? 'hidden' : ''}">
                                     <div class="alert alert-success domain">
                                         <h4><c:out value="Domínio ${domain.id} - ${domain.description}"/></h4>
@@ -158,7 +158,7 @@
                                         </div>
                                     </c:forEach>
                                 </div>
-                            </c:forEach>-->
+                            </c:forEach>
                         </div>
                         </c:forEach>
                     
