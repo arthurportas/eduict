@@ -49,7 +49,7 @@ public class QuizController extends HttpServlet {
             e.printStackTrace();
         } finally {
             request.setAttribute("errorMessage", errorMessage.toString());
-            RequestDispatcher resultView = request.getRequestDispatcher("quiz.jsp");
+            RequestDispatcher resultView = request.getRequestDispatcher("users.jsp");
             resultView.forward(request, response);
         }
     }
