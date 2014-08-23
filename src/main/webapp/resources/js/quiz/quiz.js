@@ -135,6 +135,17 @@ $(document).ready(function () {
             window.myRadar.update();
         }
         
+        switch (questionsNumber) {
+            case 1: averages.level1.domain1 = window.myRadar.datasets[1].points[0].value;
+                break;
+            case 2: averages.level1.domain2 = window.myRadar.datasets[1].points[1].value;
+                break;
+            case 5: averages.level1.domain3 = window.myRadar.datasets[1].points[2].value;
+                break;
+            default:
+                // code
+        }
+        
         if (questionsNumber === 1) {
             var visiblePanel = $('div.domain-question-wrapper-' + domainIndex);
             var nextVisiblePanel = $('div.domain-question-wrapper-' + (domainIndex + 1));
@@ -142,8 +153,6 @@ $(document).ready(function () {
                 visiblePanel.addClass("hidden");
                 nextVisiblePanel.removeClass("hidden");
             }
-            averages.level1.domain1 = 99;
-            
         } else {
             //go to next question, if not visited
             currentQuestionVisited = currentQuestionVisited + 1;
