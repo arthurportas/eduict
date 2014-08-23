@@ -14,7 +14,7 @@
 </c:forEach>
 ---
 
- <c:out value="${demoQuiz.description}">
+ <c:out value="${demoQuiz.description}"/>
  <c:out value="Nível ${demoQuiz.levels[0].id} - ${demoQuiz.levels[0].description}">
 </c:out>
 </body>
