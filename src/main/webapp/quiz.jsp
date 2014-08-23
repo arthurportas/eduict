@@ -82,6 +82,15 @@
         <%}%>
         
         <div class="row">
+            <div class="col-md-9">
+                <div class="alert alert-warning save-results">
+                    A qualquer momento pode terminar o questionário e gravar os resultados.
+                    <button class="btn btn-lg btn-primary btn-block save-results" title="Terminar e gravar resultados" >Terminar e Gravar resultados</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
             <div class="col-md-3">
                 <p class="lead">Eduict</p>
                 <div class="list-group">
