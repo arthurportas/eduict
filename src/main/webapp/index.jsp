@@ -226,7 +226,7 @@
     </div>
     <!-- /.content-section-a -->
     
-    <div class="content-section-a login hidden">
+    <div class="content-section-a login <c:if test="${not empty param.view and param.view not eq 'login'}">hidden</c:if>">
     
         <div class="container bordered">
             <div class="row">
