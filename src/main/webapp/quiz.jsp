@@ -121,12 +121,15 @@
             
                 <div class="thumbnail">
                     <!--<img class="img-responsive" src="http://placehold.it/800x300" alt="">-->
-                    <c:out value="${demoQuiz.description}">
+                    <c:out value="${demoQuiz.description}"/>
                         <c:forEach items="${demoQuiz.levels}" var="level" varStatus="levelIndex">
                         <div class="level level-${level.id}-wrapper ${not levelIndex.first ? 'hidden' : ''}">
                             <div class="alert alert-info level-${level.id}">
                                 <h4><c:out value="Nível ${level.id} - ${level.description}"/></h4>
                             </div>
+                            
+                            
+                            
                             <!--<c:forEach items="${level.domains}" var="domain" varStatus="domainIndex">
                                 <div class="domain-question-wrapper-${domain.id} ${not domainIndex.first ? 'hidden' : ''}">
                                     <div class="alert alert-success domain">
@@ -158,7 +161,6 @@
                             </c:forEach>-->
                         </div>
                         </c:forEach>
-                    </c:out>
                     
                     <div class="caption-full hidden">
                         <h4 class="pull-right">$24.99</h4>
