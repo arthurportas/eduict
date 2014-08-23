@@ -226,7 +226,7 @@
     </div>
     <!-- /.content-section-a -->
     
-    <div class="content-section-a login <c:if test="${not empty param.view}">hidden</c:if>">
+    <div class="content-section-a login <c:if test="${empty param.view}">hidden</c:if>">
     
         <div class="container bordered">
             <div class="row">
