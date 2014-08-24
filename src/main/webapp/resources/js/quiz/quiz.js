@@ -161,15 +161,20 @@ $(document).ready(function () {
             case 22: averages.level1.domain6.value = window.myRadar.datasets[1].points[5].value;
                 if (averages.level1.domain1.value === 1) {
                     averages.level2.domain1.visible = true; 
-                } else if (averages.level1.domain2.value === 1) {
+                } 
+                if (averages.level1.domain2.value === 1) {
                     averages.level2.domain2.visible = true; 
-                } else if (averages.level1.domain3.value === 1) {
+                } 
+                if (averages.level1.domain3.value === 1) {
                     averages.level2.domain3.visible = true; 
-                } else if (averages.level1.domain4.value === 1) {
+                }
+                if (averages.level1.domain4.value === 1) {
                     averages.level2.domain4.visible = true; 
-                } else if (averages.level1.domain5.value === 1) {
+                }
+                if (averages.level1.domain5.value === 1) {
                     averages.level2.domain5.visible = true; 
-                } else if (averages.level1.domain6.value === 1) {
+                }
+                if (averages.level1.domain6.value === 1) {
                     averages.level2.domain6.visible = true; 
                 }
                 break;
