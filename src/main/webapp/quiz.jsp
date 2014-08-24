@@ -118,14 +118,6 @@
             </div>
             
             <div class="col-md-9">
-                <div class="alert alert-warning save-results">
-                    A qualquer momento pode terminar o questionário e gravar os resultados. <%if (session.getAttribute("user") == null) {%>(Demonstração)<%}%>
-                    <button class="btn btn-lg btn-danger btn-block save-results" title="Terminar e gravar resultados" >Terminar e Gravar resultados</button>
-                </div>
-            </div>
-            
-            <div class="col-md-9">
-            
                 <div class="thumbnail">
                     <!--<img class="img-responsive" src="http://placehold.it/800x300" alt="">-->
                         <c:forEach items="${demoQuiz.levels}" var="level" varStatus="levelIndex">
@@ -216,7 +208,6 @@
                             <span class="glyphicon glyphicon-star-empty"></span>
                             Anonymous
                             <span class="pull-right">10 days ago</span>
-    
                             <p>This product was great in terms of quality. I would definitely buy another!</p>
                         </div>
                     </div>
@@ -255,6 +246,14 @@
                     
                 </div>
             </div>
+            
+            <div class="col-md-9">
+                <div class="alert alert-warning save-results">
+                    A qualquer momento pode terminar o questionário e gravar os resultados. <%if (session.getAttribute("user") == null) {%>(Demonstração)<%}%>
+                    <button class="btn btn-lg btn-danger btn-block save-results" title="Terminar e gravar resultados" >Terminar e Gravar resultados</button>
+                </div>
+            </div>
+            
         </div>
         <div class="row">
             <div class="thumbnail graph">
