@@ -189,6 +189,24 @@ $(document).ready(function () {
             case 40: averages.level2.domain5.value = window.myRadar.datasets[1].points[4].value;
                 break;
             case 43: averages.level2.domain6.value = window.myRadar.datasets[1].points[5].value;
+                    if (averages.level2.domain1.value === 1) {
+                        averages.level3.domain1.visible = true; 
+                    } 
+                    if (averages.level2.domain2.value === 1) {
+                        averages.level3.domain2.visible = true; 
+                    } 
+                    if (averages.level2.domain3.value === 1) {
+                        averages.level3.domain3.visible = true; 
+                    }
+                    if (averages.level2.domain4.value === 1) {
+                        averages.level3.domain4.visible = true; 
+                    }
+                    if (averages.level2.domain5.value === 1) {
+                        averages.level3.domain5.visible = true; 
+                    }
+                    if (averages.level2.domain6.value === 1) {
+                        averages.level3.domain6.visible = true; 
+                    }
                 break;
             case 44: averages.level3.domain1.value = window.myRadar.datasets[1].points[0].value;
                 break;
@@ -217,11 +235,13 @@ $(document).ready(function () {
             //go to next question, if not visited
             currentQuestionVisited = currentQuestionVisited + 1;
             if ((currentQuestionVisited) < questionsNumber) {
-                $(questions[currentQuestionVisited - 1]).addClass("hidden");//current visible
+                $(questions[currentQuestionVisited - 1]).addClass("hidden");//hide current visible question
                 //$(questions[currentQuestionVisited]).removeClass("hidden");
             } else if (currentQuestionVisited === questionsNumber) {
                 $(questions[currentQuestionVisited - 1]).addClass("hidden");//current visible
                 visiblePanel = $('div.domain-question-wrapper-' + domainIndex);
+                
+                //accordig to level and previous level/domain average show/hide
                 nextVisiblePanel = $('div.domain-question-wrapper-' + (domainIndex + 1));
                 if (visiblePanel && nextVisiblePanel) {
                     visiblePanel.addClass("hidden");
