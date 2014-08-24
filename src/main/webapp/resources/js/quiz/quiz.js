@@ -33,42 +33,54 @@ $(document).ready(function () {
             },
             level2 :{
                 domain1 :{
-                    value: 0
+                    value: 0,
+                    visible: false
                 },
                 domain2 :{
-                    value: 0
+                    value: 0,
+                    visible: false
                 },
                 domain3 :{
-                    value: 0
+                    value: 0,
+                    visible: false
                 },
                 domain4 :{
-                    value: 0
+                    value: 0,
+                    visible: false
                 },
                 domain5 :{
-                    value: 0
+                    value: 0,
+                    visible: false
                 },
                 domain6 :{
-                    value: 0
+                    value: 0,
+                    visible: false
                 },
             },
             level3 :{
                 domain1 :{
-                    value: 0
+                    value: 0,
+                    visible: false
                 },
                 domain2 :{
-                    value: 0
+                    value: 0,
+                    visible: false
                 },
                 domain3 :{
-                    value: 0
+                    value: 0,
+                    visible: false
                 },
                 domain4 :{
-                    value: 0
+                    value: 0,
+                    visible: false
                 },
                 domain5 :{
-                    value: 0
+                    value: 0,
+                    visible: false
                 },
                 domain6 :{
-                    value: 0
+                    value: 0,
+                    visible: false
                 },
             },
         };
@@ -147,6 +159,12 @@ $(document).ready(function () {
             case 19: averages.level1.domain5.value = window.myRadar.datasets[1].points[4].value;
                 break;
             case 22: averages.level1.domain6.value = window.myRadar.datasets[1].points[5].value;
+                    var i = 1;
+                    for(i; i<=6; i++) {
+                        if (averages.level1.domain + i.value === 1) {
+                            averages.level2.domain + i.visible = true; 
+                        }
+                    }
                 break;
             case 23: averages.level2.domain1.value = window.myRadar.datasets[1].points[0].value;
                 break;
