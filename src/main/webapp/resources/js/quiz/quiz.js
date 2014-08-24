@@ -136,11 +136,41 @@ $(document).ready(function () {
         }
         
         switch (questionVisible) {
-            case 1: averages.level1.domain1 = window.myRadar.datasets[1].points[0].value;
+            case 1: averages.level1.domain1.value = window.myRadar.datasets[1].points[0].value;
                 break;
-            case 2: averages.level1.domain2 = window.myRadar.datasets[1].points[1].value;
+            case 2: averages.level1.domain2.value = window.myRadar.datasets[1].points[1].value;
                 break;
-            case 5: averages.level1.domain3 = window.myRadar.datasets[1].points[2].value;
+            case 5: averages.level1.domain3.value = window.myRadar.datasets[1].points[2].value;
+                break;
+            case 16: averages.level1.domain4.value = window.myRadar.datasets[1].points[3].value;
+                break;
+            case 19: averages.level1.domain5.value = window.myRadar.datasets[1].points[4].value;
+                break;
+            case 22: averages.level1.domain6.value = window.myRadar.datasets[1].points[5].value;
+                break;
+            case 23: averages.level2.domain1.value = window.myRadar.datasets[1].points[0].value;
+                break;
+            case 25: averages.level2.domain2.value = window.myRadar.datasets[1].points[1].value;
+                break;
+            case 31: averages.level2.domain3.value = window.myRadar.datasets[1].points[2].value;
+                break;
+            case 38: averages.level2.domain4.value = window.myRadar.datasets[1].points[3].value;
+                break;
+            case 40: averages.level2.domain5.value = window.myRadar.datasets[1].points[4].value;
+                break;
+            case 43: averages.level2.domain6.value = window.myRadar.datasets[1].points[5].value;
+                break;
+            case 44: averages.level3.domain1.value = window.myRadar.datasets[1].points[0].value;
+                break;
+            case 49: averages.level3.domain2.value = window.myRadar.datasets[1].points[1].value;
+                break;
+            case 54: averages.level3.domain3.value = window.myRadar.datasets[1].points[2].value;
+                break;
+            case 55: averages.level3.domain4.value = window.myRadar.datasets[1].points[3].value;
+                break;
+            case 57: averages.level3.domain5.value = window.myRadar.datasets[1].points[4].value;
+                break;
+            case 61: averages.level3.domain6.value = window.myRadar.datasets[1].points[5].value;
                 break;
             default:
                 // code
