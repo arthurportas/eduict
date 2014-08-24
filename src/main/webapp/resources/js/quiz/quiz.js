@@ -162,7 +162,8 @@ $(document).ready(function () {
                     var i = 1;
                     for(i; i<=6; i++) {
                         if (averages.level1.domain + i.value === 1) {
-                            averages.level2.domain + i.visible = true; 
+                            var domain = averages.level2.domain + i;
+                            domain.visible = true; 
                         }
                     }
                 break;
