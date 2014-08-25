@@ -17,6 +17,7 @@ import java.util.List;
 
 @RequestScoped
 public class ResultListProducer {
+    
     @Inject
     private EntityManager em;
 
