@@ -33,7 +33,7 @@ public class Result implements Serializable{
     @XmlAttribute
     private float resultValue;
     
-    @OneToOne(fetch=FetchType.LAZY, mappedBy="result", name = "RESULT_RESPONSE")
+    @OneToOne(fetch=FetchType.LAZY, mappedBy="result")
     @XmlTransient
     private Response response;
     
