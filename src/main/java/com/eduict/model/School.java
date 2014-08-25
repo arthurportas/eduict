@@ -13,9 +13,9 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 @Table(name = "SCHOOL", uniqueConstraints = @UniqueConstraint(columnNames = "NAME"))
 @NamedQueries({
-    @NamedQuery(name = "School.FIND_ALL", query = "SELECT s from School s"),
-    @NamedQuery(name = "School.FIND_BY_NAME", query = "SELECT s from School s WHERE s.schoolName LIKE :schoolName"),
-    @NamedQuery(name = "School.FIND_BY_NAME_PATTERN", query = "SELECT s from School s WHERE s.schoolName LIKE :schoolName"),
+    @NamedQuery(name = "School.FIND_ALL", query = "SELECT s FROM School s"),
+    @NamedQuery(name = "School.FIND_BY_NAME", query = "SELECT s FROM School s WHERE s.schoolName LIKE :schoolName"),
+    @NamedQuery(name = "School.FIND_BY_NAME_PATTERN", query = "SELECT s FROM School s WHERE s.schoolName LIKE :schoolName"),
 })
 public class School implements Serializable{
 
