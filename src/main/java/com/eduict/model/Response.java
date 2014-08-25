@@ -6,6 +6,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
+import com.eduict.model.Result;
 
 @Entity
 @XmlRootElement
@@ -40,6 +41,11 @@ public class Response implements Serializable {
     @XmlAttribute
     private String value;
     
+    @OneToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="RESULT_ID")
+    @XmlAttribute
+    private Result result;
+    
    /* ==========================GETTERS/SETTERS======================= */
 
     public Long getId() {
@@ -72,5 +78,13 @@ public class Response implements Serializable {
 
     public void setValue(String value) {
         this.value = value;
+    }
+    
+    public Result getResult() {
+        return result;
+    }
+
+    public void setResult(Result value) {
+        this.result = result;
     }
 }
