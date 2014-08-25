@@ -31,7 +31,7 @@ public class Result implements Serializable{
     @NotNull
     @Column(name = "RESULT_VALUE", unique = false, nullable = false)
     @XmlAttribute
-    private float resultValue;
+    private String resultValue;
     
     @OneToOne(fetch=FetchType.LAZY, mappedBy="result")
     @XmlTransient
@@ -47,11 +47,11 @@ public class Result implements Serializable{
       this.id = id;
     }
 
-    public float getResultValue() {
+    public String getResultValue() {
       return this.resultValue;
     }
 
-    public void setResultValue(float resultValue) {
+    public void setResultValue(String resultValue) {
       this.resultValue = resultValue;
     }
 
@@ -75,7 +75,7 @@ public class Result implements Serializable{
             result = new Result();
         }
 
-        public Builder withResultValue(float resultValue) {
+        public Builder withResultValue(String resultValue) {
             result.resultValue = resultValue;
             return this;
         }
