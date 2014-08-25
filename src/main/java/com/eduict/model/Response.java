@@ -43,7 +43,7 @@ public class Response implements Serializable {
     
     @OneToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="RESULT_ID")
-    @XmlAttribute
+    @XmlTransient
     private Result result;
     
    /* ==========================GETTERS/SETTERS======================= */
