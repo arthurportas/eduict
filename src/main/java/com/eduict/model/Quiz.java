@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Date;
 import com.eduict.model.User;
+import com.eduict.model.Result;
 
 @Entity
 @XmlRootElement
@@ -43,6 +44,9 @@ public class Quiz implements Serializable {
     @JoinColumn(name = "USER_ID_FK", referencedColumnName = "USER_ID", unique = false, nullable = true, insertable = true, updatable = true)
     @XmlTransient
     private User user;
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "quiz", cascade = CascadeType.ALL)
+    private List<Result> results;
     
    /* ==========================GETTERS/SETTERS======================= */
 
@@ -84,5 +88,13 @@ public class Quiz implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+    
+    public List<Result> getResults() {
+        return results;
+    }
+
+    public void setResults(List<Result> results) {
+        this.results = results;
     }
 }

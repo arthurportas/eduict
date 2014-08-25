@@ -6,7 +6,6 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import javax.xml.bind.annotation.*;
-import com.eduict.model.Response;
 
 @Entity
 @XmlRootElement
@@ -33,9 +32,10 @@ public class Result implements Serializable{
     @XmlAttribute
     private String resultValue;
     
-    @OneToOne(fetch=FetchType.LAZY, mappedBy="result")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "QUIZ_ID_FK", referencedColumnName = "QUIZ_ID", unique = false, nullable = true, insertable = true, updatable = true)
     @XmlTransient
-    private Response response;
+    private Quiz quiz;
     
     /* ==========================GETTERS/SETTERS======================= */
 
@@ -55,12 +55,12 @@ public class Result implements Serializable{
       this.resultValue = resultValue;
     }
 
-    public Response getResponse() {
-      return this.response;
+    public Quiz getQuiz() {
+      return this.quiz;
     }
 
-    public void setResponse(Response response) {
-      this.response = response;
+    public void setQuiz(Quiz quiz) {
+      this.quiz = quiz;
     }
     /* ==========================BUILDER======================= */
 
@@ -80,8 +80,8 @@ public class Result implements Serializable{
             return this;
         }
         
-        public Builder withResponse(Response response) {
-            result.response = response;
+        public Builder withQuiz(Quiz quiz) {
+            result.quiz = quiz;
             return this;
         }
         
