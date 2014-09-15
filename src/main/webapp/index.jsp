@@ -556,11 +556,11 @@
                 <div class="col-lg-6">
                     <ul class="list-inline banner-social-buttons">
                         <li>
-                            <a href="https://www.facebook.com/pages/EduICT-Skills/532546546874224" class="btn btn-default btn-lg" title="Scoop.it"><i class=""></i>
+                            <a href="http://www.scoop.it/t/eduict-skills" class="btn btn-default btn-lg" title="Scoop.it"><i class=""></i>
                                 <span class="network-name">Scoop.it</span></a>
                         </li>
                         <li>
-                            <a href="#" class="btn btn-default btn-lg" title="Facebook"><i class="fa fa-facebook fa-fw"></i>
+                            <a href="https://www.facebook.com/pages/EduICT-Skills/532546546874224" class="btn btn-default btn-lg" title="Facebook"><i class="fa fa-facebook fa-fw"></i>
                                 <span class="network-name">Facebook</span></a>
                         </li>
                     </ul>
