@@ -38,8 +38,6 @@ public class QuizController extends HttpServlet {
 
         response.setContentType("text/html");
 
-        PrintWriter out = response.getWriter();
-
         StringBuilder errorMessage = new StringBuilder();
 
         try {
