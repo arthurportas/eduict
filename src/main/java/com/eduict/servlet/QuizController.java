@@ -47,12 +47,11 @@ public class QuizController extends HttpServlet {
             HttpSession session = request.getSession();
             User user =  (User) session.getAttribute("user");
             if(user != null) {
-                Quiz newQuiz = quizRegistration.register();
-                //fetch levels list to asociate with this new quiz
-                List<Level> levels = levelListProducer.getLevels();
-                //newQuiz.setLevels = levels;
-                //newQuiz.setUser(user);
-                
+                Quiz newQuiz = new Quiz();
+                newQuiz.setLevels = levelListProducer.getLevels();//fetch levels list to associate with this new quiz
+                newQuiz.setUser(user);
+                quizRegistration.registerNewQuiz(newQuiz);
+
                 Quiz demoQuiz = registrationService.lookupQuizById(0L);//demo quizz
                 request.setAttribute("demoQuiz", demoQuiz);
                 log.info("demoQuiz: " + demoQuiz.toString());

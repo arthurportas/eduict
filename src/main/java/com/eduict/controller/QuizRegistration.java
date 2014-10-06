@@ -41,6 +41,13 @@ public class QuizRegistration {
         initNewQuiz();
     }
 
+    public void registerNewQuiz(Quiz quiz) throws Exception {
+        log.info("Registering new quiz");
+        em.persist(quiz);
+        log.info("quiz: " + quiz.toString());
+        quizEventSrc.fire(quiz);
+    }
+    
     public Quiz lookupQuizById(long id) {
         log.info("Searching quiz with id  " + id);
         return em.find(Quiz.class, id);
