@@ -44,7 +44,7 @@ public class QuizRegistration {
     public void registerNewQuiz(Quiz quiz) throws Exception {
         log.info("Registering new quiz");
         em.persist(quiz);
-        log.info("quiz: " + quiz.toString());
+        log.info("quiz for user: " + quiz.getUser().getEmail());
         quizEventSrc.fire(quiz);
     }
     
