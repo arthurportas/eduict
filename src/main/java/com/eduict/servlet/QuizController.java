@@ -44,8 +44,9 @@ public class QuizController extends HttpServlet {
         try {
             //if user has session, then create a new Quiz for him,
             //and fetch user quiz history
-             User user =  (User) session.getAttribute("user");
-             if(user != null) {
+            HttpSession session = request.getSession();
+            User user =  (User) session.getAttribute("user");
+            if(user != null) {
                 Quiz newQuiz = quizRegistration.register();
                 //fetch levels list to asociate with this new quiz
                 List<Level> levels = levelListProducer.getLevels();
@@ -55,12 +56,12 @@ public class QuizController extends HttpServlet {
                 Quiz demoQuiz = registrationService.lookupQuizById(0L);//demo quizz
                 request.setAttribute("demoQuiz", demoQuiz);
                 log.info("demoQuiz: " + demoQuiz.toString());
-             } else {
+            } else {
                  //else present a demo quiz
                 Quiz demoQuiz = registrationService.lookupQuizById(0L);//demo quizz
                 request.setAttribute("demoQuiz", demoQuiz);
                 log.info("demoQuiz: " + demoQuiz.toString());
-             }
+            }
         } catch (Exception e) {
             Throwable t = e;
             while ((t.getCause()) != null) {
