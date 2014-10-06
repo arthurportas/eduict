@@ -41,6 +41,7 @@ public class QuizRegistration {
     }
 
     public Quiz lookupQuizById(long id) {
+        log.info("Searching quiz with id  " + id);
         return em.find(Quiz.class, id);
     }
     
