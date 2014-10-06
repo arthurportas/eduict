@@ -48,7 +48,7 @@ public class LevelListProducer {
         CriteriaQuery<Level> criteria = cb.createQuery(Level.class);
         Root<Level> level = criteria.from(Level.class);
         criteria.select(level).orderBy(cb.asc(level.get("id")));
-        levels = em.createQuery(criteria).getResultList();
+        return levels = em.createQuery(criteria).getResultList();
     }
     
 }
