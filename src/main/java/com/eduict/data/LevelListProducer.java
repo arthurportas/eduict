@@ -42,4 +42,13 @@ public class LevelListProducer {
         criteria.select(level).orderBy(cb.asc(level.get("description")));
         levels = em.createQuery(criteria).getResultList();
     }
+    
+    public List<Level> levels() {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Level> criteria = cb.createQuery(Level.class);
+        Root<Level> level = criteria.from(Level.class);
+        criteria.select(level).orderBy(cb.asc(level.get("id")));
+        levels = em.createQuery(criteria).getResultList();
+    }
+    
 }
