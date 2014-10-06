@@ -6,7 +6,7 @@ $(document).ready(function () {
         $('button.response-' + responseButtonId).data("answerValue", value);
         
     })
-    var currentQuestionVisited = 0;//bacause it's an array
+    var currentQuestionVisited = 0;//because it's an array
     var currentLevel = 1;
     var level2Offset = 6;
     var level3OOffset = 12;

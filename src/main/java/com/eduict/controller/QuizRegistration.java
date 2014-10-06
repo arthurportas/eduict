@@ -36,6 +36,7 @@ public class QuizRegistration {
     public void register() throws Exception {
         log.info("Registering " + newQuiz.getDescription());
         em.persist(newQuiz);
+        log.info("newQuiz: " + newQuiz.toString());
         quizEventSrc.fire(newQuiz);
         initNewQuiz();
     }

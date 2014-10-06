@@ -31,14 +31,14 @@ public class Quiz implements Serializable {
     @Pattern(regexp = "[A-Za-z ]*", message = "quiz description must contain only letters and spaces")
     @Column(name = "DESCRIPTION")
     @XmlAttribute
-    private String description;
+    private String description = "Quiz";
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "quiz", cascade = CascadeType.ALL)
     private List<Level> levels;
     
     @Column(name = "CREATED_AT")
     @XmlAttribute
-    private Date createdAt;
+    private Date createdAt = new java.util.Date();
     
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "USER_ID_FK", referencedColumnName = "USER_ID", unique = false, nullable = true, insertable = true, updatable = true)
@@ -48,7 +48,10 @@ public class Quiz implements Serializable {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "quiz", cascade = CascadeType.ALL)
     private List<Result> results;
     
-   /* ==========================GETTERS/SETTERS======================= */
+    /* ==========================Builder======================= */
+    
+    
+    /* ==========================GETTERS/SETTERS======================= */
 
     public Long getId() {
         return id;

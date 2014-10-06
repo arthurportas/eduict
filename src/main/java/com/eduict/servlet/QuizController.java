@@ -1,7 +1,7 @@
 package com.eduict.servlet;
 
 import com.eduict.controller.QuizRegistration;
-
+import com.eduict.data.LevelListProducer;
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Logger;
 import com.eduict.model.Quiz;
+import com.eduict.model.User;
 
 @WebServlet(urlPatterns = "/quiz")
 public class QuizController extends HttpServlet {
@@ -25,7 +26,13 @@ public class QuizController extends HttpServlet {
 
     @Inject
     QuizRegistration registrationService;
+    
+    @Inject
+    LevelListProducer levelListProducer;
 
+    @Inject
+    QuizRegistration quizRegistration;
+    
     protected void doGet(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
 
@@ -36,10 +43,25 @@ public class QuizController extends HttpServlet {
         StringBuilder errorMessage = new StringBuilder();
 
         try {
-            Quiz demoQuiz = registrationService.lookupQuizById(0L);//demo quizz
-            request.setAttribute("demoQuiz", demoQuiz);
-            log.info("demoQuiz: " + demoQuiz.toString());
-            // out.println(demoQuiz.toString());
+            //if user has session, then create a new Quiz for him,
+            //and fetch user quiz history
+             User user =  (User) session.getAttribute("user");
+             if(user != null) {
+                Quiz newQuiz = newQuiz();
+                //fetch levels list to asociate with this new quiz
+                List<Level> levels = levelListProducer.getLevels();
+                newQuiz.setLevels = levels;
+                newQuiz.setUser(user);
+                quizRegistration.register(newQuiz);
+                Quiz demoQuiz = registrationService.lookupQuizById(0L);//demo quizz
+                request.setAttribute("demoQuiz", demoQuiz);
+                log.info("demoQuiz: " + demoQuiz.toString());
+             } else {
+                 //else present a demo quiz
+                Quiz demoQuiz = registrationService.lookupQuizById(0L);//demo quizz
+                request.setAttribute("demoQuiz", demoQuiz);
+                log.info("demoQuiz: " + demoQuiz.toString());
+             }
         } catch (Exception e) {
             Throwable t = e;
             while ((t.getCause()) != null) {
