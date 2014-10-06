@@ -15,6 +15,8 @@ import java.io.PrintWriter;
 import java.util.logging.Logger;
 import com.eduict.model.Quiz;
 import com.eduict.model.User;
+import java.util.List;
+import com.eduict.model.Level;
 
 @WebServlet(urlPatterns = "/quiz")
 public class QuizController extends HttpServlet {
