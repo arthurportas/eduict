@@ -22,8 +22,8 @@ import com.eduict.model.Quiz;
 @XmlAccessorType(XmlAccessType.FIELD)
 @Table(name = "USER")
 @NamedQueries({
-        @NamedQuery(name = "User.FIND_BY_EMAIL_AND_PASSWORD", query = "SELECT u from User u  WHERE  u.email= :email AND u.password= :password"),
-        @NamedQuery(name = "User.FIND_BY_EMAIL", query = "SELECT u from User u  WHERE  u.email= :email")
+        @NamedQuery(name = "User.FIND_BY_EMAIL_AND_PASSWORD", query = "SELECT u FROM User u  WHERE  u.email= :email AND u.password= :password"),
+        @NamedQuery(name = "User.FIND_BY_EMAIL", query = "SELECT u FROM User u  WHERE  u.email= :email")
 })
 public class User implements Serializable {
 
