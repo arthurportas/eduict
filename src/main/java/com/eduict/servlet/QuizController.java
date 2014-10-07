@@ -51,7 +51,7 @@ public class QuizController extends HttpServlet {
                 //newQuiz.setLevels = levelListProducer.levels();//fetch levels list to associate with this new quiz
                 user.getQuizzes().add(newQuiz);
                 newQuiz.setUser(user);
-                quizRegistration.registerNewQuiz(newQuiz);
+                //quizRegistration.registerNewQuiz(newQuiz);
 
                 Quiz demoQuiz = registrationService.lookupQuizById(0L);//demo quizz
                 request.setAttribute("demoQuiz", demoQuiz);
