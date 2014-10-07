@@ -19,6 +19,7 @@ import java.io.Serializable;
 import java.util.List;
 import com.eduict.model.Role;
 import com.eduict.model.Quiz;
+import java.util.Collections;
 
 
 @Entity
@@ -92,7 +93,7 @@ public class User implements Serializable {
     
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @IndexColumn(name="INDEX_COL")
-    private List<Quiz> quizzes;
+    private List<Quiz> quizzes = Collections.emptyList();
    
    /* ==========================Builder======================= */
    

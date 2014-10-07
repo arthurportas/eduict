@@ -12,6 +12,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Collections;
 
 @Entity
 @XmlRootElement
@@ -41,14 +42,16 @@ public class Level implements Serializable {
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @IndexColumn(name="INDEX_COL")
-    private List<Domain> domains;
+    private List<Domain> domains = Collections.emptyList();
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "QUIZ_ID_FK", referencedColumnName = "QUIZ_ID", unique = false, nullable = false, insertable = true, updatable = true)
     @XmlTransient
     private Quiz quiz;
    
-   /* ==========================GETTERS/SETTERS======================= */
+    /* ==========================Builder======================= */
+    
+    /* ==========================GETTERS/SETTERS======================= */
 
     public Long getId() {
         return id;

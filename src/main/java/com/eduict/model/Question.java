@@ -12,6 +12,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Collections;
 
 
 @Entity
@@ -42,9 +43,11 @@ public class Question implements Serializable {
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @IndexColumn(name="INDEX_COL")
-    private List<Response> responses;
+    private List<Response> responses = Collections.emptyList();
    
-   /* ==========================GETTERS/SETTERS======================= */
+    /* ==========================Builder======================= */
+    
+    /* ==========================GETTERS/SETTERS======================= */
 
     public Long getId() {
         return id;

@@ -12,6 +12,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Collections;
 
 @Entity
 @XmlRootElement
@@ -41,7 +42,7 @@ public class Domain implements Serializable {
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @IndexColumn(name="INDEX_COL")
-    private List<Question> questions;
+    private List<Question> questions = Collections.emptyList();
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "LEVEL_ID_FK", referencedColumnName = "LEVEL_ID", unique = false, nullable = false, insertable = true, updatable = true)
