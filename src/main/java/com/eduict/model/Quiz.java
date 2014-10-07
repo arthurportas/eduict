@@ -33,7 +33,7 @@ public class Quiz implements Serializable {
     @XmlAttribute
     private String description = "Quiz";
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "quiz", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "quiz", cascade = CascadeType.ALL)
     private List<Level> levels;
     
     @Column(name = "CREATED_AT")
@@ -45,7 +45,7 @@ public class Quiz implements Serializable {
     @XmlTransient
     private User user;
     
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "quiz", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "quiz", cascade = CascadeType.ALL)
     private List<Result> results;
     
     /* ==========================Builder======================= */

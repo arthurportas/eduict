@@ -42,7 +42,7 @@ public class Region implements Serializable{
     @XmlAttribute
     private String regionName;
     
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "region", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "region", cascade = CascadeType.ALL)
     private List<School> schools;
 
     	/* ==========================GETTERS/SETTERS======================= */

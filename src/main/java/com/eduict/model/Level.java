@@ -34,7 +34,7 @@ public class Level implements Serializable {
     @XmlAttribute
     private String description;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "level", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "level", cascade = CascadeType.ALL)
     private List<Domain> domains;
 
     @ManyToOne(fetch = FetchType.EAGER)
