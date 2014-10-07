@@ -1,5 +1,10 @@
 package com.eduict.model;
 
+import org.hibernate.annotations.CollectionId;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.IndexColumn;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -34,7 +39,8 @@ public class Domain implements Serializable {
     @XmlAttribute
     private String description;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "domain", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @IndexColumn(name="INDEX_COL")
     private List<Question> questions;
 
     @ManyToOne(fetch = FetchType.EAGER)

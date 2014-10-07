@@ -1,5 +1,9 @@
 package com.eduict.model;
 
+import org.hibernate.annotations.CollectionId;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.IndexColumn;
+import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -82,10 +86,12 @@ public class User implements Serializable {
     @XmlAttribute
     private String academicDegree;
     
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @IndexColumn(name="INDEX_COL")
     private List<Role> roles;
     
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @IndexColumn(name="INDEX_COL")
     private List<Quiz> quizzes;
    
    /* ==========================Builder======================= */

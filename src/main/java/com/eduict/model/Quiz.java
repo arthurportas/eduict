@@ -10,6 +10,10 @@ import java.util.List;
 import java.util.Date;
 import com.eduict.model.User;
 import com.eduict.model.Result;
+import org.hibernate.annotations.CollectionId;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.IndexColumn;
+import org.hibernate.annotations.Type;
 
 @Entity
 @XmlRootElement
@@ -45,7 +49,8 @@ public class Quiz implements Serializable {
     @XmlTransient
     private User user;
     
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "quiz", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @IndexColumn(name="INDEX_COL")
     private List<Result> results;
     
     /* ==========================Builder======================= */

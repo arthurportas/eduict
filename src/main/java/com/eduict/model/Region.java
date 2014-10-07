@@ -7,6 +7,11 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 import javax.xml.bind.annotation.*;
 import com.eduict.model.School;
+import org.hibernate.annotations.CollectionId;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.IndexColumn;
+import org.hibernate.annotations.Type;
+
 import java.util.List;
 
 @Entity
@@ -42,7 +47,8 @@ public class Region implements Serializable{
     @XmlAttribute
     private String regionName;
     
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "region", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @IndexColumn(name="INDEX_COL")
     private List<School> schools;
 
     	/* ==========================GETTERS/SETTERS======================= */
