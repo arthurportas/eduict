@@ -37,7 +37,8 @@ public class Quiz implements Serializable {
     @XmlAttribute
     private String description = "Quiz";
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "quiz", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @IndexColumn(name="INDEX_COL")
     private List<Level> levels;
     
     @Column(name = "CREATED_AT")
