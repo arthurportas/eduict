@@ -19,7 +19,7 @@ import java.util.List;
 @RequestScoped
 public class DomainListProducer {
     
-    @PersistenceContext(type = EXTENDED)
+    @PersistenceContext(type=javax.persistence.PersistenceContextType.EXTENDED)
     private EntityManager em;
 
     private List<Domain> domains;
