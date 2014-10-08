@@ -30,7 +30,6 @@ public class Quiz implements Serializable {
     @XmlAttribute
     private Long id;
 
-    @NotNull
     @Size(min = 1, max = 100)
     @Pattern(regexp = "[A-Za-z ]*", message = "quiz description must contain only letters and spaces")
     @Column(name = "DESCRIPTION")
