@@ -50,7 +50,7 @@ public class QuizController extends HttpServlet {
                 User user =  (User) session.getAttribute("user");
                 log.info("session found for user presenting a new quiz");
                 Quiz newQuiz = new Quiz();
-                newQuiz.setLevels = levelListProducer.levels();//fetch levels list to associate with this new quiz
+                //newQuiz.setLevels = levelListProducer.levels();//fetch levels list to associate with this new quiz
                 //user.getQuizzes().add(newQuiz);
                 //newQuiz.setUser(user);
                 //quizRegistration.registerNewQuiz(newQuiz);
