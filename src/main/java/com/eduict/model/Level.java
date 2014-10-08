@@ -41,7 +41,6 @@ public class Level implements Serializable {
     private String description;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "level", cascade = CascadeType.ALL)
-    @IndexColumn(name="INDEX_COL")
     private List<Domain> domains = Collections.emptyList();
 
     @ManyToOne(fetch = FetchType.EAGER)
