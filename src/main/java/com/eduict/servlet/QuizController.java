@@ -57,6 +57,7 @@ public class QuizController extends HttpServlet {
                 request.setAttribute("demoQuiz", demoQuiz);
                 log.info("demoQuiz: " + demoQuiz.toString());
             } else {
+                log.info("no session found presenting a demo quiz");
                  //else present a demo quiz
                 Quiz demoQuiz = registrationService.lookupQuizById(0L);//demo quizz
                 request.setAttribute("demoQuiz", demoQuiz);
