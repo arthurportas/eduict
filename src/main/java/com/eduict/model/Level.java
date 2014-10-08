@@ -40,10 +40,10 @@ public class Level implements Serializable {
     @XmlAttribute
     private String description;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "level", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "level", cascade = CascadeType.ALL)
     private List<Domain> domains = Collections.emptyList();
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "QUIZ_ID_FK", referencedColumnName = "QUIZ_ID", unique = false, nullable = false, insertable = true, updatable = true)
     @XmlTransient
     private Quiz quiz;

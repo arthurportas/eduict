@@ -40,11 +40,10 @@ public class Domain implements Serializable {
     @XmlAttribute
     private String description;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @IndexColumn(name="INDEX_COL")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Question> questions = Collections.emptyList();
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "LEVEL_ID_FK", referencedColumnName = "LEVEL_ID", unique = false, nullable = false, insertable = true, updatable = true)
     @XmlTransient
     private Level level;

@@ -87,12 +87,10 @@ public class User implements Serializable {
     @XmlAttribute
     private String academicDegree;
     
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @IndexColumn(name="INDEX_COL")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Role> roles;
     
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @IndexColumn(name="INDEX_COL")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Quiz> quizzes = Collections.emptyList();
    
    /* ==========================Builder======================= */

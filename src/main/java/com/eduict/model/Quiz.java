@@ -37,20 +37,19 @@ public class Quiz implements Serializable {
     @XmlAttribute
     private String description = "Quiz";
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "quiz", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "quiz", cascade = CascadeType.ALL)
     private List<Level> levels;
     
     @Column(name = "CREATED_AT")
     @XmlAttribute
     private Date createdAt = new java.util.Date();
     
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID_FK", referencedColumnName = "USER_ID", unique = false, nullable = true, insertable = true, updatable = true)
     @XmlTransient
     private User user;
     
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @IndexColumn(name="INDEX_COL")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "quiz", cascade = CascadeType.ALL)
     private List<Result> results;
     
     /* ==========================Builder======================= */

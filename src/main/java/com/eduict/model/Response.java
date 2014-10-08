@@ -28,7 +28,7 @@ public class Response implements Serializable {
     @XmlAttribute
     private String response;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "QUESTION_ID_FK", referencedColumnName = "QUESTION_ID", unique = false, nullable = false, insertable = true, updatable = true)
     @XmlTransient
     private Question question;

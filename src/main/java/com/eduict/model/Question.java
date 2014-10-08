@@ -36,13 +36,12 @@ public class Question implements Serializable {
     @XmlAttribute
     private String question;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DOMAIN_ID_FK", referencedColumnName = "DOMAIN_ID", unique = false, nullable = false, insertable = true, updatable = true)
     @XmlTransient
     private Domain domain;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @IndexColumn(name="INDEX_COL")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Response> responses = Collections.emptyList();
    
     /* ==========================Builder======================= */
