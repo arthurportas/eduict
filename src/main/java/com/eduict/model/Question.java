@@ -42,7 +42,7 @@ public class Question implements Serializable {
     private Domain domain;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Response> responses = Collections.emptyList();
+    private List<Response> responses;
    
     /* ==========================Builder======================= */
     
