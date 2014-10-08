@@ -47,8 +47,7 @@ public class Region implements Serializable{
     @XmlAttribute
     private String regionName;
     
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @IndexColumn(name="INDEX_COL")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "region", cascade = CascadeType.ALL)
     private List<School> schools;
 
     	/* ==========================GETTERS/SETTERS======================= */

@@ -41,7 +41,7 @@ public class Question implements Serializable {
     @XmlTransient
     private Domain domain;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "question", cascade = CascadeType.ALL)
     private List<Response> responses;
    
     /* ==========================Builder======================= */

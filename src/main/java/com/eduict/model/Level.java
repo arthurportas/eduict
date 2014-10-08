@@ -41,7 +41,7 @@ public class Level implements Serializable {
     private String description;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "level", cascade = CascadeType.ALL)
-    private List<Domain> domains = Collections.emptyList();
+    private List<Domain> domains;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "QUIZ_ID_FK", referencedColumnName = "QUIZ_ID", unique = false, nullable = false, insertable = true, updatable = true)
