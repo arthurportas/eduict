@@ -40,7 +40,7 @@ public class Level implements Serializable {
     @XmlAttribute
     private String description;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "level", cascade = CascadeType.ALL)
     @IndexColumn(name="INDEX_COL")
     private List<Domain> domains = Collections.emptyList();
 
