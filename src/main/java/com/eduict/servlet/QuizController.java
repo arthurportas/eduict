@@ -55,8 +55,10 @@ public class QuizController extends HttpServlet {
                     if (obj.getName().equals("previousId")) {
                         previousId = Long.parseLong(obj.getValue());
                         Quiz previousQuiz = registrationService.lookupQuizById(previousId);
-                        previousQuiz.setLevels(levelListProducer.levels());
-                        request.setAttribute("quiz", previousQuiz);
+                        if (previousQuiz != null) {
+                            previousQuiz.setLevels(levelListProducer.levels());
+                            request.setAttribute("quiz", previousQuiz);
+                        }//TODO defensive code against live cookie, but not found in persistence
                         log.info("quiz: " + previousQuiz.toString());
                         break;
                     }
