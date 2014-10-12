@@ -55,14 +55,6 @@ public class School implements Serializable {
         return new Builder();
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
-
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
-
     public static class Builder {
 
         private School school;
@@ -115,5 +107,13 @@ public class School implements Serializable {
 
     public void setRegion(Region region) {
         this.region = region;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 }

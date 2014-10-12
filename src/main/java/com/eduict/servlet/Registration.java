@@ -114,11 +114,11 @@ public class Registration extends HttpServlet {
             Throwable t = e;
             while ((t.getCause()) != null) {
                 t = t.getCause();
+                errorMessage.append("Error========>" + t.getMessage());
             }
-
-            errorMessage.append("Error========>" + t.getMessage());
             request.setAttribute("infoMessage", "");
             e.printStackTrace();
+
         } finally {
             request.setAttribute("errorMessage", errorMessage.toString());
             RequestDispatcher resultView = request.getRequestDispatcher("index.jsp");

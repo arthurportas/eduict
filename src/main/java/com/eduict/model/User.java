@@ -16,7 +16,7 @@ import java.util.List;
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@Table(name = "USER", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name = "USER")
 @NamedQueries({
         @NamedQuery(name = "User.FIND_BY_EMAIL_AND_PASSWORD", query = "SELECT u FROM User u  WHERE  u.email= :email AND u.password= :password"),
         @NamedQuery(name = "User.FIND_BY_EMAIL", query = "SELECT u FROM User u  WHERE  u.email= :email")

@@ -288,9 +288,13 @@
     <!-- /.content-section-a -->
 
     <div class="content-section-a register ${param.view eq 'register' ? 'visible' : 'hidden'}">
+
     <div class="container bordered">
             <div class="row">
                 <div class="container">
+                <div class="alert alert-danger ${ not empty errorMessage  ? 'visible' : 'hidden'}">
+                    Ocorreu um erro...
+                </div>
                 <form class="form-signin" role="form" action="/register" method="POST" accept-charset="UTF-8">
                 <h3 class="form-signin-heading">Novo utilizador</h3>
     
