@@ -2,6 +2,9 @@ package com.eduict.servlet;
 
 import com.eduict.controller.QuizRegistration;
 import com.eduict.data.LevelListProducer;
+import com.eduict.model.Quiz;
+import com.eduict.model.User;
+
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,12 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.logging.Logger;
-import com.eduict.model.Quiz;
-import com.eduict.model.User;
+import java.util.ArrayList;
 import java.util.List;
-import com.eduict.model.Level;
+import java.util.logging.Logger;
 
 @WebServlet(urlPatterns = "/quiz")
 public class QuizController extends HttpServlet {
@@ -50,20 +50,29 @@ public class QuizController extends HttpServlet {
                 User user =  (User) session.getAttribute("user");
                 log.info("session found for user presenting a new quiz");
                 Quiz newQuiz = new Quiz();
-                //newQuiz.setLevels = levelListProducer.levels();//fetch levels list to associate with this new quiz
-                //user.getQuizzes().add(newQuiz);
-                //newQuiz.setUser(user);
-                //quizRegistration.registerNewQuiz(newQuiz);
+                newQuiz.setLevels(levelListProducer.levels());//fetch levels list to associate with this new quiz
+                newQuiz.setUser(user);
+                List<Quiz> userQuizzes = new ArrayList<Quiz>();
+                if (user.getQuizzes().isEmpty()) {
+                    userQuizzes.add(newQuiz);
+                } else {
+                    for (Quiz q : user.getQuizzes()) {
+                        userQuizzes.add(q);
+                    }
+                    userQuizzes.add(newQuiz);
+                }
+                user.setQuizzes(userQuizzes);
+                quizRegistration.registerNewQuiz(newQuiz);
 
-                Quiz demoQuiz = registrationService.lookupQuizById(0L);//demo quizz
-                request.setAttribute("demoQuiz", demoQuiz);
-                log.info("demoQuiz: " + demoQuiz.toString());
+                request.setAttribute("quiz", newQuiz);
+                log.info("quiz: " + newQuiz.toString());
+
             } else {
                 log.info("no session found presenting a demo quiz");
                  //else present a demo quiz
-                Quiz demoQuiz = registrationService.lookupQuizById(0L);//demo quizz
-                request.setAttribute("demoQuiz", demoQuiz);
-                log.info("demoQuiz: " + demoQuiz.toString());
+                Quiz demoQuiz = registrationService.lookupQuizById(0L);//demo quiz
+                request.setAttribute("quiz", demoQuiz);
+                log.info("quiz: " + demoQuiz.toString());
             }
         } catch (Exception e) {
             Throwable t = e;

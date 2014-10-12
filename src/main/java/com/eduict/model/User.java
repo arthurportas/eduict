@@ -113,10 +113,10 @@ public class User implements Serializable {
     private School workSchool;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Role> roles = Collections.emptyList();
+    private List<Role> roles = Collections.EMPTY_LIST;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Quiz> quizzes = Collections.emptyList();
+    private List<Quiz> quizzes = Collections.EMPTY_LIST;
    
    /* ==========================Builder======================= */
    
