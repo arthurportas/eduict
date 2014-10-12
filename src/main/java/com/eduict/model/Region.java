@@ -16,13 +16,12 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 @Table(name = "REGION", uniqueConstraints = @UniqueConstraint(columnNames = "NAME"))
 @NamedQueries({
-    @NamedQuery(name = "Region.FIND_ALL", query = "SELECT r from Region r"),
-    @NamedQuery(name = "Region.FIND_BY_NAME", query = "SELECT r from Region r WHERE r.regionName LIKE :regionName"),
-    @NamedQuery(name = "Region.FIND_BY_NAME_PATTERN", query = "SELECT r from Region r WHERE r.regionName LIKE :regionName"),
+        @NamedQuery(name = "Region.FIND_ALL", query = "SELECT r FROM Region r"),
+        @NamedQuery(name = "Region.FIND_BY_NAME", query = "SELECT r FROM Region r WHERE r.regionName LIKE :regionName"),
+        @NamedQuery(name = "Region.FIND_BY_NAME_PATTERN", query = "SELECT r FROM Region r WHERE r.regionName LIKE :regionName"),
 })
-public class Region implements Serializable{
+public class Region implements Serializable {
 
-    /** Default value included to remove warning. Remove or modify at will. **/
     private static final long serialVersionUID = 1L;
 
     public static final String FIND_ALL = "Region.FIND_ALL";
@@ -47,23 +46,25 @@ public class Region implements Serializable{
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "region", cascade = CascadeType.ALL)
     private List<School> schools;
 
-    	/* ==========================GETTERS/SETTERS======================= */
+    /* ==========================Builder======================= */
+
+    /* ==========================GETTERS/SETTERS======================= */
 
     public Long getId() {
-      return this.id;
-   }
+        return this.id;
+    }
 
     public void setId(Long id) {
-      this.id = id;
-   }
+        this.id = id;
+    }
 
     public String getRegionName() {
-      return this.regionName;
-   }
+        return this.regionName;
+    }
 
     public void setRegionName(String regionName) {
-      this.regionName = regionName;
-   }
+        this.regionName = regionName;
+    }
 
     public List<School> getSchools() {
         return schools;
@@ -78,6 +79,7 @@ public class Region implements Serializable{
     public static Builder getBuilder() {
         return new Builder();
     }
+
     public static class Builder {
 
         private Region region;
@@ -95,7 +97,7 @@ public class Region implements Serializable{
             region.schools = schools;
             return this;
         }
-        
+
         public Region build() {
             return region;
         }

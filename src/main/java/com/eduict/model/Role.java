@@ -4,24 +4,20 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import java.io.Serializable;
 import javax.xml.bind.annotation.*;
-import com.eduict.model.School;
-import java.util.List;
-import com.eduict.model.Role;
+import java.io.Serializable;
 
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@Table(name = "ROLE", uniqueConstraints = @UniqueConstraint(columnNames = "NAME"))
+@Table(name = "ROLE")
 @NamedQueries({
-    @NamedQuery(name = "Role.FIND_ALL", query = "SELECT r from Role r"),
-    @NamedQuery(name = "Role.FIND_BY_NAME", query = "SELECT r from Role r WHERE r.roleName LIKE :roleName"),
-    @NamedQuery(name = "Role.FIND_BY_NAME_PATTERN", query = "SELECT r from Role r WHERE r.roleName LIKE :roleName"),
+        @NamedQuery(name = "Role.FIND_ALL", query = "SELECT r FROM Role r"),
+        @NamedQuery(name = "Role.FIND_BY_NAME", query = "SELECT r FROM Role r WHERE r.roleName LIKE :roleName"),
+        @NamedQuery(name = "Role.FIND_BY_NAME_PATTERN", query = "SELECT r FROM Role r WHERE r.roleName LIKE :roleName"),
 })
 public class Role implements Serializable{
 
-    /** Default value included to remove warning. Remove or modify at will. **/
     private static final long serialVersionUID = 1L;
 
     public static final String FIND_ALL = "Role.FIND_ALL";
@@ -39,7 +35,7 @@ public class Role implements Serializable{
     @NotNull
     @Size(min = 1, max = 25)
     @Pattern(regexp = "[A-Za-z ]*", message = "must contain only letters and spaces")
-    @Column(name = "NAME", unique = true, nullable = false)
+    @Column(name = "NAME", nullable = false)
     @XmlAttribute
     private String roleName;
     
@@ -47,33 +43,7 @@ public class Role implements Serializable{
     @JoinColumn(name = "USER_ID_FK", referencedColumnName = "USER_ID", unique = false, nullable = false, insertable = true, updatable = true)
     @XmlTransient
     private User user;
-    
-    /* ==========================GETTERS/SETTERS======================= */
 
-    public Long getId() {
-      return this.id;
-    }
-
-    public void setId(Long id) {
-      this.id = id;
-    }
-
-    public String getRoleName() {
-      return this.roleName;
-    }
-
-    public void setRoleName(String roleName) {
-      this.roleName = roleName;
-    }
-    
-    public User getUser() {
-      return this.user;
-    }
-
-    public void setUser(User user) {
-      this.user = user;
-    }
-    
     /* ==========================BUILDER======================= */
 
     public static Builder getBuilder() {
@@ -91,14 +61,40 @@ public class Role implements Serializable{
             role.roleName = roleName;
             return this;
         }
-        
+
         public Builder withUser(User user) {
             role.user = user;
             return this;
         }
-        
+
         public Role build() {
             return role;
         }
+    }
+
+    /* ==========================GETTERS/SETTERS======================= */
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getRoleName() {
+        return this.roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public User getUser() {
+        return this.user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

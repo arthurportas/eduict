@@ -41,8 +41,10 @@ public class Domain implements Serializable {
     @JoinColumn(name = "LEVEL_ID_FK", referencedColumnName = "LEVEL_ID", unique = false, nullable = false, insertable = true, updatable = true)
     @XmlTransient
     private Level level;
+
+    /* ==========================Builder======================= */
    
-   /* ==========================GETTERS/SETTERS======================= */
+    /* ==========================GETTERS/SETTERS======================= */
 
     public Long getId() {
         return id;

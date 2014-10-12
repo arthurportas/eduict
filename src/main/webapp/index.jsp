@@ -191,14 +191,16 @@
                             %>
                                         
                         <div class="form-group">
-                            <label for="contact-email" class="sr-only col-sm-2 control-label">Email</label>
+                            <label for="contact-email-filled" class="sr-only col-sm-2 control-label">Email</label>
                             <input type="email" class="form-control contact-email" name="contact-email"
+                                   id="contact-email-filled"
                                    placeholder="Email" required autofocus value="<%=email%>">
                         </div>
                         <%} else { %>
                         <div class="form-group">
                             <label for="contact-email" class="sr-only col-sm-2 control-label">Email</label>
                             <input type="email" class="form-control contact-email" name="contact-email"
+                                   id="contact-email"
                                    placeholder="Email" required autofocus>
                         </div>
                         <%}%>
@@ -206,13 +208,15 @@
                         <div class="form-group">
                             <label for="contact-subject" class="sr-only col-sm-2 control-label">Assunto</label>
                             <input type="text" class="form-control contact-subject" name="contact-subject"
+                                   id="contact-subject"
                                    placeholder="Assunto" required autofocus>
                         </div>
                         
                         <div class="form-group">
                             <label for="contact-message" class="sr-only col-sm-2 control-label">Mensagem</label>
                             <textarea name="contact-message" class="form-control contact-message" rows="5"
-                                          required></textarea>
+                                      id="contact-message"
+                                      required></textarea>
                         </div>
 
                         <button class="btn btn-lg btn-primary btn-block contact-email disabled" type="submit" title="Enviar">Enviar</button>
@@ -225,9 +229,9 @@
         <!-- /.container -->
     </div>
     <!-- /.content-section-a -->
-    
-    <div class="content-section-a login <c:if test="${empty param.view}">hidden</c:if>">
-    
+
+    <div class="content-section-a login ${param.view eq 'login' ? 'visible' : 'hidden'}">
+
         <div class="container bordered">
             <div class="row">
                 <div class="container" id="formContainer">
@@ -237,11 +241,13 @@
                         <div class="form-group">
                             <label for="login-email" class="sr-only col-sm-2 control-label">Email</label>
                             <input type="email" class="form-control" name="login-email"
+                                   id="login-email"
                                    placeholder="Email" required autofocus>
                         </div>
                         <div class="form-group">
                             <label for="login-password" class="sr-only col-sm-2 control-label">Password</label>
-                            <input type="password" class="form-control" name="login-password" 
+                            <input type="password" class="form-control" name="login-password"
+                                   id="login-password"
                                    placeholder="Password" required>
                         </div>
                         <button class="btn btn-lg btn-primary btn-block" type="submit" title="Entrar">Entrar</button>
@@ -254,9 +260,9 @@
         <!-- /.container -->
     </div>
     <!-- /.content-section-a -->
-    
-    <div class="content-section-a recover-password hidden">
-        <div class="container bordered">
+
+    <div class="content-section-a recover-password ${param.view eq 'recover-password' ? 'visible' : 'hidden'}">
+    <div class="container bordered">
             <div class="row">
                 <div class="container">
                     <form class="form-signin" role="form">
@@ -278,9 +284,9 @@
         <!-- /.container -->
     </div>
     <!-- /.content-section-a -->
-    
-    <div class="content-section-a register hidden">
-        <div class="container bordered">
+
+    <div class="content-section-a register ${param.view eq 'register' ? 'visible' : 'hidden'}">
+    <div class="container bordered">
             <div class="row">
                 <div class="container">
                     <form class="form-signin" role="form" action="/register" method="GET">
@@ -289,23 +295,27 @@
                         <div class="form-group">
                             <label for="register-firstName" class="col-sm-2 control-label">Nome</label>
                             <input type="text" class="form-control" name="register-firstName"
+                                   id="register-firstName"
                                    placeholder="Nome" required autofocus/>
                         </div>
                         <div class="form-group">
                             <label for="register-lastName" class="col-sm-2 control-label">Apelido</label>
                             <input type="text" class="form-control" name="register-lastName"
+                                   id="register-lastName"
                                    placeholder="Apelido" required/>
                         </div>
     
                         <div class="form-group">
                             <label for="register-email" class="col-sm-2 control-label">Email</label>
                             <input type="email" class="form-control" name="register-email"
+                                   id="register-email"
                                    placeholder="Email" required/>
                         </div>
     
                         <div class="form-group">
                             <label for="register-password" class="col-sm-2 control-label">Password</label>
                             <input type="password" class="form-control" name="register-password"
+                                   id="register-password"
                                    placeholder="Password" required/>
                         </div>
     
@@ -314,31 +324,31 @@
     
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="age-radios" value="until25" checked/>
+                                    <input type="radio" name="register-age" value="Até 25 anos" checked/>
                                     Até 25 anos
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="age-radios" value="26until35"/>
+                                    <input type="radio" name="register-age" value="26 a 35 anos"/>
                                     26 a 35 anos
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="age-radios" value="36until45"/>
+                                    <input type="radio" name="register-age" value="36 a 45 anos"/>
                                     36 a 45 anos
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="age-radios" value="46until55"/>
+                                    <input type="radio" name="register-age" value="46 a 55 anos"/>
                                     46 a 55 anos
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="age-radios" value="56ormore"/>
+                                    <input type="radio" name="register-age" value="56 ou mais anos"/>
                                     56 ou mais anos
                                 </label>
                             </div>
@@ -349,13 +359,13 @@
     
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="gender-radios" value="male" checked/>
+                                    <input type="radio" name="register-gender" value="Masculino" checked/>
                                     Masculino
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="gender-radios" value="female"/>
+                                    <input type="radio" name="register-gender" value="Feminino"/>
                                     Feminino
                                 </label>
                             </div>
@@ -363,28 +373,33 @@
                         
                         <!--Role-->
                         <div class="form-group">
-                            <label for="user-role" class="col-sm-2 control-label">Profissão</label>
-                            <select class="selectpicker user-role multiple">
+                            <label for="register-user-role" class="col-sm-2 control-label">Profissão</label>
+                            <select class="selectpicker user-role multiple" id="register-user-role"
+                                    name="register-user-role">
                                 <c:forEach items="${roles}" var="role">
-                                    <c:out value="<option value=${role.id}>${role.roleName}</option>" escapeXml="false"/>
+                                    <c:out value="<option value=${role.roleName}>${role.roleName}</option>"
+                                           escapeXml="false"/>
                                 </c:forEach>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="academic-degree" class="col-sm-2 control-label">Grau Académico</label>
-                            <select class=" selectpicker academic-degree">
-                                <option value="graduate">Licenciatura</option>
-                                <option value="master">Mestrado</option>
-                                <option value="post-graduate">Pós-Graduação</option>
-                                <option value="doctoral">Doutoramento</option>
+                            <label for="register-academic-degree" class="col-sm-2 control-label">Grau Académico</label>
+                            <select class="selectpicker academic-degree" id="register-academic-degree"
+                                    name="register-academic-degree">
+                                <option value="Licenciatura">Licenciatura</option>
+                                <option value="Mestrado">Mestrado</option>
+                                <option value="Pós-Graduação">Pós-Graduação</option>
+                                <option value="Doutoramento">Doutoramento</option>
                             </select>
                         </div>
     
                         <div class="form-group">
-                            <label for="recruitment-group" class="col-sm-2 control-label">Grupo de Recrutamento</label>
-                            <select class="selectpicker recruitment-group">
-                                <optgroup label="Pré-Escolar e 1ºCiclo do Ensino Básico">
+                            <label for="register-recruitment-group" class="col-sm-2 control-label">Grupo de
+                                Recrutamento</label>
+                            <select class="selectpicker recruitment-group" id="register-recruitment-group"
+                                    name="register-recruitment-group">
+                            <optgroup label="Pré-Escolar e 1ºCiclo do Ensino Básico">
                                     <option value="100 - Educação Pré-Escolar">100 - Educação Pré-Escolar</option>
                                     <option value="110 - 1º Ciclo do Ensino Básico">110 - 1º Ciclo do Ensino Básico</option>
                                 </optgroup>
@@ -426,61 +441,66 @@
                                 </optgroup>
                             </select>
                         </div>
-    
-                        <div class="form-group current-year-teching-level">
-                            <label for="register-current-year-teching-level" class="col-sm-2 control-label current-year-teching-level">
-                                No presente ano letivo leciona em que nível de ensino?
+
+                        <div class="form-group current-year-teaching-level">
+                            <label for="register-current-year-teaching-level"
+                                   class="col-sm-2 control-label current-year-teaching-level">
+                            No presente ano letivo leciona em que nível de ensino?
                             </label>
                             <br/>
     
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="current-year-teching-level-radios" value="1º Ciclo" checked/>
+                                    <input type="radio" name="register-current-year-teaching-level" value="1º Ciclo"
+                                           checked/>
                                     1º Ciclo
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="current-year-teching-level-radios" value="2º Ciclo"/>
+                                    <input type="radio" name="register-current-year-teaching-level" value="2º Ciclo"/>
                                     2º Ciclo
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="current-year-teching-level-radios" value="3º Ciclo"/>
+                                    <input type="radio" name="register-current-year-teaching-level" value="3º Ciclo"/>
                                     3º Ciclo
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="current-year-teching-level-radios" value="Secundário"/>
+                                    <input type="radio" name="register-current-year-teaching-level" value="Secundário"/>
                                     Secundário
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="current-year-teching-level-radios" value="3ºciclo/Secundário"/>
+                                    <input type="radio" name="register-current-year-teaching-level"
+                                           value="3ºciclo/Secundário"/>
                                     3ºciclo/Secundário
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="current-year-teching-level-radios" value="Profissional"/>
+                                    <input type="radio" name="register-current-year-teaching-level"
+                                           value="Profissional"/>
                                     Profissional
                                 </label>
                             </div>
                             <div class="radio">
                                 <label class="radio-inline">
-                                    <input type="radio" name="current-year-teching-level-radios" value="Sem escola"/>
+                                    <input type="radio" name="register-current-year-teaching-level" value="Sem escola"/>
                                     Sem escola
                                 </label>
                             </div>
                         </div>
     
                         <div class="form-group">
-                            <label for="service-time" class="col-sm-2 control-label">Tempo de Serviço</label>
-                            <select class="selectpicker service-time">
-                                <option value="Menos de 5 anos">Menos de 5 anos</option>
+                            <label for="register-service-time" class="col-sm-2 control-label">Tempo de Serviço</label>
+                            <select class="selectpicker service-time" id="register-service-time"
+                                    name="register-service-time">
+                            <option value="Menos de 5 anos">Menos de 5 anos</option>
                                 <option value="6 a 15 anos">6 a 15 anos</option>
                                 <option value="16 a 25 anos">16 a 25 anos</option>
                                 <option value="mais de 25 anos">mais de 25 anos</option>
@@ -488,18 +508,20 @@
                         </div>
     
                         <div class="form-group">
-                            <label for="work-region" class="col-sm-2 control-label">Concelho</label>
-                            <select class="selectpicker work-region">
-                                <c:forEach items="${regions}" var="region">
+                            <label for="register-work-region" class="col-sm-2 control-label">Concelho</label>
+                            <select class="selectpicker work-region" id="register-work-region"
+                                    name="register-work-region" required>
+                            <c:forEach items="${regions}" var="region">
                                     <c:out value="<option value=${region.id}>${region.regionName}</option>" escapeXml="false"/>
                                 </c:forEach>
                             </select>
                         </div>
     
                         <div class="form-group">
-                            <label for="work-school" class="col-sm-2 control-label">Escola</label>
-                            <select class="selectpicker work-school">
-                                <c:forEach items="${regions}" var="region">
+                            <label for="register-work-school" class="col-sm-2 control-label">Escola</label>
+                            <select class="selectpicker work-school" id="register-work-school"
+                                    name="register-work-school" required>
+                            <c:forEach items="${regions}" var="region">
                                     <c:forEach items="${region.schools}" var="school">
                                         <c:out value="<option value=${school.id}>${school.schoolName}</option>" escapeXml="false"/>
                                     </c:forEach>

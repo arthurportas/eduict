@@ -1,13 +1,4 @@
 -- You can use this file to load seed data into the database using SQL statements
-insert into Member (id, name, email, phone_number) values (0, 'John Smith', 'john.smith@mailinator.com', '2125551212');
-
-INSERT INTO USER (USER_ID, FIRSTNAME, LASTNAME, PASSWORD, EMAIL, AGE, GENDER, ACADEMIC_DEGREE) VALUES (0, 'Susana', 'Gonçalves', '123456', 'susana.goncalves@portugalmail.pt', 38, 'feminino', 'licenciatura');
-INSERT INTO USER (USER_ID, FIRSTNAME, LASTNAME, PASSWORD, EMAIL, AGE, GENDER, ACADEMIC_DEGREE) VALUES (9999999, 'Arthur', 'Portas', '123456', 'arthurportas@gmail.com', 35, 'masculino', 'licenciatura');
-INSERT INTO USER (USER_ID, FIRSTNAME, LASTNAME, PASSWORD, EMAIL, AGE, GENDER, ACADEMIC_DEGREE) VALUES (1000000, 'demo', 'demo', 'demo', 'demo@example.com', 20, 'masculino', 'licenciatura');
-
-INSERT INTO ROLE (ROLE_ID, NAME, USER_ID_FK) VALUES(1, 'Professor', 0);
-INSERT INTO ROLE (ROLE_ID, NAME, USER_ID_FK) VALUES(2, 'Diretor', 0);
-INSERT INTO ROLE (ROLE_ID, NAME, USER_ID_FK) VALUES(3, 'Outra', 0);
 
 --Quiz
 INSERT INTO QUIZ (QUIZ_ID, DESCRIPTION) VALUES (0, 'Demo');
@@ -1613,3 +1604,9 @@ INSERT INTO SCHOOL (SCHOOL_ID, NAME, REGION_ID_FK) VALUES(829, '145348 - Agrupam
 INSERT INTO SCHOOL (SCHOOL_ID, NAME, REGION_ID_FK) VALUES(830, '145518 - Agrupamento de Escolas D. José I, Vila Real de Santo António', 278);
 INSERT INTO SCHOOL (SCHOOL_ID, NAME, REGION_ID_FK) VALUES(831, '700015 - Escola de Hotelaria e Turismo de Vila Real de Sto. António', 278);
 
+INSERT INTO USER (USER_ID, FIRSTNAME, LASTNAME, PASSWORD, EMAIL, AGE, GENDER, ACADEMIC_DEGREE, RECRUITMENT_GROUP, CURRENT_YEAR_TEACHING_LEVEL, SERVICE_TIME, WORK_REGION, WORK_SCHOOL) VALUES (0, 'Susana', 'Gonçalves', '123456', 'susana.goncalves@portugalmail.pt', 38, 'feminino', 'licenciatura', '100 - Educação Pré-Escolar', '1º Ciclo', 'Menos de 5 anos', 'xxx', 'xxx');
+INSERT INTO USER (USER_ID, FIRSTNAME, LASTNAME, PASSWORD, EMAIL, AGE, GENDER, ACADEMIC_DEGREE, RECRUITMENT_GROUP, CURRENT_YEAR_TEACHING_LEVEL, SERVICE_TIME, WORK_REGION, WORK_SCHOOL) VALUES (1000000, 'demo', 'demo', 'demo', 'demo@example.com', 20, 'masculino', 'licenciatura', '100 - Educação Pré-Escolar', '1º Ciclo', 'Menos de 5 anos', 'xxx', 'xxx');
+
+INSERT INTO ROLE (ROLE_ID, NAME, USER_ID_FK) VALUES(9999999, 'Professor', 0);
+INSERT INTO ROLE (ROLE_ID, NAME, USER_ID_FK) VALUES(1000000, 'Diretor', 0);
+INSERT INTO ROLE (ROLE_ID, NAME, USER_ID_FK) VALUES(1000001, 'Outra', 0);

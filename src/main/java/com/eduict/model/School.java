@@ -12,13 +12,12 @@ import java.io.Serializable;
 @XmlAccessorType(XmlAccessType.FIELD)
 @Table(name = "SCHOOL", uniqueConstraints = @UniqueConstraint(columnNames = "NAME"))
 @NamedQueries({
-    @NamedQuery(name = "School.FIND_ALL", query = "SELECT s FROM School s"),
-    @NamedQuery(name = "School.FIND_BY_NAME", query = "SELECT s FROM School s WHERE s.schoolName LIKE :schoolName"),
-    @NamedQuery(name = "School.FIND_BY_NAME_PATTERN", query = "SELECT s FROM School s WHERE s.schoolName LIKE :schoolName"),
+        @NamedQuery(name = "School.FIND_ALL", query = "SELECT s FROM School s"),
+        @NamedQuery(name = "School.FIND_BY_NAME", query = "SELECT s FROM School s WHERE s.schoolName LIKE :schoolName"),
+        @NamedQuery(name = "School.FIND_BY_NAME_PATTERN", query = "SELECT s FROM School s WHERE s.schoolName LIKE :schoolName"),
 })
-public class School implements Serializable{
+public class School implements Serializable {
 
-    /** Default value included to remove warning. Remove or modify at will. **/
     private static final long serialVersionUID = 1L;
 
     public static final String FIND_ALL = "School.FIND_ALL";
@@ -44,38 +43,13 @@ public class School implements Serializable{
     @JoinColumn(name = "REGION_ID_FK", referencedColumnName = "REGION_ID", unique = false, nullable = false, insertable = true, updatable = true)
     @XmlTransient
     private Region region;
-    
-    /* ==========================GETTERS/SETTERS======================= */
-
-    public Long getId() {
-      return this.id;
-   }
-
-    public void setId(Long id) {
-      this.id = id;
-   }
-
-    public String getSchoolName() {
-      return this.schoolName;
-    }
-
-    public void setSchoolName(String schoolName) {
-      this.schoolName = schoolName;
-    }
-
-    public Region getRegion() {
-      return this.region;
-    }
-
-    public void setRegion(Region region) {
-      this.region = region;
-    }
 
     /* ==========================BUILDER======================= */
 
     public static Builder getBuilder() {
         return new Builder();
     }
+
     public static class Builder {
 
         private School school;
@@ -93,9 +67,35 @@ public class School implements Serializable{
             school.region = region;
             return this;
         }
-        
+
         public School build() {
             return school;
         }
+    }
+
+    /* ==========================GETTERS/SETTERS======================= */
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getSchoolName() {
+        return this.schoolName;
+    }
+
+    public void setSchoolName(String schoolName) {
+        this.schoolName = schoolName;
+    }
+
+    public Region getRegion() {
+        return this.region;
+    }
+
+    public void setRegion(Region region) {
+        this.region = region;
     }
 }

@@ -32,15 +32,17 @@ public class Response implements Serializable {
     @JoinColumn(name = "QUESTION_ID_FK", referencedColumnName = "QUESTION_ID", unique = false, nullable = false, insertable = true, updatable = true)
     @XmlTransient
     private Question question;
-   
+
     @NotNull
     @Size(min = 1, max = 4)
     @Pattern(regexp = "[A-Za-z ´`ç~,.]*", message = "value must contain only letters and chars specified")
     @Column(name = "VALUE")
     @XmlAttribute
     private String value;
-    
-   /* ==========================GETTERS/SETTERS======================= */
+
+    /* ==========================Builder======================= */
+
+    /* ==========================GETTERS/SETTERS======================= */
 
     public Long getId() {
         return id;
@@ -65,7 +67,7 @@ public class Response implements Serializable {
     public void setQuestion(Question question) {
         this.question = question;
     }
-    
+
     public String getValue() {
         return value;
     }

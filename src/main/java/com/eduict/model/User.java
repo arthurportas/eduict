@@ -1,9 +1,5 @@
 package com.eduict.model;
 
-import org.hibernate.annotations.CollectionId;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.IndexColumn;
-import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -16,16 +12,14 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
-import java.util.List;
-import com.eduict.model.Role;
-import com.eduict.model.Quiz;
 import java.util.Collections;
+import java.util.List;
 
 
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-@Table(name = "USER")
+@Table(name = "USER", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 @NamedQueries({
         @NamedQuery(name = "User.FIND_BY_EMAIL_AND_PASSWORD", query = "SELECT u FROM User u  WHERE  u.email= :email AND u.password= :password"),
         @NamedQuery(name = "User.FIND_BY_EMAIL", query = "SELECT u FROM User u  WHERE  u.email= :email")
@@ -35,6 +29,7 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final String FIND_BY_EMAIL_AND_PASSWORD = "User.FIND_BY_EMAIL_AND_PASSWORD";
+
     public static final String FIND_BY_EMAIL = "User.FIND_BY_EMAIL";
 
     @Id
@@ -66,12 +61,17 @@ public class User implements Serializable {
     @NotNull
     @NotEmpty
     @Email
-    @Column(name = "EMAIL")
+    @Size(min = 1, max = 100)
+    @Column(name = "EMAIL", unique = true, nullable = false)
+    @XmlAttribute
     private String email;
 
+    @NotNull
+    @NotEmpty
+    @Size(min = 1, max = 100)
+    @Pattern(regexp = "[A-Za-z0-9 -]*", message = "age must contain only letters, numbers, whitespaces and hyphen")
     @Column(name = "AGE")
     @XmlAttribute
-    @Pattern(regexp = "[A-Za-z]*", message = "gender must contain only letters")
     private String age;
 
     @NotNull
@@ -86,10 +86,40 @@ public class User implements Serializable {
     @Column(name = "ACADEMIC_DEGREE")
     @XmlAttribute
     private String academicDegree;
-    
+
+    @NotNull
+    @NotEmpty
+    @Column(name = "RECRUITMENT_GROUP")
+    @XmlAttribute
+    private String recruitmentGroup;
+
+    @NotNull
+    @NotEmpty
+    @Column(name = "CURRENT_YEAR_TEACHING_LEVEL")
+    @XmlAttribute
+    private String currentYearTeachingLevel;
+
+    @NotNull
+    @NotEmpty
+    @Column(name = "SERVICE_TIME")
+    @XmlAttribute
+    private String serviceTime;
+
+    @NotNull
+    @NotEmpty
+    @Column(name = "WORK_REGION")
+    @XmlAttribute
+    private String workRegion;//TODO relation to region table
+
+    @NotNull
+    @NotEmpty
+    @Column(name = "WORK_SCHOOL")
+    @XmlAttribute
+    private String workSchool;////TODO relation to school table
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Role> roles;
-    
+    private List<Role> roles = Collections.emptyList();
+
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
     private List<Quiz> quizzes = Collections.emptyList();
    
@@ -122,7 +152,7 @@ public class User implements Serializable {
     }
 
     public String getPassword() {
-        return lastName;
+        return password;
     }
 
     public void setPassword(String password) {
@@ -175,5 +205,45 @@ public class User implements Serializable {
 
     public void setQuizzes(List<Quiz> quizzes) {
         this.quizzes = quizzes;
+    }
+
+    public String getRecruitmentGroup() {
+        return recruitmentGroup;
+    }
+
+    public void setRecruitmentGroup(String recruitmentGroup) {
+        this.recruitmentGroup = recruitmentGroup;
+    }
+
+    public String getCurrentYearTeachingLevel() {
+        return currentYearTeachingLevel;
+    }
+
+    public void setCurrentYearTeachingLevel(String currentYearTeachingLevel) {
+        this.currentYearTeachingLevel = currentYearTeachingLevel;
+    }
+
+    public String getServiceTime() {
+        return serviceTime;
+    }
+
+    public void setServiceTime(String serviceTime) {
+        this.serviceTime = serviceTime;
+    }
+
+    public String getWorkRegion() {
+        return workRegion;
+    }
+
+    public void setWorkRegion(String workRegion) {
+        this.workRegion = workRegion;
+    }
+
+    public String getWorkSchool() {
+        return workSchool;
+    }
+
+    public void setWorkSchool(String workSchool) {
+        this.workSchool = workSchool;
     }
 }
