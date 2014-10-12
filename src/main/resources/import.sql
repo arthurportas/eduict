@@ -1604,8 +1604,8 @@ INSERT INTO SCHOOL (SCHOOL_ID, NAME, REGION_ID_FK) VALUES(829, '145348 - Agrupam
 INSERT INTO SCHOOL (SCHOOL_ID, NAME, REGION_ID_FK) VALUES(830, '145518 - Agrupamento de Escolas D. José I, Vila Real de Santo António', 278);
 INSERT INTO SCHOOL (SCHOOL_ID, NAME, REGION_ID_FK) VALUES(831, '700015 - Escola de Hotelaria e Turismo de Vila Real de Sto. António', 278);
 
-INSERT INTO USER (USER_ID, FIRSTNAME, LASTNAME, PASSWORD, EMAIL, AGE, GENDER, ACADEMIC_DEGREE, RECRUITMENT_GROUP, CURRENT_YEAR_TEACHING_LEVEL, SERVICE_TIME, WORK_REGION, WORK_SCHOOL) VALUES (0, 'Susana', 'Gonçalves', '123456', 'susana.goncalves@portugalmail.pt', 38, 'feminino', 'licenciatura', '100 - Educação Pré-Escolar', '1º Ciclo', 'Menos de 5 anos', 'xxx', 'xxx');
-INSERT INTO USER (USER_ID, FIRSTNAME, LASTNAME, PASSWORD, EMAIL, AGE, GENDER, ACADEMIC_DEGREE, RECRUITMENT_GROUP, CURRENT_YEAR_TEACHING_LEVEL, SERVICE_TIME, WORK_REGION, WORK_SCHOOL) VALUES (1000000, 'demo', 'demo', 'demo', 'demo@example.com', 20, 'masculino', 'licenciatura', '100 - Educação Pré-Escolar', '1º Ciclo', 'Menos de 5 anos', 'xxx', 'xxx');
+INSERT INTO USER (USER_ID, FIRSTNAME, LASTNAME, PASSWORD, EMAIL, AGE, GENDER, ACADEMIC_DEGREE, RECRUITMENT_GROUP, CURRENT_YEAR_TEACHING_LEVEL, SERVICE_TIME, REGION_ID_FK, SCHOOL_ID_FK) VALUES (0, 'Susana', 'Gonçalves', '123456', 'susana.goncalves@portugalmail.pt', 38, 'feminino', 'licenciatura', '100 - Educação Pré-Escolar', '1º Ciclo', 'Menos de 5 anos', 27, 135);
+INSERT INTO USER (USER_ID, FIRSTNAME, LASTNAME, PASSWORD, EMAIL, AGE, GENDER, ACADEMIC_DEGREE, RECRUITMENT_GROUP, CURRENT_YEAR_TEACHING_LEVEL, SERVICE_TIME, REGION_ID_FK, SCHOOL_ID_FK) VALUES (1000000, 'demo', 'demo', 'demo', 'demo@example.com', 20, 'masculino', 'licenciatura', '100 - Educação Pré-Escolar', '1º Ciclo', 'Menos de 5 anos', 27, 135);
 
 INSERT INTO ROLE (ROLE_ID, NAME, USER_ID_FK) VALUES(9999999, 'Professor', 0);
 INSERT INTO ROLE (ROLE_ID, NAME, USER_ID_FK) VALUES(1000000, 'Diretor', 0);

@@ -6,6 +6,8 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 
 @Entity
 @XmlRootElement
@@ -14,7 +16,7 @@ import java.io.Serializable;
 @NamedQueries({
         @NamedQuery(name = "School.FIND_ALL", query = "SELECT s FROM School s"),
         @NamedQuery(name = "School.FIND_BY_NAME", query = "SELECT s FROM School s WHERE s.schoolName LIKE :schoolName"),
-        @NamedQuery(name = "School.FIND_BY_NAME_PATTERN", query = "SELECT s FROM School s WHERE s.schoolName LIKE :schoolName"),
+        @NamedQuery(name = "School.FIND_BY_NAME_PATTERN", query = "SELECT s FROM School s WHERE s.schoolName LIKE :schoolName")
 })
 public class School implements Serializable {
 
@@ -44,10 +46,21 @@ public class School implements Serializable {
     @XmlTransient
     private Region region;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "workSchool", cascade = CascadeType.ALL)
+    private List<User> users = Collections.EMPTY_LIST;
+
     /* ==========================BUILDER======================= */
 
     public static Builder getBuilder() {
         return new Builder();
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 
     public static class Builder {
@@ -65,6 +78,11 @@ public class School implements Serializable {
 
         public Builder withRegion(Region region) {
             school.region = region;
+            return this;
+        }
+
+        public Builder withUsers(List<User> users) {
+            school.users = users;
             return this;
         }
 

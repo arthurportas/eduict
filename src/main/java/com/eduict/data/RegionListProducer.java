@@ -7,7 +7,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.enterprise.event.Observes;
 import javax.enterprise.event.Reception;
 import javax.enterprise.inject.Produces;
-import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -41,5 +40,9 @@ public class RegionListProducer {
         Root<Region> region = criteria.from(Region.class);
         criteria.select(region).orderBy(cb.asc(region.get("regionName")));
         regions = em.createQuery(criteria).getResultList();
+    }
+
+    public Region findRegionById(Long id) {
+        return em.find(Region.class, id);
     }
 }

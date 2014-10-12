@@ -127,14 +127,16 @@
                         
                         <div class="form-group">
                             <label for="developer-subject" class="sr-only col-sm-2 control-label">Assunto</label>
-                            <input type="text" class="form-control developer-subject" name="developer-subject" 
+                            <input type="text" class="form-control developer-subject" name="developer-subject"
+                                   id="developer-subject"
                                    placeholder="Assunto" required autofocus>
                         </div>
                         
                         <div class="form-group">
                             <label for="contact-developer-message" class="sr-only col-sm-2 control-label">Mensagem</label>
                             <textarea name="contact-developer-message" class="form-control developer-message" rows="5"
-                                          required></textarea>
+                                      id="contact-developer-message"
+                                      required></textarea>
                         </div>
                         
                         <div class="form-group">
@@ -209,7 +211,7 @@
                             <label for="contact-subject" class="sr-only col-sm-2 control-label">Assunto</label>
                             <input type="text" class="form-control contact-subject" name="contact-subject"
                                    id="contact-subject"
-                                   placeholder="Assunto" required autofocus>
+                                   placeholder="Assunto" required>
                         </div>
                         
                         <div class="form-group">
@@ -289,8 +291,8 @@
     <div class="container bordered">
             <div class="row">
                 <div class="container">
-                    <form class="form-signin" role="form" action="/register" method="GET">
-                        <h3 class="form-signin-heading">Novo utilizador</h3>
+                <form class="form-signin" role="form" action="/register" method="POST" accept-charset="UTF-8">
+                <h3 class="form-signin-heading">Novo utilizador</h3>
     
                         <div class="form-group">
                             <label for="register-firstName" class="col-sm-2 control-label">Nome</label>

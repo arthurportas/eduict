@@ -7,7 +7,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.enterprise.event.Observes;
 import javax.enterprise.event.Reception;
 import javax.enterprise.inject.Produces;
-import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -41,5 +40,9 @@ public class SchoolListProducer {
         Root<School> school = criteria.from(School.class);
         criteria.select(school).orderBy(cb.asc(school.get("schoolName")));
         schools = em.createQuery(criteria).getResultList();
+    }
+
+    public School findSchoolById(Long id) {
+        return em.find(School.class, id);
     }
 }

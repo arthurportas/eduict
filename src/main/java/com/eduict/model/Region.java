@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -18,7 +19,7 @@ import java.util.List;
 @NamedQueries({
         @NamedQuery(name = "Region.FIND_ALL", query = "SELECT r FROM Region r"),
         @NamedQuery(name = "Region.FIND_BY_NAME", query = "SELECT r FROM Region r WHERE r.regionName LIKE :regionName"),
-        @NamedQuery(name = "Region.FIND_BY_NAME_PATTERN", query = "SELECT r FROM Region r WHERE r.regionName LIKE :regionName"),
+        @NamedQuery(name = "Region.FIND_BY_NAME_PATTERN", query = "SELECT r FROM Region r WHERE r.regionName LIKE :regionName")
 })
 public class Region implements Serializable {
 
@@ -45,6 +46,9 @@ public class Region implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "region", cascade = CascadeType.ALL)
     private List<School> schools;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "workRegion", cascade = CascadeType.ALL)
+    private List<User> users = Collections.EMPTY_LIST;
 
     /* ==========================Builder======================= */
 
@@ -78,6 +82,14 @@ public class Region implements Serializable {
 
     public static Builder getBuilder() {
         return new Builder();
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 
     public static class Builder {

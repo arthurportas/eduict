@@ -7,10 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
@@ -105,17 +102,15 @@ public class User implements Serializable {
     @XmlAttribute
     private String serviceTime;
 
-    @NotNull
-    @NotEmpty
-    @Column(name = "WORK_REGION")
-    @XmlAttribute
-    private String workRegion;//TODO relation to region table
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "REGION_ID_FK", referencedColumnName = "REGION_ID", unique = false, nullable = false, insertable = true, updatable = true)
+    @XmlTransient
+    private Region workRegion;
 
-    @NotNull
-    @NotEmpty
-    @Column(name = "WORK_SCHOOL")
-    @XmlAttribute
-    private String workSchool;////TODO relation to school table
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "SCHOOL_ID_FK", referencedColumnName = "SCHOOL_ID", unique = false, nullable = false, insertable = true, updatable = true)
+    @XmlTransient
+    private School workSchool;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
     private List<Role> roles = Collections.emptyList();
@@ -231,19 +226,19 @@ public class User implements Serializable {
         this.serviceTime = serviceTime;
     }
 
-    public String getWorkRegion() {
+    public Region getWorkRegion() {
         return workRegion;
     }
 
-    public void setWorkRegion(String workRegion) {
+    public void setWorkRegion(Region workRegion) {
         this.workRegion = workRegion;
     }
 
-    public String getWorkSchool() {
+    public School getWorkSchool() {
         return workSchool;
     }
 
-    public void setWorkSchool(String workSchool) {
+    public void setWorkSchool(School workSchool) {
         this.workSchool = workSchool;
     }
 }

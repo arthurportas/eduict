@@ -1,8 +1,12 @@
 package com.eduict.servlet;
 
 import com.eduict.controller.UserRegistration;
+import com.eduict.data.RegionListProducer;
 import com.eduict.data.RoleListProducer;
+import com.eduict.data.SchoolListProducer;
+import com.eduict.model.Region;
 import com.eduict.model.Role;
+import com.eduict.model.School;
 import com.eduict.model.User;
 
 import javax.inject.Inject;
@@ -30,11 +34,17 @@ public class Registration extends HttpServlet {
     UserRegistration registrationService;
 
     @Inject
+    RegionListProducer regionListProducer;
+
+    @Inject
+    SchoolListProducer schoolListProducer;
+
+    @Inject
     RoleListProducer roleListProducer;
 
-    protected void doGet(HttpServletRequest request,
-                         HttpServletResponse response) throws ServletException, IOException {
-
+    protected void doPost(HttpServletRequest request,
+                          HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
 
         StringBuilder errorMessage = new StringBuilder();
@@ -46,13 +56,13 @@ public class Registration extends HttpServlet {
             String password = request.getParameter("register-password");
             String age = request.getParameter("register-age");
             String gender = request.getParameter("register-gender");
-            String role = request.getParameter("register-user-role");
+            String roleName = request.getParameter("register-user-role");
             String academicDegree = request.getParameter("register-academic-degree");
             String recruitmentGroup = request.getParameter("register-recruitment-group");
             String currentYearTeachingLevel = request.getParameter("register-current-year-teaching-level");
             String serviceTime = request.getParameter("register-service-time");
-            String workRegion = request.getParameter("register-work-region");//TODO-convert to int lookup in db
-            String workSchool = request.getParameter("register-work-school");//TODO-convert to int lookup in db
+            Long workRegionId = Long.parseLong(request.getParameter("register-work-region"));
+            Long workSchoolId = Long.parseLong(request.getParameter("register-work-school"));
 
             User user;
 
@@ -68,7 +78,7 @@ public class Registration extends HttpServlet {
             user.setGender(gender);
 
             Role newRole = new Role();
-            newRole.setRoleName(role);//TODO: use enums with jpa
+            newRole.setRoleName(roleName);
             newRole.setUser(user);
             List<Role> rolesList = new ArrayList<Role>();//TODO: develop mechanism to allow addition of multiple roles per user
             rolesList.add(newRole);
@@ -76,6 +86,19 @@ public class Registration extends HttpServlet {
 
 
             user.setAcademicDegree(academicDegree);
+            user.setRecruitmentGroup(recruitmentGroup);
+            user.setCurrentYearTeachingLevel(currentYearTeachingLevel);
+            user.setServiceTime(serviceTime);
+
+            Region lookupRegion = regionListProducer.findRegionById(workRegionId);
+            if (lookupRegion != null) {
+                user.setWorkRegion(lookupRegion);
+            }
+
+            School lookupSchool = schoolListProducer.findSchoolById(workSchoolId);
+            if (lookupSchool != null) {
+                user.setWorkSchool(lookupSchool);
+            }
 
             registrationService.register();
 
