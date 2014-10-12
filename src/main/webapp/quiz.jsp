@@ -118,10 +118,9 @@
             </div>
             
             <div class="col-md-9">
-                <div class="thumbnail">
-                    <!--<img class="img-responsive" src="http://placehold.it/800x300" alt="">-->
+                <div class="thumbnail quiz-container">
                     <c:forEach items="${quiz.levels}" var="level" varStatus="levelIndex">
-                    <div class="level level-${level.id}-wrapper ${not levelIndex.first ? 'hidden' : ''}">
+                        <div class="level level-${level.id}-wrapper ${not levelIndex.first ? 'hidden' : ''}">
                             <div class="alert alert-info level-${level.id}">
                                 <h4><c:out value="Nível ${level.id} - ${level.description}"/></h4>
                             </div>
@@ -142,7 +141,9 @@
                                                 <c:forEach items="${question.responses}" var="response" varStatus="responseIndex">
                                                     <div class="radio">
                                                         <label>
-                                                            <input type="radio" name="response-radios" data-question="${question.id}"
+                                                            <input type="radio" class="response-question-${question.id}"
+                                                                   name="response-question"
+                                                                   data-question="${question.id}"
                                                                    value="${response.value}">
                                                                    <c:out value="${response.response}" escapeXml="false"/>
                                                         </label>
@@ -156,39 +157,12 @@
                             </c:forEach>
                         </div>
                     </c:forEach>
-                    
-                    <div class="caption-full hidden">
-                        <h4 class="pull-right">$24.99</h4>
-                        <h4><a href="#">Product Name</a>
-                        </h4>
-                        
-                        <p>See more snippets like these online store reviews at <a target="_blank"
-                                                                                   href="http://bootsnipp.com">Bootsnipp -
-                            http://bootsnipp.com</a>.</p>
-                            
-                        <p>Want to make these reviews work? Check out
-                            <strong><a
-                                    href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this
-                                building a review system tutorial</a>
-                            </strong>over at maxoffsky.com!</p>
-                            
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                    </div>
-                    <div class="ratings hidden">
-                        <p class="pull-right">3 reviews</p>
-                        
-                        <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star-empty"></span>
-                            4.0 stars
-                        </p>
+                    <div class="alert alert-warning save-results">
+                        A qualquer momento pode terminar o questionário e gravar os
+                        resultados. <%if (session.getAttribute("user") == null) {%>(Demonstração)<%}%>
+                        <button class="btn btn-lg btn-danger btn-block save-results"
+                                title="Terminar e gravar resultados">Terminar e Gravar resultados
+                        </button>
                     </div>
                 </div>
                 
@@ -245,15 +219,40 @@
                     </div>
                     
                 </div>
-            </div>
-            
-            <div class="col-md-9">
-                <div class="alert alert-warning save-results">
-                    A qualquer momento pode terminar o questionário e gravar os resultados. <%if (session.getAttribute("user") == null) {%>(Demonstração)<%}%>
-                    <button class="btn btn-lg btn-danger btn-block save-results" title="Terminar e gravar resultados" >Terminar e Gravar resultados</button>
                 </div>
+            <div class="caption-full hidden">
+                <h4 class="pull-right">$24.99</h4>
+                <h4><a href="#">Product Name</a>
+                </h4>
+
+                <p>See more snippets like these online store reviews at <a target="_blank"
+                                                                           href="http://bootsnipp.com">Bootsnipp -
+                    http://bootsnipp.com</a>.</p>
+
+                <p>Want to make these reviews work? Check out
+                    <strong><a
+                            href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this
+                        building a review system tutorial</a>
+                    </strong>over at maxoffsky.com!</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                    voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
             </div>
-            
+            <div class="ratings hidden">
+                <p class="pull-right">3 reviews</p>
+
+                <p>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                    4.0 stars
+                </p>
+            </div>
         </div>
         <div class="row">
             <div class="thumbnail graph">

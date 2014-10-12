@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("input[name=response-radios]:radio").change(function () {
+    $("input[name=response-question]:radio").change(function () {
         var responseButtonId = $(this).data("question");
         $('button.response-' + responseButtonId).removeClass('disabled');
         var value = $(this).val();
@@ -81,9 +81,9 @@ $(document).ready(function () {
                 domain6 :{
                     value: 0,
                     visible: false
-                },
-            },
-        };
+                }
+            }
+    };
         
     $('button.response').bind('click', function (e) {
         e.preventDefault();
@@ -240,8 +240,8 @@ $(document).ready(function () {
             } else if (currentQuestionVisited === questionsNumber) {
                 $(questions[currentQuestionVisited - 1]).addClass("hidden");//current visible
                 visiblePanel = $('div.domain-question-wrapper-' + domainIndex);
-                
-                //accordig to level and previous level/domain average show/hide
+
+                //according to level and previous level/domain average show/hide
                 nextVisiblePanel = $('div.domain-question-wrapper-' + (domainIndex + 1));
                 if (visiblePanel && nextVisiblePanel) {
                     visiblePanel.addClass("hidden");
@@ -251,6 +251,12 @@ $(document).ready(function () {
             }
         }
     });
+
+    $('button.save-results').bind('click', function (e) {
+        e.preventDefault();
+        //averages...//TODO
+    });
+
 });
 
 function calculateAnswerAverage(answerValue, domainIndex) {
