@@ -57,29 +57,29 @@ public class School implements Serializable {
 
     public static class Builder {
 
-        private School school;
+        private School schoolEntity;
 
         public Builder() {
-            school = new School();
+            schoolEntity = new School();
         }
 
         public Builder withName(String schoolName) {
-            school.schoolName = schoolName;
+            schoolEntity.schoolName = schoolName;
             return this;
         }
 
         public Builder withRegion(Region region) {
-            school.region = region;
+            schoolEntity.region = region;
             return this;
         }
 
         public Builder withUsers(List<User> users) {
-            school.users = users;
+            schoolEntity.users = users;
             return this;
         }
 
         public School build() {
-            return school;
+            return schoolEntity;
         }
     }
 

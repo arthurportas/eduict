@@ -52,6 +52,37 @@ public class Region implements Serializable {
 
     /* ==========================Builder======================= */
 
+    public static Builder getBuilder() {
+        return new Builder();
+    }
+
+    public static class Builder {
+
+        private Region regionEntity;
+
+        public Builder() {
+            regionEntity = new Region();
+        }
+
+        public Builder withName(String name) {
+            regionEntity.regionName = name;
+            return this;
+        }
+
+        public Builder withSchools(List<School> schools) {
+            regionEntity.schools = schools;
+            return this;
+        }
+
+        public Builder withUsers(List<User> users) {
+            regionEntity.users = users;
+            return this;
+        }
+
+        public Region build() {
+            return regionEntity;
+        }
+    }
     /* ==========================GETTERS/SETTERS======================= */
 
     public Long getId() {
@@ -78,11 +109,6 @@ public class Region implements Serializable {
         this.schools = schools;
     }
     
-    /* ==========================BUILDER======================= */
-
-    public static Builder getBuilder() {
-        return new Builder();
-    }
 
     public List<User> getUsers() {
         return users;
@@ -90,28 +116,5 @@ public class Region implements Serializable {
 
     public void setUsers(List<User> users) {
         this.users = users;
-    }
-
-    public static class Builder {
-
-        private Region region;
-
-        public Builder() {
-            region = new Region();
-        }
-
-        public Builder withName(String regionName) {
-            region.regionName = regionName;
-            return this;
-        }
-
-        public Builder withSchools(List<School> schools) {
-            region.schools = schools;
-            return this;
-        }
-
-        public Region build() {
-            return region;
-        }
     }
 }
