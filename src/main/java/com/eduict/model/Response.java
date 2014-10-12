@@ -42,6 +42,38 @@ public class Response implements Serializable {
 
     /* ==========================Builder======================= */
 
+    public static Builder getBuilder() {
+        return new Builder();
+    }
+
+    public static class Builder {
+
+        private Response responseEntity;
+
+        public Builder() {
+            responseEntity = new Response();
+        }
+
+        public Builder withResponse(String response) {
+            responseEntity.response = response;
+            return this;
+        }
+
+        public Builder withQuestion(Question question) {
+            responseEntity.question = question;
+            return this;
+        }
+
+        public Builder withResponseValue(String value) {
+            responseEntity.value = value;
+            return this;
+        }
+
+        public Response build() {
+            return responseEntity;
+        }
+    }
+
     /* ==========================GETTERS/SETTERS======================= */
 
     public Long getId() {
