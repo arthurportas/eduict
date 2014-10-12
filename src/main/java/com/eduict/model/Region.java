@@ -4,14 +4,11 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
-import javax.xml.bind.annotation.*;
-import com.eduict.model.School;
-import org.hibernate.annotations.CollectionId;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.IndexColumn;
-import org.hibernate.annotations.Type;
-
 import java.util.List;
 
 @Entity
@@ -41,13 +38,13 @@ public class Region implements Serializable{
     private Long id;
 
     @NotNull
-    @Size(min = 1, max = 25)
+    @Size(min = 1, max = 100)
     @Pattern(regexp = "[A-Za-z ]*", message = "must contain only letters and spaces")
     @Column(name = "NAME", unique = true, nullable = false)
     @XmlAttribute
     private String regionName;
-    
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "region", cascade = CascadeType.ALL)
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "region", cascade = CascadeType.ALL)
     private List<School> schools;
 
     	/* ==========================GETTERS/SETTERS======================= */

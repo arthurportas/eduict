@@ -14,9 +14,9 @@ $(document).ready(function () {
     $('select.work-region').change(function () {
         //get selected option-region Id
         //ajax call to get this specific region
-        //replace school selct html with schools according to selected region
+        //replace school select html with schools according to selected region
         var schoolSelect = $('select.work-school');
-        var regionId = $('.work-region option:selected').val()
+        var regionId = $('.work-region option:selected').val();
         $.ajax({
             type: "GET",
             url: "/regions?id=" + regionId,
@@ -26,7 +26,7 @@ $(document).ready(function () {
             success: function(jqXHR, textStatus, errorThrown) {
                 if (schoolSelect) {
                     schoolSelect.empty().append(jqXHR);
-                    $('.selectpicker').selectpicker('render');
+                    schoolSelect.selectpicker('refresh');
                 }
             },
             error: function(jqXHR, textStatus, errorThrown) {

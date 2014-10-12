@@ -6,7 +6,6 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @XmlRootElement
@@ -41,7 +40,7 @@ public class School implements Serializable{
     @XmlAttribute
     private String schoolName;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "REGION_ID_FK", referencedColumnName = "REGION_ID", unique = false, nullable = false, insertable = true, updatable = true)
     @XmlTransient
     private Region region;
@@ -71,6 +70,7 @@ public class School implements Serializable{
     public void setRegion(Region region) {
       this.region = region;
     }
+
     /* ==========================BUILDER======================= */
 
     public static Builder getBuilder() {
